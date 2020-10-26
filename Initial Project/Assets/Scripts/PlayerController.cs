@@ -20,7 +20,6 @@ public class PlayerController : MonoBehaviour
     {
         formNumber = Random.Range(0, 3);
         SwitchForm();
-        source = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
