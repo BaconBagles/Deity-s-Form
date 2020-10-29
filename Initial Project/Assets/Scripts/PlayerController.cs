@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public int health;
     Vector2 movement;
     public float moveSpeed;
     public Rigidbody2D rb;
