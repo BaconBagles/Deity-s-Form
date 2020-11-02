@@ -7,9 +7,11 @@ public class EnemyController : MonoBehaviour
 
     public int attackTimer;
     public PlayerController player;
-    public GameObject[] enemies;
-
-    
+    public List<GameObject> enemies = new List<GameObject>();
+    public GameObject basicEnemy;
+    public GameObject armourEnemy;
+    public GameObject spikeEnemy;
+    Vector2 rndPos;
 
     // Start is called before the first frame update
     void Start()
@@ -20,9 +22,11 @@ public class EnemyController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (IsArrayEmpty())
+        if (enemies.Count == 0)
         {
+            SpawnEnemies();
         }
+        rndPos = new Vector2(Random.Range(-20, 20), Random.Range(-20, 20));
     }
 
     IEnumerator EnemyAttack()
@@ -35,18 +39,9 @@ public class EnemyController : MonoBehaviour
         StartCoroutine(EnemyAttack());
     }
 
-    private bool IsArrayEmpty()
+    void SpawnEnemies()
     {
-        if (enemies == null || enemies.Length == 0)
-        {
-            return true;
-        }
-        for (int i = 0; i < enemies.Length; i++)
-        {
-            if (enemies[i] != null)
-            {
-                return false;
-            }
-        }
+            enemies.Add((GameObject)Instantiate(basicEnemy,rndPos, Quaternion.identity));
     }
+
 }
