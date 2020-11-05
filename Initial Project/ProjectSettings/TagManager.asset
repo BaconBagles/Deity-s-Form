@@ -3,7 +3,13 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - basicAttack
+  - APAttack
+  - rangedAttack
+  - basicEnemy
+  - armourEnemy
+  - spikyEnemy
   layers:
   - Default
   - TransparentFX

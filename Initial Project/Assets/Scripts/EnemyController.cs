@@ -44,4 +44,8 @@ public class EnemyController : MonoBehaviour
             enemies.Add((GameObject)Instantiate(basicEnemy,rndPos, Quaternion.identity));
     }
 
+    public void CheckNull()
+    {
+        enemies.RemoveAll(item => item == null);
+    }
 }
