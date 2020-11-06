@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
-
+    public int diffLevel;
     public int attackTimer;
     public PlayerController player;
     public List<GameObject> enemies = new List<GameObject>();
@@ -16,7 +16,7 @@ public class EnemyController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        StartCoroutine(EnemyAttack());
     }
 
     // Update is called once per frame
@@ -26,7 +26,6 @@ public class EnemyController : MonoBehaviour
         {
             SpawnEnemies();
         }
-        rndPos = new Vector2(Random.Range(-20, 20), Random.Range(-20, 20));
     }
 
     IEnumerator EnemyAttack()
@@ -41,11 +40,21 @@ public class EnemyController : MonoBehaviour
 
     void SpawnEnemies()
     {
-            enemies.Add((GameObject)Instantiate(basicEnemy,rndPos, Quaternion.identity));
-    }
 
-    public void CheckNull()
-    {
-        enemies.RemoveAll(item => item == null);
+        for (int i = 0; i < diffLevel; i++)
+        {
+            rndPos = new Vector2(Random.Range(-20, 20), Random.Range(-20, 20));
+            enemies.Add((GameObject)Instantiate(basicEnemy, rndPos, Quaternion.identity));
+        }
+        for (int i = 0; i < diffLevel/2; i++)
+        {
+            rndPos = new Vector2(Random.Range(-20, 20), Random.Range(-20, 20));
+            enemies.Add((GameObject)Instantiate(armourEnemy, rndPos, Quaternion.identity));
+        }
+        for (int i = 0; i <diffLevel/4; i++)
+        {
+            rndPos = new Vector2(Random.Range(-20, 20), Random.Range(-20, 20));
+            enemies.Add((GameObject)Instantiate(spikeEnemy, rndPos, Quaternion.Euler(0,0,45)));
+        }
     }
 }

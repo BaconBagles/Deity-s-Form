@@ -4,27 +4,54 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+    GameObject player;
+    Transform goal;
     GameObject controller;
     public EnemyController controllerScript;
+    float spaceBetween;
 
     // Start is called before the first frame update
     void Start()
     {
+        player = GameObject.Find("Player");
+        goal = player.transform;
         controller = GameObject.Find("EnemyController");
         controllerScript = controller.GetComponent<EnemyController>();
+
+        if (gameObject.tag == "basicEnemy")
+        {
+            spaceBetween = Random.Range(10, 20);
+        }
+        else if (gameObject.tag == "armourEnemy")
+        {
+            spaceBetween = Random.Range(10, 15);
+        }
+        else
+        {
+            spaceBetween = Random.Range(5, 15);
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-       
+        if (Vector2.Distance(goal.position, transform.position) >= spaceBetween)
+        {
+            Vector2 direction = goal.position - transform.position;
+            transform.Translate(direction * Time.deltaTime);
+        }
+        else
+        {
+            Vector2 direction = transform.position - goal.transform.position;
+            transform.Translate(direction * Time.deltaTime);
+        }
     }
 
     void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("basicAttack"))
         {
-            if (this.gameObject.tag == "basicEnemy")
+            if (gameObject.tag == "basicEnemy")
             {
                 controllerScript.enemies.Remove(this.gameObject);
                 Destroy(this.gameObject);
@@ -32,8 +59,9 @@ public class Enemy : MonoBehaviour
         }
         else if (other.gameObject.CompareTag("APAttack"))
         {
-            if (this.gameObject.tag == "armourEnemy")
+            if (gameObject.tag == "armourEnemy")
             {
+                controllerScript.enemies.Remove(this.gameObject);
                 Destroy(this.gameObject);
             }
         }
@@ -41,6 +69,7 @@ public class Enemy : MonoBehaviour
         {
             if (this.gameObject.tag == "spikyEnemy")
             {
+                controllerScript.enemies.Remove(this.gameObject);
                 Destroy(this.gameObject);
             }
         }
