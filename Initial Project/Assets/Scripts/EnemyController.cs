@@ -30,7 +30,7 @@ public class EnemyController : MonoBehaviour
 
     IEnumerator EnemyAttack()
     {
-        yield return new WaitForSeconds(attackTimer);
+        yield return new WaitForSecondsRealtime(attackTimer);
         foreach (GameObject enemy in enemies)
         {
             player.health -= 1;

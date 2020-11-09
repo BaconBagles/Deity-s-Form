@@ -30,6 +30,7 @@ public class Enemy : MonoBehaviour
         {
             spaceBetween = Random.Range(5, 15);
         }
+        StartCoroutine(Shuffle());
     }
 
     // Update is called once per frame
@@ -45,9 +46,14 @@ public class Enemy : MonoBehaviour
             Vector2 direction = transform.position - goal.transform.position;
             transform.Translate(direction * Time.deltaTime);
         }
+
+        if (spaceBetween > 20f)
+        {
+            spaceBetween = 20f;
+        }
     }
 
-    void OnTriggerEnter(Collider other)
+    void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("basicAttack"))
         {
@@ -73,5 +79,12 @@ public class Enemy : MonoBehaviour
                 Destroy(this.gameObject);
             }
         }
+    }
+
+    IEnumerator Shuffle()
+    {
+        yield return new WaitForSecondsRealtime(5.0f);
+        spaceBetween += Random.Range(-5f, 5f);
+        StartCoroutine(Shuffle());
     }
 }
