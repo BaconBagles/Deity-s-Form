@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour
     Vector2 movement;
     public float moveSpeed;
     public Rigidbody2D rb;
-    int formNumber;
+    public int formNumber;
     public GameObject[] forms;
     public GameObject[] formOneAttacks;
     public GameObject[] formTwoAttacks;
