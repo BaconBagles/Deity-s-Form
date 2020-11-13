@@ -9,11 +9,13 @@ public class Enemy : MonoBehaviour
     GameObject controller;
     EnemyController controllerScript;
     float spaceBetween;
+    PlayerController pCont;
 
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.Find("Player");
+        pCont = player.GetComponent<PlayerController>();
         goal = player.transform;
         controller = GameObject.Find("EnemyController");
         controllerScript = controller.GetComponent<EnemyController>();
@@ -80,7 +82,6 @@ public class Enemy : MonoBehaviour
             }
             else
             {
-                PlayerController pCont = other.GetComponent<PlayerController>();
                 pCont.health -= 1;
             }
         }
