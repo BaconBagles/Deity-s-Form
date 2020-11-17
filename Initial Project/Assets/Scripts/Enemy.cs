@@ -10,6 +10,7 @@ public class Enemy : MonoBehaviour
     EnemyController controllerScript;
     float spaceBetween;
     PlayerController pCont;
+    public int health;
 
     // Start is called before the first frame update
     void Start()
@@ -19,6 +20,7 @@ public class Enemy : MonoBehaviour
         goal = player.transform;
         controller = GameObject.Find("EnemyController");
         controllerScript = controller.GetComponent<EnemyController>();
+        health = 5;
 
         if (gameObject.tag == "basicEnemy")
         {
@@ -53,6 +55,12 @@ public class Enemy : MonoBehaviour
         {
             spaceBetween = 20f;
         }
+
+        if (health <=0)
+        {
+            controllerScript.enemies.Remove(this.gameObject);
+            Destroy(this.gameObject);
+        }
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -61,28 +69,34 @@ public class Enemy : MonoBehaviour
         {
             if (other.gameObject.CompareTag("basicAttack"))
             {
-                controllerScript.enemies.Remove(this.gameObject);
-                Destroy(this.gameObject);
+                health -= 5;
+            }
+            else
+            {
+                health -= 1;
             }
         }
         else if (gameObject.tag == "armourEnemy")
         {
             if (other.gameObject.CompareTag("APAttack"))
             {
-                controllerScript.enemies.Remove(this.gameObject);
-                Destroy(this.gameObject);
+                health -= 5;
+            }
+            else
+            {
+                health -= 1;
             }
         }
         else if(this.gameObject.tag == "spikyEnemy")
         {
             if (other.gameObject.CompareTag("rangedAttack"))
             {
-                controllerScript.enemies.Remove(this.gameObject);
-                Destroy(this.gameObject);
+                health -= 5;
             }
             else
             {
                 pCont.health -= 1;
+                health -= 1;
             }
         }
     }

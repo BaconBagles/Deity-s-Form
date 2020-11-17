@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public int maxHealth;
     public int health;
+    public HealthBar healthBar;
+
     Vector2 movement;
     public float moveSpeed;
     public Rigidbody2D rb;
@@ -21,6 +24,8 @@ public class PlayerController : MonoBehaviour
     {
         formNumber = Random.Range(0, 3);
         SwitchForm();
+        health = maxHealth;
+        healthBar.SetMaxHealth(maxHealth);
     }
 
     // Update is called once per frame
@@ -71,6 +76,13 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown("down"))
         {
             StartCoroutine(AttackDown());
+        }
+
+        healthBar.SetHealth(health);
+
+        if (health  <= 0)
+        {
+            Application.Quit();
         }
     }
 

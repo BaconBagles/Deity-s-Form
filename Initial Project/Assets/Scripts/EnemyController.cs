@@ -12,19 +12,18 @@ public class EnemyController : MonoBehaviour
     public GameObject armourEnemy;
     public GameObject spikeEnemy;
     Vector2 rndPos;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        StartCoroutine(EnemyAttack());
-    }
+    bool spawning;
+    public int spawnTime;
+    
 
     // Update is called once per frame
     void Update()
     {
-        if (enemies.Count == 0)
+        if (enemies.Count == 0 && spawning == false)
         {
-            SpawnEnemies();
+            StopCoroutine(EnemyAttack());
+            spawning = true;
+            StartCoroutine(SpawnEnemies());
         }
     }
 
@@ -38,8 +37,9 @@ public class EnemyController : MonoBehaviour
         StartCoroutine(EnemyAttack());
     }
 
-    void SpawnEnemies()
+    IEnumerator SpawnEnemies()
     {
+        yield return new WaitForSecondsRealtime(spawnTime);
 
         for (int i = 0; i < diffLevel; i++)
         {
@@ -56,5 +56,9 @@ public class EnemyController : MonoBehaviour
             rndPos = new Vector2(Random.Range(-20, 20), Random.Range(-20, 20));
             enemies.Add((GameObject)Instantiate(spikeEnemy, rndPos, Quaternion.Euler(0,0,45)));
         }
+
+        StartCoroutine(EnemyAttack());
+
+        spawning = false;
     }
 }
