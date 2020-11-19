@@ -21,7 +21,7 @@ public class EnemyController : MonoBehaviour
     {
         if (enemies.Count == 0 && spawning == false)
         {
-            StopCoroutine(EnemyAttack());
+            StopAllCoroutines();
             spawning = true;
             StartCoroutine(SpawnEnemies());
         }
