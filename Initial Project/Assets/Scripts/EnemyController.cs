@@ -6,6 +6,10 @@ public class EnemyController : MonoBehaviour
 {
     public int diffLevel;
     public int attackTimer;
+    float timeLeft;
+    public attackTimer timeBar;
+    bool attacking;
+
     public PlayerController player;
     public List<GameObject> enemies = new List<GameObject>();
     public GameObject basicEnemy;
@@ -22,13 +26,27 @@ public class EnemyController : MonoBehaviour
         if (enemies.Count == 0 && spawning == false)
         {
             StopAllCoroutines();
+            attacking = false;
             spawning = true;
             StartCoroutine(SpawnEnemies());
+        }
+
+        if (attacking == true && timeLeft > 0)
+        {
+            timeLeft -= Time.deltaTime;
+            timeBar.SetTime(timeLeft);
+        }
+
+        if (attacking == false)
+        {
+            timeLeft = attackTimer;
+            timeBar.SetMaxTime(attackTimer);
         }
     }
 
     IEnumerator EnemyAttack()
     {
+        StartTimer();
         yield return new WaitForSecondsRealtime(attackTimer);
         foreach (GameObject enemy in enemies)
         {
@@ -60,5 +78,12 @@ public class EnemyController : MonoBehaviour
         StartCoroutine(EnemyAttack());
 
         spawning = false;
+    }
+
+    void StartTimer()
+    {
+        timeLeft = attackTimer;
+        timeBar.SetMaxTime(attackTimer);
+        attacking = true;
     }
 }

@@ -13,7 +13,7 @@ public class attackTimer : MonoBehaviour
         slider.value = time;
     }
 
-    public void SetTime(int time)
+    public void SetTime(float time)
     {
         slider.value = time;
     }
