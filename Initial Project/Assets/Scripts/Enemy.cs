@@ -99,6 +99,11 @@ public class Enemy : MonoBehaviour
                 health -= 1;
             }
         }
+
+        if (other.gameObject.CompareTag("Respawn"))
+        {
+            transform.position = new Vector2(0,0);
+        }
     }
 
     IEnumerator Shuffle()

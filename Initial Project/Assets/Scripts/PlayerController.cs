@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
     public int maxHealth;
     public int health;
     public HealthBar healthBar;
+    bool attacking;
 
     Vector2 movement;
     public float moveSpeed;
@@ -22,6 +23,7 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
+        attacking = false;
         formNumber = Random.Range(0, 3);
         SwitchForm();
         health = maxHealth;
@@ -61,19 +63,19 @@ public class PlayerController : MonoBehaviour
         }
 
         //attack code
-        if (Input.GetKeyDown("right"))
+        if (Input.GetKeyDown("right") && attacking == false)
         {
             StartCoroutine (AttackRight());
         }
-        if (Input.GetKeyDown("left"))
+        if (Input.GetKeyDown("left") && attacking == false)
         {
             StartCoroutine(AttackLeft());
         }
-        if (Input.GetKeyDown("up"))
+        if (Input.GetKeyDown("up") && attacking == false)
         {
             StartCoroutine(AttackUp());
         }
-        if (Input.GetKeyDown("down"))
+        if (Input.GetKeyDown("down") && attacking == false)
         {
             StartCoroutine(AttackDown());
         }
@@ -114,89 +116,109 @@ public class PlayerController : MonoBehaviour
 
     IEnumerator AttackRight()
     {
+        attacking = true;
+
         if (formNumber == 0)
         {
             formOneAttacks[0].SetActive(true);
             yield return new WaitForSeconds(attackDuration);
             formOneAttacks[0].SetActive(false);
+            attacking = false;
         }
         else if (formNumber == 1)
         {
             formTwoAttacks[0].SetActive(true);
             yield return new WaitForSeconds(attackDuration);
             formTwoAttacks[0].SetActive(false);
+            attacking = false;
         }
         else
         {
             formThreeAttacks[0].SetActive(true);
             yield return new WaitForSeconds(attackDuration);
             formThreeAttacks[0].SetActive(false);
+            attacking = false;
         }
     }
 
     IEnumerator AttackLeft()
     {
+        attacking = true;
+
         if (formNumber == 0)
         {
             formOneAttacks[1].SetActive(true);
             yield return new WaitForSeconds(attackDuration);
             formOneAttacks[1].SetActive(false);
+            attacking = false;
         }
         else if (formNumber == 1)
         {
             formTwoAttacks[1].SetActive(true);
             yield return new WaitForSeconds(attackDuration);
             formTwoAttacks[1].SetActive(false);
+            attacking = false;
         }
         else
         {
             formThreeAttacks[1].SetActive(true);
             yield return new WaitForSeconds(attackDuration);
             formThreeAttacks[1].SetActive(false);
+            attacking = false;
         }
     }
 
     IEnumerator AttackUp()
     {
+        attacking = true;
+
         if (formNumber == 0)
         {
             formOneAttacks[2].SetActive(true);
             yield return new WaitForSeconds(attackDuration);
             formOneAttacks[2].SetActive(false);
+            attacking = false;
         }
         else if (formNumber == 1)
         {
             formTwoAttacks[2].SetActive(true);
             yield return new WaitForSeconds(attackDuration);
             formTwoAttacks[2].SetActive(false);
+            attacking = false;
         }
         else
         {
             formThreeAttacks[2].SetActive(true);
             yield return new WaitForSeconds(attackDuration);
             formThreeAttacks[2].SetActive(false);
+            attacking = false;
         }
     }
 
     IEnumerator AttackDown()
     {
+        attacking = true;
+
         if (formNumber == 0)
         {
             formOneAttacks[3].SetActive(true);
             yield return new WaitForSeconds(attackDuration);
             formOneAttacks[3].SetActive(false);
+            attacking = false;
         }
         else if (formNumber == 1)
         {
             formTwoAttacks[3].SetActive(true);
             yield return new WaitForSeconds(attackDuration);
             formTwoAttacks[3].SetActive(false);
+            attacking = false;
         }
         else
         {
             formThreeAttacks[3].SetActive(true);
             yield return new WaitForSeconds(attackDuration);
             formThreeAttacks[3].SetActive(false);
+            attacking = false;
         }
     }
 }
