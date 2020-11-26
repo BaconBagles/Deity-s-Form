@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -19,6 +20,8 @@ public class PlayerController : MonoBehaviour
     public GameObject[] formThreeAttacks;
     public AudioSource source;
 
+    private Animation anim;
+
     public float attackDuration;
 
     void Start()
@@ -28,6 +31,7 @@ public class PlayerController : MonoBehaviour
         SwitchForm();
         health = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
+        anim = gameObject.GetComponent<Animation>();
     }
 
     // Update is called once per frame
@@ -84,7 +88,12 @@ public class PlayerController : MonoBehaviour
 
         if (health  <= 0)
         {
-            Application.Quit();
+            SceneManager.LoadScene(0);
+        }
+
+        if (anim.isPlaying)
+        {
+            return;
         }
     }
 
@@ -121,6 +130,7 @@ public class PlayerController : MonoBehaviour
         if (formNumber == 0)
         {
             formOneAttacks[0].SetActive(true);
+            anim.Play("BaseAttackRight");
             yield return new WaitForSeconds(attackDuration);
             formOneAttacks[0].SetActive(false);
             attacking = false;
@@ -128,6 +138,7 @@ public class PlayerController : MonoBehaviour
         else if (formNumber == 1)
         {
             formTwoAttacks[0].SetActive(true);
+            anim.Play("ApAttackRight");
             yield return new WaitForSeconds(attackDuration);
             formTwoAttacks[0].SetActive(false);
             attacking = false;
@@ -135,6 +146,7 @@ public class PlayerController : MonoBehaviour
         else
         {
             formThreeAttacks[0].SetActive(true);
+            anim.Play("RangedAttackRight");
             yield return new WaitForSeconds(attackDuration);
             formThreeAttacks[0].SetActive(false);
             attacking = false;
@@ -148,6 +160,7 @@ public class PlayerController : MonoBehaviour
         if (formNumber == 0)
         {
             formOneAttacks[1].SetActive(true);
+            anim.Play("BaseAttackLeft");
             yield return new WaitForSeconds(attackDuration);
             formOneAttacks[1].SetActive(false);
             attacking = false;
@@ -155,6 +168,7 @@ public class PlayerController : MonoBehaviour
         else if (formNumber == 1)
         {
             formTwoAttacks[1].SetActive(true);
+            anim.Play("ApAttackLeft");
             yield return new WaitForSeconds(attackDuration);
             formTwoAttacks[1].SetActive(false);
             attacking = false;
@@ -162,6 +176,7 @@ public class PlayerController : MonoBehaviour
         else
         {
             formThreeAttacks[1].SetActive(true);
+            anim.Play("RangedAttackLeft");
             yield return new WaitForSeconds(attackDuration);
             formThreeAttacks[1].SetActive(false);
             attacking = false;
@@ -175,6 +190,7 @@ public class PlayerController : MonoBehaviour
         if (formNumber == 0)
         {
             formOneAttacks[2].SetActive(true);
+            anim.Play("BaseAttackUp");
             yield return new WaitForSeconds(attackDuration);
             formOneAttacks[2].SetActive(false);
             attacking = false;
@@ -182,6 +198,7 @@ public class PlayerController : MonoBehaviour
         else if (formNumber == 1)
         {
             formTwoAttacks[2].SetActive(true);
+            anim.Play("ApAttackUp");
             yield return new WaitForSeconds(attackDuration);
             formTwoAttacks[2].SetActive(false);
             attacking = false;
@@ -189,6 +206,7 @@ public class PlayerController : MonoBehaviour
         else
         {
             formThreeAttacks[2].SetActive(true);
+            anim.Play("RangedAttackUp");
             yield return new WaitForSeconds(attackDuration);
             formThreeAttacks[2].SetActive(false);
             attacking = false;
@@ -202,6 +220,7 @@ public class PlayerController : MonoBehaviour
         if (formNumber == 0)
         {
             formOneAttacks[3].SetActive(true);
+            anim.Play("BaseAttackDown");
             yield return new WaitForSeconds(attackDuration);
             formOneAttacks[3].SetActive(false);
             attacking = false;
@@ -209,6 +228,7 @@ public class PlayerController : MonoBehaviour
         else if (formNumber == 1)
         {
             formTwoAttacks[3].SetActive(true);
+            anim.Play("ApAttackDown");
             yield return new WaitForSeconds(attackDuration);
             formTwoAttacks[3].SetActive(false);
             attacking = false;
@@ -216,6 +236,7 @@ public class PlayerController : MonoBehaviour
         else
         {
             formThreeAttacks[3].SetActive(true);
+            anim.Play("RangedAttackDown");
             yield return new WaitForSeconds(attackDuration);
             formThreeAttacks[3].SetActive(false);
             attacking = false;
