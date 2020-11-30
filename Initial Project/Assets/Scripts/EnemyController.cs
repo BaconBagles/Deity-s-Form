@@ -16,9 +16,14 @@ public class EnemyController : MonoBehaviour
     public GameObject armourEnemy;
     public GameObject spikeEnemy;
     Vector2 rndPos;
-    bool spawning;
+    public bool spawning;
     public int spawnTime;
-    
+
+    void Start()
+    {
+        spawning = true;
+        StartCoroutine(SpawnEnemies());
+    }
 
     // Update is called once per frame
     void Update()
@@ -28,7 +33,7 @@ public class EnemyController : MonoBehaviour
             StopAllCoroutines();
             attacking = false;
             spawning = true;
-            StartCoroutine(SpawnEnemies());
+            //StartCoroutine(SpawnEnemies());
         }
 
         if (attacking == true && timeLeft > 0)
@@ -55,7 +60,7 @@ public class EnemyController : MonoBehaviour
         StartCoroutine(EnemyAttack());
     }
 
-    IEnumerator SpawnEnemies()
+    public IEnumerator SpawnEnemies()
     {
         yield return new WaitForSecondsRealtime(spawnTime);
 
