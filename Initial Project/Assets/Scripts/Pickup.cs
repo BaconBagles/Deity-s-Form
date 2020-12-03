@@ -8,6 +8,10 @@ public class Pickup : MonoBehaviour
     EnemyController eCont;
     GameObject player;
     PlayerController pCont;
+    GameObject gContObj;
+    GameController gCont;
+
+    public int pickupNumber;
 
     void Start()
     {
@@ -15,6 +19,8 @@ public class Pickup : MonoBehaviour
         eCont = eContObj.GetComponent<EnemyController>();
         player = GameObject.Find("Player");
         pCont = player.GetComponent<PlayerController>();
+        gContObj = GameObject.Find("GameController");
+        gCont = gContObj.GetComponent<GameController>();
     }
 
     void OnCollisionEnter2D(Collision2D other)
@@ -22,8 +28,28 @@ public class Pickup : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             eCont.StartCoroutine(eCont.SpawnEnemies());
-            Debug.Log("Doot Doot");
+            PickupBonus();
             Destroy(this.gameObject);
+        }
+    }
+
+    void PickupBonus()
+    {
+        switch (pickupNumber)
+        {
+            case 0:
+                pCont.health += 5;
+                break;
+            case 1:
+                break;
+            case 2:
+                break;
+            case 3:
+                break;
+            case 4:
+                break;
+            case 5:
+                break;
         }
     }
 }
