@@ -32,8 +32,6 @@ public class EnemyController : MonoBehaviour
         {
             StopAllCoroutines();
             attacking = false;
-            spawning = true;
-            //StartCoroutine(SpawnEnemies());
         }
 
         if (attacking == true && timeLeft > 0)

@@ -9,8 +9,8 @@ public class GameController : MonoBehaviour
     public GameObject[] rooms;
     public GameObject[] pickups;
     int roomNumber;
-    int pickupNumber;
-    bool pickupSpawned;
+    public int pickupNumber;
+    public bool pickupSpawned;
 
     void Start()
     {
@@ -28,10 +28,9 @@ public class GameController : MonoBehaviour
         if (eCont.enemies.Count == 0 && pickupSpawned == false && eCont.spawning == false)
         {
             pickupSpawned = true;
+            eCont.spawning = true;
             RandomPickup();
-            GameObject pickup = Instantiate(pickups[pickupNumber], new Vector2(0, 0), Quaternion.identity);
-            Pickup Pcomp = pickup.GetComponent<Pickup>();
-            Pcomp.pickupNumber = pickupNumber;
+            Instantiate(pickups[pickupNumber], new Vector2(0, 0), Quaternion.identity);
         }
     }
 
@@ -62,5 +61,6 @@ public class GameController : MonoBehaviour
         {
             pickupNumber = 0;
         }
+        
     }
 }

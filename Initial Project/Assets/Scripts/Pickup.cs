@@ -21,14 +21,17 @@ public class Pickup : MonoBehaviour
         pCont = player.GetComponent<PlayerController>();
         gContObj = GameObject.Find("GameController");
         gCont = gContObj.GetComponent<GameController>();
+
+        pickupNumber = gCont.pickupNumber;
     }
 
     void OnCollisionEnter2D(Collision2D other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            eCont.StartCoroutine(eCont.SpawnEnemies());
             PickupBonus();
+            eCont.StartCoroutine(eCont.SpawnEnemies());
+            gCont.pickupSpawned = false;
             Destroy(this.gameObject);
         }
     }
