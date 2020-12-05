@@ -5,6 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
+    //Dictionary for Storing Keybinds
+    private Dictionary<string, KeyCode> keys = new Dictionary<string, KeyCode>();
+
     public int maxHealth;
     public int health;
     public HealthBar healthBar;
@@ -32,54 +35,93 @@ public class PlayerController : MonoBehaviour
         health = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
         anim = gameObject.GetComponent<Animation>();
+
+        //Adds our stored keys to the dictionary
+        //This will need to be done again if the player changes keybinds during game
+        keys.Add("Up", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("Up", "W")));
+        keys.Add("Down", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("Down", "S")));
+        keys.Add("Left", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("Left", "A")));
+        keys.Add("Right", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("Right", "D")));
+        keys.Add("Escape", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("Escape", "Escape")));
+        keys.Add("AttackUp", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("AttackUp", "UpArrow")));
+        keys.Add("AttackDown", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("AttackDown", "DownArrow")));
+        keys.Add("AttackLeft", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("AttackLeft", "LeftArrow")));
+        keys.Add("AttackRight", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("AttackRight", "RightArrow")));
+        keys.Add("form1", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("form1", "1")));
+        keys.Add("form2", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("form2", "2")));
+        keys.Add("form3", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("form3", "3")));
+        keys.Add("switchA", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("switchA", "Q")));
+        keys.Add("switchB", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("switchB", "E")));
     }
 
-    // Update is called once per frame
     void Update()
     {
-        //Update for Input
-        movement.x = Input.GetAxisRaw("Horizontal");
-        movement.y = Input.GetAxisRaw("Vertical");
-        if (Input.GetKeyDown("1"))
+        /* //Update for Input
+         movement.x = Input.GetAxisRaw("Horizontal");
+         movement.y = Input.GetAxisRaw("Vertical"); */
+
+        //New Movement Code, no longer uses rigidbody
+        //All inputs call playerpref 'keys' dictionary that carry between scenes
+        if (Input.GetKey(keys["Up"]))
+        {
+            transform.Translate(Vector2.up * moveSpeed * Time.deltaTime);
+        }
+
+        if (Input.GetKey(keys["Down"]))
+        {
+            transform.Translate(Vector2.down * moveSpeed * Time.deltaTime);
+        }
+
+        if (Input.GetKey(keys["Left"]))
+        {
+            transform.Translate(Vector2.left * moveSpeed * Time.deltaTime);
+        }
+
+        if (Input.GetKey(keys["Right"]))
+        {
+            transform.Translate(Vector2.right * moveSpeed * Time.deltaTime);
+        }
+
+        if (Input.GetKeyDown(keys["form1"]))
         {
             formNumber = 0;
             SwitchForm();
         }
-        if (Input.GetKeyDown("2"))
+        if (Input.GetKeyDown(keys["form2"]))
         {
             formNumber = 1;
             SwitchForm();
         }
-        if (Input.GetKeyDown("3"))
+        if (Input.GetKeyDown(keys["form3"]))
         {
             formNumber = 2;
             SwitchForm();
         }
-        if (Input.GetKeyDown("q"))
+        if (Input.GetKeyDown(keys["switchA"]))
         {
             formNumber -= 1;
             SwitchForm();
         }
-        if (Input.GetKeyDown("e"))
+        if (Input.GetKeyDown(keys["switchB"]))
         {
             formNumber += 1;
             SwitchForm();
         }
 
         //attack code
-        if (Input.GetKeyDown("right") && attacking == false)
+        if (Input.GetKeyDown(keys["AttackRight"]) && attacking == false)
         {
             StartCoroutine (AttackRight());
         }
-        if (Input.GetKeyDown("left") && attacking == false)
+        if (Input.GetKeyDown(keys["AttackLeft"]) && attacking == false)
         {
             StartCoroutine(AttackLeft());
         }
-        if (Input.GetKeyDown("up") && attacking == false)
+        if (Input.GetKeyDown(keys["AttackUp"]) && attacking == false)
         {
             StartCoroutine(AttackUp());
         }
-        if (Input.GetKeyDown("down") && attacking == false)
+        if (Input.GetKeyDown(keys["AttackDown"]) && attacking == false)
         {
             StartCoroutine(AttackDown());
         }
@@ -97,11 +139,11 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    void FixedUpdate()
+  /*  void FixedUpdate()
     {
         //FUpdate for movement physics
         rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
-    }
+    } */
 
     void SwitchForm()
     {
