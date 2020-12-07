@@ -61,6 +61,9 @@ public class Enemy : MonoBehaviour
         if (health <=0)
         {
             controllerScript.enemies.Remove(this.gameObject);
+
+            FindObjectOfType<AudioManager>().Play("EnemyDeath");
+
             Destroy(this.gameObject);
         }
     }
