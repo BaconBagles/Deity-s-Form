@@ -484,7 +484,7 @@ GameObject:
   - component: {fileID: 68319414}
   - component: {fileID: 68319413}
   m_Layer: 0
-  m_Name: MoveLeft
+  m_Name: Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1398,7 +1398,7 @@ GameObject:
   - component: {fileID: 158003988}
   - component: {fileID: 158003987}
   m_Layer: 0
-  m_Name: MoveDown
+  m_Name: Down
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1889,7 +1889,7 @@ GameObject:
   - component: {fileID: 271766945}
   - component: {fileID: 271766944}
   m_Layer: 0
-  m_Name: MoveUp
+  m_Name: Up
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5074,7 +5074,7 @@ GameObject:
   - component: {fileID: 706221518}
   - component: {fileID: 706221517}
   m_Layer: 0
-  m_Name: Pause
+  m_Name: Escape
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5341,7 +5341,7 @@ GameObject:
   - component: {fileID: 761557975}
   - component: {fileID: 761557974}
   m_Layer: 0
-  m_Name: Switch Form2
+  m_Name: switchB
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8392,7 +8392,7 @@ GameObject:
   - component: {fileID: 1257156578}
   - component: {fileID: 1257156577}
   m_Layer: 0
-  m_Name: Form 2
+  m_Name: form2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8829,7 +8829,7 @@ GameObject:
   - component: {fileID: 1286589110}
   - component: {fileID: 1286589109}
   m_Layer: 0
-  m_Name: Form 1
+  m_Name: form1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12296,7 +12296,7 @@ GameObject:
   - component: {fileID: 1638290336}
   - component: {fileID: 1638290335}
   m_Layer: 0
-  m_Name: Form 3
+  m_Name: form3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14912,7 +14912,7 @@ GameObject:
   - component: {fileID: 1995812472}
   - component: {fileID: 1995812471}
   m_Layer: 0
-  m_Name: MoveRight
+  m_Name: Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16041,7 +16041,7 @@ GameObject:
   - component: {fileID: 2112936334}
   - component: {fileID: 2112936333}
   m_Layer: 0
-  m_Name: Switch Form1
+  m_Name: switchA
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
