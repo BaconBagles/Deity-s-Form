@@ -15,7 +15,9 @@ public class OptionsMenu : MonoBehaviour
     public AudioConfiguration Config;
     public TMP_Dropdown resolutionDropdown;
 
-    public Slider fxSlider, musicSlider, masterSlider;
+    public Slider fxSlider, musicSlider, masterSlider, playerHealthSlider, turnTimerSlider, enemyHealthSlider;
+
+    public int playerHealth, enemyHealth, turnTimer;
 
     public bool GameIsPaused = false;
 
@@ -31,9 +33,6 @@ public class OptionsMenu : MonoBehaviour
 
         List<string> options = new List<string>();
         int currentResolutionIndex = 0;
-        float currentmasterVol = PlayerPrefs.GetFloat("masterVol", 0);
-        float currentmusicVol = PlayerPrefs.GetFloat("musicVol", 0);
-        float currentfxVol = PlayerPrefs.GetFloat("fxVol", 0);
 
         for (int i = 0; i < resolutions.Length; i++)
         {
@@ -46,9 +45,12 @@ public class OptionsMenu : MonoBehaviour
             }
         }
 
-        fxSlider.value = currentfxVol;
-        musicSlider.value = currentmusicVol;
-        masterSlider.value = currentmasterVol;
+        fxSlider.value = PlayerPrefs.GetFloat("masterVol", 0);
+        musicSlider.value = PlayerPrefs.GetFloat("musicVol", 0);
+        masterSlider.value = PlayerPrefs.GetFloat("fxVol", 0);
+        playerHealthSlider.value = PlayerPrefs.GetInt("playerHeath", 100);
+        turnTimerSlider.value = PlayerPrefs.GetInt("turnTimer", 5); 
+        enemyHealthSlider.value = PlayerPrefs.GetInt("enemyHealth", 5);
 
         resolutionDropdown.AddOptions(options);
         resolutionDropdown.value = currentResolutionIndex;
@@ -85,6 +87,19 @@ public class OptionsMenu : MonoBehaviour
         Time.timeScale = 0f;
         GameIsPaused = true;
         EventSystem.current.SetSelectedGameObject(pauseFirst);
+    }
+
+    public void SetGameplay()
+    {
+        turnTimer = (int)turnTimerSlider.value;
+        enemyHealth = (int)enemyHealthSlider.value;
+        playerHealth = (int)playerHealthSlider.value;
+
+        PlayerPrefs.SetInt("turnTimer", turnTimer);
+        PlayerPrefs.SetInt("playerHealth", playerHealth);
+        PlayerPrefs.SetInt("enemyHealth", enemyHealth);
+
+        PlayerPrefs.Save();
     }
 
     public void SetMasterVolume(float MasterVolume)

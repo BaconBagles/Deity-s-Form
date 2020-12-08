@@ -8,9 +8,10 @@ public class PlayerController : MonoBehaviour
     //Dictionary for Storing Keybinds
     private Dictionary<string, KeyCode> keys = new Dictionary<string, KeyCode>();
 
-    public int maxHealth;
+    private int maxHealth;
     public int health;
     public HealthBar healthBar;
+    public OptionsMenu Options;
     bool attacking;
 
     Vector2 movement;
@@ -32,6 +33,7 @@ public class PlayerController : MonoBehaviour
         attacking = false;
         formNumber = Random.Range(0, 3);
         SwitchForm();
+        maxHealth = PlayerPrefs.GetInt("playerHealth", 100);
         health = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
         anim = gameObject.GetComponent<Animation>();
@@ -60,70 +62,73 @@ public class PlayerController : MonoBehaviour
          movement.x = Input.GetAxisRaw("Horizontal");
          movement.y = Input.GetAxisRaw("Vertical"); */
 
-        //New Movement Code, no longer uses rigidbody
-        //All inputs call playerpref 'keys' dictionary that carry between scenes
-        if (Input.GetKey(keys["Up"]))
+        if (Options.GameIsPaused == false)
         {
-            transform.Translate(Vector2.up * moveSpeed * Time.deltaTime);
-        }
+            //New Movement Code, no longer uses rigidbody
+            //All inputs call playerpref 'keys' dictionary that carry between scenes
+            if (Input.GetKey(keys["Up"]))
+            {
+                transform.Translate(Vector2.up * moveSpeed * Time.deltaTime);
+            }
 
-        if (Input.GetKey(keys["Down"]))
-        {
-            transform.Translate(Vector2.down * moveSpeed * Time.deltaTime);
-        }
+            if (Input.GetKey(keys["Down"]))
+            {
+                transform.Translate(Vector2.down * moveSpeed * Time.deltaTime);
+            }
 
-        if (Input.GetKey(keys["Left"]))
-        {
-            transform.Translate(Vector2.left * moveSpeed * Time.deltaTime);
-        }
+            if (Input.GetKey(keys["Left"]))
+            {
+                transform.Translate(Vector2.left * moveSpeed * Time.deltaTime);
+            }
 
-        if (Input.GetKey(keys["Right"]))
-        {
-            transform.Translate(Vector2.right * moveSpeed * Time.deltaTime);
-        }
+            if (Input.GetKey(keys["Right"]))
+            {
+                transform.Translate(Vector2.right * moveSpeed * Time.deltaTime);
+            }
 
-        if (Input.GetKeyDown(keys["form1"]))
-        {
-            formNumber = 0;
-            SwitchForm();
-        }
-        if (Input.GetKeyDown(keys["form2"]))
-        {
-            formNumber = 1;
-            SwitchForm();
-        }
-        if (Input.GetKeyDown(keys["form3"]))
-        {
-            formNumber = 2;
-            SwitchForm();
-        }
-        if (Input.GetKeyDown(keys["switchA"]))
-        {
-            formNumber -= 1;
-            SwitchForm();
-        }
-        if (Input.GetKeyDown(keys["switchB"]))
-        {
-            formNumber += 1;
-            SwitchForm();
-        }
+            if (Input.GetKeyDown(keys["form1"]))
+            {
+                formNumber = 0;
+                SwitchForm();
+            }
+            if (Input.GetKeyDown(keys["form2"]))
+            {
+                formNumber = 1;
+                SwitchForm();
+            }
+            if (Input.GetKeyDown(keys["form3"]))
+            {
+                formNumber = 2;
+                SwitchForm();
+            }
+            if (Input.GetKeyDown(keys["switchA"]))
+            {
+                formNumber -= 1;
+                SwitchForm();
+            }
+            if (Input.GetKeyDown(keys["switchB"]))
+            {
+                formNumber += 1;
+                SwitchForm();
+            }
 
-        //attack code
-        if (Input.GetKeyDown(keys["AttackRight"]) && attacking == false)
-        {
-            StartCoroutine (AttackRight());
-        }
-        if (Input.GetKeyDown(keys["AttackLeft"]) && attacking == false)
-        {
-            StartCoroutine(AttackLeft());
-        }
-        if (Input.GetKeyDown(keys["AttackUp"]) && attacking == false)
-        {
-            StartCoroutine(AttackUp());
-        }
-        if (Input.GetKeyDown(keys["AttackDown"]) && attacking == false)
-        {
-            StartCoroutine(AttackDown());
+            //attack code
+            if (Input.GetKeyDown(keys["AttackRight"]) && attacking == false)
+            {
+                StartCoroutine(AttackRight());
+            }
+            if (Input.GetKeyDown(keys["AttackLeft"]) && attacking == false)
+            {
+                StartCoroutine(AttackLeft());
+            }
+            if (Input.GetKeyDown(keys["AttackUp"]) && attacking == false)
+            {
+                StartCoroutine(AttackUp());
+            }
+            if (Input.GetKeyDown(keys["AttackDown"]) && attacking == false)
+            {
+                StartCoroutine(AttackDown());
+            }
         }
 
         healthBar.SetHealth(health);

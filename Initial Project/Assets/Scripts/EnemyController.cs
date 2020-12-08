@@ -5,10 +5,11 @@ using UnityEngine;
 public class EnemyController : MonoBehaviour
 {
     public int diffLevel;
-    public int attackTimer;
+    private int attackTimer;
     float timeLeft;
     public attackTimer timeBar;
     bool attacking;
+    public OptionsMenu Options;
 
     public PlayerController player;
     public List<GameObject> enemies = new List<GameObject>();
@@ -21,6 +22,7 @@ public class EnemyController : MonoBehaviour
 
     void Start()
     {
+        attackTimer = PlayerPrefs.GetInt("attackTimer", 5);
         spawning = true;
         StartCoroutine(SpawnEnemies());
     }
@@ -53,9 +55,12 @@ public class EnemyController : MonoBehaviour
         yield return new WaitForSecondsRealtime(attackTimer);
         FindObjectOfType<AudioManager>().Play("EnemyAttack");
         FindObjectOfType<AudioManager>().Play("PlayerDamage");
-        foreach (GameObject enemy in enemies)
+        if (Options.GameIsPaused == false)
         {
-            player.health -= 1;
+            foreach (GameObject enemy in enemies)
+            {
+                player.health -= 1;
+            }
         }
         StartCoroutine(EnemyAttack());
     }

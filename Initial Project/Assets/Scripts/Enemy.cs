@@ -22,7 +22,7 @@ public class Enemy : MonoBehaviour
         goal = player.transform;
         controller = GameObject.Find("EnemyController");
         controllerScript = controller.GetComponent<EnemyController>();
-        health = 5;
+        health = PlayerPrefs.GetInt("enemyHealth", 5);
 
         if (gameObject.tag == "basicEnemy")
         {

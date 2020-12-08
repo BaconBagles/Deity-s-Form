@@ -6,12 +6,14 @@ using UnityEngine.Audio;
 public class AudioManager : MonoBehaviour
 {
     public static AudioManager instance;
-    public Sound[] sounds;
+    public AudioMixerGroup Fx, Music;
+    public Sound[] sounds, music;
+    public OptionsMenu Options;
+
 
     private void Start()
     {
-
-        Play("MainTheme");
+        PlayMusic("MainTheme");
     }
 
     void Awake()
@@ -26,27 +28,54 @@ public class AudioManager : MonoBehaviour
             return;
         }
 
-        DontDestroyOnLoad(gameObject);
+      //  DontDestroyOnLoad(gameObject);
 
         foreach (Sound s in sounds)
         {
             s.source = gameObject.AddComponent<AudioSource>();
+            s.source.outputAudioMixerGroup = Fx;
             s.source.clip = s.clip;
 
             s.source.volume = s.volume;
             s.source.pitch = s.pitch;
             s.source.loop = s.loop;
         }
+
+        foreach (Sound m in music)
+        {
+            m.source = gameObject.AddComponent<AudioSource>();
+            m.source.outputAudioMixerGroup = Music;
+            m.source.clip = m.clip;
+
+            m.source.volume = m.volume;
+            m.source.pitch = m.pitch;
+            m.source.loop = m.loop;
+        }
     }
 
     public void Play(string name)
     {
-        Sound s = Array.Find(sounds, sound => sound.name == name);
-        if (s == null)
+        if (Options.GameIsPaused == false)
         {
-            Debug.LogWarning("Sound: " + name + " not found!");
-            return;
+            Sound s = Array.Find(sounds, sound => sound.name == name);
+            if (s == null)
+            {
+                Debug.LogWarning("Sound: " + name + " not found!");
+                return;
+            }
+            s.source.Play();
         }
-        s.source.Play();
+    }
+
+    public void PlayMusic(string name)
+    {
+        Sound m = Array.Find(music, sound => sound.name == name);
+          if (m == null)
+          {
+              Debug.LogWarning("Sound: " + name + " not found!");
+              return;
+          }
+          m.source.Play();
+
     }
 }
