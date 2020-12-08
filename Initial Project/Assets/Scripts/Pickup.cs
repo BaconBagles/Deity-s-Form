@@ -30,6 +30,7 @@ public class Pickup : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             PickupBonus();
+            FindObjectOfType<AudioManager>().Play("PickupGain");
             eCont.StartCoroutine(eCont.SpawnEnemies());
             gCont.pickupSpawned = false;
             Destroy(this.gameObject);

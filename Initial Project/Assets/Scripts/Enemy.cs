@@ -79,6 +79,7 @@ public class Enemy : MonoBehaviour
             else
             {
                 health -= 1;
+                FindObjectOfType<AudioManager>().Play("EnemyDamage");
             }
         }
         else if (gameObject.tag == "armourEnemy")
@@ -90,6 +91,7 @@ public class Enemy : MonoBehaviour
             else
             {
                 health -= 1;
+                FindObjectOfType<AudioManager>().Play("EnemyDamage");
             }
         }
         else if(this.gameObject.tag == "spikyEnemy")
@@ -102,6 +104,7 @@ public class Enemy : MonoBehaviour
             {
                 pCont.health -= 1;
                 health -= 1;
+                FindObjectOfType<AudioManager>().Play("EnemyDamage");
             }
         }
 
