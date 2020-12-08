@@ -162,12 +162,13 @@ public class PlayerController : MonoBehaviour
         }
 
         forms[formNumber].SetActive(true);
-        source.Play();
+        FindObjectOfType<AudioManager>().Play("FormChange");
     }
 
     IEnumerator AttackRight()
     {
         attacking = true;
+        FindObjectOfType<AudioManager>().Play("PlayerAttack");
 
         if (formNumber == 0)
         {
@@ -198,6 +199,7 @@ public class PlayerController : MonoBehaviour
     IEnumerator AttackLeft()
     {
         attacking = true;
+        FindObjectOfType<AudioManager>().Play("PlayerAttack");
 
         if (formNumber == 0)
         {
@@ -228,6 +230,7 @@ public class PlayerController : MonoBehaviour
     IEnumerator AttackUp()
     {
         attacking = true;
+        FindObjectOfType<AudioManager>().Play("PlayerAttack");
 
         if (formNumber == 0)
         {
@@ -258,6 +261,7 @@ public class PlayerController : MonoBehaviour
     IEnumerator AttackDown()
     {
         attacking = true;
+        FindObjectOfType<AudioManager>().Play("PlayerAttack");
 
         if (formNumber == 0)
         {

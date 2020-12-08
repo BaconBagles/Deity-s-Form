@@ -51,6 +51,8 @@ public class EnemyController : MonoBehaviour
     {
         StartTimer();
         yield return new WaitForSecondsRealtime(attackTimer);
+        FindObjectOfType<AudioManager>().Play("EnemyAttack");
+        FindObjectOfType<AudioManager>().Play("PlayerDamage");
         foreach (GameObject enemy in enemies)
         {
             player.health -= 1;
@@ -61,6 +63,7 @@ public class EnemyController : MonoBehaviour
     public IEnumerator SpawnEnemies()
     {
         yield return new WaitForSecondsRealtime(spawnTime);
+        FindObjectOfType<AudioManager>().Play("EnemySpawn");
 
         for (int i = 0; i < diffLevel; i++)
         {
