@@ -57,9 +57,16 @@ public class EnemyController : MonoBehaviour
         FindObjectOfType<AudioManager>().Play("PlayerDamage");
         if (Options.GameIsPaused == false)
         {
-            foreach (GameObject enemy in enemies)
+            if (player.shieldCount == 0)
             {
-                player.health -= 1;
+                foreach (GameObject enemy in enemies)
+                {
+                    player.health -= 1;
+                }
+            }
+            else
+            {
+                player.shieldCount -= 1;
             }
         }
         StartCoroutine(EnemyAttack());

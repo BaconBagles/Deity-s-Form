@@ -45,12 +45,17 @@ public class Pickup : MonoBehaviour
                 pCont.health += 5;
                 break;
             case 1:
+                pCont.IncreaseAttackSize();
                 break;
             case 2:
+                pCont.moveSpeed += 1.5f;
                 break;
             case 3:
+                pCont.maxHealth += 5;
+                pCont.health += 5;
                 break;
             case 4:
+                pCont.shieldCount = 2;
                 break;
             case 5:
                 break;

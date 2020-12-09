@@ -8,11 +8,13 @@ public class PlayerController : MonoBehaviour
     //Dictionary for Storing Keybinds
     private Dictionary<string, KeyCode> keys = new Dictionary<string, KeyCode>();
 
-    private int maxHealth;
+    public int maxHealth;
     public int health;
     public HealthBar healthBar;
     public OptionsMenu Options;
     bool attacking;
+    
+    public int shieldCount;
 
     Vector2 movement;
     public float moveSpeed;
@@ -137,6 +139,7 @@ public class PlayerController : MonoBehaviour
         {
             SceneManager.LoadScene(0);
         }
+        
 
         if (anim.isPlaying)
         {
@@ -291,6 +294,22 @@ public class PlayerController : MonoBehaviour
             yield return new WaitForSeconds(attackDuration);
             formThreeAttacks[3].SetActive(false);
             attacking = false;
+        }
+    }
+
+    public void IncreaseAttackSize()
+    {
+        foreach (GameObject attack in formOneAttacks)
+        {
+            attack.gameObject.transform.localScale += new Vector3(0, .5f, 0);
+        }
+        foreach (GameObject attack in formTwoAttacks)
+        {
+            attack.gameObject.transform.localScale += new Vector3(.5f, .5f, 0);
+        }
+        foreach (GameObject attack in formThreeAttacks)
+        {
+            attack.gameObject.transform.localScale += new Vector3(1, 0, 0);
         }
     }
 }
