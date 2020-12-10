@@ -30,6 +30,7 @@ public class Enemy : MonoBehaviour
         }
         else if (gameObject.tag == "armourEnemy")
         {
+            health += 2;
             spaceBetween = Random.Range(10, 15);
         }
         else

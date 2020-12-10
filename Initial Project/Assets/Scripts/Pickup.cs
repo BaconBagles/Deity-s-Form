@@ -48,6 +48,7 @@ public class Pickup : MonoBehaviour
                 pCont.IncreaseAttackSize();
                 break;
             case 2:
+                pCont.speedBonus += 1.5f;
                 pCont.moveSpeed += 1.5f;
                 break;
             case 3:

@@ -18,15 +18,15 @@ public class PlayerController : MonoBehaviour
 
     Vector2 movement;
     public float moveSpeed;
+    public float speedBonus;
     public Rigidbody2D rb;
     public int formNumber;
-    public GameObject[] forms;
+    //public GameObject[] forms;
     public GameObject[] formOneAttacks;
     public GameObject[] formTwoAttacks;
     public GameObject[] formThreeAttacks;
-    public AudioSource source;
 
-    private Animation anim;
+    public Animator anim;
 
     public float attackDuration;
 
@@ -38,7 +38,8 @@ public class PlayerController : MonoBehaviour
         maxHealth = PlayerPrefs.GetInt("playerHealth", 100);
         health = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
-        anim = gameObject.GetComponent<Animation>();
+
+        
 
         //Adds our stored keys to the dictionary
         //This will need to be done again if the player changes keybinds during game
@@ -60,10 +61,8 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        /* //Update for Input
-         movement.x = Input.GetAxisRaw("Horizontal");
-         movement.y = Input.GetAxisRaw("Vertical"); */
-
+        //Update for Input
+        //anim.SetFloat("speed", anim.GetFloat("vertical")*anim.GetFloat("horizontal"));
         if (Options.GameIsPaused == false)
         {
             //New Movement Code, no longer uses rigidbody
@@ -71,21 +70,25 @@ public class PlayerController : MonoBehaviour
             if (Input.GetKey(keys["Up"]))
             {
                 transform.Translate(Vector2.up * moveSpeed * Time.deltaTime);
+                anim.SetFloat("vertical", 1);
             }
 
             if (Input.GetKey(keys["Down"]))
             {
                 transform.Translate(Vector2.down * moveSpeed * Time.deltaTime);
+                anim.SetFloat("vertical", -1);
             }
 
             if (Input.GetKey(keys["Left"]))
             {
                 transform.Translate(Vector2.left * moveSpeed * Time.deltaTime);
+                anim.SetFloat("horizontal", -1);
             }
 
             if (Input.GetKey(keys["Right"]))
             {
                 transform.Translate(Vector2.right * moveSpeed * Time.deltaTime);
+                anim.SetFloat("horizontal", 1);
             }
 
             if (Input.GetKeyDown(keys["form1"]))
@@ -135,23 +138,19 @@ public class PlayerController : MonoBehaviour
 
         healthBar.SetHealth(health);
 
+        if (health > maxHealth)
+        {
+            health = maxHealth;
+        }
+
         if (health  <= 0)
         {
             SceneManager.LoadScene(0);
         }
         
-
-        if (anim.isPlaying)
-        {
-            return;
-        }
+        
     }
-
-  /*  void FixedUpdate()
-    {
-        //FUpdate for movement physics
-        rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
-    } */
+ 
 
     void SwitchForm()
     {
@@ -164,13 +163,24 @@ public class PlayerController : MonoBehaviour
             formNumber = 2;
         }
 
-        foreach (GameObject form in forms)
+        anim.SetFloat("form", formNumber);
+        /*foreach (GameObject form in forms)
         {
             form.SetActive(false);
         }
 
-        forms[formNumber].SetActive(true);
+        forms[formNumber].SetActive(true);*/
         FindObjectOfType<AudioManager>().Play("FormChange");
+
+        switch (formNumber)
+        {
+            case 0:
+                moveSpeed = 20 + speedBonus;
+                break;
+            default:
+                moveSpeed = 15 + speedBonus;
+                break;
+        }
     }
 
     IEnumerator AttackRight()
@@ -181,7 +191,7 @@ public class PlayerController : MonoBehaviour
         if (formNumber == 0)
         {
             formOneAttacks[0].SetActive(true);
-            anim.Play("BaseAttackRight");
+            //anim.Play("BaseAttackRight");
             yield return new WaitForSeconds(attackDuration);
             formOneAttacks[0].SetActive(false);
             attacking = false;
@@ -189,7 +199,7 @@ public class PlayerController : MonoBehaviour
         else if (formNumber == 1)
         {
             formTwoAttacks[0].SetActive(true);
-            anim.Play("ApAttackRight");
+            //anim.Play("ApAttackRight");
             yield return new WaitForSeconds(attackDuration);
             formTwoAttacks[0].SetActive(false);
             attacking = false;
@@ -197,7 +207,7 @@ public class PlayerController : MonoBehaviour
         else
         {
             formThreeAttacks[0].SetActive(true);
-            anim.Play("RangedAttackRight");
+            //anim.Play("RangedAttackRight");
             yield return new WaitForSeconds(attackDuration);
             formThreeAttacks[0].SetActive(false);
             attacking = false;
@@ -212,7 +222,7 @@ public class PlayerController : MonoBehaviour
         if (formNumber == 0)
         {
             formOneAttacks[1].SetActive(true);
-            anim.Play("BaseAttackLeft");
+            //anim.Play("BaseAttackLeft");
             yield return new WaitForSeconds(attackDuration);
             formOneAttacks[1].SetActive(false);
             attacking = false;
@@ -220,7 +230,7 @@ public class PlayerController : MonoBehaviour
         else if (formNumber == 1)
         {
             formTwoAttacks[1].SetActive(true);
-            anim.Play("ApAttackLeft");
+            //anim.Play("ApAttackLeft");
             yield return new WaitForSeconds(attackDuration);
             formTwoAttacks[1].SetActive(false);
             attacking = false;
@@ -228,7 +238,7 @@ public class PlayerController : MonoBehaviour
         else
         {
             formThreeAttacks[1].SetActive(true);
-            anim.Play("RangedAttackLeft");
+            //anim.Play("RangedAttackLeft");
             yield return new WaitForSeconds(attackDuration);
             formThreeAttacks[1].SetActive(false);
             attacking = false;
@@ -243,7 +253,7 @@ public class PlayerController : MonoBehaviour
         if (formNumber == 0)
         {
             formOneAttacks[2].SetActive(true);
-            anim.Play("BaseAttackUp");
+            //anim.Play("BaseAttackUp");
             yield return new WaitForSeconds(attackDuration);
             formOneAttacks[2].SetActive(false);
             attacking = false;
@@ -251,7 +261,7 @@ public class PlayerController : MonoBehaviour
         else if (formNumber == 1)
         {
             formTwoAttacks[2].SetActive(true);
-            anim.Play("ApAttackUp");
+            //anim.Play("ApAttackUp");
             yield return new WaitForSeconds(attackDuration);
             formTwoAttacks[2].SetActive(false);
             attacking = false;
@@ -259,7 +269,7 @@ public class PlayerController : MonoBehaviour
         else
         {
             formThreeAttacks[2].SetActive(true);
-            anim.Play("RangedAttackUp");
+            //anim.Play("RangedAttackUp");
             yield return new WaitForSeconds(attackDuration);
             formThreeAttacks[2].SetActive(false);
             attacking = false;
@@ -274,7 +284,7 @@ public class PlayerController : MonoBehaviour
         if (formNumber == 0)
         {
             formOneAttacks[3].SetActive(true);
-            anim.Play("BaseAttackDown");
+            //anim.Play("BaseAttackDown");
             yield return new WaitForSeconds(attackDuration);
             formOneAttacks[3].SetActive(false);
             attacking = false;
@@ -282,7 +292,7 @@ public class PlayerController : MonoBehaviour
         else if (formNumber == 1)
         {
             formTwoAttacks[3].SetActive(true);
-            anim.Play("ApAttackDown");
+            //anim.Play("ApAttackDown");
             yield return new WaitForSeconds(attackDuration);
             formTwoAttacks[3].SetActive(false);
             attacking = false;
@@ -290,7 +300,7 @@ public class PlayerController : MonoBehaviour
         else
         {
             formThreeAttacks[3].SetActive(true);
-            anim.Play("RangedAttackDown");
+            //anim.Play("RangedAttackDown");
             yield return new WaitForSeconds(attackDuration);
             formThreeAttacks[3].SetActive(false);
             attacking = false;
