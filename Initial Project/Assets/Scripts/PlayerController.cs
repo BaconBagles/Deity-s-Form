@@ -70,24 +70,28 @@ public class PlayerController : MonoBehaviour
             if (Input.GetKey(keys["Up"]))
             {
                 transform.Translate(Vector2.up * moveSpeed * Time.deltaTime);
+                anim.SetFloat("horizontal", 0);
                 anim.SetFloat("vertical", 1);
             }
 
             if (Input.GetKey(keys["Down"]))
             {
                 transform.Translate(Vector2.down * moveSpeed * Time.deltaTime);
+                anim.SetFloat("horizontal", -0);
                 anim.SetFloat("vertical", -1);
             }
 
             if (Input.GetKey(keys["Left"]))
             {
                 transform.Translate(Vector2.left * moveSpeed * Time.deltaTime);
+                anim.SetFloat("vertical", 0);
                 anim.SetFloat("horizontal", -1);
             }
 
             if (Input.GetKey(keys["Right"]))
             {
                 transform.Translate(Vector2.right * moveSpeed * Time.deltaTime);
+                anim.SetFloat("vertical", 0);
                 anim.SetFloat("horizontal", 1);
             }
 
@@ -163,7 +167,7 @@ public class PlayerController : MonoBehaviour
             formNumber = 2;
         }
 
-        anim.SetFloat("form", formNumber);
+        anim.SetInteger("form", formNumber);
         /*foreach (GameObject form in forms)
         {
             form.SetActive(false);

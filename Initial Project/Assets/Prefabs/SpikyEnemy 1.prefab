@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7017633826688464324}
   - component: {fileID: 3704512963063462597}
   - component: {fileID: 7026609714722928751}
+  - component: {fileID: 7049152765276969609}
   m_Layer: 0
   m_Name: SpikyEnemy 1
   m_TagString: spikyEnemy
@@ -145,3 +146,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 0
+  enemyAnim: {fileID: 7049152765276969609}
+--- !u!95 &7049152765276969609
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 529861034411739998}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 111d134342521ee4cb6a3347f85b2f85, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

@@ -11,12 +11,14 @@ public class Enemy : MonoBehaviour
     float spaceBetween;
     PlayerController pCont;
     public int health;
+    public Animator enemyAnim;
 
 
 
     // Start is called before the first frame update
     void Start()
     {
+
         player = GameObject.Find("Player");
         pCont = player.GetComponent<PlayerController>();
         goal = player.transform;
@@ -26,15 +28,18 @@ public class Enemy : MonoBehaviour
 
         if (gameObject.tag == "basicEnemy")
         {
+            enemyAnim.SetInteger("EnemyType", 0);
             spaceBetween = Random.Range(10, 20);
         }
         else if (gameObject.tag == "armourEnemy")
         {
             health += 2;
+            enemyAnim.SetInteger("EnemyType", 1);
             spaceBetween = Random.Range(10, 15);
         }
         else
         {
+            enemyAnim.SetInteger("EnemyType", 2);
             spaceBetween = Random.Range(5, 15);
         }
         StartCoroutine(Shuffle());
@@ -46,11 +51,15 @@ public class Enemy : MonoBehaviour
         if (Vector2.Distance(goal.position, transform.position) >= spaceBetween)
         {
             Vector2 direction = goal.position - transform.position;
+            enemyAnim.SetFloat("Horizontal", direction.x);
+            enemyAnim.SetFloat("Vertical", direction.y);
             transform.Translate(direction * Time.deltaTime);
         }
         else
         {
             Vector2 direction = transform.position - goal.transform.position;
+            enemyAnim.SetFloat("Horizontal", -direction.x);
+            enemyAnim.SetFloat("Vertical", -direction.y);
             transform.Translate(direction * Time.deltaTime);
         }
 

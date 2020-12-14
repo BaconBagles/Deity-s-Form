@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class UIController : MonoBehaviour
 {
-    public Text healthText;
-    public Text formText;
+    public TextMeshProUGUI healthText, formText;
 
     GameObject player;
     PlayerController pController;
@@ -26,17 +26,17 @@ public class UIController : MonoBehaviour
         switch(pController.formNumber)
         {
             case 0:
-                formName = "BASE";
+                formName = "JACKAL";
                 break;
             case 1:
-                formName = "CRUSHER";
+                formName = "HAWK";
                 break;
             case 2:
-                formName = "THRESHER";
+                formName = "BULL";
                 break;
         }
 
-        healthText.text = "HEALTH: " + pController.health;
-        formText.text = "FORM: " + formName;
+        healthText.text = "Health: " + pController.health;
+        formText.text = "Form: " + formName;
     }
 }
