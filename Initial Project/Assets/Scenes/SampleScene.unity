@@ -21392,13 +21392,7 @@ MonoBehaviour:
   rooms:
   - {fileID: 1524719348}
   - {fileID: 1356236380}
-  pickups:
-  - {fileID: 6380638922849501012, guid: 6335c983ccf5d814eb6c43e7c0a0b612, type: 3}
-  - {fileID: 8955854042689988434, guid: 8bb2c8d3a155e594d82f0702dce96fcf, type: 3}
-  - {fileID: 5598712857052647150, guid: 97c33df00716a0145a956d748060331d, type: 3}
-  - {fileID: 642662251101441715, guid: c6da47f62b9369643a4c9a47bd0b692b, type: 3}
-  - {fileID: 306088002717221677, guid: a11557fb1d458804aa07d453579c73a8, type: 3}
-  - {fileID: 8799549178579394652, guid: cbfb3b788af00ad489bb07102062bd1c, type: 3}
+  pickup: {fileID: 8876447283324357626, guid: 779758a5009ec7344970c1af30a5464f, type: 3}
   pickupNumber: 0
   pickupSpawned: 0
 --- !u!4 &1452527725

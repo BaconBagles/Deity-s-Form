@@ -11,6 +11,8 @@ public class Pickup : MonoBehaviour
     GameObject gContObj;
     GameController gCont;
 
+    public Sprite[] images;
+
     public int pickupNumber;
 
     void Start()
@@ -23,6 +25,8 @@ public class Pickup : MonoBehaviour
         gCont = gContObj.GetComponent<GameController>();
 
         pickupNumber = gCont.pickupNumber;
+        SpriteRenderer render = gameObject.GetComponent<SpriteRenderer>();
+        render.sprite = images[pickupNumber];
     }
 
     void OnCollisionEnter2D(Collision2D other)

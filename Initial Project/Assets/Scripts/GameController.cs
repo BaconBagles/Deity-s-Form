@@ -7,7 +7,7 @@ public class GameController : MonoBehaviour
     public EnemyController eCont;
     public PlayerController player;
     public GameObject[] rooms;
-    public GameObject[] pickups;
+    public GameObject pickup;
     int roomNumber;
     public int pickupNumber;
     public bool pickupSpawned;
@@ -30,7 +30,7 @@ public class GameController : MonoBehaviour
             pickupSpawned = true;
             eCont.spawning = true;
             RandomPickup();
-            Instantiate(pickups[pickupNumber], new Vector2(0, 0), Quaternion.identity);
+            Instantiate(pickup, new Vector2(0, 0), Quaternion.identity);
         }
     }
 
