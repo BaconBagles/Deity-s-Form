@@ -52,11 +52,9 @@ public class EnemyController : MonoBehaviour
     IEnumerator EnemyAttack()
     {
         StartTimer();
-        yield return new WaitForSecondsRealtime(attackTimer);
+        yield return new WaitForSeconds(attackTimer);
         FindObjectOfType<AudioManager>().Play("EnemyAttack");
         FindObjectOfType<AudioManager>().Play("PlayerDamage");
-        if (Options.GameIsPaused == false)
-        {
             if (player.shieldCount == 0)
             {
                 foreach (GameObject enemy in enemies)
@@ -68,13 +66,12 @@ public class EnemyController : MonoBehaviour
             {
                 player.shieldCount -= 1;
             }
-        }
         StartCoroutine(EnemyAttack());
     }
 
     public IEnumerator SpawnEnemies()
     {
-        yield return new WaitForSecondsRealtime(spawnTime);
+        yield return new WaitForSeconds(spawnTime);
         FindObjectOfType<AudioManager>().Play("EnemySpawn");
 
         for (int i = 0; i < diffLevel; i++)
@@ -90,7 +87,7 @@ public class EnemyController : MonoBehaviour
         for (int i = 0; i <diffLevel/4; i++)
         {
             rndPos = new Vector2(Random.Range(-20, 20), Random.Range(-20, 20));
-            enemies.Add((GameObject)Instantiate(spikeEnemy, rndPos, Quaternion.Euler(0,0,45)));
+            enemies.Add((GameObject)Instantiate(spikeEnemy, rndPos, Quaternion.identity));
         }
 
         StartCoroutine(EnemyAttack());
