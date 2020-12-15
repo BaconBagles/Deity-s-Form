@@ -35,8 +35,7 @@ public class Pickup : MonoBehaviour
         {
             PickupBonus();
             FindObjectOfType<AudioManager>().Play("Pickup");
-            eCont.StartCoroutine(eCont.SpawnEnemies());
-            gCont.pickupSpawned = false;
+            gCont.SetUpNextRoom();
             Destroy(this.gameObject);
         }
     }
@@ -61,8 +60,6 @@ public class Pickup : MonoBehaviour
                 break;
             case 4:
                 pCont.shieldCount = 2;
-                break;
-            case 5:
                 break;
         }
     }

@@ -12,6 +12,7 @@ public class EnemyController : MonoBehaviour
     public OptionsMenu Options;
 
     public PlayerController player;
+    public GameController gameController;
     public List<GameObject> enemies = new List<GameObject>();
     public GameObject basicEnemy;
     public GameObject armourEnemy;
@@ -30,12 +31,17 @@ public class EnemyController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         if (enemies.Count == 0 && spawning == false)
         {
             StopAllCoroutines();
-            attacking = false;
+            if (gameController.roomComplete == false)
+            {
+                attacking = false;
+                spawning = true;
+                StartCoroutine(SpawnEnemies());
+            }
         }
-
         if (attacking == true && timeLeft > 0)
         {
             timeLeft -= Time.deltaTime;
@@ -66,7 +72,7 @@ public class EnemyController : MonoBehaviour
             {
                 player.shieldCount -= 1;
             }
-        StartCoroutine(EnemyAttack());
+            StartCoroutine(EnemyAttack());
     }
 
     public IEnumerator SpawnEnemies()
@@ -90,6 +96,7 @@ public class EnemyController : MonoBehaviour
             enemies.Add((GameObject)Instantiate(spikeEnemy, rndPos, Quaternion.identity));
         }
 
+        gameController.waveNum += 1;
         StartCoroutine(EnemyAttack());
 
         spawning = false;
