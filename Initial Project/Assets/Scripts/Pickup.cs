@@ -11,6 +11,7 @@ public class Pickup : MonoBehaviour
     GameObject gContObj;
     GameController gCont;
 
+
     public Sprite[] images;
 
     public int pickupNumber;

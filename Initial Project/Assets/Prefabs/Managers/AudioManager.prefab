@@ -43,6 +43,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35da8767d46c22046bb7b44843acdab7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Fx: {fileID: 8821393910224788343, guid: eb08b2dc8297f0340a454dafedf006d3, type: 2}
+  Music: {fileID: 8767909757734467971, guid: eb08b2dc8297f0340a454dafedf006d3, type: 2}
   sounds:
   - name: EnemyDeath
     clip: {fileID: 8300000, guid: abbeb7e54b8bd9a48a57e242ec3d4931, type: 3}
@@ -98,9 +100,36 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 0}
+  - name: PlayerWalk
+    clip: {fileID: 8300000, guid: 34c33d57074291744bd294bf16aa86b8, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  music:
+  - name: IntroMainTheme
+    clip: {fileID: 8300000, guid: 494ffe19a12ab1b49ac36acc15367121, type: 3}
+    volume: 0.1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: MenuTheme
+    clip: {fileID: 8300000, guid: e1abb948203c4684ab4171ce920b42b0, type: 3}
+    volume: 0.1
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
   - name: MainTheme
     clip: {fileID: 8300000, guid: b10c361a2022c19479c95bf0488b77d1, type: 3}
     volume: 0.1
     pitch: 1
     loop: 1
     source: {fileID: 0}
+  - name: GameOver
+    clip: {fileID: 8300000, guid: 8ab3505e6d377624ca636e5504002cef, type: 3}
+    volume: 0.1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  Options: {fileID: 0}
+  audioSource: {fileID: 0}

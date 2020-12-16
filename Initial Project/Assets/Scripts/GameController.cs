@@ -13,6 +13,7 @@ public class GameController : MonoBehaviour
     public int pickupNumber;
     public bool pickupSpawned;
 
+    public int currentRoom;
     public int waveMax;
     public int waveNum;
     public bool roomComplete;
@@ -24,6 +25,7 @@ public class GameController : MonoBehaviour
     void Start()
     {
         RandomRoom();
+        currentRoom = 1;
     }
 
     // Update is called once per frame

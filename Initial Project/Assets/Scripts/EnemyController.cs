@@ -11,6 +11,7 @@ public class EnemyController : MonoBehaviour
     bool attacking;
     public OptionsMenu Options;
 
+    public AudioManager Audio;
     public PlayerController player;
     public GameController gameController;
     public List<GameObject> enemies = new List<GameObject>();
@@ -59,8 +60,8 @@ public class EnemyController : MonoBehaviour
     {
         StartTimer();
         yield return new WaitForSeconds(attackTimer);
-        FindObjectOfType<AudioManager>().Play("EnemyAttack");
-        FindObjectOfType<AudioManager>().Play("PlayerDamage");
+        Audio.Play("EnemyAttack");
+        Audio.Play("PlayerDamage");
             if (player.shieldCount == 0)
             {
                 foreach (GameObject enemy in enemies)
@@ -78,7 +79,7 @@ public class EnemyController : MonoBehaviour
     public IEnumerator SpawnEnemies()
     {
         yield return new WaitForSeconds(spawnTime);
-        FindObjectOfType<AudioManager>().Play("EnemySpawn");
+        Audio.Play("EnemySpawn");
 
         for (int i = 0; i < diffLevel; i++)
         {

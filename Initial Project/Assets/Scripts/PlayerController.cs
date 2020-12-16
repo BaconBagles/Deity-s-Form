@@ -12,6 +12,9 @@ public class PlayerController : MonoBehaviour
     public int health;
     public HealthBar healthBar;
     public OptionsMenu Options;
+    public AudioManager Audio;
+    public DeathScript death;
+
     bool attacking;
     
     public int shieldCount;
@@ -69,6 +72,7 @@ public class PlayerController : MonoBehaviour
             //All inputs call playerpref 'keys' dictionary that carry between scenes
             if (Input.GetKey(keys["Up"]))
             {
+               
                 transform.Translate(Vector2.up * moveSpeed * Time.deltaTime);
                 anim.SetFloat("horizontal", 0);
                 anim.SetFloat("vertical", 1);
@@ -76,6 +80,7 @@ public class PlayerController : MonoBehaviour
 
             if (Input.GetKey(keys["Down"]))
             {
+                
                 transform.Translate(Vector2.down * moveSpeed * Time.deltaTime);
                 anim.SetFloat("horizontal", -0);
                 anim.SetFloat("vertical", -1);
@@ -83,6 +88,7 @@ public class PlayerController : MonoBehaviour
 
             if (Input.GetKey(keys["Left"]))
             {
+               
                 transform.Translate(Vector2.left * moveSpeed * Time.deltaTime);
                 anim.SetFloat("vertical", 0);
                 anim.SetFloat("horizontal", -1);
@@ -90,6 +96,7 @@ public class PlayerController : MonoBehaviour
 
             if (Input.GetKey(keys["Right"]))
             {
+            
                 transform.Translate(Vector2.right * moveSpeed * Time.deltaTime);
                 anim.SetFloat("vertical", 0);
                 anim.SetFloat("horizontal", 1);
@@ -149,12 +156,12 @@ public class PlayerController : MonoBehaviour
 
         if (health  <= 0)
         {
-            SceneManager.LoadScene(0);
+            death.dead = true;
         }
         
         
     }
- 
+
 
     void SwitchForm()
     {
@@ -174,7 +181,7 @@ public class PlayerController : MonoBehaviour
         }
 
         forms[formNumber].SetActive(true);*/
-        FindObjectOfType<AudioManager>().Play("FormChange");
+        Audio.Play("FormChange");
 
         switch (formNumber)
         {
@@ -190,7 +197,7 @@ public class PlayerController : MonoBehaviour
     IEnumerator AttackRight()
     {
         attacking = true;
-        FindObjectOfType<AudioManager>().Play("PlayerAttack");
+       Audio.Play("PlayerAttack");
 
         if (formNumber == 0)
         {
@@ -221,7 +228,7 @@ public class PlayerController : MonoBehaviour
     IEnumerator AttackLeft()
     {
         attacking = true;
-        FindObjectOfType<AudioManager>().Play("PlayerAttack");
+        Audio.Play("PlayerAttack");
 
         if (formNumber == 0)
         {
@@ -252,7 +259,7 @@ public class PlayerController : MonoBehaviour
     IEnumerator AttackUp()
     {
         attacking = true;
-        FindObjectOfType<AudioManager>().Play("PlayerAttack");
+        Audio.Play("PlayerAttack");
 
         if (formNumber == 0)
         {
@@ -283,7 +290,7 @@ public class PlayerController : MonoBehaviour
     IEnumerator AttackDown()
     {
         attacking = true;
-        FindObjectOfType<AudioManager>().Play("PlayerAttack");
+        Audio.Play("PlayerAttack");
 
         if (formNumber == 0)
         {
@@ -315,7 +322,7 @@ public class PlayerController : MonoBehaviour
     {
         foreach (GameObject attack in formOneAttacks)
         {
-            attack.gameObject.transform.localScale += new Vector3(0, .5f, 0);
+            attack.gameObject.transform.localScale += new Vector3(0, 1f, 0);
         }
         foreach (GameObject attack in formTwoAttacks)
         {
@@ -323,7 +330,7 @@ public class PlayerController : MonoBehaviour
         }
         foreach (GameObject attack in formThreeAttacks)
         {
-            attack.gameObject.transform.localScale += new Vector3(1, 0, 0);
+            attack.gameObject.transform.localScale += new Vector3(1f, 0, 0);
         }
     }
 }

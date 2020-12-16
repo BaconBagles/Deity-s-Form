@@ -13,6 +13,7 @@ public class door : MonoBehaviour
             collider.isTrigger = false;
             renderer.enabled = false;
             GameController gCont = FindObjectOfType<GameController>();
+            gCont.currentRoom++;
             gCont.roomComplete = false;
             gCont.RandomRoom();
             gCont.pickupSpawned = false;
