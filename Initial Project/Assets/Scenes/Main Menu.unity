@@ -10836,7 +10836,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7700597709515770726, guid: 778310a3baf364948b30a874d07886cc, type: 3}
       propertyPath: music.Array.size
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7700597709515770726, guid: 778310a3baf364948b30a874d07886cc, type: 3}
       propertyPath: sounds.Array.size
@@ -10874,6 +10874,46 @@ PrefabInstance:
       propertyPath: Options
       value: 
       objectReference: {fileID: 1967986636}
+    - target: {fileID: 7700597709515770726, guid: 778310a3baf364948b30a874d07886cc, type: 3}
+      propertyPath: music.Array.data[1].name
+      value: MenuTheme
+      objectReference: {fileID: 0}
+    - target: {fileID: 7700597709515770726, guid: 778310a3baf364948b30a874d07886cc, type: 3}
+      propertyPath: music.Array.data[1].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: e1abb948203c4684ab4171ce920b42b0, type: 3}
+    - target: {fileID: 7700597709515770726, guid: 778310a3baf364948b30a874d07886cc, type: 3}
+      propertyPath: music.Array.data[1].volume
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7700597709515770726, guid: 778310a3baf364948b30a874d07886cc, type: 3}
+      propertyPath: music.Array.data[1].pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7700597709515770726, guid: 778310a3baf364948b30a874d07886cc, type: 3}
+      propertyPath: music.Array.data[1].loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7700597709515770726, guid: 778310a3baf364948b30a874d07886cc, type: 3}
+      propertyPath: music.Array.data[2].name
+      value: MainThemeWithIntro
+      objectReference: {fileID: 0}
+    - target: {fileID: 7700597709515770726, guid: 778310a3baf364948b30a874d07886cc, type: 3}
+      propertyPath: music.Array.data[2].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 494ffe19a12ab1b49ac36acc15367121, type: 3}
+    - target: {fileID: 7700597709515770726, guid: 778310a3baf364948b30a874d07886cc, type: 3}
+      propertyPath: music.Array.data[2].volume
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7700597709515770726, guid: 778310a3baf364948b30a874d07886cc, type: 3}
+      propertyPath: music.Array.data[2].pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7700597709515770726, guid: 778310a3baf364948b30a874d07886cc, type: 3}
+      propertyPath: music.Array.data[2].loop
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7700597709515770727, guid: 778310a3baf364948b30a874d07886cc, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

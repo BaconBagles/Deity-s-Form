@@ -8,6 +8,10 @@ public class door : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
+            BoxCollider2D collider = gameObject.GetComponent<BoxCollider2D>();
+            MeshRenderer renderer = gameObject.GetComponent<MeshRenderer>();
+            collider.isTrigger = false;
+            renderer.enabled = false;
             GameController gCont = FindObjectOfType<GameController>();
             gCont.roomComplete = false;
             gCont.RandomRoom();

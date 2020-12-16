@@ -19,6 +19,8 @@ public class GameController : MonoBehaviour
     public GameObject door;
     new BoxCollider2D collider;
 
+    int currentScene;
+
     void Start()
     {
         RandomRoom();
