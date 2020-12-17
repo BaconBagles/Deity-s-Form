@@ -21,7 +21,6 @@ public class DeathScript : MonoBehaviour
 
     void Start()
     {
-        
         dead = false;
     }
 

@@ -73,7 +73,7 @@ public class PlayerController : MonoBehaviour
             //All inputs call playerpref 'keys' dictionary that carry between scenes
             if (Input.GetKey(keys["Up"]))
             {
-               
+
                 transform.Translate(Vector2.up * moveSpeed * Time.deltaTime);
                 anim.SetFloat("horizontal", 0);
                 anim.SetFloat("vertical", 1);
@@ -81,7 +81,7 @@ public class PlayerController : MonoBehaviour
 
             if (Input.GetKey(keys["Down"]))
             {
-                
+
                 transform.Translate(Vector2.down * moveSpeed * Time.deltaTime);
                 anim.SetFloat("horizontal", -0);
                 anim.SetFloat("vertical", -1);
@@ -89,7 +89,7 @@ public class PlayerController : MonoBehaviour
 
             if (Input.GetKey(keys["Left"]))
             {
-               
+
                 transform.Translate(Vector2.left * moveSpeed * Time.deltaTime);
                 anim.SetFloat("vertical", 0);
                 anim.SetFloat("horizontal", -1);
@@ -97,7 +97,7 @@ public class PlayerController : MonoBehaviour
 
             if (Input.GetKey(keys["Right"]))
             {
-            
+
                 transform.Translate(Vector2.right * moveSpeed * Time.deltaTime);
                 anim.SetFloat("vertical", 0);
                 anim.SetFloat("horizontal", 1);
@@ -155,12 +155,18 @@ public class PlayerController : MonoBehaviour
             health = maxHealth;
         }
 
-        if (health  <= 0)
+        if (health <= 0)
+        {
+            health = 0;
+        }
+
+        if (health == 0)
         {
             death.dead = true;
+            health = 1;
         }
-        
-        
+
+
     }
 
 

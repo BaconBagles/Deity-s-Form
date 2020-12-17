@@ -10,6 +10,8 @@ public class Pickup : MonoBehaviour
     PlayerController pCont;
     GameObject gContObj;
     GameController gCont;
+    OptionsMenu Options;
+    GameObject OptionsObj;
 
 
     public Sprite[] images;
@@ -24,6 +26,8 @@ public class Pickup : MonoBehaviour
         pCont = player.GetComponent<PlayerController>();
         gContObj = GameObject.Find("GameController");
         gCont = gContObj.GetComponent<GameController>();
+        OptionsObj = GameObject.Find("MenuManager");
+        Options = OptionsObj.GetComponent<OptionsMenu>();
 
         pickupNumber = gCont.pickupNumber;
         SpriteRenderer render = gameObject.GetComponent<SpriteRenderer>();
@@ -61,6 +65,28 @@ public class Pickup : MonoBehaviour
                 break;
             case 4:
                 pCont.shieldCount = 2;
+                break;
+            case 5:
+                 gCont.StartCoroutine(gCont.MemoryAdded());
+              
+                if(PlayerPrefs.GetInt("Memory1", 0) == 0)
+                {
+                    PlayerPrefs.SetInt("Memory1", 1);
+                }
+
+                if (PlayerPrefs.GetInt("Memory1", 0) == 1)
+                {
+                    PlayerPrefs.SetInt("Memory2", 1);
+                }
+
+                if (PlayerPrefs.GetInt("Memory2", 0) == 1)
+                {
+                    PlayerPrefs.SetInt("Memory3", 1);
+                    gCont.allMemories = true;
+                }
+
+                Options.MemoryCheck();
+
                 break;
         }
     }

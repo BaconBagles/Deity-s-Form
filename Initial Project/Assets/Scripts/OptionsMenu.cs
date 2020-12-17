@@ -17,11 +17,11 @@ public class OptionsMenu : MonoBehaviour
 
     public Slider fxSlider, musicSlider, masterSlider, playerHealthSlider, turnTimerSlider, enemyHealthSlider;
 
-    public int playerHealth, enemyHealth, turnTimer;
+    public int playerHealth, enemyHealth, turnTimer, memory1, memory2, memory3;
 
     public bool GameIsPaused = false;
 
-    public GameObject pauseMenuUI;
+    public GameObject pauseMenuUI, memoryText1, memoryText2, memoryText3;
     public GameObject pauseFirst;
 
     public float fxVol, musicVol, masterVol;
@@ -51,12 +51,17 @@ public class OptionsMenu : MonoBehaviour
         playerHealthSlider.value = PlayerPrefs.GetInt("playerHeath", 100);
         turnTimerSlider.value = PlayerPrefs.GetInt("turnTimer", 5); 
         enemyHealthSlider.value = PlayerPrefs.GetInt("enemyHealth", 5);
+        memory1 = PlayerPrefs.GetInt("Memory1", 0);
+        memory2 = PlayerPrefs.GetInt("Memory2", 0);
+        memory3 = PlayerPrefs.GetInt("Memory3", 0);
+
 
         resolutionDropdown.AddOptions(options);
         resolutionDropdown.value = currentResolutionIndex;
         resolutionDropdown.RefreshShownValue();
 
         keys.Add("Escape", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("Escape", "Escape")));
+        MemoryCheck();
     }
 
     public void Update()
@@ -71,6 +76,28 @@ public class OptionsMenu : MonoBehaviour
             {
                 Pause();
             }
+        }
+    }
+
+    public void MemoryCheck()
+    {
+        memory1 = PlayerPrefs.GetInt("Memory1", 0);
+        memory2 = PlayerPrefs.GetInt("Memory2", 0);
+        memory3 = PlayerPrefs.GetInt("Memory3", 0);
+
+        if (memory1 == 1)
+        {
+            memoryText1.SetActive(true);
+        }
+
+        if (memory2 == 1)
+        {
+            memoryText2.SetActive(true);
+        }
+
+        if (memory3 == 1)
+        {
+            memoryText3.SetActive(true);
         }
     }
 

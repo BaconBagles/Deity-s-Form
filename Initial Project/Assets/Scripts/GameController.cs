@@ -8,10 +8,12 @@ public class GameController : MonoBehaviour
     public PlayerController player;
     public GameObject[] rooms;
     public GameObject pickup;
+    public GameObject MemoryPickupText;
     int roomNumber;
 
     public int pickupNumber;
     public bool pickupSpawned;
+    public bool allMemories;
 
     public int currentRoom;
     public int waveMax;
@@ -24,6 +26,14 @@ public class GameController : MonoBehaviour
 
     void Start()
     {
+        if (PlayerPrefs.GetInt("Memory3", 0) == 1)
+        {
+            allMemories = true;
+        }
+        else
+        {
+            allMemories = false;
+        }
         RandomRoom();
         currentRoom = 1;
     }
@@ -67,27 +77,40 @@ public class GameController : MonoBehaviour
 
     void RandomPickup()
     {
-        int randomiser = Random.Range(0, 90);
+        int randomiser = Random.Range(0, 100);
         if(randomiser >= 50 && randomiser < 60)
         {
             pickupNumber = 1;
         }
-        else if (randomiser >= 60 && randomiser < 70)
+        else if (randomiser >= 61 && randomiser < 70)
         {
             pickupNumber = 2;
         }
-        else if (randomiser >= 70 && randomiser < 80)
+        else if (randomiser >= 71 && randomiser < 80)
         {
             pickupNumber = 3;
         }
-        else if (randomiser >= 80 && randomiser < 90)
+        else if (randomiser >= 81 && randomiser < 90)
         {
             pickupNumber = 4;
+        }
+        else if (randomiser >= 91 && randomiser < 100 && !allMemories)
+        {
+            pickupNumber = 5;
         }
         else
         {
             pickupNumber = 0;
         }
-        
+       
+    }
+
+    public IEnumerator MemoryAdded()
+    {
+        MemoryPickupText.SetActive(true);
+
+        yield return new WaitForSeconds(2);
+
+        MemoryPickupText.SetActive(false);
     }
 }
