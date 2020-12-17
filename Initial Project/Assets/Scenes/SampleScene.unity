@@ -20984,6 +20984,7 @@ MonoBehaviour:
   speedBonus: 0
   rb: {fileID: 0}
   formNumber: 0
+  attackEffect: {fileID: 4907821312957067333, guid: ee9a125ed9521a84293d1197fbd41e75, type: 3}
   formOneAttacks:
   - {fileID: 1159383207}
   - {fileID: 1071861711}
@@ -55015,7 +55016,6 @@ MonoBehaviour:
     loop: 0
     source: {fileID: 0}
   Options: {fileID: 1967495149}
-  audioSource: {fileID: 0}
 --- !u!4 &7700597709660189911
 Transform:
   m_ObjectHideFlags: 0

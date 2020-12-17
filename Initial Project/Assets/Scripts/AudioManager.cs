@@ -12,6 +12,7 @@ public class AudioManager : MonoBehaviour
     public OptionsMenu Options;
     AudioSource audioSource;
     bool introComplete;
+    bool mainMenu;
 
     private void Start()
     {
@@ -23,6 +24,7 @@ public class AudioManager : MonoBehaviour
         }
         else
         {
+            mainMenu = true;
             PlayMusic("MenuTheme");
         }
         audioSource = GetComponent<AudioSource>();
@@ -70,10 +72,13 @@ public class AudioManager : MonoBehaviour
 
     void Update()
     {
-        if (!audioSource.isPlaying && introComplete == false)
+        if (mainMenu == false)
         {
-            introComplete = true;
-            PlayMusic("MainTheme");
+            if (!audioSource.isPlaying && introComplete == false)
+            {
+                introComplete = true;
+                PlayMusic("MainTheme");
+            }
         }
     }
 

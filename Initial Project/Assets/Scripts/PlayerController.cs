@@ -25,6 +25,7 @@ public class PlayerController : MonoBehaviour
     public Rigidbody2D rb;
     public int formNumber;
     //public GameObject[] forms;
+    public ParticleSystem attackEffect;
     public GameObject[] formOneAttacks;
     public GameObject[] formTwoAttacks;
     public GameObject[] formThreeAttacks;
@@ -198,6 +199,7 @@ public class PlayerController : MonoBehaviour
     {
         attacking = true;
        Audio.Play("PlayerAttack");
+        StartCoroutine(ParticleRight());
 
         if (formNumber == 0)
         {
@@ -225,10 +227,20 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    IEnumerator ParticleRight()
+    {
+        ParticleSystem aEffect = Instantiate(attackEffect, transform.position, Quaternion.Euler(0, 90, 0));
+        SetParticleColour();
+        aEffect.transform.parent = gameObject.transform;
+        yield return new WaitForSeconds(attackDuration + .5f);
+        Destroy(aEffect.gameObject);
+    }
+
     IEnumerator AttackLeft()
     {
         attacking = true;
         Audio.Play("PlayerAttack");
+        StartCoroutine(ParticleLeft());
 
         if (formNumber == 0)
         {
@@ -256,10 +268,20 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    IEnumerator ParticleLeft()
+    {
+        ParticleSystem aEffect = Instantiate(attackEffect, transform.position, Quaternion.Euler(0, -90, 0));
+        SetParticleColour();
+        aEffect.transform.parent = gameObject.transform;
+        yield return new WaitForSeconds(attackDuration + .5f);
+        Destroy(aEffect.gameObject);
+    }
+
     IEnumerator AttackUp()
     {
         attacking = true;
         Audio.Play("PlayerAttack");
+        StartCoroutine(ParticleUp());
 
         if (formNumber == 0)
         {
@@ -287,10 +309,20 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    IEnumerator ParticleUp()
+    {
+        ParticleSystem aEffect = Instantiate(attackEffect, transform.position, Quaternion.Euler(-90, 0, 0));
+        SetParticleColour();
+        aEffect.transform.parent = gameObject.transform;
+        yield return new WaitForSeconds(attackDuration + .5f);
+        Destroy(aEffect.gameObject);
+    }
+
     IEnumerator AttackDown()
     {
         attacking = true;
         Audio.Play("PlayerAttack");
+        StartCoroutine(ParticleDown());
 
         if (formNumber == 0)
         {
@@ -318,6 +350,15 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    IEnumerator ParticleDown()
+    {
+        ParticleSystem aEffect = Instantiate(attackEffect, transform.position, Quaternion.Euler(90, 0, 0));
+        SetParticleColour();
+        aEffect.transform.parent = gameObject.transform;
+        yield return new WaitForSeconds(attackDuration + .5f);
+        Destroy(aEffect.gameObject);
+    }
+
     public void IncreaseAttackSize()
     {
         foreach (GameObject attack in formOneAttacks)
@@ -333,4 +374,25 @@ public class PlayerController : MonoBehaviour
             attack.gameObject.transform.localScale += new Vector3(1f, 0, 0);
         }
     }
+
+    void SetParticleColour()
+    {
+        ParticleSystem pObj = GameObject.FindObjectOfType<ParticleSystem>();
+        ParticleSystem ps = pObj.GetComponent<ParticleSystem>();
+        var main = ps.main;
+        switch (formNumber)
+        {
+            case 1:
+                main.startColor = Color.black;
+                break;
+            case 2:
+                main.startColor = Color.yellow;
+                break;
+            default:
+                main.startColor = Color.blue;
+                break;
+        }
+    }
+
+    
 }
