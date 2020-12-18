@@ -82,21 +82,29 @@ public class GameController : MonoBehaviour
         {
             pickupNumber = 1;
         }
-        else if (randomiser >= 61 && randomiser < 70)
+        else if (randomiser >= 51 && randomiser < 60)
         {
             pickupNumber = 2;
         }
-        else if (randomiser >= 71 && randomiser < 80)
+        else if (randomiser >= 61 && randomiser < 70)
         {
             pickupNumber = 3;
         }
-        else if (randomiser >= 81 && randomiser < 90)
+        else if (randomiser >= 71 && randomiser < 80)
         {
             pickupNumber = 4;
         }
-        else if (randomiser >= 91 && randomiser < 100 && !allMemories)
+        else if (randomiser >= 81 && randomiser < 90 && !allMemories)
         {
             pickupNumber = 5;
+        }
+        else if (randomiser >= 91 && randomiser < 95)
+        {
+            pickupNumber = 6;
+        }
+        else if (randomiser >= 96 && randomiser < 100)
+        {
+            pickupNumber = 7;
         }
         else
         {

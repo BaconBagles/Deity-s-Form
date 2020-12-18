@@ -89,9 +89,11 @@ public class Pickup : MonoBehaviour
                 break;
             case 6:
                 pCont.powerAttack = true;
+                pCont.tempFormActive = false;
                 break;
             case 7:
                 pCont.superForm = true;
+                pCont.tempFormActive = false;
                 break;
         }
     }

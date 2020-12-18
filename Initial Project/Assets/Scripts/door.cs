@@ -18,6 +18,17 @@ public class door : MonoBehaviour
             gCont.RandomRoom();
             gCont.pickupSpawned = false;
             collision.gameObject.transform.position = new Vector2(0, 0);
+            PlayerController player = collision.GetComponent<PlayerController>();
+            if (player.tempFormActive == true)
+            {
+                player.superForm = false;
+                player.powerAttack = false;
+                player.tempFormActive = false;
+            }
+            if (player.superForm == true || player.powerAttack == true)
+            {
+                player.tempFormActive = true;
+            }
         }
     }
 }

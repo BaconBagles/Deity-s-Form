@@ -37,6 +37,9 @@ public class PlayerController : MonoBehaviour
 
     public bool powerAttack;
     public bool superForm;
+    public bool tempFormActive;
+
+    SpriteRenderer sr;
 
     void Start()
     {
@@ -47,7 +50,7 @@ public class PlayerController : MonoBehaviour
         health = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
 
-
+        sr = GetComponent<SpriteRenderer>();
 
         //Adds our stored keys to the dictionary
         //This will need to be done again if the player changes keybinds during game
@@ -69,6 +72,15 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        if (superForm == true)
+        {
+            sr.color = Color.yellow;
+        }
+        else
+        {
+            sr.color = Color.white;
+        }
+
         //Update for Input
         //anim.SetFloat("speed", anim.GetFloat("vertical")*anim.GetFloat("horizontal"));
         if (Options.GameIsPaused == false)
@@ -401,10 +413,37 @@ public class PlayerController : MonoBehaviour
     {
         attacking = true;
         Audio.Play("PlayerAttack");
+
+        if (formNumber == 0)
+        {
+            formOneAttacks[4].SetActive(true);
+            //anim.Play("BaseAttackDown");
+            yield return new WaitForSeconds(attackDuration);
+            formOneAttacks[4].SetActive(false);
+            attacking = false;
+        }
+        else if (formNumber == 1)
+        {
+            formTwoAttacks[4].SetActive(true);
+            //anim.Play("ApAttackDown");
+            yield return new WaitForSeconds(attackDuration);
+            formTwoAttacks[4].SetActive(false);
+            attacking = false;
+        }
+        else
+        {
+            formThreeAttacks[4].SetActive(true);
+            //anim.Play("RangedAttackDown");
+            yield return new WaitForSeconds(attackDuration);
+            formThreeAttacks[4].SetActive(false);
+            attacking = false;
+        }
+        /*
         powerAttackObj.SetActive(true);
         yield return new WaitForSeconds(attackDuration);
         powerAttackObj.SetActive(false);
         attacking = false;
+        */
     }
 
     public void IncreaseAttackSize()

@@ -81,7 +81,11 @@ public class Enemy : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (gameObject.tag == "basicEnemy")
+        if (pCont.superForm == true)
+        {
+            health -= 10;
+        }
+        else if (gameObject.tag == "basicEnemy")
         {
             if (other.gameObject.CompareTag("basicAttack"))
             {
