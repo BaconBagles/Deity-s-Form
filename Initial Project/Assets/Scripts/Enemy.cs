@@ -97,7 +97,7 @@ public class Enemy : MonoBehaviour
         {
             if (other.gameObject.CompareTag("APAttack"))
             {
-                health -= 5;
+                health -= 7;
             }
             else
             {

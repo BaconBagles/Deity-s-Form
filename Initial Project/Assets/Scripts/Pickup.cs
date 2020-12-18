@@ -86,7 +86,12 @@ public class Pickup : MonoBehaviour
                 }
 
                 Options.MemoryCheck();
-
+                break;
+            case 6:
+                pCont.powerAttack = true;
+                break;
+            case 7:
+                pCont.superForm = true;
                 break;
         }
     }

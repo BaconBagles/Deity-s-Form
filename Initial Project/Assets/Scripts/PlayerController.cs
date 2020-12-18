@@ -16,7 +16,7 @@ public class PlayerController : MonoBehaviour
     public DeathScript death;
 
     bool attacking;
-    
+
     public int shieldCount;
 
     Vector2 movement;
@@ -29,10 +29,14 @@ public class PlayerController : MonoBehaviour
     public GameObject[] formOneAttacks;
     public GameObject[] formTwoAttacks;
     public GameObject[] formThreeAttacks;
+    public GameObject powerAttackObj;
 
     public Animator anim;
 
     public float attackDuration;
+
+    public bool powerAttack;
+    public bool superForm;
 
     void Start()
     {
@@ -43,7 +47,7 @@ public class PlayerController : MonoBehaviour
         health = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
 
-        
+
 
         //Adds our stored keys to the dictionary
         //This will need to be done again if the player changes keybinds during game
@@ -132,19 +136,47 @@ public class PlayerController : MonoBehaviour
             //attack code
             if (Input.GetKeyDown(keys["AttackRight"]) && attacking == false)
             {
-                StartCoroutine(AttackRight());
+                if (powerAttack != true)
+                {
+                    StartCoroutine(AttackRight());
+                }
+                else
+                {
+                    StartCoroutine(PowerAttack());
+                }
             }
             if (Input.GetKeyDown(keys["AttackLeft"]) && attacking == false)
             {
-                StartCoroutine(AttackLeft());
+                if (powerAttack != true)
+                {
+                    StartCoroutine(AttackLeft());
+                }
+                else
+                {
+                    StartCoroutine(PowerAttack());
+                }
             }
             if (Input.GetKeyDown(keys["AttackUp"]) && attacking == false)
             {
-                StartCoroutine(AttackUp());
+                if (powerAttack != true)
+                {
+                    StartCoroutine(AttackUp());
+                }
+                else
+                {
+                    StartCoroutine(PowerAttack());
+                }
             }
             if (Input.GetKeyDown(keys["AttackDown"]) && attacking == false)
             {
-                StartCoroutine(AttackDown());
+                if (powerAttack != true)
+                {
+                    StartCoroutine(AttackDown());
+                }
+                else
+                {
+                    StartCoroutine(PowerAttack());
+                }
             }
         }
 
@@ -204,9 +236,9 @@ public class PlayerController : MonoBehaviour
     IEnumerator AttackRight()
     {
         attacking = true;
-       Audio.Play("PlayerAttack");
-        StartCoroutine(ParticleRight());
+        Audio.Play("PlayerAttack");
 
+        StartCoroutine(ParticleRight());
         if (formNumber == 0)
         {
             formOneAttacks[0].SetActive(true);
@@ -363,6 +395,16 @@ public class PlayerController : MonoBehaviour
         aEffect.transform.parent = gameObject.transform;
         yield return new WaitForSeconds(attackDuration + .5f);
         Destroy(aEffect.gameObject);
+    }
+
+    IEnumerator PowerAttack()
+    {
+        attacking = true;
+        Audio.Play("PlayerAttack");
+        powerAttackObj.SetActive(true);
+        yield return new WaitForSeconds(attackDuration);
+        powerAttackObj.SetActive(false);
+        attacking = false;
     }
 
     public void IncreaseAttackSize()

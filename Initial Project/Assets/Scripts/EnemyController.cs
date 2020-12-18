@@ -62,17 +62,25 @@ public class EnemyController : MonoBehaviour
         yield return new WaitForSeconds(attackTimer);
         Audio.Play("EnemyAttack");
         Audio.Play("PlayerDamage");
-            if (player.shieldCount == 0)
+        if (player.shieldCount == 0)
+        {
+            if (player.formNumber != 2)
             {
-                foreach (GameObject enemy in enemies)
+                player.health -= enemies.Count;
+                /*foreach (GameObject enemy in enemies)
                 {
                     player.health -= 1;
-                }
+                }*/
             }
             else
             {
-                player.shieldCount -= 1;
+                player.health -= enemies.Count - 1;
             }
+        }
+        else
+        {
+            player.shieldCount -= 1;
+        }
             StartCoroutine(EnemyAttack());
     }
 
