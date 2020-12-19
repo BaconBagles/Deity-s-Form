@@ -78,7 +78,7 @@ public class GameController : MonoBehaviour
     void RandomPickup()
     {
         int randomiser = Random.Range(0, 100);
-        if(randomiser >= 50 && randomiser < 60)
+        if(randomiser >= 51 && randomiser < 60)
         {
             pickupNumber = 1;
         }

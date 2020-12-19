@@ -29,7 +29,7 @@ public class Pickup : MonoBehaviour
         OptionsObj = GameObject.Find("MenuManager");
         Options = OptionsObj.GetComponent<OptionsMenu>();
 
-        pickupNumber = 5;// gCont.pickupNumber;
+        pickupNumber = gCont.pickupNumber;
         SpriteRenderer render = gameObject.GetComponent<SpriteRenderer>();
         render.sprite = images[pickupNumber];
     }

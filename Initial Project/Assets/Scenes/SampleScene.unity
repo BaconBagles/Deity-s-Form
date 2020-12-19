@@ -1015,7 +1015,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8eadb34054e47444ad754b090287c18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sortingOrderBase: 6000
+  sortingOrderBase: 5000
   offset: 0
   runOnlyOnce: 1
 --- !u!1 &49226231
@@ -1406,7 +1406,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8eadb34054e47444ad754b090287c18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sortingOrderBase: 6000
+  sortingOrderBase: 5000
   offset: 0
   runOnlyOnce: 1
 --- !u!1 &56980760
@@ -3303,7 +3303,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8eadb34054e47444ad754b090287c18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sortingOrderBase: 6000
+  sortingOrderBase: 5000
   offset: 0
   runOnlyOnce: 1
 --- !u!1 &91253768
@@ -4027,7 +4027,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8eadb34054e47444ad754b090287c18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sortingOrderBase: 6000
+  sortingOrderBase: 5000
   offset: 0
   runOnlyOnce: 1
 --- !u!1 &120699496
@@ -4755,7 +4755,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8eadb34054e47444ad754b090287c18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sortingOrderBase: 6000
+  sortingOrderBase: 5000
   offset: 0
   runOnlyOnce: 1
 --- !u!1 &137940033
@@ -5244,7 +5244,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8eadb34054e47444ad754b090287c18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sortingOrderBase: 6000
+  sortingOrderBase: 5000
   offset: 0
   runOnlyOnce: 1
 --- !u!1 &163847418
@@ -8427,8 +8427,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -342.4, y: -197.7}
-  m_SizeDelta: {x: 710.5413, y: 395.4596}
+  m_AnchoredPosition: {x: -338.2, y: -220.1}
+  m_SizeDelta: {x: 757.37225, y: 440.1621}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &269993569
 MonoBehaviour:
@@ -11294,7 +11294,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8eadb34054e47444ad754b090287c18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sortingOrderBase: 6000
+  sortingOrderBase: 5000
   offset: 0
   runOnlyOnce: 1
 --- !u!1 &396239313
@@ -11523,7 +11523,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8eadb34054e47444ad754b090287c18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sortingOrderBase: 6000
+  sortingOrderBase: 5000
   offset: 0
   runOnlyOnce: 1
 --- !u!1 &406851670
@@ -13018,7 +13018,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8eadb34054e47444ad754b090287c18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sortingOrderBase: 6000
+  sortingOrderBase: 5000
   offset: 0
   runOnlyOnce: 1
 --- !u!1 &466277013
@@ -13153,7 +13153,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8eadb34054e47444ad754b090287c18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sortingOrderBase: 6000
+  sortingOrderBase: 5000
   offset: 0
   runOnlyOnce: 1
 --- !u!1 &476966508
@@ -17780,7 +17780,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8eadb34054e47444ad754b090287c18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sortingOrderBase: 6000
+  sortingOrderBase: 5000
   offset: 0
   runOnlyOnce: 1
 --- !u!1 &641289761
@@ -20209,7 +20209,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8eadb34054e47444ad754b090287c18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sortingOrderBase: 6000
+  sortingOrderBase: 5000
   offset: 0
   runOnlyOnce: 1
 --- !u!1 &712036881
@@ -20428,7 +20428,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8eadb34054e47444ad754b090287c18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sortingOrderBase: 6000
+  sortingOrderBase: 5000
   offset: 0
   runOnlyOnce: 1
 --- !u!1 &720483263
@@ -20527,7 +20527,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8eadb34054e47444ad754b090287c18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sortingOrderBase: 6000
+  sortingOrderBase: 5000
   offset: 0
   runOnlyOnce: 1
 --- !u!1 &721924737
@@ -21201,7 +21201,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8eadb34054e47444ad754b090287c18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sortingOrderBase: 6000
+  sortingOrderBase: 5000
   offset: 0
   runOnlyOnce: 1
 --- !u!1 &749633098
@@ -22364,7 +22364,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8eadb34054e47444ad754b090287c18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sortingOrderBase: 6000
+  sortingOrderBase: 5000
   offset: 0
   runOnlyOnce: 1
 --- !u!1 &772301571
@@ -22723,7 +22723,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8eadb34054e47444ad754b090287c18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sortingOrderBase: 6000
+  sortingOrderBase: 5000
   offset: 0
   runOnlyOnce: 1
 --- !u!1 &785793940
@@ -24092,7 +24092,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8eadb34054e47444ad754b090287c18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sortingOrderBase: 6000
+  sortingOrderBase: 5000
   offset: 0
   runOnlyOnce: 1
 --- !u!1 &863527438
@@ -25154,7 +25154,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8eadb34054e47444ad754b090287c18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sortingOrderBase: 6000
+  sortingOrderBase: 5000
   offset: 0
   runOnlyOnce: 1
 --- !u!1 &883762524
@@ -25409,7 +25409,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8eadb34054e47444ad754b090287c18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sortingOrderBase: 6000
+  sortingOrderBase: 5000
   offset: 0
   runOnlyOnce: 1
 --- !u!1 &887350077
@@ -26675,7 +26675,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8eadb34054e47444ad754b090287c18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sortingOrderBase: 6000
+  sortingOrderBase: 5000
   offset: 0
   runOnlyOnce: 1
 --- !u!1 &942328722
@@ -28366,7 +28366,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8eadb34054e47444ad754b090287c18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sortingOrderBase: 6000
+  sortingOrderBase: 5000
   offset: 0
   runOnlyOnce: 1
 --- !u!1 &985698256
@@ -28725,7 +28725,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8eadb34054e47444ad754b090287c18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sortingOrderBase: 6000
+  sortingOrderBase: 5000
   offset: 0
   runOnlyOnce: 1
 --- !u!1 &993933298
@@ -30412,7 +30412,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8eadb34054e47444ad754b090287c18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sortingOrderBase: 6000
+  sortingOrderBase: 5000
   offset: 0
   runOnlyOnce: 1
 --- !u!1 &1057063530
@@ -31373,7 +31373,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8eadb34054e47444ad754b090287c18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sortingOrderBase: 6000
+  sortingOrderBase: 5000
   offset: 0
   runOnlyOnce: 1
 --- !u!1 &1067823638
@@ -31987,7 +31987,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8eadb34054e47444ad754b090287c18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sortingOrderBase: 6000
+  sortingOrderBase: 5000
   offset: 0
   runOnlyOnce: 1
 --- !u!1 &1092991202
@@ -33477,7 +33477,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8eadb34054e47444ad754b090287c18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sortingOrderBase: 6000
+  sortingOrderBase: 5000
   offset: 0
   runOnlyOnce: 1
 --- !u!1 &1144031820
@@ -33803,7 +33803,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8eadb34054e47444ad754b090287c18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sortingOrderBase: 6000
+  sortingOrderBase: 5000
   offset: 0
   runOnlyOnce: 1
 --- !u!1 &1151954624
@@ -34035,7 +34035,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8eadb34054e47444ad754b090287c18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sortingOrderBase: 6000
+  sortingOrderBase: 5000
   offset: 0
   runOnlyOnce: 1
 --- !u!1 &1159383207
@@ -35720,7 +35720,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8eadb34054e47444ad754b090287c18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sortingOrderBase: 6000
+  sortingOrderBase: 5000
   offset: 0
   runOnlyOnce: 1
 --- !u!1 &1197654109
@@ -36159,7 +36159,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8eadb34054e47444ad754b090287c18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sortingOrderBase: 6000
+  sortingOrderBase: 5000
   offset: 0
   runOnlyOnce: 1
 --- !u!1 &1207902382
@@ -36258,7 +36258,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8eadb34054e47444ad754b090287c18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sortingOrderBase: 6000
+  sortingOrderBase: 5000
   offset: 0
   runOnlyOnce: 1
 --- !u!1 &1209100949
@@ -36357,7 +36357,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8eadb34054e47444ad754b090287c18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sortingOrderBase: 6000
+  sortingOrderBase: 5000
   offset: 0
   runOnlyOnce: 1
 --- !u!1 &1209733306
@@ -37110,7 +37110,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8eadb34054e47444ad754b090287c18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sortingOrderBase: 6000
+  sortingOrderBase: 5000
   offset: 0
   runOnlyOnce: 1
 --- !u!1 &1235223160
@@ -37759,7 +37759,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8eadb34054e47444ad754b090287c18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sortingOrderBase: 6000
+  sortingOrderBase: 5000
   offset: 0
   runOnlyOnce: 1
 --- !u!1 &1257453597
@@ -40243,7 +40243,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8eadb34054e47444ad754b090287c18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sortingOrderBase: 6000
+  sortingOrderBase: 5000
   offset: 0
   runOnlyOnce: 1
 --- !u!1 &1333924886
@@ -40739,7 +40739,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8eadb34054e47444ad754b090287c18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sortingOrderBase: 6000
+  sortingOrderBase: 5000
   offset: 0
   runOnlyOnce: 1
 --- !u!1 &1349948516
@@ -41738,7 +41738,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8eadb34054e47444ad754b090287c18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sortingOrderBase: 6000
+  sortingOrderBase: 5000
   offset: 0
   runOnlyOnce: 1
 --- !u!1 &1402381035
@@ -42383,7 +42383,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8eadb34054e47444ad754b090287c18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sortingOrderBase: 6000
+  sortingOrderBase: 5000
   offset: 0
   runOnlyOnce: 1
 --- !u!1 &1442282244
@@ -43059,7 +43059,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8eadb34054e47444ad754b090287c18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sortingOrderBase: 6000
+  sortingOrderBase: 5000
   offset: 0
   runOnlyOnce: 1
 --- !u!1 &1465834952
@@ -43422,7 +43422,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8eadb34054e47444ad754b090287c18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sortingOrderBase: 6000
+  sortingOrderBase: 5000
   offset: 0
   runOnlyOnce: 1
 --- !u!1 &1469092078
@@ -45191,7 +45191,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8eadb34054e47444ad754b090287c18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sortingOrderBase: 6000
+  sortingOrderBase: 5000
   offset: 0
   runOnlyOnce: 1
 --- !u!1 &1546178409
@@ -46878,7 +46878,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8eadb34054e47444ad754b090287c18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sortingOrderBase: 6000
+  sortingOrderBase: 5000
   offset: 0
   runOnlyOnce: 1
 --- !u!1 &1596681989
@@ -47655,7 +47655,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8eadb34054e47444ad754b090287c18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sortingOrderBase: 6000
+  sortingOrderBase: 5000
   offset: 0
   runOnlyOnce: 1
 --- !u!1 &1615550677
@@ -48101,7 +48101,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8eadb34054e47444ad754b090287c18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sortingOrderBase: 6000
+  sortingOrderBase: 5000
   offset: 0
   runOnlyOnce: 1
 --- !u!1 &1637887492
@@ -48539,7 +48539,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8eadb34054e47444ad754b090287c18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sortingOrderBase: 6000
+  sortingOrderBase: 5000
   offset: 0
   runOnlyOnce: 1
 --- !u!1 &1646322723
@@ -49816,7 +49816,7 @@ GameObject:
   - component: {fileID: 1684216346}
   - component: {fileID: 1684216345}
   m_Layer: 0
-  m_Name: Start Game
+  m_Name: Resume
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -52547,7 +52547,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8eadb34054e47444ad754b090287c18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sortingOrderBase: 6000
+  sortingOrderBase: 5000
   offset: 0
   runOnlyOnce: 1
 --- !u!1 &1823247242
@@ -53681,7 +53681,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8eadb34054e47444ad754b090287c18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sortingOrderBase: 6000
+  sortingOrderBase: 5000
   offset: 0
   runOnlyOnce: 1
 --- !u!1 &1840585616
@@ -54505,7 +54505,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8eadb34054e47444ad754b090287c18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sortingOrderBase: 6000
+  sortingOrderBase: 5000
   offset: 0
   runOnlyOnce: 1
 --- !u!1 &1879310636
@@ -54604,7 +54604,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8eadb34054e47444ad754b090287c18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sortingOrderBase: 6000
+  sortingOrderBase: 5000
   offset: 0
   runOnlyOnce: 1
 --- !u!1 &1879504228
@@ -54902,7 +54902,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8eadb34054e47444ad754b090287c18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sortingOrderBase: 6000
+  sortingOrderBase: 5000
   offset: 0
   runOnlyOnce: 1
 --- !u!1 &1895201877
@@ -57956,7 +57956,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8eadb34054e47444ad754b090287c18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sortingOrderBase: 6000
+  sortingOrderBase: 5000
   offset: 0
   runOnlyOnce: 1
 --- !u!1 &1988820729
@@ -58669,7 +58669,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8eadb34054e47444ad754b090287c18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sortingOrderBase: 6000
+  sortingOrderBase: 5000
   offset: 0
   runOnlyOnce: 1
 --- !u!1 &2038764380
@@ -58898,7 +58898,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8eadb34054e47444ad754b090287c18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sortingOrderBase: 6000
+  sortingOrderBase: 5000
   offset: 0
   runOnlyOnce: 1
 --- !u!1 &2046063246
@@ -61997,8 +61997,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 1.98, y: 7}
-  m_SizeDelta: {x: 713.6299, y: 364.42108}
+  m_AnchoredPosition: {x: -1.2, y: 4.8}
+  m_SizeDelta: {x: 749.8174, y: 436.79645}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2126725602
 MonoBehaviour:
