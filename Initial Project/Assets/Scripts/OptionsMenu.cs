@@ -64,7 +64,6 @@ public class OptionsMenu : MonoBehaviour
         {
             PlayerPrefs.SetInt("Memory3", 0);
         }
-        PlayerPrefs.Save();
         
         resolutionDropdown.AddOptions(options);
         resolutionDropdown.value = currentResolutionIndex;
@@ -94,6 +93,7 @@ public class OptionsMenu : MonoBehaviour
         memory1 = PlayerPrefs.GetInt("Memory1", 0);
         memory2 = PlayerPrefs.GetInt("Memory2", 0);
         memory3 = PlayerPrefs.GetInt("Memory3", 0);
+        PlayerPrefs.Save();
 
         if (memory1 == 1)
         {
