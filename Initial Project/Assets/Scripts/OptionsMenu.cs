@@ -51,11 +51,21 @@ public class OptionsMenu : MonoBehaviour
         playerHealthSlider.value = PlayerPrefs.GetInt("playerHeath", 100);
         turnTimerSlider.value = PlayerPrefs.GetInt("turnTimer", 5); 
         enemyHealthSlider.value = PlayerPrefs.GetInt("enemyHealth", 5);
-        memory1 = PlayerPrefs.GetInt("Memory1", 0);
-        memory2 = PlayerPrefs.GetInt("Memory2", 0);
-        memory3 = PlayerPrefs.GetInt("Memory3", 0);
-
-
+        
+        if (memory1 != 1)
+        {
+            PlayerPrefs.SetInt("Memory1", 0);
+        }
+        if (memory2 != 1)
+        {
+            PlayerPrefs.SetInt("Memory2", 0);
+        }
+        if (memory3 != 1)
+        {
+            PlayerPrefs.SetInt("Memory3", 0);
+        }
+        PlayerPrefs.Save();
+        
         resolutionDropdown.AddOptions(options);
         resolutionDropdown.value = currentResolutionIndex;
         resolutionDropdown.RefreshShownValue();

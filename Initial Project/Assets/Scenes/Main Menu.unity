@@ -18427,7 +18427,7 @@ MonoBehaviour:
   playerHealth: 0
   enemyHealth: 0
   turnTimer: 0
-  memory1: 0
+  memory1: 1
   memory2: 0
   memory3: 0
   GameIsPaused: 0

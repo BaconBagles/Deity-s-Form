@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuSceneControl : MonoBehaviour
 {
+    
     public void StartGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1); // Will load player into next scene, (only works in menu)
@@ -17,6 +18,9 @@ public class MainMenuSceneControl : MonoBehaviour
 
     public void MainMenu()
     {
+        OptionsMenu optionsMenu = FindObjectOfType<OptionsMenu>();
+        
+        optionsMenu.Resume();
         SceneManager.LoadScene(0);
     }
 }
