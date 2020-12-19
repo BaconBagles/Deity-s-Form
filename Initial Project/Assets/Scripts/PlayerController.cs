@@ -111,6 +111,12 @@ public class PlayerController : MonoBehaviour
                 anim.SetFloat("horizontal", -1);
             }
 
+            if(!Input.GetKey(keys["Left"]) && !Input.GetKey(keys["Right"]) && !Input.GetKey(keys["Up"]) && !Input.GetKey(keys["Down"]))
+            {
+                anim.SetFloat("vertical", 0);
+                anim.SetFloat("horizontal", 0);
+            }
+
             if (Input.GetKey(keys["Right"]))
             {
 
@@ -211,6 +217,11 @@ public class PlayerController : MonoBehaviour
         }
 
 
+    }
+
+    void playFootstepSound()
+    {
+        Audio.Play("PlayerWalk");
     }
 
 
