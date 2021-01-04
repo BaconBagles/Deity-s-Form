@@ -51,6 +51,7 @@ public class DeathScript : MonoBehaviour
 
     public void Restart()
     {
+        options.GameIsPaused = false;
         SceneManager.LoadScene(0);
     }
 

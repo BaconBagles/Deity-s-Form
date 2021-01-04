@@ -26,10 +26,11 @@ public class PlayerController : MonoBehaviour
     public int formNumber;
     //public GameObject[] forms;
     public ParticleSystem attackEffect;
-    public GameObject[] formOneAttacks;
-    public GameObject[] formTwoAttacks;
-    public GameObject[] formThreeAttacks;
-    public GameObject powerAttackObj;
+    public GameObject[] attacks;
+    //public GameObject[] formOneAttacks;
+    //public GameObject[] formTwoAttacks;
+    //public GameObject[] formThreeAttacks;
+    //public GameObject powerAttackObj;
 
     public Animator anim;
 
@@ -59,15 +60,17 @@ public class PlayerController : MonoBehaviour
         keys.Add("Left", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("Left", "A")));
         keys.Add("Right", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("Right", "D")));
         keys.Add("Escape", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("Escape", "Escape")));
-        keys.Add("AttackUp", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("AttackUp", "UpArrow")));
+        /*keys.Add("AttackUp", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("AttackUp", "UpArrow")));
         keys.Add("AttackDown", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("AttackDown", "DownArrow")));
         keys.Add("AttackLeft", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("AttackLeft", "LeftArrow")));
         keys.Add("AttackRight", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("AttackRight", "RightArrow")));
         keys.Add("form1", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("form1", "1")));
         keys.Add("form2", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("form2", "2")));
-        keys.Add("form3", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("form3", "3")));
+        keys.Add("form3", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("form3", "3")));*/
         keys.Add("switchA", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("switchA", "Q")));
         keys.Add("switchB", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("switchB", "E")));
+        keys.Add("basicAttack", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("basicAttack", "LeftMouse")));
+        keys.Add("secondaryAttack", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("secondaryAttack", "RightMouse")));
     }
 
     void Update()
@@ -80,6 +83,8 @@ public class PlayerController : MonoBehaviour
         {
             sr.color = Color.white;
         }
+
+        
 
         //Update for Input
         //anim.SetFloat("speed", anim.GetFloat("vertical")*anim.GetFloat("horizontal"));
@@ -151,7 +156,14 @@ public class PlayerController : MonoBehaviour
                 SwitchForm();
             }
 
-            //attack code
+            //attackCode (Mouse)
+            if (Input.GetKeyDown(keys["basicAttack"]) && attacking == false)
+            {
+                StartCoroutine(BasicAttack());
+            }
+
+            /*
+            //attack code (D-Keys)
             if (Input.GetKeyDown(keys["AttackRight"]) && attacking == false)
             {
                 if (powerAttack != true)
@@ -196,6 +208,7 @@ public class PlayerController : MonoBehaviour
                     StartCoroutine(PowerAttack());
                 }
             }
+            */
         }
 
         healthBar.SetHealth(health);
@@ -237,12 +250,6 @@ public class PlayerController : MonoBehaviour
         }
 
         anim.SetInteger("form", formNumber);
-        /*foreach (GameObject form in forms)
-        {
-            form.SetActive(false);
-        }
-
-        forms[formNumber].SetActive(true);*/
         Audio.Play("FormChange");
 
         switch (formNumber)
@@ -256,6 +263,35 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    IEnumerator BasicAttack()
+    {
+        attacking = true;
+
+        if (powerAttack)
+        {
+            attacks[3].SetActive(true);
+            ParticleSystem aEffect = Instantiate(attackEffect, transform.position, Quaternion.Euler(0, 0, 0));
+            SetParticleColour();
+            aEffect.transform.parent = gameObject.transform;
+            yield return new WaitForSeconds(attackDuration);
+            attacks[3].SetActive(false);
+            Destroy(aEffect.gameObject);
+            attacking = false;
+        }
+        else
+        {
+            attacks[formNumber].SetActive(true);
+            ParticleSystem aEffect = Instantiate(attackEffect, transform.position, Quaternion.Euler(0, 0, 0));
+            SetParticleColour();
+            aEffect.transform.parent = gameObject.transform;
+            yield return new WaitForSeconds(attackDuration);
+            attacks[3].SetActive(false);
+            Destroy(aEffect.gameObject);
+            attacking = false;
+        }
+    }
+
+    /* Attack (D-Key) Coroutines
     IEnumerator AttackRight()
     {
         attacking = true;
@@ -449,27 +485,18 @@ public class PlayerController : MonoBehaviour
             formThreeAttacks[4].SetActive(false);
             attacking = false;
         }
-        /*
         powerAttackObj.SetActive(true);
         yield return new WaitForSeconds(attackDuration);
         powerAttackObj.SetActive(false);
         attacking = false;
-        */
-    }
+    }*/
 
+        
     public void IncreaseAttackSize()
     {
-        foreach (GameObject attack in formOneAttacks)
+        foreach (GameObject attack in attacks)
         {
-            attack.gameObject.transform.localScale += new Vector3(0, 1f, 0);
-        }
-        foreach (GameObject attack in formTwoAttacks)
-        {
-            attack.gameObject.transform.localScale += new Vector3(.5f, .5f, 0);
-        }
-        foreach (GameObject attack in formThreeAttacks)
-        {
-            attack.gameObject.transform.localScale += new Vector3(1f, 0, 0);
+            attack.gameObject.transform.localScale += new Vector3(1f, 1f, 0);
         }
     }
 
