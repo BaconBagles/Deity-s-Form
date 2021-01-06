@@ -41,8 +41,8 @@ public class KeybindsManager : MonoBehaviour
         keys.Add("form3", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("form3", "3")));*/
         keys.Add("switchA", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("switchA", "Q")));
         keys.Add("switchB", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("switchB", "E")));
-        keys.Add("basicAttack", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("basicAttack", "LeftMouse")));
-        keys.Add("secondaryAttack", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("secondaryAttack", "RightMouse")));
+        keys.Add("basicAttack", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("basicAttack", "Mouse0")));
+        keys.Add("secondaryAttack", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("secondaryAttack", "Mouse1")));
 
         //Change the button text to match the keybinds
         upText.text = keys["Up"].ToString();
@@ -89,7 +89,7 @@ public class KeybindsManager : MonoBehaviour
                 && input != keys["switchA"]
                 && input != keys["switchB"]
                 && input != keys["basicAttack"]
-                && input != keys["secondaryAttackText"]
+                && input != keys["secondaryAttack"]
                 )
             {
                 //Change the currentKey's name to the key that was just pressed
@@ -186,8 +186,8 @@ public class KeybindsManager : MonoBehaviour
             || keys["form3"] != (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("form3", "3"))*/
             || keys["switchA"] != (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("switchA", "Q"))
             || keys["switchB"] != (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("switchB", "E"))
-            || keys["basicAttack"] != (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("basicAttack", "Left Mouse"))
-            || keys["secondaryAttack"] != (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("secondaryAttack", "Right Mouse"))
+            || keys["basicAttack"] != (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("basicAttack", "Mouse0"))
+            || keys["secondaryAttack"] != (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("secondaryAttack", "Mouse1"))
             )
         {
             SaveKeys();

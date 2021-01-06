@@ -69,8 +69,8 @@ public class PlayerController : MonoBehaviour
         keys.Add("form3", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("form3", "3")));*/
         keys.Add("switchA", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("switchA", "Q")));
         keys.Add("switchB", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("switchB", "E")));
-        keys.Add("basicAttack", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("basicAttack", "LeftMouse")));
-        keys.Add("secondaryAttack", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("secondaryAttack", "RightMouse")));
+        keys.Add("basicAttack", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("basicAttack", "Mouse0")));
+        keys.Add("secondaryAttack", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("secondaryAttack", "Mouse1")));
     }
 
     void Update()
@@ -129,7 +129,7 @@ public class PlayerController : MonoBehaviour
                 anim.SetFloat("vertical", 0);
                 anim.SetFloat("horizontal", 1);
             }
-
+            /*
             if (Input.GetKeyDown(keys["form1"]))
             {
                 formNumber = 0;
@@ -144,7 +144,7 @@ public class PlayerController : MonoBehaviour
             {
                 formNumber = 2;
                 SwitchForm();
-            }
+            }*/
             if (Input.GetKeyDown(keys["switchA"]))
             {
                 formNumber -= 1;
@@ -161,7 +161,7 @@ public class PlayerController : MonoBehaviour
             {
                 StartCoroutine(BasicAttack());
             }
-
+            
             /*
             //attack code (D-Keys)
             if (Input.GetKeyDown(keys["AttackRight"]) && attacking == false)
@@ -285,7 +285,7 @@ public class PlayerController : MonoBehaviour
             SetParticleColour();
             aEffect.transform.parent = gameObject.transform;
             yield return new WaitForSeconds(attackDuration);
-            attacks[3].SetActive(false);
+            attacks[formNumber].SetActive(false);
             Destroy(aEffect.gameObject);
             attacking = false;
         }
