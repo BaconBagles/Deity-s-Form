@@ -145,12 +145,12 @@ public class PlayerController : MonoBehaviour
                 formNumber = 2;
                 SwitchForm();
             }*/
-            if (Input.GetKeyDown(keys["switchA"]))
+            if (Input.GetKeyDown(keys["switchA"]) && attacking == false)
             {
                 formNumber -= 1;
                 SwitchForm();
             }
-            if (Input.GetKeyDown(keys["switchB"]))
+            if (Input.GetKeyDown(keys["switchB"]) && attacking == false)
             {
                 formNumber += 1;
                 SwitchForm();
