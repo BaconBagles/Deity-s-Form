@@ -225,8 +225,7 @@ public class PlayerController : MonoBehaviour
 
         if (health == 0)
         {
-            death.dead = true;
-            health = 1;
+            death.Dead();
         }
 
 

@@ -16,11 +16,4 @@ public class MainMenuSceneControl : MonoBehaviour
         Application.Quit();
     }
 
-    public void MainMenu()
-    {
-        OptionsMenu optionsMenu = FindObjectOfType<OptionsMenu>();
-        
-        optionsMenu.Resume();
-        SceneManager.LoadScene(0);
-    }
 }
