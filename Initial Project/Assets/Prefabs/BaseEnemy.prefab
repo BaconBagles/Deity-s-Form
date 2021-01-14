@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1347843649691882203}
   - component: {fileID: 7956289166715365268}
   - component: {fileID: 7422532054927458531}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: BaseEnemy
   m_TagString: basicEnemy
   m_Icon: {fileID: 0}
@@ -148,6 +148,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 0
   enemyAnim: {fileID: 7956289166715365268}
+  projectile: {fileID: 1573355114100768558, guid: 6996c5613b83a934fad343f1a18c7969, type: 3}
 --- !u!95 &7956289166715365268
 Animator:
   serializedVersion: 3

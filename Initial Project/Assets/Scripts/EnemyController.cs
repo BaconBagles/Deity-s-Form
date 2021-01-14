@@ -11,6 +11,7 @@ public class EnemyController : MonoBehaviour
     bool attacking;
     public OptionsMenu Options;
 
+    public Enemy enemyScript;
     public AudioManager Audio;
     public PlayerController player;
     public GameController gameController;
@@ -60,17 +61,22 @@ public class EnemyController : MonoBehaviour
     {
         StartTimer();
         yield return new WaitForSeconds(attackTimer);
-        Audio.Play("EnemyAttack");
-        Audio.Play("PlayerDamage");
+        foreach (GameObject enemy in enemies)
+        {
+            enemyScript = enemy.GetComponent<Enemy>();
+            enemyScript.Attack();
+        }
+       Audio.Play("EnemyAttack");
+        /*Audio.Play("PlayerDamage");
         if (player.shieldCount == 0)
         {
             if (player.formNumber != 2)
             {
                 player.health -= enemies.Count;
-                /*foreach (GameObject enemy in enemies)
+                foreach (GameObject enemy in enemies)
                 {
                     player.health -= 1;
-                }*/
+                }
             }
             else
             {
@@ -80,7 +86,7 @@ public class EnemyController : MonoBehaviour
         else
         {
             player.shieldCount -= 1;
-        }
+        } */
             StartCoroutine(EnemyAttack());
     }
 

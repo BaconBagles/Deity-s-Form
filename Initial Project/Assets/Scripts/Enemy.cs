@@ -12,6 +12,7 @@ public class Enemy : MonoBehaviour
     PlayerController pCont;
     public int health;
     public Animator enemyAnim;
+    public GameObject projectile;
 
 
 
@@ -77,6 +78,11 @@ public class Enemy : MonoBehaviour
 
             Destroy(this.gameObject);
         }
+    }
+
+    public void Attack()
+    {
+        Instantiate(projectile.transform, transform.position, Quaternion.identity);
     }
 
     void OnTriggerEnter2D(Collider2D other)

@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7026609714722928751}
   - component: {fileID: 7049152765276969609}
   - component: {fileID: -913271598685305751}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SpikyEnemy 1
   m_TagString: spikyEnemy
   m_Icon: {fileID: 0}
@@ -148,6 +148,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 0
   enemyAnim: {fileID: 7049152765276969609}
+  projectile: {fileID: 1573355114100768558, guid: 6996c5613b83a934fad343f1a18c7969, type: 3}
 --- !u!95 &7049152765276969609
 Animator:
   serializedVersion: 3

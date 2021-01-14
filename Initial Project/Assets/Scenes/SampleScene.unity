@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 12061783}
   - component: {fileID: 12061782}
   - component: {fileID: 12061781}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Pillar3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -522,7 +522,7 @@ GameObject:
   - component: {fileID: 17608475}
   - component: {fileID: 17608474}
   - component: {fileID: 17608473}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (16)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -652,7 +652,7 @@ GameObject:
   - component: {fileID: 27516783}
   - component: {fileID: 27516782}
   - component: {fileID: 27516781}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (10)
   m_TagString: Respawn
   m_Icon: {fileID: 0}
@@ -930,7 +930,7 @@ GameObject:
   - component: {fileID: 46648011}
   - component: {fileID: 46648012}
   - component: {fileID: 46648013}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Room Sprites_7 (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1027,7 +1027,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 49226232}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Room3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1063,7 +1063,7 @@ GameObject:
   - component: {fileID: 50885648}
   - component: {fileID: 50885647}
   - component: {fileID: 50885646}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (16)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1193,7 +1193,7 @@ GameObject:
   - component: {fileID: 51759649}
   - component: {fileID: 51759648}
   - component: {fileID: 51759647}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (16)
   m_TagString: Respawn
   m_Icon: {fileID: 0}
@@ -1321,7 +1321,7 @@ GameObject:
   - component: {fileID: 53577501}
   - component: {fileID: 53577502}
   - component: {fileID: 53577503}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Room Sprites_7 (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1422,7 +1422,7 @@ GameObject:
   - component: {fileID: 56980764}
   - component: {fileID: 56980763}
   - component: {fileID: 56980762}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1552,7 +1552,7 @@ GameObject:
   - component: {fileID: 57442429}
   - component: {fileID: 57442428}
   - component: {fileID: 57442427}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (17)
   m_TagString: Respawn
   m_Icon: {fileID: 0}
@@ -1682,7 +1682,7 @@ GameObject:
   - component: {fileID: 58632533}
   - component: {fileID: 58632532}
   - component: {fileID: 58632531}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (21)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2021,7 +2021,7 @@ GameObject:
   - component: {fileID: 64581678}
   - component: {fileID: 64581677}
   - component: {fileID: 64581676}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (16)
   m_TagString: Respawn
   m_Icon: {fileID: 0}
@@ -2151,7 +2151,7 @@ GameObject:
   - component: {fileID: 69861927}
   - component: {fileID: 69861926}
   - component: {fileID: 69861925}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2281,7 +2281,7 @@ GameObject:
   - component: {fileID: 74200319}
   - component: {fileID: 74200318}
   - component: {fileID: 74200317}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2447,7 +2447,7 @@ GameObject:
   - component: {fileID: 76242324}
   - component: {fileID: 76242323}
   - component: {fileID: 76242322}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (19)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2577,7 +2577,7 @@ GameObject:
   - component: {fileID: 82226855}
   - component: {fileID: 82226854}
   - component: {fileID: 82226853}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (11)
   m_TagString: Respawn
   m_Icon: {fileID: 0}
@@ -2707,7 +2707,7 @@ GameObject:
   - component: {fileID: 84643426}
   - component: {fileID: 84643425}
   - component: {fileID: 84643424}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (8)
   m_TagString: Respawn
   m_Icon: {fileID: 0}
@@ -2837,7 +2837,7 @@ GameObject:
   - component: {fileID: 85946570}
   - component: {fileID: 85946569}
   - component: {fileID: 85946568}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (13)
   m_TagString: Respawn
   m_Icon: {fileID: 0}
@@ -2967,7 +2967,7 @@ GameObject:
   - component: {fileID: 87525126}
   - component: {fileID: 87525125}
   - component: {fileID: 87525124}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Pillar3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3085,7 +3085,7 @@ GameObject:
   - component: {fileID: 88123760}
   - component: {fileID: 88123761}
   - component: {fileID: 88123762}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Room Sprites_7 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3319,7 +3319,7 @@ GameObject:
   - component: {fileID: 96460001}
   - component: {fileID: 96460000}
   - component: {fileID: 96459999}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Pillar3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3439,7 +3439,7 @@ GameObject:
   - component: {fileID: 109258183}
   - component: {fileID: 109258182}
   - component: {fileID: 109258181}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (18)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3675,7 +3675,7 @@ GameObject:
   - component: {fileID: 119721471}
   - component: {fileID: 119721472}
   - component: {fileID: 119721473}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Room Sprites_7 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3776,7 +3776,7 @@ GameObject:
   - component: {fileID: 120699500}
   - component: {fileID: 120699499}
   - component: {fileID: 120699498}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (13)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3906,7 +3906,7 @@ GameObject:
   - component: {fileID: 125001237}
   - component: {fileID: 125001236}
   - component: {fileID: 125001235}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (13)
   m_TagString: Respawn
   m_Icon: {fileID: 0}
@@ -4403,7 +4403,7 @@ GameObject:
   - component: {fileID: 136630208}
   - component: {fileID: 136630209}
   - component: {fileID: 136630210}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Room Sprites_7 (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4504,7 +4504,7 @@ GameObject:
   - component: {fileID: 137940037}
   - component: {fileID: 137940036}
   - component: {fileID: 137940035}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (23)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4634,7 +4634,7 @@ GameObject:
   - component: {fileID: 140458208}
   - component: {fileID: 140458207}
   - component: {fileID: 140458206}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (13)
   m_TagString: Respawn
   m_Icon: {fileID: 0}
@@ -4764,7 +4764,7 @@ GameObject:
   - component: {fileID: 146155189}
   - component: {fileID: 146155188}
   - component: {fileID: 146155187}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (9)
   m_TagString: Respawn
   m_Icon: {fileID: 0}
@@ -4892,7 +4892,7 @@ GameObject:
   - component: {fileID: 147022131}
   - component: {fileID: 147022132}
   - component: {fileID: 147022133}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Room Sprites_7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5217,7 +5217,7 @@ GameObject:
   - component: {fileID: 171996470}
   - component: {fileID: 171996469}
   - component: {fileID: 171996468}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (13)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5347,7 +5347,7 @@ GameObject:
   - component: {fileID: 186924454}
   - component: {fileID: 186924453}
   - component: {fileID: 186924452}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Pillar3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5467,7 +5467,7 @@ GameObject:
   - component: {fileID: 194414365}
   - component: {fileID: 194414364}
   - component: {fileID: 194414363}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (16)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5597,7 +5597,7 @@ GameObject:
   - component: {fileID: 196299058}
   - component: {fileID: 196299057}
   - component: {fileID: 196299056}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5995,7 +5995,7 @@ GameObject:
   - component: {fileID: 206067929}
   - component: {fileID: 206067928}
   - component: {fileID: 206067927}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (13)
   m_TagString: Respawn
   m_Icon: {fileID: 0}
@@ -6125,7 +6125,7 @@ GameObject:
   - component: {fileID: 206082149}
   - component: {fileID: 206082148}
   - component: {fileID: 206082147}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (12)
   m_TagString: Respawn
   m_Icon: {fileID: 0}
@@ -6255,7 +6255,7 @@ GameObject:
   - component: {fileID: 213452835}
   - component: {fileID: 213452834}
   - component: {fileID: 213452833}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (9)
   m_TagString: Respawn
   m_Icon: {fileID: 0}
@@ -6451,7 +6451,7 @@ GameObject:
   - component: {fileID: 219900802}
   - component: {fileID: 219900801}
   - component: {fileID: 219900800}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6581,7 +6581,7 @@ GameObject:
   - component: {fileID: 226598795}
   - component: {fileID: 226598794}
   - component: {fileID: 226598793}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Pillar3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6701,7 +6701,7 @@ GameObject:
   - component: {fileID: 230305763}
   - component: {fileID: 230305762}
   - component: {fileID: 230305761}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (16)
   m_TagString: Respawn
   m_Icon: {fileID: 0}
@@ -6831,7 +6831,7 @@ GameObject:
   - component: {fileID: 231698012}
   - component: {fileID: 231698011}
   - component: {fileID: 231698010}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7170,7 +7170,7 @@ GameObject:
   - component: {fileID: 246561205}
   - component: {fileID: 246561204}
   - component: {fileID: 246561203}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (9)
   m_TagString: Respawn
   m_Icon: {fileID: 0}
@@ -7720,7 +7720,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 265926873}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Respawn barriers
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8064,7 +8064,7 @@ GameObject:
   - component: {fileID: 282397438}
   - component: {fileID: 282397437}
   - component: {fileID: 282397436}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (15)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8194,7 +8194,7 @@ GameObject:
   - component: {fileID: 286118072}
   - component: {fileID: 286118071}
   - component: {fileID: 286118070}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Pillar3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8316,7 +8316,7 @@ GameObject:
   - component: {fileID: 299915707}
   - component: {fileID: 299915712}
   - component: {fileID: 299915711}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8678,7 +8678,7 @@ GameObject:
   - component: {fileID: 307358978}
   - component: {fileID: 307358977}
   - component: {fileID: 307358976}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (13)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8808,7 +8808,7 @@ GameObject:
   - component: {fileID: 307430178}
   - component: {fileID: 307430177}
   - component: {fileID: 307430176}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Pillar3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8924,7 +8924,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 314270415}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Walls
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9221,7 +9221,7 @@ GameObject:
   - component: {fileID: 337164875}
   - component: {fileID: 337164874}
   - component: {fileID: 337164873}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (15)
   m_TagString: Respawn
   m_Icon: {fileID: 0}
@@ -9351,7 +9351,7 @@ GameObject:
   - component: {fileID: 338473709}
   - component: {fileID: 338473708}
   - component: {fileID: 338473707}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (17)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9612,7 +9612,7 @@ GameObject:
   m_Component:
   - component: {fileID: 348733133}
   - component: {fileID: 348733134}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: example_room
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9700,7 +9700,7 @@ GameObject:
   - component: {fileID: 360360914}
   - component: {fileID: 360360913}
   - component: {fileID: 360360912}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Pillar3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9954,7 +9954,7 @@ GameObject:
   - component: {fileID: 364524196}
   - component: {fileID: 364524195}
   - component: {fileID: 364524194}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10080,7 +10080,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 364889879}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Rooms
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10122,7 +10122,7 @@ GameObject:
   - component: {fileID: 367843459}
   - component: {fileID: 367843458}
   - component: {fileID: 367843457}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10488,7 +10488,7 @@ GameObject:
   - component: {fileID: 386352207}
   - component: {fileID: 386352206}
   - component: {fileID: 386352205}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (12)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10616,7 +10616,7 @@ GameObject:
   - component: {fileID: 388917043}
   - component: {fileID: 388917044}
   - component: {fileID: 388917045}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Room Sprites_7 (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10851,7 +10851,7 @@ GameObject:
   - component: {fileID: 396239317}
   - component: {fileID: 396239316}
   - component: {fileID: 396239315}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (20)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10979,7 +10979,7 @@ GameObject:
   - component: {fileID: 400020087}
   - component: {fileID: 400020088}
   - component: {fileID: 400020089}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Room Sprites_7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11076,7 +11076,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 406851671}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Walls
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11395,7 +11395,7 @@ GameObject:
   - component: {fileID: 432836699}
   - component: {fileID: 432836698}
   - component: {fileID: 432836697}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (14)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11525,7 +11525,7 @@ GameObject:
   - component: {fileID: 434056195}
   - component: {fileID: 434056194}
   - component: {fileID: 434056193}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (12)
   m_TagString: Respawn
   m_Icon: {fileID: 0}
@@ -11923,7 +11923,7 @@ GameObject:
   - component: {fileID: 447955355}
   - component: {fileID: 447955354}
   - component: {fileID: 447955353}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (14)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12054,7 +12054,7 @@ GameObject:
   - component: {fileID: 451940714}
   - component: {fileID: 451940713}
   - component: {fileID: 451940717}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12346,7 +12346,7 @@ GameObject:
   - component: {fileID: 460841253}
   - component: {fileID: 460841252}
   - component: {fileID: 460841251}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (14)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12474,7 +12474,7 @@ GameObject:
   - component: {fileID: 462274853}
   - component: {fileID: 462274854}
   - component: {fileID: 462274855}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Room Sprites_7 (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12609,7 +12609,7 @@ GameObject:
   - component: {fileID: 468636776}
   - component: {fileID: 468636777}
   - component: {fileID: 468636778}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Room Sprites_7 (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12781,7 +12781,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 481929975}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Respawn barriers
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13361,7 +13361,7 @@ GameObject:
   - component: {fileID: 519420032}
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -13521,7 +13521,7 @@ GameObject:
   - component: {fileID: 525785452}
   - component: {fileID: 525785451}
   - component: {fileID: 525785450}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (8)
   m_TagString: Respawn
   m_Icon: {fileID: 0}
@@ -13726,7 +13726,7 @@ GameObject:
   - component: {fileID: 533138125}
   - component: {fileID: 533138124}
   - component: {fileID: 533138123}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (7)
   m_TagString: Respawn
   m_Icon: {fileID: 0}
@@ -14098,7 +14098,7 @@ GameObject:
   - component: {fileID: 544539630}
   - component: {fileID: 544539629}
   - component: {fileID: 544539628}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (20)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14228,7 +14228,7 @@ GameObject:
   - component: {fileID: 545065655}
   - component: {fileID: 545065654}
   - component: {fileID: 545065653}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (9)
   m_TagString: Respawn
   m_Icon: {fileID: 0}
@@ -14358,7 +14358,7 @@ GameObject:
   - component: {fileID: 545536869}
   - component: {fileID: 545536868}
   - component: {fileID: 545536867}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14488,7 +14488,7 @@ GameObject:
   - component: {fileID: 546806341}
   - component: {fileID: 546806340}
   - component: {fileID: 546806339}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Pillar3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14742,7 +14742,7 @@ GameObject:
   - component: {fileID: 551887325}
   - component: {fileID: 551887324}
   - component: {fileID: 551887323}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Pillar3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15094,7 +15094,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 565260789}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Room4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15130,7 +15130,7 @@ GameObject:
   - component: {fileID: 580648167}
   - component: {fileID: 580648166}
   - component: {fileID: 580648165}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Pillar3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15250,7 +15250,7 @@ GameObject:
   - component: {fileID: 582301122}
   - component: {fileID: 582301121}
   - component: {fileID: 582301120}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Pillar3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15500,7 +15500,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 608661275}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Respawn barriers
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15676,7 +15676,7 @@ GameObject:
   - component: {fileID: 614950005}
   - component: {fileID: 614950004}
   - component: {fileID: 614950003}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15806,7 +15806,7 @@ GameObject:
   - component: {fileID: 619595003}
   - component: {fileID: 619595002}
   - component: {fileID: 619595001}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (9)
   m_TagString: Respawn
   m_Icon: {fileID: 0}
@@ -15936,7 +15936,7 @@ GameObject:
   - component: {fileID: 620539752}
   - component: {fileID: 620539751}
   - component: {fileID: 620539750}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (14)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16066,7 +16066,7 @@ GameObject:
   - component: {fileID: 622315571}
   - component: {fileID: 622315570}
   - component: {fileID: 622315569}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Pillar3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16186,7 +16186,7 @@ GameObject:
   - component: {fileID: 624574257}
   - component: {fileID: 624574256}
   - component: {fileID: 624574255}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (16)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16352,7 +16352,7 @@ GameObject:
   - component: {fileID: 625846974}
   - component: {fileID: 625846973}
   - component: {fileID: 625846972}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16616,7 +16616,7 @@ GameObject:
   - component: {fileID: 629622871}
   - component: {fileID: 629622870}
   - component: {fileID: 629622869}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16746,7 +16746,7 @@ GameObject:
   - component: {fileID: 629956710}
   - component: {fileID: 629956709}
   - component: {fileID: 629956708}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (15)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16876,7 +16876,7 @@ GameObject:
   - component: {fileID: 632294186}
   - component: {fileID: 632294185}
   - component: {fileID: 632294184}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Pillar3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16994,7 +16994,7 @@ GameObject:
   - component: {fileID: 637334371}
   - component: {fileID: 637334372}
   - component: {fileID: 637334373}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Room Sprites_7 (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17229,7 +17229,7 @@ GameObject:
   - component: {fileID: 651377861}
   - component: {fileID: 651377860}
   - component: {fileID: 651377859}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17359,7 +17359,7 @@ GameObject:
   - component: {fileID: 654408195}
   - component: {fileID: 654408194}
   - component: {fileID: 654408193}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Pillar3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17479,7 +17479,7 @@ GameObject:
   - component: {fileID: 660889196}
   - component: {fileID: 660889195}
   - component: {fileID: 660889194}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Pillar3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17599,7 +17599,7 @@ GameObject:
   - component: {fileID: 660898700}
   - component: {fileID: 660898699}
   - component: {fileID: 660898698}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Pillar3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17719,7 +17719,7 @@ GameObject:
   - component: {fileID: 663055347}
   - component: {fileID: 663055346}
   - component: {fileID: 663055345}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (15)
   m_TagString: Respawn
   m_Icon: {fileID: 0}
@@ -17849,7 +17849,7 @@ GameObject:
   - component: {fileID: 663091282}
   - component: {fileID: 663091281}
   - component: {fileID: 663091280}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Pillar3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17969,7 +17969,7 @@ GameObject:
   - component: {fileID: 674793293}
   - component: {fileID: 674793292}
   - component: {fileID: 674793291}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (14)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18099,7 +18099,7 @@ GameObject:
   - component: {fileID: 677185710}
   - component: {fileID: 677185709}
   - component: {fileID: 677185708}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Pillar3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18219,7 +18219,7 @@ GameObject:
   - component: {fileID: 678818127}
   - component: {fileID: 678818126}
   - component: {fileID: 678818125}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (19)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18392,7 +18392,7 @@ GameObject:
   - component: {fileID: 687549808}
   - component: {fileID: 687549807}
   - component: {fileID: 687549806}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Pillar3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18548,7 +18548,7 @@ GameObject:
   - component: {fileID: 693392584}
   - component: {fileID: 693392583}
   - component: {fileID: 693392582}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (15)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18678,7 +18678,7 @@ GameObject:
   - component: {fileID: 700988198}
   - component: {fileID: 700988197}
   - component: {fileID: 700988196}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (12)
   m_TagString: Respawn
   m_Icon: {fileID: 0}
@@ -19074,7 +19074,7 @@ GameObject:
   - component: {fileID: 711255677}
   - component: {fileID: 711255678}
   - component: {fileID: 711255679}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Room Sprites_7 (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19175,7 +19175,7 @@ GameObject:
   - component: {fileID: 712036885}
   - component: {fileID: 712036884}
   - component: {fileID: 712036883}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Pillar3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19293,7 +19293,7 @@ GameObject:
   - component: {fileID: 716688994}
   - component: {fileID: 716688995}
   - component: {fileID: 716688996}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Room Sprites_7 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19392,7 +19392,7 @@ GameObject:
   - component: {fileID: 720483264}
   - component: {fileID: 720483265}
   - component: {fileID: 720483266}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Room Sprites_7 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19493,7 +19493,7 @@ GameObject:
   - component: {fileID: 721924741}
   - component: {fileID: 721924740}
   - component: {fileID: 721924739}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Pillar3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19770,7 +19770,7 @@ GameObject:
   - component: {fileID: 737194995}
   - component: {fileID: 737194994}
   - component: {fileID: 737194998}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20066,7 +20066,7 @@ GameObject:
   - component: {fileID: 746952807}
   - component: {fileID: 746952808}
   - component: {fileID: 746952809}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Room Sprites_7 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20167,7 +20167,7 @@ GameObject:
   - component: {fileID: 749633102}
   - component: {fileID: 749633101}
   - component: {fileID: 749633100}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (22)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20317,6 +20317,7 @@ MonoBehaviour:
   diffLevel: 4
   timeBar: {fileID: 513245255}
   Options: {fileID: 1967495149}
+  enemyScript: {fileID: 0}
   Audio: {fileID: 7700597709660189910}
   player: {fileID: 881548572}
   gameController: {fileID: 1452527724}
@@ -20583,7 +20584,7 @@ GameObject:
   - component: {fileID: 759417881}
   - component: {fileID: 759417880}
   - component: {fileID: 759417879}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (18)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20847,7 +20848,7 @@ GameObject:
   - component: {fileID: 764853530}
   - component: {fileID: 764853529}
   - component: {fileID: 764853528}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Pillar3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20967,7 +20968,7 @@ GameObject:
   - component: {fileID: 767390330}
   - component: {fileID: 767390329}
   - component: {fileID: 767390331}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21095,7 +21096,7 @@ GameObject:
   - component: {fileID: 770693861}
   - component: {fileID: 770693862}
   - component: {fileID: 770693863}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Room Sprites_7 (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21196,7 +21197,7 @@ GameObject:
   - component: {fileID: 772301575}
   - component: {fileID: 772301574}
   - component: {fileID: 772301573}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (14)
   m_TagString: Respawn
   m_Icon: {fileID: 0}
@@ -21326,7 +21327,7 @@ GameObject:
   - component: {fileID: 775121377}
   - component: {fileID: 775121376}
   - component: {fileID: 775121375}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21454,7 +21455,7 @@ GameObject:
   - component: {fileID: 780766646}
   - component: {fileID: 780766647}
   - component: {fileID: 780766648}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Room Sprites_7 (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21551,7 +21552,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 786295378}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Room8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21833,7 +21834,7 @@ GameObject:
   - component: {fileID: 793872291}
   - component: {fileID: 793872290}
   - component: {fileID: 793872289}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21963,7 +21964,7 @@ GameObject:
   - component: {fileID: 797399310}
   - component: {fileID: 797399309}
   - component: {fileID: 797399308}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (8)
   m_TagString: Respawn
   m_Icon: {fileID: 0}
@@ -22089,7 +22090,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 802573706}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Pillars
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22129,7 +22130,7 @@ GameObject:
   - component: {fileID: 818110049}
   - component: {fileID: 818110048}
   - component: {fileID: 818110047}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Pillar3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22520,7 +22521,7 @@ GameObject:
   - component: {fileID: 836481422}
   - component: {fileID: 836481421}
   - component: {fileID: 836481420}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (7)
   m_TagString: Respawn
   m_Icon: {fileID: 0}
@@ -22646,7 +22647,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 850469813}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Respawn barriers
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22689,7 +22690,7 @@ GameObject:
   - component: {fileID: 852278720}
   - component: {fileID: 852278721}
   - component: {fileID: 852278722}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Room Sprites_7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22790,7 +22791,7 @@ GameObject:
   - component: {fileID: 863527442}
   - component: {fileID: 863527441}
   - component: {fileID: 863527440}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Pillar3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23433,7 +23434,7 @@ GameObject:
   - component: {fileID: 881548571}
   - component: {fileID: 881548570}
   - component: {fileID: 881548569}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -23497,7 +23498,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 15
   m_LinearDrag: 2
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -23722,7 +23723,7 @@ GameObject:
   - component: {fileID: 883290294}
   - component: {fileID: 883290295}
   - component: {fileID: 883290296}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Room Sprites_7 (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23977,7 +23978,7 @@ GameObject:
   - component: {fileID: 884129009}
   - component: {fileID: 884129010}
   - component: {fileID: 884129011}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Room Sprites_7 (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24212,7 +24213,7 @@ GameObject:
   - component: {fileID: 888570989}
   - component: {fileID: 888570988}
   - component: {fileID: 888570987}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Pillar3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24328,7 +24329,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 890202318}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Respawn barriers
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24370,7 +24371,7 @@ GameObject:
   - component: {fileID: 898956424}
   - component: {fileID: 898956423}
   - component: {fileID: 898956422}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Pillar3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24486,7 +24487,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 899990399}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Walls
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24529,7 +24530,7 @@ GameObject:
   - component: {fileID: 904231554}
   - component: {fileID: 904231553}
   - component: {fileID: 904231552}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (13)
   m_TagString: Respawn
   m_Icon: {fileID: 0}
@@ -24659,7 +24660,7 @@ GameObject:
   - component: {fileID: 909984059}
   - component: {fileID: 909984058}
   - component: {fileID: 909984057}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24789,7 +24790,7 @@ GameObject:
   - component: {fileID: 917146525}
   - component: {fileID: 917146524}
   - component: {fileID: 917146523}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Pillar3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24909,7 +24910,7 @@ GameObject:
   - component: {fileID: 927315812}
   - component: {fileID: 927315811}
   - component: {fileID: 927315810}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (21)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25037,7 +25038,7 @@ GameObject:
   - component: {fileID: 938821206}
   - component: {fileID: 938821207}
   - component: {fileID: 938821208}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Room Sprites_7 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25134,7 +25135,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 942632547}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Walls
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25181,7 +25182,7 @@ GameObject:
   - component: {fileID: 943168360}
   - component: {fileID: 943168359}
   - component: {fileID: 943168358}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Pillar3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25419,7 +25420,7 @@ GameObject:
   - component: {fileID: 957071441}
   - component: {fileID: 957071440}
   - component: {fileID: 957071439}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (8)
   m_TagString: Respawn
   m_Icon: {fileID: 0}
@@ -25699,7 +25700,7 @@ GameObject:
   - component: {fileID: 968356345}
   - component: {fileID: 968356344}
   - component: {fileID: 968356343}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (17)
   m_TagString: Respawn
   m_Icon: {fileID: 0}
@@ -25829,7 +25830,7 @@ GameObject:
   - component: {fileID: 968757786}
   - component: {fileID: 968757785}
   - component: {fileID: 968757784}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Pillar3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25949,7 +25950,7 @@ GameObject:
   - component: {fileID: 972529474}
   - component: {fileID: 972529473}
   - component: {fileID: 972529472}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (22)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26259,7 +26260,7 @@ GameObject:
   - component: {fileID: 978309521}
   - component: {fileID: 978309520}
   - component: {fileID: 978309519}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26428,7 +26429,7 @@ GameObject:
   - component: {fileID: 982509123}
   - component: {fileID: 982509124}
   - component: {fileID: 982509125}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Room Sprites_7 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26529,7 +26530,7 @@ GameObject:
   - component: {fileID: 985698260}
   - component: {fileID: 985698259}
   - component: {fileID: 985698258}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (21)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26659,7 +26660,7 @@ GameObject:
   - component: {fileID: 990059648}
   - component: {fileID: 990059647}
   - component: {fileID: 990059646}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (10)
   m_TagString: Respawn
   m_Icon: {fileID: 0}
@@ -26787,7 +26788,7 @@ GameObject:
   - component: {fileID: 990882661}
   - component: {fileID: 990882662}
   - component: {fileID: 990882663}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Room Sprites_7 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26888,7 +26889,7 @@ GameObject:
   - component: {fileID: 993933302}
   - component: {fileID: 993933301}
   - component: {fileID: 993933300}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Pillar3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27540,7 +27541,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1012309137}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Walls
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27590,7 +27591,7 @@ GameObject:
   - component: {fileID: 1012981108}
   - component: {fileID: 1012981107}
   - component: {fileID: 1012981111}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27807,7 +27808,7 @@ GameObject:
   - component: {fileID: 1021542123}
   - component: {fileID: 1021542122}
   - component: {fileID: 1021542121}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (15)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28176,7 +28177,7 @@ GameObject:
   - component: {fileID: 1040429880}
   - component: {fileID: 1040429879}
   - component: {fileID: 1040429878}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (13)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28474,7 +28475,7 @@ GameObject:
   - component: {fileID: 1054013354}
   - component: {fileID: 1054013355}
   - component: {fileID: 1054013356}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Room Sprites_7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28575,7 +28576,7 @@ GameObject:
   - component: {fileID: 1057063534}
   - component: {fileID: 1057063533}
   - component: {fileID: 1057063532}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (8)
   m_TagString: Respawn
   m_Icon: {fileID: 0}
@@ -28705,7 +28706,7 @@ GameObject:
   - component: {fileID: 1057595913}
   - component: {fileID: 1057595912}
   - component: {fileID: 1057595911}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (13)
   m_TagString: Respawn
   m_Icon: {fileID: 0}
@@ -28969,7 +28970,7 @@ GameObject:
   - component: {fileID: 1063050767}
   - component: {fileID: 1063050766}
   - component: {fileID: 1063050765}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Pillar3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29219,7 +29220,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1064266649}
   - component: {fileID: 1064266650}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: example_room
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29307,7 +29308,7 @@ GameObject:
   - component: {fileID: 1067452023}
   - component: {fileID: 1067452022}
   - component: {fileID: 1067452021}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29435,7 +29436,7 @@ GameObject:
   - component: {fileID: 1067801426}
   - component: {fileID: 1067801427}
   - component: {fileID: 1067801428}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Room Sprites_7 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29537,7 +29538,7 @@ GameObject:
   - component: {fileID: 1067823641}
   - component: {fileID: 1067823640}
   - component: {fileID: 1067823644}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29679,7 +29680,7 @@ GameObject:
   - component: {fileID: 1072548144}
   - component: {fileID: 1072548143}
   - component: {fileID: 1072548142}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (19)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30075,7 +30076,7 @@ GameObject:
   - component: {fileID: 1088378148}
   - component: {fileID: 1088378149}
   - component: {fileID: 1088378150}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Room Sprites_7 (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30176,7 +30177,7 @@ GameObject:
   - component: {fileID: 1092991206}
   - component: {fileID: 1092991205}
   - component: {fileID: 1092991204}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30460,7 +30461,7 @@ GameObject:
   - component: {fileID: 1129612255}
   - component: {fileID: 1129612254}
   - component: {fileID: 1129612253}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Pillar3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30714,7 +30715,7 @@ GameObject:
   - component: {fileID: 1132538322}
   - component: {fileID: 1132538321}
   - component: {fileID: 1132538320}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (15)
   m_TagString: Respawn
   m_Icon: {fileID: 0}
@@ -30844,7 +30845,7 @@ GameObject:
   - component: {fileID: 1134700157}
   - component: {fileID: 1134700156}
   - component: {fileID: 1134700155}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (12)
   m_TagString: Respawn
   m_Icon: {fileID: 0}
@@ -31076,7 +31077,7 @@ GameObject:
   - component: {fileID: 1138098379}
   - component: {fileID: 1138098378}
   - component: {fileID: 1138098377}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31206,7 +31207,7 @@ GameObject:
   - component: {fileID: 1139203603}
   - component: {fileID: 1139203602}
   - component: {fileID: 1139203601}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (12)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31334,7 +31335,7 @@ GameObject:
   - component: {fileID: 1139471300}
   - component: {fileID: 1139471301}
   - component: {fileID: 1139471302}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Room Sprites_7 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31435,7 +31436,7 @@ GameObject:
   - component: {fileID: 1144031824}
   - component: {fileID: 1144031823}
   - component: {fileID: 1144031822}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31660,7 +31661,7 @@ GameObject:
   - component: {fileID: 1150431467}
   - component: {fileID: 1150431468}
   - component: {fileID: 1150431469}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Room Sprites_7 (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31892,7 +31893,7 @@ GameObject:
   - component: {fileID: 1153337934}
   - component: {fileID: 1153337935}
   - component: {fileID: 1153337936}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Room Sprites_7 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32269,7 +32270,7 @@ GameObject:
   - component: {fileID: 1166188241}
   - component: {fileID: 1166188240}
   - component: {fileID: 1166188239}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Pillar3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32389,7 +32390,7 @@ GameObject:
   - component: {fileID: 1167039160}
   - component: {fileID: 1167039159}
   - component: {fileID: 1167039158}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (14)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32519,7 +32520,7 @@ GameObject:
   - component: {fileID: 1167821319}
   - component: {fileID: 1167821318}
   - component: {fileID: 1167821317}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Pillar3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32639,7 +32640,7 @@ GameObject:
   - component: {fileID: 1172545969}
   - component: {fileID: 1172545968}
   - component: {fileID: 1172545970}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Pillar3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32759,7 +32760,7 @@ GameObject:
   - component: {fileID: 1176559513}
   - component: {fileID: 1176559512}
   - component: {fileID: 1176559511}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (11)
   m_TagString: Respawn
   m_Icon: {fileID: 0}
@@ -32975,7 +32976,7 @@ GameObject:
   - component: {fileID: 1182214802}
   - component: {fileID: 1182214801}
   - component: {fileID: 1182214800}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (17)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33230,7 +33231,7 @@ GameObject:
   - component: {fileID: 1190662843}
   - component: {fileID: 1190662842}
   - component: {fileID: 1190662841}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (17)
   m_TagString: Respawn
   m_Icon: {fileID: 0}
@@ -33357,7 +33358,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1194865775}
   - component: {fileID: 1194865776}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: example_room
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33443,7 +33444,7 @@ GameObject:
   - component: {fileID: 1196753860}
   - component: {fileID: 1196753861}
   - component: {fileID: 1196753862}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Room Sprites_7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33666,7 +33667,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1200098846}
   - component: {fileID: 1200098847}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: example_room
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33754,7 +33755,7 @@ GameObject:
   - component: {fileID: 1200384748}
   - component: {fileID: 1200384747}
   - component: {fileID: 1200384746}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33882,7 +33883,7 @@ GameObject:
   - component: {fileID: 1202530158}
   - component: {fileID: 1202530159}
   - component: {fileID: 1202530160}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Room Sprites_7 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33981,7 +33982,7 @@ GameObject:
   - component: {fileID: 1207902383}
   - component: {fileID: 1207902384}
   - component: {fileID: 1207902385}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Room Sprites_7 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34080,7 +34081,7 @@ GameObject:
   - component: {fileID: 1209100950}
   - component: {fileID: 1209100951}
   - component: {fileID: 1209100952}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Room Sprites_7 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34181,7 +34182,7 @@ GameObject:
   - component: {fileID: 1209733310}
   - component: {fileID: 1209733309}
   - component: {fileID: 1209733308}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34311,7 +34312,7 @@ GameObject:
   - component: {fileID: 1215222141}
   - component: {fileID: 1215222140}
   - component: {fileID: 1215222139}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (10)
   m_TagString: Respawn
   m_Icon: {fileID: 0}
@@ -34441,7 +34442,7 @@ GameObject:
   - component: {fileID: 1218912982}
   - component: {fileID: 1218912981}
   - component: {fileID: 1218912980}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (12)
   m_TagString: Respawn
   m_Icon: {fileID: 0}
@@ -34705,7 +34706,7 @@ GameObject:
   - component: {fileID: 1229146797}
   - component: {fileID: 1229146796}
   - component: {fileID: 1229146795}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34833,7 +34834,7 @@ GameObject:
   - component: {fileID: 1233280110}
   - component: {fileID: 1233280111}
   - component: {fileID: 1233280112}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Room Sprites_7 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34934,7 +34935,7 @@ GameObject:
   - component: {fileID: 1235223164}
   - component: {fileID: 1235223163}
   - component: {fileID: 1235223162}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (7)
   m_TagString: Respawn
   m_Icon: {fileID: 0}
@@ -35220,7 +35221,7 @@ GameObject:
   - component: {fileID: 1246946461}
   - component: {fileID: 1246946460}
   - component: {fileID: 1246946459}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35482,7 +35483,7 @@ GameObject:
   - component: {fileID: 1252297193}
   - component: {fileID: 1252297194}
   - component: {fileID: 1252297195}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Room Sprites_7 (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35579,7 +35580,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1257453598}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Pillars
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35619,7 +35620,7 @@ GameObject:
   - component: {fileID: 1257576668}
   - component: {fileID: 1257576667}
   - component: {fileID: 1257576666}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35749,7 +35750,7 @@ GameObject:
   - component: {fileID: 1271743243}
   - component: {fileID: 1271743242}
   - component: {fileID: 1271743241}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (10)
   m_TagString: Respawn
   m_Icon: {fileID: 0}
@@ -35876,7 +35877,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1277028220}
   - component: {fileID: 1277028221}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: example_room
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35961,7 +35962,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1280306398}
   - component: {fileID: 1280306399}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: example_room
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36049,7 +36050,7 @@ GameObject:
   - component: {fileID: 1282032365}
   - component: {fileID: 1282032364}
   - component: {fileID: 1282032363}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Pillar3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36169,7 +36170,7 @@ GameObject:
   - component: {fileID: 1282900761}
   - component: {fileID: 1282900760}
   - component: {fileID: 1282900759}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (15)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36299,7 +36300,7 @@ GameObject:
   - component: {fileID: 1284315801}
   - component: {fileID: 1284315800}
   - component: {fileID: 1284315799}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (14)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36563,7 +36564,7 @@ GameObject:
   - component: {fileID: 1288739671}
   - component: {fileID: 1288739670}
   - component: {fileID: 1288739669}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (9)
   m_TagString: Respawn
   m_Icon: {fileID: 0}
@@ -36693,7 +36694,7 @@ GameObject:
   - component: {fileID: 1292637932}
   - component: {fileID: 1292637931}
   - component: {fileID: 1292637930}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (18)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36823,7 +36824,7 @@ GameObject:
   - component: {fileID: 1293455065}
   - component: {fileID: 1293455064}
   - component: {fileID: 1293455063}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (12)
   m_TagString: Respawn
   m_Icon: {fileID: 0}
@@ -37028,7 +37029,7 @@ GameObject:
   - component: {fileID: 1298755201}
   - component: {fileID: 1298755200}
   - component: {fileID: 1298755199}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (11)
   m_TagString: Respawn
   m_Icon: {fileID: 0}
@@ -37448,7 +37449,7 @@ GameObject:
   - component: {fileID: 1307586485}
   - component: {fileID: 1307586484}
   - component: {fileID: 1307586483}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (17)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37578,7 +37579,7 @@ GameObject:
   - component: {fileID: 1321944255}
   - component: {fileID: 1321944254}
   - component: {fileID: 1321944253}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37708,7 +37709,7 @@ GameObject:
   - component: {fileID: 1325343353}
   - component: {fileID: 1325343352}
   - component: {fileID: 1325343351}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (18)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37838,7 +37839,7 @@ GameObject:
   - component: {fileID: 1331739532}
   - component: {fileID: 1331739531}
   - component: {fileID: 1331739530}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (11)
   m_TagString: Respawn
   m_Icon: {fileID: 0}
@@ -37966,7 +37967,7 @@ GameObject:
   - component: {fileID: 1333535912}
   - component: {fileID: 1333535913}
   - component: {fileID: 1333535914}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Room Sprites_7 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38103,7 +38104,7 @@ GameObject:
   - component: {fileID: 1337850152}
   - component: {fileID: 1337850151}
   - component: {fileID: 1337850150}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38233,7 +38234,7 @@ GameObject:
   - component: {fileID: 1338151188}
   - component: {fileID: 1338151187}
   - component: {fileID: 1338151186}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Pillar3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38462,7 +38463,7 @@ GameObject:
   - component: {fileID: 1345006387}
   - component: {fileID: 1345006388}
   - component: {fileID: 1345006389}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Room Sprites_7 (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38713,7 +38714,7 @@ GameObject:
   - component: {fileID: 1353728331}
   - component: {fileID: 1353728330}
   - component: {fileID: 1353728329}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38839,7 +38840,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1356236381}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Room2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39008,7 +39009,7 @@ GameObject:
   - component: {fileID: 1372740443}
   - component: {fileID: 1372740442}
   - component: {fileID: 1372740441}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Pillar3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39128,7 +39129,7 @@ GameObject:
   - component: {fileID: 1389319927}
   - component: {fileID: 1389319926}
   - component: {fileID: 1389319925}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (16)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39258,7 +39259,7 @@ GameObject:
   - component: {fileID: 1397018290}
   - component: {fileID: 1397018289}
   - component: {fileID: 1397018288}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39461,7 +39462,7 @@ GameObject:
   - component: {fileID: 1400850482}
   - component: {fileID: 1400850483}
   - component: {fileID: 1400850484}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Room Sprites_7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39562,7 +39563,7 @@ GameObject:
   - component: {fileID: 1402381039}
   - component: {fileID: 1402381038}
   - component: {fileID: 1402381037}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Pillar3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39682,7 +39683,7 @@ GameObject:
   - component: {fileID: 1405862002}
   - component: {fileID: 1405862001}
   - component: {fileID: 1405862000}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (21)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39942,7 +39943,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1425438639}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Room5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39978,7 +39979,7 @@ GameObject:
   - component: {fileID: 1428815927}
   - component: {fileID: 1428815926}
   - component: {fileID: 1428815925}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (17)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40106,7 +40107,7 @@ GameObject:
   - component: {fileID: 1430821761}
   - component: {fileID: 1430821762}
   - component: {fileID: 1430821763}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Room Sprites_7 (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40340,7 +40341,7 @@ GameObject:
   - component: {fileID: 1442282248}
   - component: {fileID: 1442282247}
   - component: {fileID: 1442282246}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (10)
   m_TagString: Respawn
   m_Icon: {fileID: 0}
@@ -40470,7 +40471,7 @@ GameObject:
   - component: {fileID: 1449063539}
   - component: {fileID: 1449063538}
   - component: {fileID: 1449063537}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (7)
   m_TagString: Respawn
   m_Icon: {fileID: 0}
@@ -40797,7 +40798,7 @@ GameObject:
   - component: {fileID: 1456707197}
   - component: {fileID: 1456707196}
   - component: {fileID: 1456707195}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Pillar3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40915,7 +40916,7 @@ GameObject:
   - component: {fileID: 1461822588}
   - component: {fileID: 1461822589}
   - component: {fileID: 1461822590}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Room Sprites_7 (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41150,7 +41151,7 @@ GameObject:
   - component: {fileID: 1467403016}
   - component: {fileID: 1467403015}
   - component: {fileID: 1467403014}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (7)
   m_TagString: Respawn
   m_Icon: {fileID: 0}
@@ -41278,7 +41279,7 @@ GameObject:
   - component: {fileID: 1468037431}
   - component: {fileID: 1468037432}
   - component: {fileID: 1468037433}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Room Sprites_7 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41379,7 +41380,7 @@ GameObject:
   - component: {fileID: 1469092082}
   - component: {fileID: 1469092081}
   - component: {fileID: 1469092080}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (16)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41696,7 +41697,7 @@ GameObject:
   - component: {fileID: 1476592097}
   - component: {fileID: 1476592096}
   - component: {fileID: 1476592095}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (13)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41826,7 +41827,7 @@ GameObject:
   - component: {fileID: 1479764095}
   - component: {fileID: 1479764094}
   - component: {fileID: 1479764093}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Pillar3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42620,7 +42621,7 @@ GameObject:
   - component: {fileID: 1491638740}
   - component: {fileID: 1491638739}
   - component: {fileID: 1491638738}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Pillar3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42736,7 +42737,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1524719349}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Room1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42773,7 +42774,7 @@ GameObject:
   - component: {fileID: 1533626269}
   - component: {fileID: 1533626268}
   - component: {fileID: 1533626272}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42913,7 +42914,7 @@ GameObject:
   - component: {fileID: 1542316469}
   - component: {fileID: 1542316470}
   - component: {fileID: 1542316471}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Room Sprites_7 (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43148,7 +43149,7 @@ GameObject:
   - component: {fileID: 1547077266}
   - component: {fileID: 1547077265}
   - component: {fileID: 1547077264}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Pillar3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43268,7 +43269,7 @@ GameObject:
   - component: {fileID: 1547951678}
   - component: {fileID: 1547951677}
   - component: {fileID: 1547951676}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Pillar3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43388,7 +43389,7 @@ GameObject:
   - component: {fileID: 1551312633}
   - component: {fileID: 1551312632}
   - component: {fileID: 1551312631}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (17)
   m_TagString: Respawn
   m_Icon: {fileID: 0}
@@ -43514,7 +43515,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1554792480}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Room6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43550,7 +43551,7 @@ GameObject:
   - component: {fileID: 1556237330}
   - component: {fileID: 1556237329}
   - component: {fileID: 1556237328}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (14)
   m_TagString: Respawn
   m_Icon: {fileID: 0}
@@ -43813,7 +43814,7 @@ GameObject:
   - component: {fileID: 1564569814}
   - component: {fileID: 1564569813}
   - component: {fileID: 1564569812}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (9)
   m_TagString: Respawn
   m_Icon: {fileID: 0}
@@ -43943,7 +43944,7 @@ GameObject:
   - component: {fileID: 1565319775}
   - component: {fileID: 1565319774}
   - component: {fileID: 1565319773}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (12)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44341,7 +44342,7 @@ GameObject:
   - component: {fileID: 1575526595}
   - component: {fileID: 1575526594}
   - component: {fileID: 1575526593}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (15)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44471,7 +44472,7 @@ GameObject:
   - component: {fileID: 1588709822}
   - component: {fileID: 1588709821}
   - component: {fileID: 1588709820}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (12)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44733,7 +44734,7 @@ GameObject:
   - component: {fileID: 1589875966}
   - component: {fileID: 1589875967}
   - component: {fileID: 1589875968}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Room Sprites_7 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45038,7 +45039,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1602615489}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Room7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45344,7 +45345,7 @@ GameObject:
   - component: {fileID: 1605528324}
   - component: {fileID: 1605528323}
   - component: {fileID: 1605528322}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (9)
   m_TagString: Respawn
   m_Icon: {fileID: 0}
@@ -45470,7 +45471,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1614552776}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Pillars
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45510,7 +45511,7 @@ GameObject:
   - component: {fileID: 1615510047}
   - component: {fileID: 1615510048}
   - component: {fileID: 1615510049}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Room Sprites_7 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45741,7 +45742,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1616494974}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Pillars
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45777,7 +45778,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1627471352}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Walls
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45828,7 +45829,7 @@ GameObject:
   - component: {fileID: 1631073933}
   - component: {fileID: 1631073932}
   - component: {fileID: 1631073931}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (11)
   m_TagString: Respawn
   m_Icon: {fileID: 0}
@@ -45956,7 +45957,7 @@ GameObject:
   - component: {fileID: 1633760674}
   - component: {fileID: 1633760675}
   - component: {fileID: 1633760676}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Room Sprites_7 (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -46057,7 +46058,7 @@ GameObject:
   - component: {fileID: 1637887496}
   - component: {fileID: 1637887495}
   - component: {fileID: 1637887494}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (13)
   m_TagString: Respawn
   m_Icon: {fileID: 0}
@@ -46394,7 +46395,7 @@ GameObject:
   - component: {fileID: 1645620632}
   - component: {fileID: 1645620633}
   - component: {fileID: 1645620634}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Room Sprites_7 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -46495,7 +46496,7 @@ GameObject:
   - component: {fileID: 1646322727}
   - component: {fileID: 1646322726}
   - component: {fileID: 1646322725}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (7)
   m_TagString: Respawn
   m_Icon: {fileID: 0}
@@ -46625,7 +46626,7 @@ GameObject:
   - component: {fileID: 1646479090}
   - component: {fileID: 1646479089}
   - component: {fileID: 1646479088}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (12)
   m_TagString: Respawn
   m_Icon: {fileID: 0}
@@ -46942,7 +46943,7 @@ GameObject:
   - component: {fileID: 1664461406}
   - component: {fileID: 1664461405}
   - component: {fileID: 1664461404}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (13)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47314,7 +47315,7 @@ GameObject:
   - component: {fileID: 1680263894}
   - component: {fileID: 1680263893}
   - component: {fileID: 1680263892}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (15)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47440,7 +47441,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1681058016}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Walls
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47621,7 +47622,7 @@ GameObject:
   - component: {fileID: 1689436914}
   - component: {fileID: 1689436913}
   - component: {fileID: 1689436912}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (7)
   m_TagString: Respawn
   m_Icon: {fileID: 0}
@@ -47751,7 +47752,7 @@ GameObject:
   - component: {fileID: 1689531977}
   - component: {fileID: 1689531976}
   - component: {fileID: 1689531975}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (11)
   m_TagString: Respawn
   m_Icon: {fileID: 0}
@@ -47881,7 +47882,7 @@ GameObject:
   - component: {fileID: 1708940392}
   - component: {fileID: 1708940391}
   - component: {fileID: 1708940390}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -48219,7 +48220,7 @@ GameObject:
   - component: {fileID: 1730804068}
   - component: {fileID: 1730804067}
   - component: {fileID: 1730804066}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (20)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -48820,7 +48821,7 @@ GameObject:
   - component: {fileID: 1757628479}
   - component: {fileID: 1757628478}
   - component: {fileID: 1757628477}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (16)
   m_TagString: Respawn
   m_Icon: {fileID: 0}
@@ -48950,7 +48951,7 @@ GameObject:
   - component: {fileID: 1760735806}
   - component: {fileID: 1760735805}
   - component: {fileID: 1760735804}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (13)
   m_TagString: Respawn
   m_Icon: {fileID: 0}
@@ -49151,7 +49152,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1773186591}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Respawn barriers
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -49196,7 +49197,7 @@ GameObject:
   - component: {fileID: 1774370955}
   - component: {fileID: 1774370954}
   - component: {fileID: 1774370953}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (20)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -49326,7 +49327,7 @@ GameObject:
   - component: {fileID: 1777330376}
   - component: {fileID: 1777330375}
   - component: {fileID: 1777330374}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (18)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -49452,7 +49453,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1779685827}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Pillars
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -49493,7 +49494,7 @@ GameObject:
   - component: {fileID: 1782140424}
   - component: {fileID: 1782140423}
   - component: {fileID: 1782140422}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Pillar3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -49747,7 +49748,7 @@ GameObject:
   - component: {fileID: 1790189887}
   - component: {fileID: 1790189886}
   - component: {fileID: 1790189885}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (17)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -49877,7 +49878,7 @@ GameObject:
   - component: {fileID: 1797429111}
   - component: {fileID: 1797429110}
   - component: {fileID: 1797429109}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (16)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -50007,7 +50008,7 @@ GameObject:
   - component: {fileID: 1801357831}
   - component: {fileID: 1801357830}
   - component: {fileID: 1801357829}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -50135,7 +50136,7 @@ GameObject:
   - component: {fileID: 1816821788}
   - component: {fileID: 1816821789}
   - component: {fileID: 1816821790}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Room Sprites_7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -50370,7 +50371,7 @@ GameObject:
   - component: {fileID: 1823247246}
   - component: {fileID: 1823247245}
   - component: {fileID: 1823247244}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (16)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -50575,7 +50576,7 @@ GameObject:
   - component: {fileID: 1826177992}
   - component: {fileID: 1826177991}
   - component: {fileID: 1826177990}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (8)
   m_TagString: Respawn
   m_Icon: {fileID: 0}
@@ -50780,7 +50781,7 @@ GameObject:
   - component: {fileID: 1828373443}
   - component: {fileID: 1828373442}
   - component: {fileID: 1828373441}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (18)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -50910,7 +50911,7 @@ GameObject:
   - component: {fileID: 1831543132}
   - component: {fileID: 1831543131}
   - component: {fileID: 1831543130}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (14)
   m_TagString: Respawn
   m_Icon: {fileID: 0}
@@ -51040,7 +51041,7 @@ GameObject:
   - component: {fileID: 1831543661}
   - component: {fileID: 1831543660}
   - component: {fileID: 1831543659}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (10)
   m_TagString: Respawn
   m_Icon: {fileID: 0}
@@ -51256,7 +51257,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1837073801}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Pillars
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -51295,7 +51296,7 @@ GameObject:
   - component: {fileID: 1838704622}
   - component: {fileID: 1838704623}
   - component: {fileID: 1838704624}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Room Sprites_7 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -51471,7 +51472,7 @@ GameObject:
   - component: {fileID: 1843907996}
   - component: {fileID: 1843907995}
   - component: {fileID: 1843907994}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (12)
   m_TagString: Respawn
   m_Icon: {fileID: 0}
@@ -51734,7 +51735,7 @@ GameObject:
   - component: {fileID: 1850055648}
   - component: {fileID: 1850055647}
   - component: {fileID: 1850055646}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (23)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -51860,7 +51861,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1863657066}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Pillars
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -51899,7 +51900,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1873552819}
   - component: {fileID: 1873552820}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: example_room
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -52119,7 +52120,7 @@ GameObject:
   - component: {fileID: 1876837856}
   - component: {fileID: 1876837857}
   - component: {fileID: 1876837858}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Room Sprites_7 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -52218,7 +52219,7 @@ GameObject:
   - component: {fileID: 1879310637}
   - component: {fileID: 1879310638}
   - component: {fileID: 1879310639}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Room Sprites_7 (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -52315,7 +52316,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1879504229}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Walls
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -52516,7 +52517,7 @@ GameObject:
   - component: {fileID: 1885912527}
   - component: {fileID: 1885912528}
   - component: {fileID: 1885912529}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Room Sprites_7 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -52792,7 +52793,7 @@ GameObject:
   - component: {fileID: 1899361472}
   - component: {fileID: 1899361471}
   - component: {fileID: 1899361470}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Pillar3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -52912,7 +52913,7 @@ GameObject:
   - component: {fileID: 1900355859}
   - component: {fileID: 1900355858}
   - component: {fileID: 1900355857}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -53042,7 +53043,7 @@ GameObject:
   - component: {fileID: 1903330899}
   - component: {fileID: 1903330898}
   - component: {fileID: 1903330897}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -53172,7 +53173,7 @@ GameObject:
   - component: {fileID: 1903442058}
   - component: {fileID: 1903442057}
   - component: {fileID: 1903442056}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (19)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -53302,7 +53303,7 @@ GameObject:
   - component: {fileID: 1910472961}
   - component: {fileID: 1910472960}
   - component: {fileID: 1910472959}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (10)
   m_TagString: Respawn
   m_Icon: {fileID: 0}
@@ -53432,7 +53433,7 @@ GameObject:
   - component: {fileID: 1915536634}
   - component: {fileID: 1915536633}
   - component: {fileID: 1915536632}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Pillar3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -53548,7 +53549,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1920294843}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Respawn barriers
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -53593,7 +53594,7 @@ GameObject:
   - component: {fileID: 1924597895}
   - component: {fileID: 1924597894}
   - component: {fileID: 1924597893}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (14)
   m_TagString: Respawn
   m_Icon: {fileID: 0}
@@ -53759,7 +53760,7 @@ GameObject:
   - component: {fileID: 1933147954}
   - component: {fileID: 1933147953}
   - component: {fileID: 1933147952}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (19)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -53889,7 +53890,7 @@ GameObject:
   - component: {fileID: 1934586665}
   - component: {fileID: 1934586664}
   - component: {fileID: 1934586663}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (20)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -54019,7 +54020,7 @@ GameObject:
   - component: {fileID: 1948771667}
   - component: {fileID: 1948771666}
   - component: {fileID: 1948771665}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (14)
   m_TagString: Respawn
   m_Icon: {fileID: 0}
@@ -54305,7 +54306,7 @@ GameObject:
   - component: {fileID: 1952822843}
   - component: {fileID: 1952822842}
   - component: {fileID: 1952822841}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (14)
   m_TagString: Respawn
   m_Icon: {fileID: 0}
@@ -54620,7 +54621,7 @@ GameObject:
   - component: {fileID: 1959234099}
   - component: {fileID: 1959234098}
   - component: {fileID: 1959234102}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -54837,7 +54838,7 @@ GameObject:
   - component: {fileID: 1964627207}
   - component: {fileID: 1964627206}
   - component: {fileID: 1964627205}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -55068,7 +55069,7 @@ GameObject:
   - component: {fileID: 1968969304}
   - component: {fileID: 1968969303}
   - component: {fileID: 1968969302}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (17)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -55198,7 +55199,7 @@ GameObject:
   - component: {fileID: 1972103639}
   - component: {fileID: 1972103638}
   - component: {fileID: 1972103637}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Pillar3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -55318,7 +55319,7 @@ GameObject:
   - component: {fileID: 1979569223}
   - component: {fileID: 1979569222}
   - component: {fileID: 1979569221}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (14)
   m_TagString: Respawn
   m_Icon: {fileID: 0}
@@ -55448,7 +55449,7 @@ GameObject:
   - component: {fileID: 1982006871}
   - component: {fileID: 1982006870}
   - component: {fileID: 1982006869}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (8)
   m_TagString: Respawn
   m_Icon: {fileID: 0}
@@ -55576,7 +55577,7 @@ GameObject:
   - component: {fileID: 1986019049}
   - component: {fileID: 1986019050}
   - component: {fileID: 1986019051}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Room Sprites_7 (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -55677,7 +55678,7 @@ GameObject:
   - component: {fileID: 1988820733}
   - component: {fileID: 1988820732}
   - component: {fileID: 1988820731}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Pillar3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -56119,7 +56120,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2007348617}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Respawn barriers
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -56161,7 +56162,7 @@ GameObject:
   - component: {fileID: 2012741363}
   - component: {fileID: 2012741362}
   - component: {fileID: 2012741361}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -56289,7 +56290,7 @@ GameObject:
   - component: {fileID: 2029004156}
   - component: {fileID: 2029004157}
   - component: {fileID: 2029004158}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Room Sprites_7 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -56390,7 +56391,7 @@ GameObject:
   - component: {fileID: 2038764384}
   - component: {fileID: 2038764383}
   - component: {fileID: 2038764382}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (11)
   m_TagString: Respawn
   m_Icon: {fileID: 0}
@@ -56518,7 +56519,7 @@ GameObject:
   - component: {fileID: 2039768215}
   - component: {fileID: 2039768216}
   - component: {fileID: 2039768217}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Room Sprites_7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -56619,7 +56620,7 @@ GameObject:
   - component: {fileID: 2046063250}
   - component: {fileID: 2046063249}
   - component: {fileID: 2046063248}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (14)
   m_TagString: Respawn
   m_Icon: {fileID: 0}
@@ -56749,7 +56750,7 @@ GameObject:
   - component: {fileID: 2046899845}
   - component: {fileID: 2046899844}
   - component: {fileID: 2046899843}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (19)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -56879,7 +56880,7 @@ GameObject:
   - component: {fileID: 2051929482}
   - component: {fileID: 2051929481}
   - component: {fileID: 2051929480}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -57143,7 +57144,7 @@ GameObject:
   - component: {fileID: 2061487554}
   - component: {fileID: 2061487553}
   - component: {fileID: 2061487552}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -57541,7 +57542,7 @@ GameObject:
   - component: {fileID: 2074602052}
   - component: {fileID: 2074602051}
   - component: {fileID: 2074602050}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (14)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -57671,7 +57672,7 @@ GameObject:
   - component: {fileID: 2076386714}
   - component: {fileID: 2076386713}
   - component: {fileID: 2076386712}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (17)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -57802,7 +57803,7 @@ GameObject:
   - component: {fileID: 2079981424}
   - component: {fileID: 2079981423}
   - component: {fileID: 2079981427}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -57944,7 +57945,7 @@ GameObject:
   - component: {fileID: 2086468252}
   - component: {fileID: 2086468251}
   - component: {fileID: 2086468250}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (15)
   m_TagString: Respawn
   m_Icon: {fileID: 0}
@@ -58074,7 +58075,7 @@ GameObject:
   - component: {fileID: 2087643404}
   - component: {fileID: 2087643403}
   - component: {fileID: 2087643402}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Pillar3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -58329,7 +58330,7 @@ GameObject:
   - component: {fileID: 2095910779}
   - component: {fileID: 2095910778}
   - component: {fileID: 2095910777}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Pillar3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -58449,7 +58450,7 @@ GameObject:
   - component: {fileID: 2097990863}
   - component: {fileID: 2097990862}
   - component: {fileID: 2097990861}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Pillar3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -58569,7 +58570,7 @@ GameObject:
   - component: {fileID: 2098781946}
   - component: {fileID: 2098781945}
   - component: {fileID: 2098781944}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (15)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -58774,7 +58775,7 @@ GameObject:
   - component: {fileID: 2101096053}
   - component: {fileID: 2101096052}
   - component: {fileID: 2101096051}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -58904,7 +58905,7 @@ GameObject:
   - component: {fileID: 2103690065}
   - component: {fileID: 2103690064}
   - component: {fileID: 2103690063}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (8)
   m_TagString: Respawn
   m_Icon: {fileID: 0}
@@ -59034,7 +59035,7 @@ GameObject:
   - component: {fileID: 2103977460}
   - component: {fileID: 2103977459}
   - component: {fileID: 2103977458}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (17)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -59298,7 +59299,7 @@ GameObject:
   - component: {fileID: 2109819618}
   - component: {fileID: 2109819617}
   - component: {fileID: 2109819616}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (7)
   m_TagString: Respawn
   m_Icon: {fileID: 0}
@@ -59424,7 +59425,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2110443880}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Pillars
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -59461,7 +59462,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2119561591}
   - component: {fileID: 2119561592}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: example_room
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -59549,7 +59550,7 @@ GameObject:
   - component: {fileID: 2124381694}
   - component: {fileID: 2124381693}
   - component: {fileID: 2124381692}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (11)
   m_TagString: Respawn
   m_Icon: {fileID: 0}
@@ -59814,7 +59815,7 @@ GameObject:
   - component: {fileID: 2139879188}
   - component: {fileID: 2139879187}
   - component: {fileID: 2139879186}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (10)
   m_TagString: Respawn
   m_Icon: {fileID: 0}
@@ -59944,7 +59945,7 @@ GameObject:
   - component: {fileID: 2140268707}
   - component: {fileID: 2140268706}
   - component: {fileID: 2140268705}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Pillar3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -60064,7 +60065,7 @@ GameObject:
   - component: {fileID: 2145632295}
   - component: {fileID: 2145632294}
   - component: {fileID: 2145632293}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (20)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

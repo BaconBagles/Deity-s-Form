@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 9078318220567786660}
   - component: {fileID: -4914434019838112790}
   - component: {fileID: -8133796118170815469}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: ArmouredEnemy 1
   m_TagString: armourEnemy
   m_Icon: {fileID: 0}
@@ -148,6 +148,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 0
   enemyAnim: {fileID: -4914434019838112790}
+  projectile: {fileID: 1573355114100768558, guid: 6996c5613b83a934fad343f1a18c7969, type: 3}
 --- !u!95 &-4914434019838112790
 Animator:
   serializedVersion: 3
