@@ -24,13 +24,9 @@ public class PlayerController : MonoBehaviour
     public float speedBonus;
     public Rigidbody2D rb;
     public int formNumber;
-    //public GameObject[] forms;
     public ParticleSystem attackEffect;
     public GameObject[] attacks;
-    //public GameObject[] formOneAttacks;
-    //public GameObject[] formTwoAttacks;
-    //public GameObject[] formThreeAttacks;
-    //public GameObject powerAttackObj;
+    public GameObject[] secondaryAttacks;
 
     public Animator anim;
 
@@ -60,13 +56,6 @@ public class PlayerController : MonoBehaviour
         keys.Add("Left", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("Left", "A")));
         keys.Add("Right", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("Right", "D")));
         keys.Add("Escape", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("Escape", "Escape")));
-        /*keys.Add("AttackUp", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("AttackUp", "UpArrow")));
-        keys.Add("AttackDown", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("AttackDown", "DownArrow")));
-        keys.Add("AttackLeft", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("AttackLeft", "LeftArrow")));
-        keys.Add("AttackRight", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("AttackRight", "RightArrow")));
-        keys.Add("form1", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("form1", "1")));
-        keys.Add("form2", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("form2", "2")));
-        keys.Add("form3", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("form3", "3")));*/
         keys.Add("switchA", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("switchA", "Q")));
         keys.Add("switchB", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("switchB", "E")));
         keys.Add("basicAttack", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("basicAttack", "Mouse0")));
@@ -84,10 +73,9 @@ public class PlayerController : MonoBehaviour
             sr.color = Color.white;
         }
 
-        
+
 
         //Update for Input
-        //anim.SetFloat("speed", anim.GetFloat("vertical")*anim.GetFloat("horizontal"));
         if (Options.GameIsPaused == false)
         {
             //New Movement Code, no longer uses rigidbody
@@ -116,7 +104,7 @@ public class PlayerController : MonoBehaviour
                 anim.SetFloat("horizontal", -1);
             }
 
-            if(!Input.GetKey(keys["Left"]) && !Input.GetKey(keys["Right"]) && !Input.GetKey(keys["Up"]) && !Input.GetKey(keys["Down"]))
+            if (!Input.GetKey(keys["Left"]) && !Input.GetKey(keys["Right"]) && !Input.GetKey(keys["Up"]) && !Input.GetKey(keys["Down"]))
             {
                 anim.SetFloat("vertical", 0);
                 anim.SetFloat("horizontal", 0);
@@ -129,22 +117,7 @@ public class PlayerController : MonoBehaviour
                 anim.SetFloat("vertical", 0);
                 anim.SetFloat("horizontal", 1);
             }
-            /*
-            if (Input.GetKeyDown(keys["form1"]))
-            {
-                formNumber = 0;
-                SwitchForm();
-            }
-            if (Input.GetKeyDown(keys["form2"]))
-            {
-                formNumber = 1;
-                SwitchForm();
-            }
-            if (Input.GetKeyDown(keys["form3"]))
-            {
-                formNumber = 2;
-                SwitchForm();
-            }*/
+
             if (Input.GetKeyDown(keys["switchA"]) && attacking == false)
             {
                 formNumber -= 1;
@@ -161,54 +134,12 @@ public class PlayerController : MonoBehaviour
             {
                 StartCoroutine(BasicAttack());
             }
+
+            /*if (Input.GetKeyDown(keys["secondaryAttack"]) && attacking == false)
+            {
+                StartCoroutine(SecondaryAttack());
+            }*/
             
-            /*
-            //attack code (D-Keys)
-            if (Input.GetKeyDown(keys["AttackRight"]) && attacking == false)
-            {
-                if (powerAttack != true)
-                {
-                    StartCoroutine(AttackRight());
-                }
-                else
-                {
-                    StartCoroutine(PowerAttack());
-                }
-            }
-            if (Input.GetKeyDown(keys["AttackLeft"]) && attacking == false)
-            {
-                if (powerAttack != true)
-                {
-                    StartCoroutine(AttackLeft());
-                }
-                else
-                {
-                    StartCoroutine(PowerAttack());
-                }
-            }
-            if (Input.GetKeyDown(keys["AttackUp"]) && attacking == false)
-            {
-                if (powerAttack != true)
-                {
-                    StartCoroutine(AttackUp());
-                }
-                else
-                {
-                    StartCoroutine(PowerAttack());
-                }
-            }
-            if (Input.GetKeyDown(keys["AttackDown"]) && attacking == false)
-            {
-                if (powerAttack != true)
-                {
-                    StartCoroutine(AttackDown());
-                }
-                else
-                {
-                    StartCoroutine(PowerAttack());
-                }
-            }
-            */
         }
 
         healthBar.SetHealth(health);
@@ -289,207 +220,42 @@ public class PlayerController : MonoBehaviour
             attacking = false;
         }
     }
-
-    /* Attack (D-Key) Coroutines
-    IEnumerator AttackRight()
+    
+    IEnumerator SecondaryAttack()
     {
         attacking = true;
-        Audio.Play("PlayerAttack");
 
-        StartCoroutine(ParticleRight());
-        if (formNumber == 0)
+        if (formNumber == 2)
         {
-            formOneAttacks[0].SetActive(true);
-            //anim.Play("BaseAttackRight");
-            yield return new WaitForSeconds(attackDuration);
-            formOneAttacks[0].SetActive(false);
-            attacking = false;
+            while (Input.GetKeyDown(keys["secondaryAttack"]) == true)
+            {
+                secondaryAttacks[formNumber].SetActive(true);
+                secondaryAttacks[formNumber].gameObject.transform.localScale += new Vector3(0.1f, 0f, 0f) * Time.deltaTime;
+                if (secondaryAttacks[formNumber].gameObject.transform.localScale.x >= 10)
+                {
+                    secondaryAttacks[formNumber].gameObject.transform.localScale = new Vector3(10f, 1f, 0f);
+                }
+            }
+            if (Input.GetKeyUp(keys["secondaryAttack"]))
+            {
+                this.gameObject.transform.Translate(Vector3.forward * (Time.deltaTime * secondaryAttacks[formNumber].gameObject.transform.localScale.x));
+                secondaryAttacks[formNumber].gameObject.transform.localScale = new Vector3(0f, 1f, 0f);
+                secondaryAttacks[formNumber].SetActive(false);
+                attacking = false;
+            }
+            yield return null;
         }
+
         else if (formNumber == 1)
         {
-            formTwoAttacks[0].SetActive(true);
-            //anim.Play("ApAttackRight");
-            yield return new WaitForSeconds(attackDuration);
-            formTwoAttacks[0].SetActive(false);
-            attacking = false;
+
         }
+
         else
         {
-            formThreeAttacks[0].SetActive(true);
-            //anim.Play("RangedAttackRight");
-            yield return new WaitForSeconds(attackDuration);
-            formThreeAttacks[0].SetActive(false);
-            attacking = false;
+
         }
     }
-
-    IEnumerator ParticleRight()
-    {
-        ParticleSystem aEffect = Instantiate(attackEffect, transform.position, Quaternion.Euler(0, 90, 0));
-        SetParticleColour();
-        aEffect.transform.parent = gameObject.transform;
-        yield return new WaitForSeconds(attackDuration + .5f);
-        Destroy(aEffect.gameObject);
-    }
-
-    IEnumerator AttackLeft()
-    {
-        attacking = true;
-        Audio.Play("PlayerAttack");
-        StartCoroutine(ParticleLeft());
-
-        if (formNumber == 0)
-        {
-            formOneAttacks[1].SetActive(true);
-            //anim.Play("BaseAttackLeft");
-            yield return new WaitForSeconds(attackDuration);
-            formOneAttacks[1].SetActive(false);
-            attacking = false;
-        }
-        else if (formNumber == 1)
-        {
-            formTwoAttacks[1].SetActive(true);
-            //anim.Play("ApAttackLeft");
-            yield return new WaitForSeconds(attackDuration);
-            formTwoAttacks[1].SetActive(false);
-            attacking = false;
-        }
-        else
-        {
-            formThreeAttacks[1].SetActive(true);
-            //anim.Play("RangedAttackLeft");
-            yield return new WaitForSeconds(attackDuration);
-            formThreeAttacks[1].SetActive(false);
-            attacking = false;
-        }
-    }
-
-    IEnumerator ParticleLeft()
-    {
-        ParticleSystem aEffect = Instantiate(attackEffect, transform.position, Quaternion.Euler(0, -90, 0));
-        SetParticleColour();
-        aEffect.transform.parent = gameObject.transform;
-        yield return new WaitForSeconds(attackDuration + .5f);
-        Destroy(aEffect.gameObject);
-    }
-
-    IEnumerator AttackUp()
-    {
-        attacking = true;
-        Audio.Play("PlayerAttack");
-        StartCoroutine(ParticleUp());
-
-        if (formNumber == 0)
-        {
-            formOneAttacks[2].SetActive(true);
-            //anim.Play("BaseAttackUp");
-            yield return new WaitForSeconds(attackDuration);
-            formOneAttacks[2].SetActive(false);
-            attacking = false;
-        }
-        else if (formNumber == 1)
-        {
-            formTwoAttacks[2].SetActive(true);
-            //anim.Play("ApAttackUp");
-            yield return new WaitForSeconds(attackDuration);
-            formTwoAttacks[2].SetActive(false);
-            attacking = false;
-        }
-        else
-        {
-            formThreeAttacks[2].SetActive(true);
-            //anim.Play("RangedAttackUp");
-            yield return new WaitForSeconds(attackDuration);
-            formThreeAttacks[2].SetActive(false);
-            attacking = false;
-        }
-    }
-
-    IEnumerator ParticleUp()
-    {
-        ParticleSystem aEffect = Instantiate(attackEffect, transform.position, Quaternion.Euler(-90, 0, 0));
-        SetParticleColour();
-        aEffect.transform.parent = gameObject.transform;
-        yield return new WaitForSeconds(attackDuration + .5f);
-        Destroy(aEffect.gameObject);
-    }
-
-    IEnumerator AttackDown()
-    {
-        attacking = true;
-        Audio.Play("PlayerAttack");
-        StartCoroutine(ParticleDown());
-
-        if (formNumber == 0)
-        {
-            formOneAttacks[3].SetActive(true);
-            //anim.Play("BaseAttackDown");
-            yield return new WaitForSeconds(attackDuration);
-            formOneAttacks[3].SetActive(false);
-            attacking = false;
-        }
-        else if (formNumber == 1)
-        {
-            formTwoAttacks[3].SetActive(true);
-            //anim.Play("ApAttackDown");
-            yield return new WaitForSeconds(attackDuration);
-            formTwoAttacks[3].SetActive(false);
-            attacking = false;
-        }
-        else
-        {
-            formThreeAttacks[3].SetActive(true);
-            //anim.Play("RangedAttackDown");
-            yield return new WaitForSeconds(attackDuration);
-            formThreeAttacks[3].SetActive(false);
-            attacking = false;
-        }
-    }
-
-    IEnumerator ParticleDown()
-    {
-        ParticleSystem aEffect = Instantiate(attackEffect, transform.position, Quaternion.Euler(90, 0, 0));
-        SetParticleColour();
-        aEffect.transform.parent = gameObject.transform;
-        yield return new WaitForSeconds(attackDuration + .5f);
-        Destroy(aEffect.gameObject);
-    }
-
-    IEnumerator PowerAttack()
-    {
-        attacking = true;
-        Audio.Play("PlayerAttack");
-
-        if (formNumber == 0)
-        {
-            formOneAttacks[4].SetActive(true);
-            //anim.Play("BaseAttackDown");
-            yield return new WaitForSeconds(attackDuration);
-            formOneAttacks[4].SetActive(false);
-            attacking = false;
-        }
-        else if (formNumber == 1)
-        {
-            formTwoAttacks[4].SetActive(true);
-            //anim.Play("ApAttackDown");
-            yield return new WaitForSeconds(attackDuration);
-            formTwoAttacks[4].SetActive(false);
-            attacking = false;
-        }
-        else
-        {
-            formThreeAttacks[4].SetActive(true);
-            //anim.Play("RangedAttackDown");
-            yield return new WaitForSeconds(attackDuration);
-            formThreeAttacks[4].SetActive(false);
-            attacking = false;
-        }
-        powerAttackObj.SetActive(true);
-        yield return new WaitForSeconds(attackDuration);
-        powerAttackObj.SetActive(false);
-        attacking = false;
-    }*/
-
         
     public void IncreaseAttackSize()
     {

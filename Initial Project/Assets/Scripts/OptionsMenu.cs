@@ -48,7 +48,7 @@ public class OptionsMenu : MonoBehaviour
         fxSlider.value = PlayerPrefs.GetFloat("masterVol", 0);
         musicSlider.value = PlayerPrefs.GetFloat("musicVol", 0);
         masterSlider.value = PlayerPrefs.GetFloat("fxVol", 0);
-        playerHealthSlider.value = PlayerPrefs.GetInt("playerHeath", 100);
+        playerHealthSlider.value = PlayerPrefs.GetInt("playerHeath", 50);
         turnTimerSlider.value = PlayerPrefs.GetInt("turnTimer", 5); 
         enemyHealthSlider.value = PlayerPrefs.GetInt("enemyHealth", 5);
         
