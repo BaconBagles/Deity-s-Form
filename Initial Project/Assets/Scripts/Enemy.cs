@@ -144,7 +144,7 @@ public class Enemy : MonoBehaviour
                 health -= 1;
                 FindObjectOfType<AudioManager>().Play("EnemyDamaged");
             }
-            }
+        }
 
             if (other.gameObject.CompareTag("Respawn"))
             {

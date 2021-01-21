@@ -41,10 +41,14 @@ public class PlayerController : MonoBehaviour
 
     public Camera cam;
 
+    //New Primary Attack Stuff
+    public Transform firePoint;
+    public GameObject[] attackPrefabs;
+
     void Start()
     {
         attacking = false;
-        formNumber = Random.Range(0, 3);
+        formNumber = 0;
         SwitchForm();
         maxHealth = PlayerPrefs.GetInt("playerHealth", 100);
         health = maxHealth;
@@ -135,7 +139,8 @@ public class PlayerController : MonoBehaviour
             //attackCode (Mouse)
             if (Input.GetKeyDown(keys["basicAttack"]) && attacking == false)
             {
-                StartCoroutine(BasicAttack());
+                //StartCoroutine(BasicAttack());
+                MainAttack();
             }
 
             if (Input.GetKeyDown(keys["secondaryAttack"]) && attacking == false)
@@ -196,7 +201,23 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    IEnumerator BasicAttack()
+    void MainAttack()
+    {
+        if(formNumber == 0)
+        {
+           GameObject JackalAttack = Instantiate(attackPrefabs[0], firePoint.position, Quaternion.identity);
+        }
+        else if(formNumber == 1)
+        {
+           GameObject HawkAttack = Instantiate(attackPrefabs[2], firePoint.position, firePoint.rotation);
+        }
+        else if (formNumber == 2)
+        {
+            GameObject BullAttack = Instantiate(attackPrefabs[1], firePoint.position, firePoint.rotation);
+        }
+    }
+
+    /*IEnumerator BasicAttack()
     {
         attacking = true;
 
@@ -222,7 +243,7 @@ public class PlayerController : MonoBehaviour
             Destroy(aEffect.gameObject);
             attacking = false;
         }
-    }
+    } */
     
     IEnumerator SecondaryAttack()
     {
