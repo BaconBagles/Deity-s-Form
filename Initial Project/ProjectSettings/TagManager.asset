@@ -12,6 +12,9 @@ TagManager:
   - spikyEnemy
   - MenuManager
   - PowerAttack
+  - JackalSpecial
+  - BullSpecial
+  - HawkSpecial
   layers:
   - Default
   - TransparentFX

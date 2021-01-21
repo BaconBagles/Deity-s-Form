@@ -25,6 +25,7 @@ public class PlayerController : MonoBehaviour
     public Rigidbody2D rb;
     public int formNumber;
     public ParticleSystem attackEffect;
+    public GameObject attackOrbiter;
     public GameObject[] attacks;
     public GameObject[] secondaryAttacks;
 
@@ -37,6 +38,8 @@ public class PlayerController : MonoBehaviour
     public bool tempFormActive;
 
     SpriteRenderer sr;
+
+    public Camera cam;
 
     void Start()
     {
@@ -135,10 +138,10 @@ public class PlayerController : MonoBehaviour
                 StartCoroutine(BasicAttack());
             }
 
-            /*if (Input.GetKeyDown(keys["secondaryAttack"]) && attacking == false)
+            if (Input.GetKeyDown(keys["secondaryAttack"]) && attacking == false)
             {
                 StartCoroutine(SecondaryAttack());
-            }*/
+            }
             
         }
 
@@ -227,7 +230,7 @@ public class PlayerController : MonoBehaviour
 
         if (formNumber == 2)
         {
-            while (Input.GetKeyDown(keys["secondaryAttack"]) == true)
+           /* while (Input.GetKeyDown(keys["secondaryAttack"]) == true)
             {
                 secondaryAttacks[formNumber].SetActive(true);
                 secondaryAttacks[formNumber].gameObject.transform.localScale += new Vector3(0.1f, 0f, 0f) * Time.deltaTime;
@@ -242,18 +245,26 @@ public class PlayerController : MonoBehaviour
                 secondaryAttacks[formNumber].gameObject.transform.localScale = new Vector3(0f, 1f, 0f);
                 secondaryAttacks[formNumber].SetActive(false);
                 attacking = false;
-            }
+            }*/
             yield return null;
         }
 
         else if (formNumber == 1)
         {
-
+            secondaryAttacks[formNumber].SetActive(true);
+            yield return new WaitForSeconds(attackDuration);
+            secondaryAttacks[formNumber].SetActive(false);
+            attacking = false;
         }
 
         else
         {
-
+            attackOrbit orbitPos = attackOrbiter.GetComponent<attackOrbit>();
+            secondaryAttacks[formNumber].SetActive(true);
+            transform.localPosition = new Vector3(transform.position.x + orbitPos.xPos * 4, (transform.position.y + 3) + orbitPos.yPos * 4, 0);
+            yield return new WaitForSeconds(attackDuration);
+            secondaryAttacks[formNumber].SetActive(false);
+            attacking = false;
         }
     }
         

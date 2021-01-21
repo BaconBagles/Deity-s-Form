@@ -9051,7 +9051,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 321332772}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.46, y: -2.94, z: 0}
+  m_LocalPosition: {x: 0.1, y: -2.94, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1159383208}
@@ -9077,6 +9077,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 881548568}
+  xPos: 0
+  yPos: 0
 --- !u!1 &331749547
 GameObject:
   m_ObjectHideFlags: 0
@@ -12827,11 +12829,11 @@ GameObject:
   - component: {fileID: 482410477}
   m_Layer: 0
   m_Name: bullAttackS
-  m_TagString: basicAttack
+  m_TagString: BullSpecial
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &482410476
 Transform:
   m_ObjectHideFlags: 0
@@ -12841,7 +12843,7 @@ Transform:
   m_GameObject: {fileID: 482410475}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 4, y: 6, z: 1}
+  m_LocalScale: {x: 4, y: 4, z: 1}
   m_Children: []
   m_Father: {fileID: 321332773}
   m_RootOrder: 6
@@ -23642,6 +23644,7 @@ MonoBehaviour:
   rb: {fileID: 0}
   formNumber: 0
   attackEffect: {fileID: 4907821312957067333, guid: ee9a125ed9521a84293d1197fbd41e75, type: 3}
+  attackOrbiter: {fileID: 321332772}
   attacks:
   - {fileID: 1159383207}
   - {fileID: 1677645507}
@@ -23656,6 +23659,7 @@ MonoBehaviour:
   powerAttack: 0
   superForm: 0
   tempFormActive: 0
+  cam: {fileID: 519420031}
 --- !u!212 &881548573
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -42857,7 +42861,7 @@ GameObject:
   - component: {fileID: 1501062229}
   m_Layer: 0
   m_Name: hawkAttackS
-  m_TagString: basicAttack
+  m_TagString: HawkSpecial
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -42871,7 +42875,7 @@ Transform:
   m_GameObject: {fileID: 1501062227}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 4, y: 6, z: 1}
+  m_LocalScale: {x: 8, y: 4, z: 1}
   m_Children: []
   m_Father: {fileID: 321332773}
   m_RootOrder: 5
@@ -47297,7 +47301,7 @@ GameObject:
   - component: {fileID: 1672726789}
   m_Layer: 0
   m_Name: jackalAttackS
-  m_TagString: basicAttack
+  m_TagString: JackalSpecial
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

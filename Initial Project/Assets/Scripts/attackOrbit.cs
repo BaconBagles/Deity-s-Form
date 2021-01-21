@@ -8,7 +8,8 @@ public class attackOrbit : MonoBehaviour
     Vector3 v3Pos;
     float angle;
     float distance = .24f;
-    
+    public float xPos;
+    public float yPos;
 
     // Update is called once per frame
     void Update()
@@ -22,8 +23,8 @@ public class attackOrbit : MonoBehaviour
         if (angle < 0.0f) angle += 360.0f;
         transform.localEulerAngles = new Vector3(0, 0, angle);
         //as pos is transformed, maintain .24 radius;
-        float xPos = Mathf.Cos(Mathf.Deg2Rad * angle) + distance;
-        float yPos = Mathf.Sin(Mathf.Deg2Rad * angle) + distance - 1;
+        xPos = Mathf.Cos(Mathf.Deg2Rad * angle) + distance;
+        yPos = Mathf.Sin(Mathf.Deg2Rad * angle) + distance - 1;
         transform.localPosition = new Vector3(player.transform.position.x + xPos * 4, player.transform.position.y + yPos * 4, 0);
     }
 }

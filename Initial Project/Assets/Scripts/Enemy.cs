@@ -70,7 +70,12 @@ public class Enemy : MonoBehaviour
             spaceBetween = 20f;
         }
 
-        if (health <=0)
+        if (spaceBetween < 1f)
+        {
+            spaceBetween = 1f;
+        }
+
+        if (health <= 0)
         {
             controllerScript.enemies.Remove(this.gameObject);
 
@@ -93,6 +98,10 @@ public class Enemy : MonoBehaviour
         }
         else if (gameObject.tag == "basicEnemy")
         {
+            if (other.gameObject.CompareTag("BullSpecial") || other.gameObject.CompareTag("HawkSpecial") || other.gameObject.CompareTag("JackalSpecial"))
+            {
+                SpecialAttack(other.gameObject.tag);
+            }
             if (other.gameObject.CompareTag("basicAttack"))
             {
                 health -= 5;
@@ -105,6 +114,10 @@ public class Enemy : MonoBehaviour
         }
         else if (gameObject.tag == "armourEnemy")
         {
+            if (other.gameObject.CompareTag("BullSpecial") || other.gameObject.CompareTag("HawkSpecial") || other.gameObject.CompareTag("JackalSpecial"))
+            {
+                SpecialAttack(other.gameObject.tag);
+            }
             if (other.gameObject.CompareTag("APAttack"))
             {
                 health -= 7;
@@ -115,8 +128,12 @@ public class Enemy : MonoBehaviour
                 FindObjectOfType<AudioManager>().Play("EnemyDamaged");
             }
         }
-        else if(this.gameObject.tag == "spikyEnemy")
+        else if (this.gameObject.tag == "spikyEnemy")
         {
+            if (other.gameObject.CompareTag("BullSpecial") || other.gameObject.CompareTag("HawkSpecial") || other.gameObject.CompareTag("JackalSpecial"))
+            {
+                SpecialAttack(other.gameObject.tag);
+            }
             if (other.gameObject.CompareTag("rangedAttack"))
             {
                 health -= 5;
@@ -127,18 +144,35 @@ public class Enemy : MonoBehaviour
                 health -= 1;
                 FindObjectOfType<AudioManager>().Play("EnemyDamaged");
             }
+            }
+
+            if (other.gameObject.CompareTag("Respawn"))
+            {
+                transform.position = new Vector2(0, 0);
+            }
         }
 
-        if (other.gameObject.CompareTag("Respawn"))
-        {
-            transform.position = new Vector2(0,0);
-        }
-    }
-
-    IEnumerator Shuffle()
+    void SpecialAttack(string attackTag)
     {
-        yield return new WaitForSecondsRealtime(5.0f);
-        spaceBetween += Random.Range(-5f, 5f);
-        StartCoroutine(Shuffle());
+        if (attackTag == "JackalSpecial")
+        {
+            health -= 2;
+            pCont.health += 1;
+        }
+        else if (attackTag =="HawkSpecial")
+        {
+            spaceBetween -= 5f;
+        }
+        else if (attackTag == "BullSpecial")
+        {
+            health -= 3;
+        }
     }
+
+        IEnumerator Shuffle()
+        {
+            yield return new WaitForSecondsRealtime(4.0f);
+            spaceBetween += Random.Range(-5f, 5f);
+            StartCoroutine(Shuffle());
+        }
 }
