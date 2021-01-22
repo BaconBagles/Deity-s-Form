@@ -8,9 +8,13 @@ public class playerProjectileScript : MonoBehaviour
     Vector2 mousePos;
     Rigidbody2D rb;
     public float force;
+    public float range;
+    PlayerController pContd;
+    Enemy enemy;
 
     void Start()
     {
+        pContd = FindObjectOfType<PlayerController>();
         cam = FindObjectOfType<Camera>();
         rb = GetComponent<Rigidbody2D>();
         mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
@@ -18,17 +22,23 @@ public class playerProjectileScript : MonoBehaviour
         float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 90f;
         rb.rotation = angle;
         rb.AddForce(lookDir * force);
+   
+        gameObject.transform.localScale = new Vector3(transform.localScale.x + pContd.attackIncrease, transform.localScale.y, 0);
 
-        if(this.gameObject.tag == "basicAttack")
+        if (this.gameObject.tag == "basicAttack")
         {
+          
             StartCoroutine(JackalSelfDestruct());
+           
         }
         else if (this.gameObject.tag == "APAttack")
         {
+            
             StartCoroutine(BullSelfDestruct());
         }
         if (this.gameObject.tag == "rangedAttack")
         {
+            
             StartCoroutine(HawkSelfDestruct());
         }
 
@@ -36,26 +46,61 @@ public class playerProjectileScript : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
+        enemy = other.gameObject.GetComponent<Enemy>();
+        if(gameObject.tag == "basicAttack")
+        {
+            if (other.gameObject.CompareTag("basicEnemy"))
+            {
+                enemy.health -= 5;
+            }
+            else
+            {
+                enemy.health -= 1;
+            }
+        }
+        else if (gameObject.tag == "APAttack")
+        {
+            if (other.gameObject.CompareTag("armourEnemy"))
+            {
+                enemy.health -= 7;
+            }
+            else
+            {
+                enemy.health -= 1;
+            }
+        }
+        else if (gameObject.tag == "rangedAttack")
+        {
+            if (other.gameObject.CompareTag("spikyEnemy"))
+            {
+                enemy.health -= 5;
+            }
+            else
+            {
+                enemy.health -= 1;
+            }
+        }
+
         Destroy(this.gameObject);
     }
 
     IEnumerator JackalSelfDestruct()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(range);
 
         Destroy(this.gameObject);
     }
 
     IEnumerator HawkSelfDestruct()
     {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(range * 2);
 
         Destroy(this.gameObject);
     }
 
     IEnumerator BullSelfDestruct()
     {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(range);
 
         Destroy(this.gameObject);
     }

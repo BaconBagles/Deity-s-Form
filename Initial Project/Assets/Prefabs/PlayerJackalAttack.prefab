@@ -99,7 +99,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 0}
-  force: 400
+  force: 200
+  range: 0.08
 --- !u!114 &3439206099605525687
 MonoBehaviour:
   m_ObjectHideFlags: 0

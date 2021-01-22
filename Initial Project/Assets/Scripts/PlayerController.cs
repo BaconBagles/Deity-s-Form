@@ -44,9 +44,13 @@ public class PlayerController : MonoBehaviour
     //New Primary Attack Stuff
     public Transform firePoint;
     public GameObject[] attackPrefabs;
+    public float attackIncrease;
+    public float attackCooldown;
+    float currentCooldown;
 
     void Start()
     {
+        currentCooldown = attackCooldown;
         attacking = false;
         formNumber = 0;
         SwitchForm();
@@ -147,6 +151,11 @@ public class PlayerController : MonoBehaviour
             {
                 StartCoroutine(SecondaryAttack());
             }
+
+            if(currentCooldown <= attackCooldown)
+            {
+                currentCooldown -= Time.deltaTime;
+            }
             
         }
 
@@ -203,18 +212,23 @@ public class PlayerController : MonoBehaviour
 
     void MainAttack()
     {
-        if(formNumber == 0)
+        if (currentCooldown <= 0)
         {
-           GameObject JackalAttack = Instantiate(attackPrefabs[0], firePoint.position, Quaternion.identity);
+            if (formNumber == 0)
+            {
+                GameObject JackalAttack = Instantiate(attackPrefabs[0], firePoint.position, Quaternion.identity);
+            }
+            else if (formNumber == 1)
+            {
+                GameObject HawkAttack = Instantiate(attackPrefabs[2], firePoint.position, firePoint.rotation);
+            }
+            else if (formNumber == 2)
+            {
+                GameObject BullAttack = Instantiate(attackPrefabs[1], firePoint.position, firePoint.rotation);
+            }
+            currentCooldown = attackCooldown;
         }
-        else if(formNumber == 1)
-        {
-           GameObject HawkAttack = Instantiate(attackPrefabs[2], firePoint.position, firePoint.rotation);
-        }
-        else if (formNumber == 2)
-        {
-            GameObject BullAttack = Instantiate(attackPrefabs[1], firePoint.position, firePoint.rotation);
-        }
+       
     }
 
     /*IEnumerator BasicAttack()
@@ -291,10 +305,7 @@ public class PlayerController : MonoBehaviour
         
     public void IncreaseAttackSize()
     {
-        foreach (GameObject attack in attacks)
-        {
-            attack.gameObject.transform.localScale += new Vector3(1f, 1f, 0);
-        }
+        attackIncrease += 1f;
     }
 
     void SetParticleColour()

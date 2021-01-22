@@ -67,27 +67,7 @@ public class EnemyController : MonoBehaviour
             enemyScript.Attack();
         }
        Audio.Play("EnemyAttack");
-        /*Audio.Play("PlayerDamage");
-        if (player.shieldCount == 0)
-        {
-            if (player.formNumber != 2)
-            {
-                player.health -= enemies.Count;
-                foreach (GameObject enemy in enemies)
-                {
-                    player.health -= 1;
-                }
-            }
-            else
-            {
-                player.health -= enemies.Count - 1;
-            }
-        }
-        else
-        {
-            player.shieldCount -= 1;
-        } */
-            StartCoroutine(EnemyAttack());
+        StartCoroutine(EnemyAttack());
     }
 
     public IEnumerator SpawnEnemies()

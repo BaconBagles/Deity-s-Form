@@ -96,7 +96,7 @@ public class Enemy : MonoBehaviour
         {
             health -= 10;
         }
-        else if (gameObject.tag == "basicEnemy")
+       /* else if (gameObject.tag == "basicEnemy")
         {
             if (other.gameObject.CompareTag("BullSpecial") || other.gameObject.CompareTag("HawkSpecial") || other.gameObject.CompareTag("JackalSpecial"))
             {
@@ -144,7 +144,7 @@ public class Enemy : MonoBehaviour
                 health -= 1;
                 FindObjectOfType<AudioManager>().Play("EnemyDamaged");
             }
-        }
+        } */
 
             if (other.gameObject.CompareTag("Respawn"))
             {

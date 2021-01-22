@@ -19,6 +19,7 @@ public class projectileScript : MonoBehaviour
         target = player.transform;
         transform.right = target.position - transform.position;
         Vector2 targetPos = target.position;
+        targetPos.y -= 3;
         Direction = targetPos - (Vector2)transform.position;
         GetComponent<Rigidbody2D>().AddForce(Direction * force);
         StartCoroutine(SelfDestruct());
@@ -29,7 +30,15 @@ public class projectileScript : MonoBehaviour
         if(other.gameObject.tag == "Player")
         {
             Audio.Play("PlayerDamage");
-            player.GetComponent<PlayerController>().health --; 
+            if (player.GetComponent<PlayerController>().shieldCount == 0)
+            {
+                player.GetComponent<PlayerController>().health--;
+
+            }
+            else
+            {
+                player.GetComponent<PlayerController>().shieldCount -= 1;
+            }
         }
 
         Destroy(this.gameObject);
