@@ -10,9 +10,11 @@ public class projectileScript : MonoBehaviour
     Vector2 Direction;
     public float force;
     public AudioManager Audio;
+    public int damage;
 
     void Start()
     {
+        damage = 1;
         player = GameObject.Find("Player");
         AudioManager = GameObject.Find("AudioManager");
         Audio = AudioManager.GetComponent<AudioManager>();
@@ -32,7 +34,7 @@ public class projectileScript : MonoBehaviour
             Audio.Play("PlayerDamage");
             if (player.GetComponent<PlayerController>().shieldCount == 0)
             {
-                player.GetComponent<PlayerController>().health--;
+                player.GetComponent<PlayerController>().health -= damage;
 
             }
             else

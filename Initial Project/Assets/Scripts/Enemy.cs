@@ -87,7 +87,7 @@ public class Enemy : MonoBehaviour
 
     public void Attack()
     {
-        Instantiate(projectile.transform, transform.position, Quaternion.identity);
+        Instantiate(projectile, transform.position, Quaternion.identity);
     }
 
     void OnTriggerEnter2D(Collider2D other)
