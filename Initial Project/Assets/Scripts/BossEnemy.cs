@@ -154,4 +154,4 @@ public class BossEnemy : MonoBehaviour
         StartCoroutine(Shuffle());
     }
 }
-}
+

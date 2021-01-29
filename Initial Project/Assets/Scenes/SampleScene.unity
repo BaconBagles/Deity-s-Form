@@ -23556,7 +23556,7 @@ MonoBehaviour:
   healthBar: {fileID: 869362989}
   Options: {fileID: 1967495149}
   Audio: {fileID: 7700597709660189910}
-  death: {fileID: 0}
+  death: {fileID: 1967495152}
   shieldCount: 0
   moveSpeed: 20
   speedBonus: 0
