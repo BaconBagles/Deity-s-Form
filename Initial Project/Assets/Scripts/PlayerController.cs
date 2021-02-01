@@ -37,6 +37,14 @@ public class PlayerController : MonoBehaviour
     public bool superForm;
     public bool tempFormActive;
 
+    bool jackalSndAtk;
+    bool hawkSndAtk;
+    bool bullSndAtk;
+    Vector3 mousePos;
+    private Vector3 normaliseDir;
+
+    attackOrbit orbitPos;
+
     SpriteRenderer sr;
 
     public Camera cam;
@@ -59,6 +67,8 @@ public class PlayerController : MonoBehaviour
         healthBar.SetMaxHealth(maxHealth);
 
         sr = GetComponent<SpriteRenderer>();
+
+        orbitPos = attackOrbiter.GetComponent<attackOrbit>();
 
         //Adds our stored keys to the dictionary
         //This will need to be done again if the player changes keybinds during game
@@ -152,11 +162,47 @@ public class PlayerController : MonoBehaviour
                 StartCoroutine(SecondaryAttack());
             }
 
-            if(currentCooldown <= attackCooldown)
+            if(currentCooldown >= 0)
             {
                 currentCooldown -= Time.deltaTime;
             }
-            
+
+
+            mousePos = Input.mousePosition;
+            mousePos.z = 0;
+            mousePos = Camera.main.ScreenToWorldPoint(mousePos);
+            normaliseDir = (mousePos - transform.position).normalized;
+
+            if (bullSndAtk == true)
+            {
+                transform.Translate(normaliseDir * (moveSpeed * 2) * Time.deltaTime);
+                if (currentCooldown <= 0f)
+                {
+                    attacking = false;
+                    secondaryAttacks[formNumber].SetActive(false);
+                    bullSndAtk = false;
+                }
+            }
+            if (jackalSndAtk == true)
+            {
+                transform.Translate(normaliseDir * (moveSpeed * 2) * Time.deltaTime);
+                if (currentCooldown <= 0f)
+                {
+                    jackalSndAtk = false;
+                    attacking = false;
+                    secondaryAttacks[formNumber].SetActive(false);
+                }
+            }
+            if (hawkSndAtk == true)
+            {
+                if (currentCooldown <= 0f)
+                {
+                    hawkSndAtk = false;
+                    attacking = false;
+                    secondaryAttacks[formNumber].SetActive(false);
+                }
+            }
+
         }
 
         healthBar.SetHealth(health);
@@ -256,11 +302,32 @@ public class PlayerController : MonoBehaviour
     
     IEnumerator SecondaryAttack()
     {
-        attacking = true;
+         attacking = true;
 
         if (formNumber == 2)
         {
-           /* while (Input.GetKeyDown(keys["secondaryAttack"]) == true)
+            secondaryAttacks[formNumber].SetActive(true);
+            currentCooldown = attackCooldown * 4;
+            bullSndAtk = true;
+        }
+        else if (formNumber == 1)
+        {
+            secondaryAttacks[formNumber].SetActive(true);
+            currentCooldown = attackCooldown;
+            hawkSndAtk = true;
+        }
+        else
+        {
+            secondaryAttacks[formNumber].SetActive(true);
+            currentCooldown = attackCooldown/2;
+            jackalSndAtk = true;
+        }
+
+        yield return null;
+        /*
+        if (formNumber == 2)
+        {
+            while (Input.GetKeyDown(keys["secondaryAttack"]) == true)
             {
                 secondaryAttacks[formNumber].SetActive(true);
                 secondaryAttacks[formNumber].gameObject.transform.localScale += new Vector3(0.1f, 0f, 0f) * Time.deltaTime;
@@ -275,8 +342,7 @@ public class PlayerController : MonoBehaviour
                 secondaryAttacks[formNumber].gameObject.transform.localScale = new Vector3(0f, 1f, 0f);
                 secondaryAttacks[formNumber].SetActive(false);
                 attacking = false;
-            }*/
-            yield return null;
+            }
         }
 
         else if (formNumber == 1)
@@ -295,9 +361,9 @@ public class PlayerController : MonoBehaviour
             yield return new WaitForSeconds(attackDuration);
             secondaryAttacks[formNumber].SetActive(false);
             attacking = false;
-        }
+        }*/
     }
-        
+
     public void IncreaseAttackSize()
     {
         attackIncrease += 1f;
