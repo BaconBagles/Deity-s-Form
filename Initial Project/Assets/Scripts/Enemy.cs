@@ -8,7 +8,7 @@ public class Enemy : MonoBehaviour
     Transform goal;
     GameObject controller;
     EnemyController controllerScript;
-    float spaceBetween;
+    public float spaceBetween;
     PlayerController pCont;
     public int health;
     public Animator enemyAnim;
@@ -31,18 +31,18 @@ public class Enemy : MonoBehaviour
         if (gameObject.tag == "basicEnemy")
         {
             enemyAnim.SetInteger("EnemyType", 0);
-            spaceBetween = Random.Range(10, 20);
+            spaceBetween = Random.Range(15, 25);
         }
         else if (gameObject.tag == "armourEnemy")
         {
             health += 2;
             enemyAnim.SetInteger("EnemyType", 1);
-            spaceBetween = Random.Range(10, 15);
+            spaceBetween = Random.Range(15, 20);
         }
         else
         {
             enemyAnim.SetInteger("EnemyType", 2);
-            spaceBetween = Random.Range(5, 15);
+            spaceBetween = Random.Range(10, 15);
         }
         StartCoroutine(Shuffle());
     }
@@ -65,14 +65,14 @@ public class Enemy : MonoBehaviour
             transform.Translate(direction * Time.deltaTime);
         }
 
-        if (spaceBetween > 20f)
+        if (spaceBetween > 30f)
         {
-            spaceBetween = 20f;
+            spaceBetween = 30f;
         }
 
-        if (spaceBetween < 1f)
+        if (spaceBetween < 0f)
         {
-            spaceBetween = 1f;
+            spaceBetween = 0f;
         }
 
         if (health <= 0)
@@ -92,87 +92,45 @@ public class Enemy : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
+        if (other.gameObject.CompareTag("Respawn"))
+        {
+            transform.position = new Vector2(0, 0);
+        }
         if (pCont.superForm == true)
         {
             health -= 10;
         }
-       /* else if (gameObject.tag == "basicEnemy")
+        else if (other.gameObject.CompareTag("JackalSpecial"))
         {
-            if (other.gameObject.CompareTag("BullSpecial") || other.gameObject.CompareTag("HawkSpecial") || other.gameObject.CompareTag("JackalSpecial"))
-            {
-                SpecialAttack(other.gameObject.tag);
-            }
-            if (other.gameObject.CompareTag("basicAttack"))
-            {
-                health -= 5;
-            }
-            else
-            {
-                health -= 1;
-                FindObjectOfType<AudioManager>().Play("EnemyDamaged");
-            }
-        }
-        else if (gameObject.tag == "armourEnemy")
-        {
-            if (other.gameObject.CompareTag("BullSpecial") || other.gameObject.CompareTag("HawkSpecial") || other.gameObject.CompareTag("JackalSpecial"))
-            {
-                SpecialAttack(other.gameObject.tag);
-            }
-            if (other.gameObject.CompareTag("APAttack"))
-            {
-                health -= 7;
-            }
-            else
-            {
-                health -= 1;
-                FindObjectOfType<AudioManager>().Play("EnemyDamaged");
-            }
-        }
-        else if (this.gameObject.tag == "spikyEnemy")
-        {
-            if (other.gameObject.CompareTag("BullSpecial") || other.gameObject.CompareTag("HawkSpecial") || other.gameObject.CompareTag("JackalSpecial"))
-            {
-                SpecialAttack(other.gameObject.tag);
-            }
-            if (other.gameObject.CompareTag("rangedAttack"))
-            {
-                health -= 5;
-            }
-            else
-            {
-                pCont.health -= 1;
-                health -= 1;
-                FindObjectOfType<AudioManager>().Play("EnemyDamaged");
-            }
-        } */
-
-            if (other.gameObject.CompareTag("Respawn"))
-            {
-                transform.position = new Vector2(0, 0);
-            }
-        }
-
-    void SpecialAttack(string attackTag)
-    {
-        if (attackTag == "JackalSpecial")
-        {
-            health -= 2;
+            health -= 1;
             pCont.health += 1;
+            FindObjectOfType<AudioManager>().Play("EnemyDamaged");
         }
-        else if (attackTag =="HawkSpecial")
+        else if (other.gameObject.CompareTag("BullSpecial"))
         {
-            spaceBetween -= 5f;
+            health -= 1;
+            spaceBetween += 5;
         }
-        else if (attackTag == "BullSpecial")
+        else if (other.gameObject.CompareTag("HawkSpecial"))
         {
-            health -= 3;
+            spaceBetween = 0;
         }
+
+
     }
 
-        IEnumerator Shuffle()
+
+    IEnumerator Shuffle()
+    {
+        yield return new WaitForSecondsRealtime(4.0f);
+        if (spaceBetween < 5f)
         {
-            yield return new WaitForSecondsRealtime(4.0f);
-            spaceBetween += Random.Range(-5f, 5f);
-            StartCoroutine(Shuffle());
+            spaceBetween += 10f;
         }
+        else
+        {
+            spaceBetween += Random.Range(-7.5f, 7.5f);
+        }
+        StartCoroutine(Shuffle());
+    }
 }

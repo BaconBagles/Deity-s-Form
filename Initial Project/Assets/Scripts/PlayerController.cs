@@ -319,49 +319,12 @@ public class PlayerController : MonoBehaviour
         else
         {
             secondaryAttacks[formNumber].SetActive(true);
-            currentCooldown = attackCooldown/2;
+            currentCooldown = attackCooldown/2 ;
             jackalSndAtk = true;
         }
 
         yield return null;
-        /*
-        if (formNumber == 2)
-        {
-            while (Input.GetKeyDown(keys["secondaryAttack"]) == true)
-            {
-                secondaryAttacks[formNumber].SetActive(true);
-                secondaryAttacks[formNumber].gameObject.transform.localScale += new Vector3(0.1f, 0f, 0f) * Time.deltaTime;
-                if (secondaryAttacks[formNumber].gameObject.transform.localScale.x >= 10)
-                {
-                    secondaryAttacks[formNumber].gameObject.transform.localScale = new Vector3(10f, 1f, 0f);
-                }
-            }
-            if (Input.GetKeyUp(keys["secondaryAttack"]))
-            {
-                this.gameObject.transform.Translate(Vector3.forward * (Time.deltaTime * secondaryAttacks[formNumber].gameObject.transform.localScale.x));
-                secondaryAttacks[formNumber].gameObject.transform.localScale = new Vector3(0f, 1f, 0f);
-                secondaryAttacks[formNumber].SetActive(false);
-                attacking = false;
-            }
-        }
-
-        else if (formNumber == 1)
-        {
-            secondaryAttacks[formNumber].SetActive(true);
-            yield return new WaitForSeconds(attackDuration);
-            secondaryAttacks[formNumber].SetActive(false);
-            attacking = false;
-        }
-
-        else
-        {
-            attackOrbit orbitPos = attackOrbiter.GetComponent<attackOrbit>();
-            secondaryAttacks[formNumber].SetActive(true);
-            transform.localPosition = new Vector3(transform.position.x + orbitPos.xPos * 4, (transform.position.y + 3) + orbitPos.yPos * 4, 0);
-            yield return new WaitForSeconds(attackDuration);
-            secondaryAttacks[formNumber].SetActive(false);
-            attacking = false;
-        }*/
+       
     }
 
     public void IncreaseAttackSize()
