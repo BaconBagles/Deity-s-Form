@@ -8,7 +8,7 @@ public class EnemyController : MonoBehaviour
     private int attackTimer;
     float timeLeft;
     public attackTimer timeBar;
-    bool attacking;
+    public bool attacking;
     public OptionsMenu Options;
 
     public Enemy enemyScript;

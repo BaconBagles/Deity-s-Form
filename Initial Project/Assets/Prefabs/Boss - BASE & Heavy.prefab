@@ -12,10 +12,10 @@ GameObject:
   - component: {fileID: 1656593290272148479}
   - component: {fileID: 3357913298963347637}
   - component: {fileID: 5076422069683274171}
-  - component: {fileID: 1347843649691882203}
+  - component: {fileID: 5484044989827649020}
+  - component: {fileID: 3791742543417215833}
   - component: {fileID: 7956289166715365268}
   - component: {fileID: 7422532054927458531}
-  - component: {fileID: 5484044989827649020}
   m_Layer: 10
   m_Name: Boss - BASE & Heavy
   m_TagString: basicEnemy
@@ -32,7 +32,7 @@ Transform:
   m_GameObject: {fileID: 1557396358725871626}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -135,7 +135,24 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.4375, y: 2.187179}
   m_EdgeRadius: 0
---- !u!114 &1347843649691882203
+--- !u!114 &5484044989827649020
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1557396358725871626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b6b8638a55a4fb4d8acba0f8db0ab3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentHealth: 0
+  spriteList:
+  - {fileID: 2733428402010816068, guid: e4bd357720d1ce34699827061e51672c, type: 3}
+  - {fileID: -387313879964003934, guid: e7ef0ae0bc079fa40a165931759fd899, type: 3}
+  enemyAnim: {fileID: 7956289166715365268}
+--- !u!114 &3791742543417215833
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -147,6 +164,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01699a3e0df9e494dae5e127490511a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spaceBetween: 0
   health: 0
   enemyAnim: {fileID: 7956289166715365268}
   projectile: {fileID: 1573355114100768558, guid: 6996c5613b83a934fad343f1a18c7969, type: 3}
@@ -184,15 +202,3 @@ MonoBehaviour:
   sortingOrderBase: 5000
   offset: 2
   runOnlyOnce: 0
---- !u!114 &5484044989827649020
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1557396358725871626}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b6b8638a55a4fb4d8acba0f8db0ab3e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

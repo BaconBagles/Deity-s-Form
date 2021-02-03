@@ -11,6 +11,7 @@ public class playerProjectileScript : MonoBehaviour
     public float range;
     PlayerController pContd;
     Enemy enemy;
+    BossEnemy bossEnemy;
 
     void Start()
     {
@@ -47,6 +48,7 @@ public class playerProjectileScript : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D other)
     {
         enemy = other.gameObject.GetComponent<Enemy>();
+    
         if(gameObject.tag == "basicAttack")
         {
             if (other.gameObject.CompareTag("basicEnemy"))

@@ -13,9 +13,16 @@ public class Enemy : MonoBehaviour
     public int health;
     public Animator enemyAnim;
     public GameObject projectile;
+    public int currentDamage;
+    public float currentSize;
 
 
-
+    private void Awake()
+    {
+        health = PlayerPrefs.GetInt("enemyHealth", 5);
+        currentDamage = 1;
+        currentSize = 0f;
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -26,7 +33,7 @@ public class Enemy : MonoBehaviour
         goal = player.transform;
         controller = GameObject.Find("EnemyController");
         controllerScript = controller.GetComponent<EnemyController>();
-        health = PlayerPrefs.GetInt("enemyHealth", 5);
+        
 
         if (gameObject.tag == "basicEnemy")
         {
@@ -87,7 +94,10 @@ public class Enemy : MonoBehaviour
 
     public void Attack()
     {
-        Instantiate(projectile, transform.position, Quaternion.identity);
+        GameObject enemyProjectile = Instantiate(projectile, transform.position, Quaternion.identity);
+        projectileScript proj = enemyProjectile.GetComponent<projectileScript>();
+        proj.damage = currentDamage;
+        proj.bossSize = currentSize;
     }
 
     void OnTriggerEnter2D(Collider2D other)

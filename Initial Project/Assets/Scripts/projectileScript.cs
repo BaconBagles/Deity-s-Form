@@ -11,10 +11,10 @@ public class projectileScript : MonoBehaviour
     public float force;
     public AudioManager Audio;
     public int damage;
+    public float bossSize;
 
     void Start()
     {
-        damage = 1;
         player = GameObject.Find("Player");
         AudioManager = GameObject.Find("AudioManager");
         Audio = AudioManager.GetComponent<AudioManager>();
@@ -25,6 +25,7 @@ public class projectileScript : MonoBehaviour
         Direction = targetPos - (Vector2)transform.position;
         GetComponent<Rigidbody2D>().AddForce(Direction * force);
         StartCoroutine(SelfDestruct());
+        gameObject.transform.localScale = new Vector3(transform.localScale.x + bossSize, transform.localScale.y + bossSize, 0);
     }
 
     private void OnCollisionEnter2D(Collision2D other)
@@ -39,7 +40,7 @@ public class projectileScript : MonoBehaviour
             }
             else
             {
-                player.GetComponent<PlayerController>().shieldCount -= 1;
+                player.GetComponent<PlayerController>().shieldCount -= damage;
             }
         }
 
