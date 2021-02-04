@@ -20355,9 +20355,9 @@ MonoBehaviour:
   player: {fileID: 881548572}
   gameController: {fileID: 1452527724}
   enemies: []
-  basicEnemy: {fileID: 1557396358725871626, guid: 42e6620f441864e468c12ff74cfe9617, type: 3}
-  armourEnemy: {fileID: 2929758767139285992, guid: 74370bdf42bb5ed47933cef5ad168030, type: 3}
-  spikeEnemy: {fileID: 529861034411739998, guid: 38e7531e78ecd2b4d9262e75a9aeb8ee, type: 3}
+  basicEnemy: {fileID: 529861034411739998, guid: 38e7531e78ecd2b4d9262e75a9aeb8ee, type: 3}
+  armourEnemy: {fileID: 1557396358725871626, guid: 42e6620f441864e468c12ff74cfe9617, type: 3}
+  spikeEnemy: {fileID: 2929758767139285992, guid: 74370bdf42bb5ed47933cef5ad168030, type: 3}
   spawning: 0
   spawnTime: 2
 --- !u!4 &753775460
@@ -23582,9 +23582,9 @@ MonoBehaviour:
   cam: {fileID: 519420031}
   firePoint: {fileID: 38970872}
   attackPrefabs:
+  - {fileID: 500660799331199026, guid: d60b8454a2e71914c95298f9f7dfa53d, type: 3}
   - {fileID: 4226733762755751975, guid: fc29453be96b54445a1480f847b88917, type: 3}
   - {fileID: 546221952060932348, guid: 1ded19347785be24fa05caa503f3b636, type: 3}
-  - {fileID: 500660799331199026, guid: d60b8454a2e71914c95298f9f7dfa53d, type: 3}
   attackIncrease: 0
   attackCooldown: 0.3
 --- !u!212 &881548573

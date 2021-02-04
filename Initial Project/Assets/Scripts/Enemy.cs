@@ -37,18 +37,18 @@ public class Enemy : MonoBehaviour
 
         if (gameObject.tag == "basicEnemy")
         {
-            enemyAnim.SetInteger("EnemyType", 0);
+            enemyAnim.SetInteger("EnemyType", 2);
             spaceBetween = Random.Range(15, 25);
         }
         else if (gameObject.tag == "armourEnemy")
         {
             health += 2;
-            enemyAnim.SetInteger("EnemyType", 1);
+            enemyAnim.SetInteger("EnemyType", 0);
             spaceBetween = Random.Range(15, 20);
         }
         else
         {
-            enemyAnim.SetInteger("EnemyType", 2);
+            enemyAnim.SetInteger("EnemyType", 1);
             spaceBetween = Random.Range(10, 15);
         }
         StartCoroutine(Shuffle());

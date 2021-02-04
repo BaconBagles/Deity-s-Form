@@ -55,14 +55,14 @@ public class BossEnemy : MonoBehaviour
         {
             case 0:
                 gameObject.tag = "basicEnemy";
-                spriteR.sprite = spriteList[0];
-                enemyAnim.SetInteger("EnemyType", 0);
+                spriteR.sprite = spriteList[1];
+                enemyAnim.SetInteger("EnemyType", 2);
                 FormList = 1;
                 break;
             case 1:
                 gameObject.tag = "armourEnemy";
-                enemyAnim.SetInteger("EnemyType", 1);
-                spriteR.sprite = spriteList[1];
+                enemyAnim.SetInteger("EnemyType", 0);
+                spriteR.sprite = spriteList[0];
                 FormList = 0;
                 break;
            /* case 2:
