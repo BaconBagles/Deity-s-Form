@@ -319,7 +319,7 @@ public class PlayerController : MonoBehaviour
         else
         {
             secondaryAttacks[formNumber].SetActive(true);
-            currentCooldown = attackCooldown/2 ;
+            currentCooldown = attackCooldown/2;
             jackalSndAtk = true;
         }
 
