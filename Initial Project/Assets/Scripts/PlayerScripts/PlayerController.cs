@@ -53,6 +53,7 @@ public class PlayerController : MonoBehaviour
     public Transform firePoint;
     public GameObject[] attackPrefabs;
     public float attackIncrease;
+    public float rangeIncrease;
     public float attackCooldown;
     float currentCooldown;
 
@@ -278,14 +279,17 @@ public class PlayerController : MonoBehaviour
             if (formNumber == 0)
             {
                 GameObject JackalAttack = Instantiate(attackPrefabs[0], firePoint.position, Quaternion.identity);
+               // playerProjectileScript Proj = JackalAttack.GetComponent<playerProjectileScript>();
             }
             else if (formNumber == 1)
             {
                 GameObject HawkAttack = Instantiate(attackPrefabs[2], firePoint.position, firePoint.rotation);
+               // playerProjectileScript Proj = HawkAttack.GetComponent<playerProjectileScript>();
             }
             else if (formNumber == 2)
             {
                 GameObject BullAttack = Instantiate(attackPrefabs[1], firePoint.position, firePoint.rotation);
+              //  playerProjectileScript Proj = BullAttack.GetComponent<playerProjectileScript>();
             }
             currentCooldown = attackCooldown;
         }
@@ -325,6 +329,11 @@ public class PlayerController : MonoBehaviour
 
         yield return null;
        
+    }
+
+    public void IncreaseAttackRange()
+    {
+        rangeIncrease += 0.4f;
     }
 
     public void IncreaseAttackSize()

@@ -14,6 +14,7 @@ public class Enemy : MonoBehaviour
     public Animator enemyAnim;
     public GameObject projectile;
     public int currentDamage;
+    public int currentForce;
     public float currentSize;
     public GameObject healthPickup;
 
@@ -21,6 +22,7 @@ public class Enemy : MonoBehaviour
     private void Awake()
     {
         health = PlayerPrefs.GetInt("enemyHealth", 5);
+        currentForce = 400;
         currentDamage = 1;
         currentSize = 0f;
     }
@@ -100,6 +102,7 @@ public class Enemy : MonoBehaviour
     {
         GameObject enemyProjectile = Instantiate(projectile, transform.position, Quaternion.identity);
         projectileScript proj = enemyProjectile.GetComponent<projectileScript>();
+        proj.force = currentForce;
         proj.damage = currentDamage;
         proj.bossSize = currentSize;
     }

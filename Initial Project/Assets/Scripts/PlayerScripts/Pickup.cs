@@ -8,6 +8,7 @@ public class Pickup : MonoBehaviour
     PlayerController pCont;
     GameController gCont;
     OptionsMenu Options;
+    Enemy enemyScript;
 
 
     public Sprite[] images;
@@ -41,6 +42,7 @@ public class Pickup : MonoBehaviour
         {
             case 0:
                 //attack range up
+                pCont.IncreaseAttackRange();
                 break;
             case 1:
                 //attack speed up
@@ -48,6 +50,7 @@ public class Pickup : MonoBehaviour
                 break;
             case 2:
                 //attack size up
+                pCont.IncreaseAttackSize();
                 break;
             case 3:
                 //Secondary attack cooldown reduced
@@ -55,6 +58,11 @@ public class Pickup : MonoBehaviour
                 break;
             case 4:
                 //enemy projectile speed down
+                foreach (GameObject enemy in eCont.enemies)
+                {
+                    enemyScript = enemy.GetComponent<Enemy>();
+                    enemyScript.currentForce -= 50;
+                }
                 break;
             case 5:
                 //attack timer up

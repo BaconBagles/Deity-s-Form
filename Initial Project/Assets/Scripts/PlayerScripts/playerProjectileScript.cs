@@ -8,7 +8,7 @@ public class playerProjectileScript : MonoBehaviour
     Vector2 mousePos;
     Rigidbody2D rb;
     public float force;
-    public float range;
+    public float range = 0.8f;
     PlayerController pContd;
     Enemy enemy;
     BossEnemy bossEnemy;
@@ -23,13 +23,13 @@ public class playerProjectileScript : MonoBehaviour
         float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 90f;
         rb.rotation = angle;
         rb.AddForce(lookDir * force);
-   
+
+        range += pContd.rangeIncrease;
         gameObject.transform.localScale = new Vector3(transform.localScale.x + pContd.attackIncrease, transform.localScale.y, 0);
 
         if (this.gameObject.tag == "basicAttack")
         {
-          
-            StartCoroutine(JackalSelfDestruct());
+             StartCoroutine(JackalSelfDestruct());
            
         }
         else if (this.gameObject.tag == "APAttack")
