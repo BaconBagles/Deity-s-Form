@@ -44,6 +44,7 @@ public class Pickup : MonoBehaviour
                 break;
             case 1:
                 //attack speed up
+                pCont.attackCooldown -= 0.05f;
                 break;
             case 2:
                 //attack size up
@@ -65,13 +66,14 @@ public class Pickup : MonoBehaviour
                 break;
             case 7:
                 //armoured
-                pCont.shieldCount = 2;
+                pCont.shieldCount = 5;
                 break;
             case 8:
                 //Attack Knockback/mass up
                 break;
             case 9:
                 //secondary attack range up
+                pCont.IncreaseSecondarySize();
                 break;
             case 10:
                 //knockback reduced

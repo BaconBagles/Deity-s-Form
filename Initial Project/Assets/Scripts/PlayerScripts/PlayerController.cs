@@ -292,33 +292,13 @@ public class PlayerController : MonoBehaviour
        
     }
 
-    /*IEnumerator BasicAttack()
+    public void IncreaseSecondarySize()
     {
-        attacking = true;
-
-        if (powerAttack)
+        foreach (GameObject attack in secondaryAttacks)
         {
-            attacks[3].SetActive(true);
-            ParticleSystem aEffect = Instantiate(attackEffect, transform.position, Quaternion.Euler(0, 0, 0));
-            SetParticleColour();
-            aEffect.transform.parent = gameObject.transform;
-            yield return new WaitForSeconds(attackDuration);
-            attacks[3].SetActive(false);
-            Destroy(aEffect.gameObject);
-            attacking = false;
+            attack.transform.localScale = new Vector2(attack.gameObject.transform.localScale.x + 1, attack.gameObject.transform.localScale.y);
         }
-        else
-        {
-            attacks[formNumber].SetActive(true);
-            ParticleSystem aEffect = Instantiate(attackEffect, transform.position, Quaternion.Euler(0, 0, 0));
-            SetParticleColour();
-            aEffect.transform.parent = gameObject.transform;
-            yield return new WaitForSeconds(attackDuration);
-            attacks[formNumber].SetActive(false);
-            Destroy(aEffect.gameObject);
-            attacking = false;
-        }
-    } */
+    }
     
     IEnumerator SecondaryAttack()
     {
