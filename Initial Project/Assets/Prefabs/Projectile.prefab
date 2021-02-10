@@ -100,6 +100,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   force: 400
   Audio: {fileID: 0}
+  damage: 0
+  bossSize: 0
 --- !u!114 &95872913172333198
 MonoBehaviour:
   m_ObjectHideFlags: 0

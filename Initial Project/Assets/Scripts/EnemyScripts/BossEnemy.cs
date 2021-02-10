@@ -26,7 +26,7 @@ public class BossEnemy : MonoBehaviour
         FormList = 1;
         SwitchForm();
         enemyScript.currentDamage = 5;
-        enemyScript.currentSize = 5f;
+        enemyScript.currentSize = 3f;
         
     }
 

@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 10
-  m_Sprite: {fileID: 2733428402010816068, guid: e4bd357720d1ce34699827061e51672c, type: 3}
+  m_Sprite: {fileID: -3794345883848746471, guid: cb05b30c9337c194289f332cc5a18fd3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -125,7 +125,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.4375, y: 5.725}
+    oldSize: {x: 2.70625, y: 5.7375}
     newSize: {x: 24.375, y: 57.25}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -151,7 +151,9 @@ MonoBehaviour:
   enemyAnim: {fileID: 7956289166715365268}
   projectile: {fileID: 1573355114100768558, guid: 6996c5613b83a934fad343f1a18c7969, type: 3}
   currentDamage: 0
+  currentForce: 0
   currentSize: 0
+  healthPickup: {fileID: 0}
 --- !u!95 &7956289166715365268
 Animator:
   serializedVersion: 3

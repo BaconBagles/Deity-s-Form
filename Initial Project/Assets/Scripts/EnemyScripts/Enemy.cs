@@ -14,7 +14,7 @@ public class Enemy : MonoBehaviour
     public Animator enemyAnim;
     public GameObject projectile;
     public int currentDamage;
-    public int currentForce;
+    public float currentForce;
     public float currentSize;
     public GameObject healthPickup;
 

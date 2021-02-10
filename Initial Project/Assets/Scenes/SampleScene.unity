@@ -23587,6 +23587,7 @@ MonoBehaviour:
   - {fileID: 4226733762755751975, guid: fc29453be96b54445a1480f847b88917, type: 3}
   - {fileID: 546221952060932348, guid: 1ded19347785be24fa05caa503f3b636, type: 3}
   attackIncrease: 0
+  rangeIncrease: 0
   attackCooldown: 0.3
   sndCooldown: 0
 --- !u!212 &881548573
@@ -28563,6 +28564,18 @@ PrefabInstance:
     - target: {fileID: 1541926171133747452, guid: 7d0def1df506d7941b6b6ded5520e208, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1541926171133747452, guid: 7d0def1df506d7941b6b6ded5520e208, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1541926171133747452, guid: 7d0def1df506d7941b6b6ded5520e208, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1541926171133747452, guid: 7d0def1df506d7941b6b6ded5520e208, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 1557396358725871626, guid: 7d0def1df506d7941b6b6ded5520e208, type: 3}
       propertyPath: m_Name

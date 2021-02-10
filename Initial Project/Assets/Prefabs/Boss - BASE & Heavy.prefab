@@ -32,7 +32,7 @@ Transform:
   m_GameObject: {fileID: 1557396358725871626}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -77,7 +77,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 10
-  m_Sprite: {fileID: 2733428402010816068, guid: e4bd357720d1ce34699827061e51672c, type: 3}
+  m_Sprite: {fileID: 5366621052071639061, guid: 835be9276eafc73468298a2068b4007e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -126,7 +126,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.4375, y: 5.725}
+    oldSize: {x: 2.575, y: 5.9875}
     newSize: {x: 24.375, y: 57.25}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -149,7 +149,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentHealth: 0
   spriteList:
-  - {fileID: 2733428402010816068, guid: e4bd357720d1ce34699827061e51672c, type: 3}
+  - {fileID: 5366621052071639061, guid: 835be9276eafc73468298a2068b4007e, type: 3}
   - {fileID: 7717462755901127523, guid: 4199d22beb6833446b8f9acdf6d8baf5, type: 3}
   enemyAnim: {fileID: 7956289166715365268}
 --- !u!114 &3791742543417215833
@@ -169,7 +169,9 @@ MonoBehaviour:
   enemyAnim: {fileID: 7956289166715365268}
   projectile: {fileID: 1573355114100768558, guid: 6996c5613b83a934fad343f1a18c7969, type: 3}
   currentDamage: 0
+  currentForce: 0
   currentSize: 0
+  healthPickup: {fileID: 0}
 --- !u!95 &7956289166715365268
 Animator:
   serializedVersion: 3
@@ -180,7 +182,7 @@ Animator:
   m_GameObject: {fileID: 1557396358725871626}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 111d134342521ee4cb6a3347f85b2f85, type: 2}
+  m_Controller: {fileID: 9100000, guid: 76ef16b747ba586418887eb1372f9a99, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

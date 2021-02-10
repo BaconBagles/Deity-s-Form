@@ -61,7 +61,7 @@ public class Pickup : MonoBehaviour
                 foreach (GameObject enemy in eCont.enemies)
                 {
                     enemyScript = enemy.GetComponent<Enemy>();
-                    enemyScript.currentForce -= 50;
+                    enemyScript.currentForce /= 12.5f;
                 }
                 break;
             case 5:
