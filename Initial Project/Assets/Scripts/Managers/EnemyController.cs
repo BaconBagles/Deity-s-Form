@@ -77,7 +77,7 @@ public class EnemyController : MonoBehaviour
         yield return new WaitForSeconds(spawnTime);
         Audio.Play("EnemySpawn");
 
-        if (gameController.currentRoom == 1 && bossSpawned == false)
+        if (gameController.currentRoom == 5 && bossSpawned == false)
         {
             bossSpawned = true;
             rndPos = new Vector2(Random.Range(-20, 20), Random.Range(-20, 20));

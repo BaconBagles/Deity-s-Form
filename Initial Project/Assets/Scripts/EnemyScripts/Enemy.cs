@@ -88,7 +88,7 @@ public class Enemy : MonoBehaviour
         if (health <= 0)
         {
             float randomNum = Random.Range(0, 100);
-            if (randomNum > 95)
+            if (randomNum > 90)
             {
                 Instantiate(healthPickup, new Vector2(gameObject.transform.position.x, gameObject.transform.position.y), Quaternion.identity);
             }
@@ -119,13 +119,13 @@ public class Enemy : MonoBehaviour
         }
         else if (other.gameObject.CompareTag("JackalSpecial"))
         {
-            health -= 1;
+            health -= 3;
             pCont.health += 1;
             FindObjectOfType<AudioManager>().Play("EnemyDamaged");
         }
         else if (other.gameObject.CompareTag("BullSpecial"))
         {
-            health -= 1;
+            health -= 2;
             spaceBetween += 5;
         }
         else if (other.gameObject.CompareTag("HawkSpecial"))
