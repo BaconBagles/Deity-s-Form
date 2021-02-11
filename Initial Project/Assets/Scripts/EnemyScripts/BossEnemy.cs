@@ -20,7 +20,6 @@ public class BossEnemy : MonoBehaviour
         enemyScript = GetComponent<Enemy>();
         controller = GameObject.Find("EnemyController");
         controllerScript = controller.GetComponent<EnemyController>();
-        controllerScript.enemies.Add(this.gameObject);
         enemyScript.health = 25;
         currentHealth = enemyScript.health;
         FormList = 1;

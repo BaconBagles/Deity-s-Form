@@ -10,7 +10,7 @@ public class GameController : MonoBehaviour
     public GameObject[] rooms;
     public GameObject pickup;
     public TMPro.TextMeshProUGUI PickupText;
-    int roomNumber;
+    public int roomNumber;
 
     public int pickupNumber;
     public bool pickupSpawned;
