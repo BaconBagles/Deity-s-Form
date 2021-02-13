@@ -11552,7 +11552,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -89, y: -13.799988}
+  m_AnchoredPosition: {x: -89, y: -13.799927}
   m_SizeDelta: {x: 161.09668, y: 21.24546}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &428830286
@@ -13662,7 +13662,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 6, y: -3.5165405}
+  m_AnchoredPosition: {x: 6, y: -3.5164795}
   m_SizeDelta: {x: 172.82404, y: 19.033112}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &513245255
@@ -40951,6 +40951,7 @@ MonoBehaviour:
   waveMax: 1
   waveNum: 0
   roomComplete: 0
+  bossRoom: 0
   door: {fileID: 0}
 --- !u!4 &1452527725
 Transform:
@@ -60774,29 +60775,42 @@ MonoBehaviour:
   music:
   - name: IntroMainTheme
     clip: {fileID: 8300000, guid: 494ffe19a12ab1b49ac36acc15367121, type: 3}
-    volume: 0.1
+    volume: 0.05
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: MenuTheme
     clip: {fileID: 8300000, guid: e1abb948203c4684ab4171ce920b42b0, type: 3}
-    volume: 0.1
+    volume: 0.05
     pitch: 1
     loop: 1
     source: {fileID: 0}
   - name: MainTheme
     clip: {fileID: 8300000, guid: b10c361a2022c19479c95bf0488b77d1, type: 3}
-    volume: 0.1
+    volume: 0.05
     pitch: 1
-    loop: 1
+    loop: 0
     source: {fileID: 0}
   - name: GameOver
     clip: {fileID: 8300000, guid: 8ab3505e6d377624ca636e5504002cef, type: 3}
-    volume: 0.1
+    volume: 0.05
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: BossTheme01
+    clip: {fileID: 8300000, guid: 1cdf923d2eaa4d245babd7b9b2fc5390, type: 3}
+    volume: 0.05
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: BossTheme02
+    clip: {fileID: 8300000, guid: 55d4e4c7b062cd54a83a3e4d92b0c8e6, type: 3}
+    volume: 0.05
     pitch: 1
     loop: 0
     source: {fileID: 0}
   Options: {fileID: 1967495149}
+  MusicSources: []
 --- !u!4 &7700597709660189911
 Transform:
   m_ObjectHideFlags: 0

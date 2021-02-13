@@ -20,6 +20,7 @@ public class GameController : MonoBehaviour
     public int waveMax;
     public int waveNum;
     public bool roomComplete;
+    public bool bossRoom;
     public GameObject door;
     new BoxCollider2D collider;
 
@@ -52,6 +53,11 @@ public class GameController : MonoBehaviour
             pickupSpawned = true;
             RandomPickup();
             Instantiate(pickup, new Vector2(0, 0), Quaternion.identity);
+        }
+
+        if (currentRoom == 5)
+        {
+            bossRoom = true;
         }
     }
 

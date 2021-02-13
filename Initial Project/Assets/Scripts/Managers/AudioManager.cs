@@ -10,12 +10,18 @@ public class AudioManager : MonoBehaviour
     public AudioMixerGroup Fx, Music;
     public Sound[] sounds, music;
     public OptionsMenu Options;
-    AudioSource audioSource;
+    GameController gCont;
+    //AudioSource audioSource;
     bool introComplete;
     bool mainMenu;
+    bool bossStageOne;
+
+    public AudioSource[] MusicSources;
 
     private void Start()
     {
+        gCont = FindObjectOfType<GameController>();
+
         int sceneID = SceneManager.GetActiveScene().buildIndex;
 
         if (sceneID > 0)
@@ -27,23 +33,12 @@ public class AudioManager : MonoBehaviour
             mainMenu = true;
             PlayMusic("MenuTheme");
         }
-        audioSource = GetComponent<AudioSource>();
+
     }
 
     void Awake()
     {
-        /*if (instance == null)
-        {
-            instance = this;
-        }
-        else
-        {
-            Destroy(gameObject);
-            return;
-        }
-
-        DontDestroyOnLoad(gameObject);
-      */
+        
 
         foreach (Sound m in music)
         {
@@ -55,6 +50,8 @@ public class AudioManager : MonoBehaviour
             m.source.pitch = m.pitch;
             m.source.loop = m.loop;
         }
+
+        MusicSources = GetComponents<AudioSource>();
 
         foreach (Sound s in sounds)
         {
@@ -74,12 +71,31 @@ public class AudioManager : MonoBehaviour
     {
         if (mainMenu == false)
         {
-            if (!audioSource.isPlaying && introComplete == false)
+            if (!MusicSources[0].isPlaying)
             {
-                introComplete = true;
-                PlayMusic("MainTheme");
+                if (!MusicSources[2].isPlaying && gCont.bossRoom == true)
+                {
+                    if (!MusicSources[4].isPlaying && bossStageOne == false)
+                    {
+                        bossStageOne = true;
+                        PlayMusic("BossTheme01");
+                    }
+                    if (!MusicSources[4].isPlaying && !MusicSources[5].isPlaying && bossStageOne == true)
+                    {
+                        PlayMusic("BossTheme02");
+                    }
+                }
+                else
+                {
+                    if (!MusicSources[2].isPlaying)
+                    {
+                        PlayMusic("MainTheme");
+                    }
+                }
+
             }
         }
+
     }
 
     public void Play(string name)
@@ -105,6 +121,5 @@ public class AudioManager : MonoBehaviour
               return;
           }
           m.source.Play();
-
     }
 }
