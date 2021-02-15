@@ -10,7 +10,7 @@ public class Enemy : MonoBehaviour
     EnemyController controllerScript;
     public float spaceBetween;
     PlayerController pCont;
-    public int health;
+    public float health;
     public Animator enemyAnim;
     public GameObject projectile;
     public int currentDamage;

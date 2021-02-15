@@ -6,7 +6,7 @@ public class BossEnemy : MonoBehaviour
 {
     GameObject controller;
     EnemyController controllerScript;
-    public int currentHealth;
+    public float currentHealth;
     private int FormList;
     Enemy enemyScript;
     public Sprite[] spriteList;
