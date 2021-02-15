@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
     public int maxHealth;
     public int health;
     public HealthBar healthBar;
+    public SecondaryCooldown secondaryCooldown;
     public OptionsMenu Options;
     public AudioManager Audio;
     public DeathScript death;
@@ -237,6 +238,10 @@ public class PlayerController : MonoBehaviour
         {
             death.Dead();
         }
+
+        secondaryCooldown.SetTime(sndCurrentCooldown);
+
+
 
 
     }
