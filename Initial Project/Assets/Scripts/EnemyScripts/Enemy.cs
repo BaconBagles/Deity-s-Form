@@ -16,6 +16,7 @@ public class Enemy : MonoBehaviour
     public int currentDamage;
     public float currentForce;
     public float currentSize;
+    public float currentKnockback;
     public GameObject healthPickup;
     public Rigidbody2D rb;
 
@@ -24,9 +25,10 @@ public class Enemy : MonoBehaviour
     private void Awake()
     {
         health = PlayerPrefs.GetInt("enemyHealth", 5);
-        currentForce = 400;
+        currentForce = 350;
         currentDamage = 1;
         currentSize = 0f;
+        currentKnockback = 175;
     }
 
     // Start is called before the first frame update
@@ -108,6 +110,7 @@ public class Enemy : MonoBehaviour
         proj.force = currentForce;
         proj.damage = currentDamage;
         proj.bossSize = currentSize;
+        proj.knockbackPower = currentKnockback;
     }
 
     public IEnumerator Knockback(float knockBackDuration, float knockbackPower, Transform obj)

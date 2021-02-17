@@ -60,6 +60,7 @@ public class PlayerController : MonoBehaviour
     public float rangeIncrease;
     public float attackCooldown;
     float currentCooldown;
+    public float knockbackIncrease;
 
     bool sndActive;
     float sndCurrentCooldown;
@@ -308,23 +309,23 @@ public class PlayerController : MonoBehaviour
             {
                 GameObject JackalAttack = Instantiate(attackPrefabs[0], firePoint.position, firePoint.rotation);
                 Rigidbody2D brb = JackalAttack.GetComponent<Rigidbody2D>();
+                playerProjectileScript jProj = JackalAttack.GetComponent<playerProjectileScript>();
                 brb.AddForce(firePoint.up * force, ForceMode2D.Impulse);
-               // playerProjectileScript Proj = JackalAttack.GetComponent<playerProjectileScript>();
 
             }
             else if (formNumber == 1)
             {
                 GameObject HawkAttack = Instantiate(attackPrefabs[2], firePoint.position, firePoint.rotation);
                 Rigidbody2D brb = HawkAttack.GetComponent<Rigidbody2D>();
+                playerProjectileScript hProj = HawkAttack.GetComponent<playerProjectileScript>();
                 brb.AddForce(firePoint.up * force, ForceMode2D.Impulse);
-                // playerProjectileScript Proj = HawkAttack.GetComponent<playerProjectileScript>();
             }
             else if (formNumber == 2)
             {
                 GameObject BullAttack = Instantiate(attackPrefabs[1], firePoint.position, firePoint.rotation);
                 Rigidbody2D brb = BullAttack.GetComponent<Rigidbody2D>();
+                playerProjectileScript bProj = BullAttack.GetComponent<playerProjectileScript>();
                 brb.AddForce(firePoint.up * force, ForceMode2D.Impulse);
-                //  playerProjectileScript Proj = BullAttack.GetComponent<playerProjectileScript>();
             }
             currentCooldown = attackCooldown;
         }
@@ -369,6 +370,11 @@ public class PlayerController : MonoBehaviour
     public void IncreaseAttackRange()
     {
         rangeIncrease += 0.5f;
+    }
+
+    public void IncreaseKnockback()
+    {
+        knockbackIncrease += 50f;
     }
 
     public void IncreaseAttackSize()

@@ -19,6 +19,7 @@ public class playerProjectileScript : MonoBehaviour
         pContd = FindObjectOfType<PlayerController>();
 
         range += pContd.rangeIncrease;
+        knockbackPower += pContd.knockbackIncrease;
         gameObject.transform.localScale = new Vector3(transform.localScale.x + pContd.attackIncrease, transform.localScale.y, 0);
 
         if (this.gameObject.tag == "basicAttack")

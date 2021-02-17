@@ -14,7 +14,7 @@ public class projectileScript : MonoBehaviour
     public float bossSize;
 
     //knockback stuff
-    public float knockbackPower = 100;
+    public float knockbackPower = 150;
     public float knockbackDuration = 1.5f;
 
     void Start()

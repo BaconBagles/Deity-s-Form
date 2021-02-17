@@ -78,6 +78,7 @@ public class Pickup : MonoBehaviour
                 break;
             case 8:
                 //Attack Knockback/mass up
+                pCont.IncreaseKnockback();
                 break;
             case 9:
                 //secondary attack range up
@@ -85,6 +86,11 @@ public class Pickup : MonoBehaviour
                 break;
             case 10:
                 //knockback reduced
+                foreach (GameObject enemy in eCont.enemies)
+                {
+                    enemyScript = enemy.GetComponent<Enemy>();
+                    enemyScript.currentKnockback /= 12.5f;
+                }
                 break;
             case 11:
                 //Max health increased
