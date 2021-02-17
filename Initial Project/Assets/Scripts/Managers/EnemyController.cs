@@ -27,7 +27,8 @@ public class EnemyController : MonoBehaviour
 
     void Start()
     {
-        attackTimer = PlayerPrefs.GetInt("attackTimer", 5);
+        attackTimer = PlayerPrefs.GetInt("turnTimer", 5);
+
         spawning = true;
         StartCoroutine(SpawnEnemies());
     }

@@ -74,7 +74,7 @@ public class Pickup : MonoBehaviour
                 break;
             case 7:
                 //armoured
-                pCont.shieldCount = 5;
+                pCont.shieldCount = 10;
                 break;
             case 8:
                 //Attack Knockback/mass up
@@ -88,8 +88,8 @@ public class Pickup : MonoBehaviour
                 break;
             case 11:
                 //Max health increased
-                pCont.maxHealth += 4;
-                pCont.health += 4;
+                pCont.maxHealth += 10;
+                pCont.health += 10;
                 break;
         }
     }

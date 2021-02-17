@@ -4,25 +4,19 @@ using UnityEngine;
 
 public class playerProjectileScript : MonoBehaviour
 {
-    public Camera cam;
-    Vector2 mousePos;
-    Rigidbody2D rb;
-    public float force;
-    public float range = 0.8f;
+    public GameObject hitEffect;
+    public float range = 0.2f;
     PlayerController pContd;
     Enemy enemy;
     BossEnemy bossEnemy;
 
+    //knockback stuff
+    public float knockbackPower = 175;
+    public float knockbackDuration = 2f;
+
     void Start()
     {
         pContd = FindObjectOfType<PlayerController>();
-        cam = FindObjectOfType<Camera>();
-        rb = GetComponent<Rigidbody2D>();
-        mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
-        Vector2 lookDir = mousePos - rb.position;
-        float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 90f;
-        rb.rotation = angle;
-        rb.AddForce(lookDir * force);
 
         range += pContd.rangeIncrease;
         gameObject.transform.localScale = new Vector3(transform.localScale.x + pContd.attackIncrease, transform.localScale.y, 0);
@@ -48,8 +42,8 @@ public class playerProjectileScript : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D other)
     {
         enemy = other.gameObject.GetComponent<Enemy>();
-    
-        if(gameObject.tag == "basicAttack")
+        StartCoroutine(enemy.GetComponent<Enemy>().Knockback(knockbackDuration, knockbackPower, this.transform));
+        if (gameObject.tag == "basicAttack")
         {
             if (other.gameObject.CompareTag("basicEnemy"))
             {
@@ -83,6 +77,8 @@ public class playerProjectileScript : MonoBehaviour
             }
         }
 
+        GameObject effect = Instantiate(hitEffect, transform.position, Quaternion.identity);
+        Destroy(effect, 0.5f);
         Destroy(this.gameObject);
     }
 

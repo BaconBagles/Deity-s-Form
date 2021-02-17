@@ -17,6 +17,8 @@ public class Enemy : MonoBehaviour
     public float currentForce;
     public float currentSize;
     public GameObject healthPickup;
+    public Rigidbody2D rb;
+
 
 
     private void Awake()
@@ -36,7 +38,8 @@ public class Enemy : MonoBehaviour
         goal = player.transform;
         controller = GameObject.Find("EnemyController");
         controllerScript = controller.GetComponent<EnemyController>();
-        
+
+        rb = GetComponent<Rigidbody2D>();
 
         if (gameObject.tag == "basicEnemy")
         {
@@ -88,7 +91,7 @@ public class Enemy : MonoBehaviour
         if (health <= 0)
         {
             float randomNum = Random.Range(0, 100);
-            if (randomNum > 90)
+            if (randomNum > 95)
             {
                 Instantiate(healthPickup, new Vector2(gameObject.transform.position.x, gameObject.transform.position.y), Quaternion.identity);
             }
@@ -105,6 +108,20 @@ public class Enemy : MonoBehaviour
         proj.force = currentForce;
         proj.damage = currentDamage;
         proj.bossSize = currentSize;
+    }
+
+    public IEnumerator Knockback(float knockBackDuration, float knockbackPower, Transform obj)
+    {
+        float timer = 0;
+
+        while (knockBackDuration > timer)
+        {
+            timer += Time.deltaTime;
+            Vector2 direction = (obj.transform.position - this.transform.position).normalized;
+            rb.AddForce(-direction * knockbackPower);
+        }
+
+        yield return 0;
     }
 
     void OnTriggerEnter2D(Collider2D other)

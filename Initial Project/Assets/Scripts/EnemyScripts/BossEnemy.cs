@@ -6,7 +6,7 @@ public class BossEnemy : MonoBehaviour
 {
     GameObject controller;
     EnemyController controllerScript;
-    public float currentHealth;
+    public float switchthreshold;
     private int FormList;
     Enemy enemyScript;
     public Sprite[] spriteList;
@@ -21,7 +21,7 @@ public class BossEnemy : MonoBehaviour
         controller = GameObject.Find("EnemyController");
         controllerScript = controller.GetComponent<EnemyController>();
         enemyScript.health = 25;
-        currentHealth = enemyScript.health;
+        switchthreshold = 15;
         FormList = 1;
         SwitchForm();
         enemyScript.currentDamage = 5;
@@ -33,10 +33,12 @@ public class BossEnemy : MonoBehaviour
     void Update()
     {
        
-        if (enemyScript.health <= currentHealth-5)
+        if (enemyScript.health <= switchthreshold)
         {
+            FormList = 0;
             SwitchForm();
-            currentHealth -= 5;
+            switchthreshold = enemyScript.health / 2;
+            StartCoroutine(SwitchBack());
         }
 
        if (controllerScript.attacking == true && controllerScript.enemies.Count == 1)
@@ -56,18 +58,26 @@ public class BossEnemy : MonoBehaviour
                 gameObject.tag = "basicEnemy";
                 spriteR.sprite = spriteList[1];
                 enemyAnim.SetInteger("EnemyType", 2);
-                FormList = 1;
+               
                 break;
             case 1:
                 gameObject.tag = "armourEnemy";
-                enemyAnim.SetInteger("EnemyType", 0);
                 spriteR.sprite = spriteList[0];
-                FormList = 0;
+                enemyAnim.SetInteger("EnemyType", 0);
+                
+                
                 break;
            /* case 2:
                 gameObject.tag = "spikyEnemy";
                 break; */
         }
+    }
+
+    IEnumerator SwitchBack()
+    {
+        yield return new WaitForSeconds(10f);
+        FormList = 1;
+        SwitchForm();
     }
 
     

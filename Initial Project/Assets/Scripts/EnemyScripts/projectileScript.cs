@@ -13,6 +13,10 @@ public class projectileScript : MonoBehaviour
     public int damage;
     public float bossSize;
 
+    //knockback stuff
+    public float knockbackPower = 100;
+    public float knockbackDuration = 1.5f;
+
     void Start()
     {
         player = GameObject.Find("Player");
@@ -33,6 +37,7 @@ public class projectileScript : MonoBehaviour
         if(other.gameObject.tag == "Player")
         {
             Audio.Play("PlayerDamage");
+            StartCoroutine(player.GetComponent<PlayerController>().Knockback(knockbackDuration, knockbackPower, this.transform));
             if (player.GetComponent<PlayerController>().shieldCount == 0)
             {
                 player.GetComponent<PlayerController>().health -= damage;

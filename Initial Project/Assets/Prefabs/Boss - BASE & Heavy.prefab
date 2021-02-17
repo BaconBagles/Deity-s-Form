@@ -101,7 +101,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 10
   m_LinearDrag: 2
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -148,10 +148,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b6b8638a55a4fb4d8acba0f8db0ab3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentHealth: 0
+  switchthreshold: 0
   spriteList:
   - {fileID: 5366621052071639061, guid: 835be9276eafc73468298a2068b4007e, type: 3}
-  - {fileID: 7717462755901127523, guid: 4199d22beb6833446b8f9acdf6d8baf5, type: 3}
+  - {fileID: 4058296332798208554, guid: 143402749c6ca0f4488e7fc4d1686c1e, type: 3}
   enemyAnim: {fileID: 7956289166715365268}
 --- !u!114 &3791742543417215833
 MonoBehaviour:
@@ -172,7 +172,7 @@ MonoBehaviour:
   currentDamage: 0
   currentForce: 0
   currentSize: 0
-  healthPickup: {fileID: 0}
+  healthPickup: {fileID: 1104073636124065548, guid: 4bf49cacdd16a6b48a2e41e261616927, type: 3}
 --- !u!95 &7956289166715365268
 Animator:
   serializedVersion: 3

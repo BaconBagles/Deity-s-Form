@@ -24,6 +24,7 @@ public class PlayerController : MonoBehaviour
     public float moveSpeed;
     public float speedBonus;
     public Rigidbody2D rb;
+    public Rigidbody2D frb;
     public int formNumber;
     public ParticleSystem attackEffect;
     public GameObject attackOrbiter;
@@ -41,7 +42,7 @@ public class PlayerController : MonoBehaviour
     bool jackalSndAtk;
     bool hawkSndAtk;
     bool bullSndAtk;
-    Vector3 mousePos;
+    Vector2 mousePos;
     private Vector3 normaliseDir;
 
     attackOrbit orbitPos;
@@ -52,7 +53,9 @@ public class PlayerController : MonoBehaviour
 
     //New Primary Attack Stuff
     public Transform firePoint;
+    public GameObject fireObject;
     public GameObject[] attackPrefabs;
+    public float force = 75;
     public float attackIncrease;
     public float rangeIncrease;
     public float attackCooldown;
@@ -74,7 +77,8 @@ public class PlayerController : MonoBehaviour
         sndCooldown = 5;
 
         sr = GetComponent<SpriteRenderer>();
-
+        rb = GetComponent<Rigidbody2D>();
+        frb = fireObject.GetComponent<Rigidbody2D>();
         orbitPos = attackOrbiter.GetComponent<attackOrbit>();
 
         //Adds our stored keys to the dictionary
@@ -101,7 +105,8 @@ public class PlayerController : MonoBehaviour
             sr.color = Color.white;
         }
 
-
+        mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
+        fireObject.transform.position = rb.transform.position;
 
         //Update for Input
         if (Options.GameIsPaused == false)
@@ -184,10 +189,10 @@ public class PlayerController : MonoBehaviour
                 sndActive = false;
             }
 
-            mousePos = Input.mousePosition;
+           /* mousePos = Input.mousePosition;
             mousePos.z = 0;
-            mousePos = Camera.main.ScreenToWorldPoint(mousePos);
-            normaliseDir = (mousePos - transform.position).normalized;
+            mousePos = Camera.main.ScreenToWorldPoint(mousePos); */
+            normaliseDir = (mousePos - rb.position).normalized;
 
             if (bullSndAtk == true)
             {
@@ -240,10 +245,14 @@ public class PlayerController : MonoBehaviour
         }
 
         secondaryCooldown.SetTime(sndCurrentCooldown);
+        
+    }
 
-
-
-
+    private void FixedUpdate()
+    {
+        Vector2 lookDir = mousePos - rb.position;
+        float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 90f;
+        frb.rotation = angle;
     }
 
     void playFootstepSound()
@@ -277,24 +286,45 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public IEnumerator Knockback(float knockBackDuration, float knockbackPower, Transform obj)
+    {
+        float timer = 0;
+
+        while (knockBackDuration > timer)
+        {
+            timer += Time.deltaTime;
+            Vector2 direction = (obj.transform.position - this.transform.position).normalized;
+            rb.AddForce(-direction * knockbackPower);
+        }
+
+        yield return 0;
+    }
+
     void MainAttack()
     {
         if (currentCooldown <= 0)
         {
             if (formNumber == 0)
             {
-                GameObject JackalAttack = Instantiate(attackPrefabs[0], firePoint.position, Quaternion.identity);
+                GameObject JackalAttack = Instantiate(attackPrefabs[0], firePoint.position, firePoint.rotation);
+                Rigidbody2D brb = JackalAttack.GetComponent<Rigidbody2D>();
+                brb.AddForce(firePoint.up * force, ForceMode2D.Impulse);
                // playerProjectileScript Proj = JackalAttack.GetComponent<playerProjectileScript>();
+
             }
             else if (formNumber == 1)
             {
                 GameObject HawkAttack = Instantiate(attackPrefabs[2], firePoint.position, firePoint.rotation);
-               // playerProjectileScript Proj = HawkAttack.GetComponent<playerProjectileScript>();
+                Rigidbody2D brb = HawkAttack.GetComponent<Rigidbody2D>();
+                brb.AddForce(firePoint.up * force, ForceMode2D.Impulse);
+                // playerProjectileScript Proj = HawkAttack.GetComponent<playerProjectileScript>();
             }
             else if (formNumber == 2)
             {
                 GameObject BullAttack = Instantiate(attackPrefabs[1], firePoint.position, firePoint.rotation);
-              //  playerProjectileScript Proj = BullAttack.GetComponent<playerProjectileScript>();
+                Rigidbody2D brb = BullAttack.GetComponent<Rigidbody2D>();
+                brb.AddForce(firePoint.up * force, ForceMode2D.Impulse);
+                //  playerProjectileScript Proj = BullAttack.GetComponent<playerProjectileScript>();
             }
             currentCooldown = attackCooldown;
         }
@@ -338,32 +368,13 @@ public class PlayerController : MonoBehaviour
 
     public void IncreaseAttackRange()
     {
-        rangeIncrease += 0.4f;
+        rangeIncrease += 0.5f;
     }
 
     public void IncreaseAttackSize()
     {
         attackIncrease += 1f;
     }
-
-    void SetParticleColour()
-    {
-        ParticleSystem pObj = GameObject.FindObjectOfType<ParticleSystem>();
-        ParticleSystem ps = pObj.GetComponent<ParticleSystem>();
-        var main = ps.main;
-        switch (formNumber)
-        {
-            case 1:
-                main.startColor = Color.black;
-                break;
-            case 2:
-                main.startColor = Color.yellow;
-                break;
-            default:
-                main.startColor = Color.blue;
-                break;
-        }
-    }
-
+    
     
 }

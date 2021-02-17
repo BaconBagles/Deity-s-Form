@@ -98,9 +98,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba53948f035ed8d48bec126991913893, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 0}
-  force: 200
-  range: 0.08
+  hitEffect: {fileID: 121578373512880053, guid: e0e9462b25bdb6044b1701be07dddaba, type: 3}
+  range: 0.2
+  knockbackPower: 175
+  knockbackDuration: 2
 --- !u!114 &8008769319339840723
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -128,7 +129,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 0.5
+  m_Mass: 0.8
   m_LinearDrag: 2
   m_AngularDrag: 0.05
   m_GravityScale: 0
