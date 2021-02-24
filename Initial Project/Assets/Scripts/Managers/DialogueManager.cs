@@ -12,6 +12,11 @@ public class DialogueManager : MonoBehaviour
 
     Queue<string> sentences;
 
+    public DialogueTrigger[] triggers;
+    public bool response;
+    public int responseNumber;
+    
+
     void Start()
     {
         sentences = new Queue<string>();
@@ -58,6 +63,14 @@ public class DialogueManager : MonoBehaviour
 
     void EndDialogue()
     {
-        animator.SetBool("IsOpen", false);
+        if (response == true)
+        {
+            response = false;
+            triggers[responseNumber].TriggerDialogue();
+        }
+        else
+        {
+            animator.SetBool("IsOpen", false);
+        }
     }
 }
