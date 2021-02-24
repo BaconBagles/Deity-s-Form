@@ -24436,9 +24436,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e42b9bf7ee86e24aa7d264dda4091fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  options: {fileID: 1967495149}
   nameText: {fileID: 1696368145}
   dialogueText: {fileID: 1349984203}
-  animator: {fileID: 2024592627}
+  textBox: {fileID: 2024592623}
   triggers:
   - {fileID: 1783384703}
   - {fileID: 1886386393}
@@ -60951,14 +60952,13 @@ GameObject:
   - component: {fileID: 2024592624}
   - component: {fileID: 2024592626}
   - component: {fileID: 2024592625}
-  - component: {fileID: 2024592627}
   m_Layer: 5
   m_Name: DialogueBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2024592624
 RectTransform:
   m_ObjectHideFlags: 0
@@ -60978,7 +60978,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: -93}
+  m_AnchoredPosition: {x: 0, y: 128}
   m_SizeDelta: {x: 500, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2024592625
@@ -61019,25 +61019,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2024592623}
   m_CullTransparentMesh: 0
---- !u!95 &2024592627
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2024592623}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: ce44e368fe4ef1949a273d040462d200, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2029004155
 GameObject:
   m_ObjectHideFlags: 0

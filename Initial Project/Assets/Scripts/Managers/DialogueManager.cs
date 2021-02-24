@@ -5,10 +5,12 @@ using UnityEngine.UI;
 
 public class DialogueManager : MonoBehaviour
 {
+    public OptionsMenu options;
+
     public TMPro.TextMeshProUGUI nameText;
     public TMPro.TextMeshProUGUI dialogueText;
 
-    public Animator animator;
+    public GameObject textBox;
 
     Queue<string> sentences;
 
@@ -24,7 +26,9 @@ public class DialogueManager : MonoBehaviour
 
     public void StartDialogue(Dialogue dialogue)
     {
-        animator.SetBool("IsOpen", true);
+        textBox.SetActive(true);
+        Time.timeScale = 0f;
+        options.GameIsPaused = true;
 
         nameText.text = dialogue.name;
 
@@ -41,7 +45,7 @@ public class DialogueManager : MonoBehaviour
     public void DisplayNextSentence()
     {
         if (sentences.Count == 0)
-        {
+        {          
             EndDialogue();
             return;
         }
@@ -70,7 +74,10 @@ public class DialogueManager : MonoBehaviour
         }
         else
         {
-            animator.SetBool("IsOpen", false);
+            Time.timeScale = 1f;
+            options.GameIsPaused = false;
+
+            textBox.SetActive(false);
         }
     }
 }
