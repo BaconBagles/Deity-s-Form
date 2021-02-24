@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4187769153165728781}
   - component: {fileID: 539602658839585061}
   - component: {fileID: 773440634155736326}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: MemoryGain
   m_TagString: Untagged
   m_Icon: {fileID: 0}

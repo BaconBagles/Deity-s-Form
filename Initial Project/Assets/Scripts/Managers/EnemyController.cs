@@ -63,13 +63,22 @@ public class EnemyController : MonoBehaviour
     IEnumerator EnemyAttack()
     {
         StartTimer();
-        yield return new WaitForSeconds(attackTimer);
+        yield return new WaitForSeconds(attackTimer - 0.3f);
         foreach (GameObject enemy in enemies)
         {
             enemyScript = enemy.GetComponent<Enemy>();
-            enemyScript.Attack();
+            enemyScript.enemyAnim.SetTrigger("Attack");
+            
         }
-       Audio.Play("EnemyAttack");
+        yield return new WaitForSeconds(0.3f);
+        foreach (GameObject enemy in enemies)
+        {
+            enemyScript = enemy.GetComponent<Enemy>();
+            yield return new WaitForSeconds(0.1f);
+            enemyScript.Attack();
+        } 
+
+        Audio.Play("EnemyAttack");
         StartCoroutine(EnemyAttack());
     }
 
