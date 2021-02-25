@@ -5,6 +5,7 @@ using UnityEngine;
 public class BossEnemy : MonoBehaviour
 {
     GameObject controller;
+    GameObject audioManager;
     EnemyController controllerScript;
     public float switchthreshold;
     private int FormList;
@@ -12,6 +13,7 @@ public class BossEnemy : MonoBehaviour
     public Sprite[] spriteList;
     private SpriteRenderer spriteR;
     public Animator enemyAnim;
+    public AudioManager Audio;
 
     // Start is called before the first frame update
     void Start()
@@ -19,6 +21,8 @@ public class BossEnemy : MonoBehaviour
         spriteR = GetComponent<SpriteRenderer>();
         enemyScript = GetComponent<Enemy>();
         controller = GameObject.Find("EnemyController");
+        audioManager = GameObject.Find("AudioManager");
+        Audio = audioManager.GetComponent<AudioManager>();
         controllerScript = controller.GetComponent<EnemyController>();
         enemyScript.health = 25;
         switchthreshold = 15;
@@ -35,6 +39,7 @@ public class BossEnemy : MonoBehaviour
        
         if (enemyScript.health <= switchthreshold)
         {
+            Audio.Play("BossShieldBreak");
             FormList = 0;
             SwitchForm();
             switchthreshold = enemyScript.health / 2;
@@ -77,6 +82,7 @@ public class BossEnemy : MonoBehaviour
     {
         yield return new WaitForSeconds(10f);
         FormList = 1;
+        Audio.Play("BossReapplyingArmour");
         SwitchForm();
     }
 

@@ -30,7 +30,7 @@ public class EnemyController : MonoBehaviour
         attackTimer = PlayerPrefs.GetInt("turnTimer", 5);
 
         spawning = true;
-        StartCoroutine(SpawnEnemies());
+       StartCoroutine(SpawnEnemies());
     }
 
     // Update is called once per frame

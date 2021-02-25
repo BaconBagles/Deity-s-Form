@@ -213,7 +213,7 @@ GameObject:
   - component: {fileID: 12061781}
   m_Layer: 9
   m_Name: Pillar3
-  m_TagString: Untagged
+  m_TagString: Pillar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -330,6 +330,7 @@ GameObject:
   - component: {fileID: 12931002}
   - component: {fileID: 12931001}
   - component: {fileID: 12931000}
+  - component: {fileID: 12931003}
   m_Layer: 0
   m_Name: Quit
   m_TagString: Untagged
@@ -450,6 +451,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 12930998}
   m_CullTransparentMesh: 0
+--- !u!114 &12931003
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 12930998}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7700597709660189910}
+          m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+          m_MethodName: Play
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: MenuClick
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7700597709660189910}
+          m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+          m_MethodName: Play
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: MenuHover
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &14594395
 GameObject:
   m_ObjectHideFlags: 0
@@ -599,7 +645,7 @@ GameObject:
   - component: {fileID: 17608473}
   m_Layer: 9
   m_Name: Cube (16)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -729,7 +775,7 @@ GameObject:
   - component: {fileID: 27516781}
   m_Layer: 9
   m_Name: Cube (10)
-  m_TagString: Respawn
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1327,7 +1373,7 @@ GameObject:
   - component: {fileID: 50885646}
   m_Layer: 9
   m_Name: Cube (16)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1457,7 +1503,7 @@ GameObject:
   - component: {fileID: 51759647}
   m_Layer: 9
   m_Name: Cube (16)
-  m_TagString: Respawn
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1686,7 +1732,7 @@ GameObject:
   - component: {fileID: 56980762}
   m_Layer: 9
   m_Name: Cube (7)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1816,7 +1862,7 @@ GameObject:
   - component: {fileID: 57442427}
   m_Layer: 9
   m_Name: Cube (17)
-  m_TagString: Respawn
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1946,7 +1992,7 @@ GameObject:
   - component: {fileID: 58632531}
   m_Layer: 9
   m_Name: Cube (21)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2151,7 +2197,7 @@ GameObject:
   - component: {fileID: 64581676}
   m_Layer: 9
   m_Name: Cube (16)
-  m_TagString: Respawn
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2281,7 +2327,7 @@ GameObject:
   - component: {fileID: 69861925}
   m_Layer: 9
   m_Name: Cube (9)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2411,7 +2457,7 @@ GameObject:
   - component: {fileID: 74200317}
   m_Layer: 9
   m_Name: Cube (11)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2577,7 +2623,7 @@ GameObject:
   - component: {fileID: 76242322}
   m_Layer: 9
   m_Name: Cube (19)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2707,7 +2753,7 @@ GameObject:
   - component: {fileID: 82226853}
   m_Layer: 9
   m_Name: Cube (11)
-  m_TagString: Respawn
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2837,7 +2883,7 @@ GameObject:
   - component: {fileID: 84643424}
   m_Layer: 9
   m_Name: Cube (8)
-  m_TagString: Respawn
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2967,7 +3013,7 @@ GameObject:
   - component: {fileID: 85946568}
   m_Layer: 9
   m_Name: Cube (13)
-  m_TagString: Respawn
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3097,7 +3143,7 @@ GameObject:
   - component: {fileID: 87525124}
   m_Layer: 9
   m_Name: Pillar3
-  m_TagString: Untagged
+  m_TagString: Pillar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3313,6 +3359,7 @@ GameObject:
   - component: {fileID: 91253772}
   - component: {fileID: 91253771}
   - component: {fileID: 91253770}
+  - component: {fileID: 91253773}
   m_Layer: 0
   m_Name: Down
   m_TagString: Untagged
@@ -3434,6 +3481,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 91253768}
   m_CullTransparentMesh: 0
+--- !u!114 &91253773
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 91253768}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7700597709660189910}
+          m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+          m_MethodName: Play
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: MenuClick
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7700597709660189910}
+          m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+          m_MethodName: Play
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: MenuHover
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &96459997
 GameObject:
   m_ObjectHideFlags: 0
@@ -3449,7 +3541,7 @@ GameObject:
   - component: {fileID: 96459999}
   m_Layer: 9
   m_Name: Pillar3
-  m_TagString: Untagged
+  m_TagString: Pillar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3569,7 +3661,7 @@ GameObject:
   - component: {fileID: 109258181}
   m_Layer: 9
   m_Name: Cube (18)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3798,7 +3890,7 @@ GameObject:
   - component: {fileID: 120699498}
   m_Layer: 9
   m_Name: Cube (13)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3928,7 +4020,7 @@ GameObject:
   - component: {fileID: 125001235}
   m_Layer: 9
   m_Name: Cube (13)
-  m_TagString: Respawn
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4205,6 +4297,7 @@ GameObject:
   - component: {fileID: 134857714}
   - component: {fileID: 134857713}
   - component: {fileID: 134857712}
+  - component: {fileID: 134857715}
   m_Layer: 0
   m_Name: switchB
   m_TagString: Untagged
@@ -4326,6 +4419,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 134857710}
   m_CullTransparentMesh: 0
+--- !u!114 &134857715
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 134857710}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7700597709660189910}
+          m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+          m_MethodName: Play
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: MenuClick
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7700597709660189910}
+          m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+          m_MethodName: Play
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: MenuHover
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &135830732
 GameObject:
   m_ObjectHideFlags: 0
@@ -4526,7 +4664,7 @@ GameObject:
   - component: {fileID: 137940035}
   m_Layer: 9
   m_Name: Cube (23)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4656,7 +4794,7 @@ GameObject:
   - component: {fileID: 140458206}
   m_Layer: 9
   m_Name: Cube (13)
-  m_TagString: Respawn
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4786,7 +4924,7 @@ GameObject:
   - component: {fileID: 146155187}
   m_Layer: 9
   m_Name: Cube (9)
-  m_TagString: Respawn
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5296,6 +5434,7 @@ GameObject:
   - component: {fileID: 168020364}
   - component: {fileID: 168020363}
   - component: {fileID: 168020362}
+  - component: {fileID: 168020365}
   m_Layer: 0
   m_Name: Next
   m_TagString: Untagged
@@ -5416,6 +5555,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 168020360}
   m_CullTransparentMesh: 0
+--- !u!114 &168020365
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 168020360}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7700597709660189910}
+          m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+          m_MethodName: Play
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: MenuClick
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7700597709660189910}
+          m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+          m_MethodName: Play
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: MenuHover
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &169462276
 GameObject:
   m_ObjectHideFlags: 0
@@ -5426,6 +5610,7 @@ GameObject:
   m_Component:
   - component: {fileID: 169462277}
   - component: {fileID: 169462278}
+  - component: {fileID: 169462279}
   m_Layer: 5
   m_Name: Player Health
   m_TagString: Untagged
@@ -5506,6 +5691,51 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &169462279
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 169462276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7700597709660189910}
+          m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+          m_MethodName: Play
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: MenuClick
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7700597709660189910}
+          m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+          m_MethodName: Play
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: MenuHover
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &171996466
 GameObject:
   m_ObjectHideFlags: 0
@@ -5521,7 +5751,7 @@ GameObject:
   - component: {fileID: 171996468}
   m_Layer: 9
   m_Name: Cube (13)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5651,7 +5881,7 @@ GameObject:
   - component: {fileID: 186924452}
   m_Layer: 9
   m_Name: Pillar3
-  m_TagString: Untagged
+  m_TagString: Pillar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5771,7 +6001,7 @@ GameObject:
   - component: {fileID: 194414363}
   m_Layer: 9
   m_Name: Cube (16)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5901,7 +6131,7 @@ GameObject:
   - component: {fileID: 196299056}
   m_Layer: 9
   m_Name: Cube (9)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6299,7 +6529,7 @@ GameObject:
   - component: {fileID: 206067927}
   m_Layer: 9
   m_Name: Cube (13)
-  m_TagString: Respawn
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6429,7 +6659,7 @@ GameObject:
   - component: {fileID: 206082147}
   m_Layer: 9
   m_Name: Cube (12)
-  m_TagString: Respawn
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6559,7 +6789,7 @@ GameObject:
   - component: {fileID: 213452833}
   m_Layer: 9
   m_Name: Cube (9)
-  m_TagString: Respawn
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6755,7 +6985,7 @@ GameObject:
   - component: {fileID: 219900800}
   m_Layer: 9
   m_Name: Cube (10)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6885,7 +7115,7 @@ GameObject:
   - component: {fileID: 226598793}
   m_Layer: 9
   m_Name: Pillar3
-  m_TagString: Untagged
+  m_TagString: Pillar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7005,7 +7235,7 @@ GameObject:
   - component: {fileID: 230305761}
   m_Layer: 9
   m_Name: Cube (16)
-  m_TagString: Respawn
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7135,7 +7365,7 @@ GameObject:
   - component: {fileID: 231698010}
   m_Layer: 9
   m_Name: Cube (10)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7474,7 +7704,7 @@ GameObject:
   - component: {fileID: 246561203}
   m_Layer: 9
   m_Name: Cube (9)
-  m_TagString: Respawn
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8857,7 +9087,7 @@ GameObject:
   - component: {fileID: 282397436}
   m_Layer: 9
   m_Name: Cube (15)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8987,7 +9217,7 @@ GameObject:
   - component: {fileID: 286118070}
   m_Layer: 9
   m_Name: Pillar3
-  m_TagString: Untagged
+  m_TagString: Pillar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9260,6 +9490,7 @@ GameObject:
   - component: {fileID: 301498314}
   - component: {fileID: 301498313}
   - component: {fileID: 301498312}
+  - component: {fileID: 301498315}
   m_Layer: 0
   m_Name: Escape
   m_TagString: Untagged
@@ -9381,6 +9612,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 301498310}
   m_CullTransparentMesh: 0
+--- !u!114 &301498315
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 301498310}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7700597709660189910}
+          m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+          m_MethodName: Play
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: MenuClick
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7700597709660189910}
+          m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+          m_MethodName: Play
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: MenuHover
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &306397653
 GameObject:
   m_ObjectHideFlags: 0
@@ -9471,7 +9747,7 @@ GameObject:
   - component: {fileID: 307358976}
   m_Layer: 9
   m_Name: Cube (13)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9601,7 +9877,7 @@ GameObject:
   - component: {fileID: 307430176}
   m_Layer: 9
   m_Name: Pillar3
-  m_TagString: Untagged
+  m_TagString: Pillar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10255,7 +10531,7 @@ GameObject:
   - component: {fileID: 337164873}
   m_Layer: 9
   m_Name: Cube (15)
-  m_TagString: Respawn
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10385,7 +10661,7 @@ GameObject:
   - component: {fileID: 338473707}
   m_Layer: 9
   m_Name: Cube (17)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10859,7 +11135,7 @@ GameObject:
   - component: {fileID: 360360912}
   m_Layer: 9
   m_Name: Pillar3
-  m_TagString: Untagged
+  m_TagString: Pillar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11113,7 +11389,7 @@ GameObject:
   - component: {fileID: 364524194}
   m_Layer: 9
   m_Name: Cube (7)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11281,7 +11557,7 @@ GameObject:
   - component: {fileID: 367843457}
   m_Layer: 9
   m_Name: Cube (8)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11406,6 +11682,7 @@ GameObject:
   m_Component:
   - component: {fileID: 380316030}
   - component: {fileID: 380316029}
+  - component: {fileID: 380316031}
   m_Layer: 5
   m_Name: Music Volume
   m_TagString: Untagged
@@ -11498,6 +11775,51 @@ RectTransform:
   m_AnchoredPosition: {x: -174, y: -141.1}
   m_SizeDelta: {x: 160, y: 29.272285}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &380316031
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 380316028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7700597709660189910}
+          m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+          m_MethodName: Play
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: MenuClick
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7700597709660189910}
+          m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+          m_MethodName: Play
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: MenuHover
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &386352203
 GameObject:
   m_ObjectHideFlags: 0
@@ -11513,7 +11835,7 @@ GameObject:
   - component: {fileID: 386352205}
   m_Layer: 9
   m_Name: Cube (12)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11962,7 +12284,7 @@ GameObject:
   - component: {fileID: 396239315}
   m_Layer: 9
   m_Name: Cube (20)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12656,7 +12978,7 @@ GameObject:
   - component: {fileID: 432836697}
   m_Layer: 9
   m_Name: Cube (14)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12786,7 +13108,7 @@ GameObject:
   - component: {fileID: 434056193}
   m_Layer: 9
   m_Name: Cube (12)
-  m_TagString: Respawn
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13184,7 +13506,7 @@ GameObject:
   - component: {fileID: 447955353}
   m_Layer: 9
   m_Name: Cube (14)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13607,7 +13929,7 @@ GameObject:
   - component: {fileID: 460841251}
   m_Layer: 9
   m_Name: Cube (14)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14926,7 +15248,7 @@ GameObject:
   - component: {fileID: 525785450}
   m_Layer: 9
   m_Name: Cube (8)
-  m_TagString: Respawn
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15128,6 +15450,7 @@ GameObject:
   - component: {fileID: 528315846}
   - component: {fileID: 528315845}
   - component: {fileID: 528315844}
+  - component: {fileID: 528315847}
   m_Layer: 5
   m_Name: Font Colour Dropdown
   m_TagString: Untagged
@@ -15277,6 +15600,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 528315842}
   m_CullTransparentMesh: 0
+--- !u!114 &528315847
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 528315842}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7700597709660189910}
+          m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+          m_MethodName: Play
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: MenuClick
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7700597709660189910}
+          m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+          m_MethodName: Play
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: MenuHover
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &533138121
 GameObject:
   m_ObjectHideFlags: 0
@@ -15292,7 +15660,7 @@ GameObject:
   - component: {fileID: 533138123}
   m_Layer: 9
   m_Name: Cube (7)
-  m_TagString: Respawn
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15664,7 +16032,7 @@ GameObject:
   - component: {fileID: 544539628}
   m_Layer: 9
   m_Name: Cube (20)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15794,7 +16162,7 @@ GameObject:
   - component: {fileID: 545065653}
   m_Layer: 9
   m_Name: Cube (9)
-  m_TagString: Respawn
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15924,7 +16292,7 @@ GameObject:
   - component: {fileID: 545536867}
   m_Layer: 9
   m_Name: Cube (10)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -16196,7 +16564,7 @@ GameObject:
   - component: {fileID: 546806339}
   m_Layer: 9
   m_Name: Pillar3
-  m_TagString: Untagged
+  m_TagString: Pillar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -16450,7 +16818,7 @@ GameObject:
   - component: {fileID: 551887323}
   m_Layer: 9
   m_Name: Pillar3
-  m_TagString: Untagged
+  m_TagString: Pillar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -16699,6 +17067,7 @@ GameObject:
   m_Component:
   - component: {fileID: 563359973}
   - component: {fileID: 563359972}
+  - component: {fileID: 563359974}
   m_Layer: 5
   m_Name: Master Volume
   m_TagString: Untagged
@@ -16791,6 +17160,51 @@ RectTransform:
   m_AnchoredPosition: {x: -174, y: -18}
   m_SizeDelta: {x: 160, y: 29.272285}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &563359974
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 563359971}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7700597709660189910}
+          m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+          m_MethodName: Play
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: MenuClick
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7700597709660189910}
+          m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+          m_MethodName: Play
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: MenuHover
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &565260788
 GameObject:
   m_ObjectHideFlags: 0
@@ -16838,7 +17252,7 @@ GameObject:
   - component: {fileID: 580648165}
   m_Layer: 9
   m_Name: Pillar3
-  m_TagString: Untagged
+  m_TagString: Pillar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -16958,7 +17372,7 @@ GameObject:
   - component: {fileID: 582301120}
   m_Layer: 9
   m_Name: Pillar3
-  m_TagString: Untagged
+  m_TagString: Pillar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17459,7 +17873,7 @@ GameObject:
   - component: {fileID: 614950003}
   m_Layer: 9
   m_Name: Cube (10)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17589,7 +18003,7 @@ GameObject:
   - component: {fileID: 619595001}
   m_Layer: 9
   m_Name: Cube (9)
-  m_TagString: Respawn
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17719,7 +18133,7 @@ GameObject:
   - component: {fileID: 620539750}
   m_Layer: 9
   m_Name: Cube (14)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17849,7 +18263,7 @@ GameObject:
   - component: {fileID: 622315569}
   m_Layer: 9
   m_Name: Pillar3
-  m_TagString: Untagged
+  m_TagString: Pillar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17969,7 +18383,7 @@ GameObject:
   - component: {fileID: 624574255}
   m_Layer: 9
   m_Name: Cube (16)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -18135,7 +18549,7 @@ GameObject:
   - component: {fileID: 625846972}
   m_Layer: 9
   m_Name: Cube (8)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -18399,7 +18813,7 @@ GameObject:
   - component: {fileID: 629622869}
   m_Layer: 9
   m_Name: Cube (8)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -18529,7 +18943,7 @@ GameObject:
   - component: {fileID: 629956708}
   m_Layer: 9
   m_Name: Cube (15)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -18659,7 +19073,7 @@ GameObject:
   - component: {fileID: 632294184}
   m_Layer: 9
   m_Name: Pillar3
-  m_TagString: Untagged
+  m_TagString: Pillar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -19146,7 +19560,7 @@ GameObject:
   - component: {fileID: 651377859}
   m_Layer: 9
   m_Name: Cube (10)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -19276,7 +19690,7 @@ GameObject:
   - component: {fileID: 654408193}
   m_Layer: 9
   m_Name: Pillar3
-  m_TagString: Untagged
+  m_TagString: Pillar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -19396,7 +19810,7 @@ GameObject:
   - component: {fileID: 660889194}
   m_Layer: 9
   m_Name: Pillar3
-  m_TagString: Untagged
+  m_TagString: Pillar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -19516,7 +19930,7 @@ GameObject:
   - component: {fileID: 660898698}
   m_Layer: 9
   m_Name: Pillar3
-  m_TagString: Untagged
+  m_TagString: Pillar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -19711,7 +20125,7 @@ GameObject:
   - component: {fileID: 663055345}
   m_Layer: 9
   m_Name: Cube (15)
-  m_TagString: Respawn
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -19841,7 +20255,7 @@ GameObject:
   - component: {fileID: 663091280}
   m_Layer: 9
   m_Name: Pillar3
-  m_TagString: Untagged
+  m_TagString: Pillar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -20051,7 +20465,7 @@ GameObject:
   - component: {fileID: 674793291}
   m_Layer: 9
   m_Name: Cube (14)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -20181,7 +20595,7 @@ GameObject:
   - component: {fileID: 677185708}
   m_Layer: 9
   m_Name: Pillar3
-  m_TagString: Untagged
+  m_TagString: Pillar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -20301,7 +20715,7 @@ GameObject:
   - component: {fileID: 678818125}
   m_Layer: 9
   m_Name: Cube (19)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -20474,7 +20888,7 @@ GameObject:
   - component: {fileID: 687549806}
   m_Layer: 9
   m_Name: Pillar3
-  m_TagString: Untagged
+  m_TagString: Pillar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -20630,7 +21044,7 @@ GameObject:
   - component: {fileID: 693392582}
   m_Layer: 9
   m_Name: Cube (15)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -20760,7 +21174,7 @@ GameObject:
   - component: {fileID: 700988196}
   m_Layer: 9
   m_Name: Cube (12)
-  m_TagString: Respawn
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -21257,7 +21671,7 @@ GameObject:
   - component: {fileID: 712036883}
   m_Layer: 9
   m_Name: Pillar3
-  m_TagString: Untagged
+  m_TagString: Pillar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -21650,7 +22064,7 @@ GameObject:
   - component: {fileID: 721924739}
   m_Layer: 9
   m_Name: Pillar3
-  m_TagString: Untagged
+  m_TagString: Pillar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -21767,6 +22181,7 @@ GameObject:
   - component: {fileID: 723422113}
   - component: {fileID: 723422112}
   - component: {fileID: 723422111}
+  - component: {fileID: 723422114}
   m_Layer: 0
   m_Name: Reset to Default
   m_TagString: Untagged
@@ -21911,6 +22326,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 723422109}
   m_CullTransparentMesh: 0
+--- !u!114 &723422114
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 723422109}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7700597709660189910}
+          m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+          m_MethodName: Play
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: MenuClick
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7700597709660189910}
+          m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+          m_MethodName: Play
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: MenuHover
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &737194992
 GameObject:
   m_ObjectHideFlags: 0
@@ -22066,6 +22526,7 @@ GameObject:
   - component: {fileID: 738017389}
   - component: {fileID: 738017388}
   - component: {fileID: 738017387}
+  - component: {fileID: 738017391}
   m_Layer: 0
   m_Name: Gameplay
   m_TagString: Untagged
@@ -22210,6 +22671,51 @@ RectTransform:
   m_AnchoredPosition: {x: -156.3, y: -106.8}
   m_SizeDelta: {x: 181.27765, y: 50.26448}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &738017391
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 738017386}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7700597709660189910}
+          m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+          m_MethodName: Play
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: MenuClick
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7700597709660189910}
+          m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+          m_MethodName: Play
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: MenuHover
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &746952806
 GameObject:
   m_ObjectHideFlags: 0
@@ -22324,7 +22830,7 @@ GameObject:
   - component: {fileID: 749633100}
   m_Layer: 9
   m_Name: Cube (22)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -22744,7 +23250,7 @@ GameObject:
   - component: {fileID: 759417879}
   m_Layer: 9
   m_Name: Cube (18)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -23008,7 +23514,7 @@ GameObject:
   - component: {fileID: 764853528}
   m_Layer: 9
   m_Name: Pillar3
-  m_TagString: Untagged
+  m_TagString: Pillar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -23128,7 +23634,7 @@ GameObject:
   - component: {fileID: 767390331}
   m_Layer: 9
   m_Name: Cube (7)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -23357,7 +23863,7 @@ GameObject:
   - component: {fileID: 772301573}
   m_Layer: 9
   m_Name: Cube (14)
-  m_TagString: Respawn
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -23487,7 +23993,7 @@ GameObject:
   - component: {fileID: 775121375}
   m_Layer: 9
   m_Name: Cube (9)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -23835,6 +24341,7 @@ GameObject:
   - component: {fileID: 787529636}
   - component: {fileID: 787529635}
   - component: {fileID: 787529634}
+  - component: {fileID: 787529638}
   m_Layer: 0
   m_Name: Options
   m_TagString: Untagged
@@ -23979,6 +24486,51 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -9}
   m_SizeDelta: {x: 181.27765, y: 50.26448}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &787529638
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 787529633}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7700597709660189910}
+          m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+          m_MethodName: Play
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: MenuClick
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7700597709660189910}
+          m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+          m_MethodName: Play
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: MenuHover
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &788916123
 GameObject:
   m_ObjectHideFlags: 0
@@ -24126,7 +24678,7 @@ GameObject:
   - component: {fileID: 793872289}
   m_Layer: 9
   m_Name: Cube (9)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -24256,7 +24808,7 @@ GameObject:
   - component: {fileID: 797399308}
   m_Layer: 9
   m_Name: Cube (8)
-  m_TagString: Respawn
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -24382,7 +24934,7 @@ GameObject:
   - component: {fileID: 802573706}
   m_Layer: 9
   m_Name: Pillars
-  m_TagString: Untagged
+  m_TagString: Pillar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -24475,7 +25027,7 @@ GameObject:
   - component: {fileID: 818110047}
   m_Layer: 9
   m_Name: Pillar3
-  m_TagString: Untagged
+  m_TagString: Pillar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -24866,7 +25418,7 @@ GameObject:
   - component: {fileID: 836481420}
   m_Layer: 9
   m_Name: Cube (7)
-  m_TagString: Respawn
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -25136,7 +25688,7 @@ GameObject:
   - component: {fileID: 863527440}
   m_Layer: 9
   m_Name: Pillar3
-  m_TagString: Untagged
+  m_TagString: Pillar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -25448,6 +26000,7 @@ GameObject:
   - component: {fileID: 877228201}
   - component: {fileID: 877228200}
   - component: {fileID: 877228199}
+  - component: {fileID: 877228202}
   m_Layer: 0
   m_Name: Reset to Default
   m_TagString: Untagged
@@ -25628,6 +26181,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 877228197}
   m_CullTransparentMesh: 0
+--- !u!114 &877228202
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 877228197}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7700597709660189910}
+          m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+          m_MethodName: Play
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: MenuClick
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7700597709660189910}
+          m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+          m_MethodName: Play
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: MenuHover
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &877795553
 GameObject:
   m_ObjectHideFlags: 0
@@ -26047,6 +26645,7 @@ GameObject:
   m_Component:
   - component: {fileID: 882316518}
   - component: {fileID: 882316519}
+  - component: {fileID: 882316520}
   m_Layer: 5
   m_Name: Enemy Health
   m_TagString: Untagged
@@ -26127,6 +26726,51 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &882316520
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 882316517}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7700597709660189910}
+          m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+          m_MethodName: Play
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: MenuClick
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7700597709660189910}
+          m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+          m_MethodName: Play
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: MenuHover
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &883290293
 GameObject:
   m_ObjectHideFlags: 0
@@ -26238,6 +26882,7 @@ GameObject:
   - component: {fileID: 883762527}
   - component: {fileID: 883762526}
   - component: {fileID: 883762525}
+  - component: {fileID: 883762529}
   m_Layer: 5
   m_Name: Back
   m_TagString: Untagged
@@ -26382,6 +27027,51 @@ RectTransform:
   m_AnchoredPosition: {x: -137.2, y: -383.8}
   m_SizeDelta: {x: 181.27765, y: 50.264465}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &883762529
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 883762524}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7700597709660189910}
+          m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+          m_MethodName: Play
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: MenuClick
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7700597709660189910}
+          m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+          m_MethodName: Play
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: MenuHover
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &884129008
 GameObject:
   m_ObjectHideFlags: 0
@@ -26630,7 +27320,7 @@ GameObject:
   - component: {fileID: 888570987}
   m_Layer: 9
   m_Name: Pillar3
-  m_TagString: Untagged
+  m_TagString: Pillar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26788,7 +27478,7 @@ GameObject:
   - component: {fileID: 898956422}
   m_Layer: 9
   m_Name: Pillar3
-  m_TagString: Untagged
+  m_TagString: Pillar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26947,7 +27637,7 @@ GameObject:
   - component: {fileID: 904231552}
   m_Layer: 9
   m_Name: Cube (13)
-  m_TagString: Respawn
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27077,7 +27767,7 @@ GameObject:
   - component: {fileID: 909984057}
   m_Layer: 9
   m_Name: Cube (7)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27207,7 +27897,7 @@ GameObject:
   - component: {fileID: 917146523}
   m_Layer: 9
   m_Name: Pillar3
-  m_TagString: Untagged
+  m_TagString: Pillar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27327,7 +28017,7 @@ GameObject:
   - component: {fileID: 927315810}
   m_Layer: 9
   m_Name: Cube (21)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27599,7 +28289,7 @@ GameObject:
   - component: {fileID: 943168358}
   m_Layer: 9
   m_Name: Pillar3
-  m_TagString: Untagged
+  m_TagString: Pillar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27841,7 +28531,7 @@ GameObject:
   - component: {fileID: 957071439}
   m_Layer: 9
   m_Name: Cube (8)
-  m_TagString: Respawn
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -28121,7 +28811,7 @@ GameObject:
   - component: {fileID: 968356343}
   m_Layer: 9
   m_Name: Cube (17)
-  m_TagString: Respawn
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -28251,7 +28941,7 @@ GameObject:
   - component: {fileID: 968757784}
   m_Layer: 9
   m_Name: Pillar3
-  m_TagString: Untagged
+  m_TagString: Pillar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -28505,7 +29195,7 @@ GameObject:
   - component: {fileID: 972529472}
   m_Layer: 9
   m_Name: Cube (22)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -28632,6 +29322,7 @@ GameObject:
   - component: {fileID: 974114635}
   - component: {fileID: 974114634}
   - component: {fileID: 974114633}
+  - component: {fileID: 974114636}
   m_Layer: 0
   m_Name: Back
   m_TagString: Untagged
@@ -28800,6 +29491,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 974114631}
   m_CullTransparentMesh: 0
+--- !u!114 &974114636
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 974114631}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7700597709660189910}
+          m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+          m_MethodName: Play
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: MenuClick
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7700597709660189910}
+          m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+          m_MethodName: Play
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: MenuHover
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &978309517
 GameObject:
   m_ObjectHideFlags: 0
@@ -28815,7 +29551,7 @@ GameObject:
   - component: {fileID: 978309519}
   m_Layer: 9
   m_Name: Cube (9)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29085,7 +29821,7 @@ GameObject:
   - component: {fileID: 985698258}
   m_Layer: 9
   m_Name: Cube (21)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29215,7 +29951,7 @@ GameObject:
   - component: {fileID: 990059646}
   m_Layer: 9
   m_Name: Cube (10)
-  m_TagString: Respawn
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29607,7 +30343,7 @@ GameObject:
   - component: {fileID: 993933300}
   m_Layer: 9
   m_Name: Pillar3
-  m_TagString: Untagged
+  m_TagString: Pillar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -30651,7 +31387,7 @@ GameObject:
   - component: {fileID: 1021542121}
   m_Layer: 9
   m_Name: Cube (15)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -30814,6 +31550,7 @@ GameObject:
   - component: {fileID: 1022989027}
   - component: {fileID: 1022989026}
   - component: {fileID: 1022989025}
+  - component: {fileID: 1022989029}
   m_Layer: 0
   m_Name: Controls
   m_TagString: Untagged
@@ -30958,6 +31695,51 @@ RectTransform:
   m_AnchoredPosition: {x: 141.2, y: -15.3}
   m_SizeDelta: {x: 181.27765, y: 50.26448}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1022989029
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1022989024}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7700597709660189910}
+          m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+          m_MethodName: Play
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: MenuClick
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7700597709660189910}
+          m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+          m_MethodName: Play
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: MenuHover
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1031908550
 GameObject:
   m_ObjectHideFlags: 0
@@ -31086,7 +31868,7 @@ GameObject:
   - component: {fileID: 1040429878}
   m_Layer: 9
   m_Name: Cube (13)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -31485,7 +32267,7 @@ GameObject:
   - component: {fileID: 1057063532}
   m_Layer: 9
   m_Name: Cube (8)
-  m_TagString: Respawn
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -31615,7 +32397,7 @@ GameObject:
   - component: {fileID: 1057595911}
   m_Layer: 9
   m_Name: Cube (13)
-  m_TagString: Respawn
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -31879,7 +32661,7 @@ GameObject:
   - component: {fileID: 1063050765}
   m_Layer: 9
   m_Name: Pillar3
-  m_TagString: Untagged
+  m_TagString: Pillar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -32084,7 +32866,7 @@ GameObject:
   - component: {fileID: 1067452021}
   m_Layer: 9
   m_Name: Cube (11)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -32456,7 +33238,7 @@ GameObject:
   - component: {fileID: 1072548142}
   m_Layer: 9
   m_Name: Cube (19)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -32989,7 +33771,7 @@ GameObject:
   - component: {fileID: 1092991204}
   m_Layer: 9
   m_Name: Cube (8)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -33273,7 +34055,7 @@ GameObject:
   - component: {fileID: 1129612253}
   m_Layer: 9
   m_Name: Pillar3
-  m_TagString: Untagged
+  m_TagString: Pillar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -33527,7 +34309,7 @@ GameObject:
   - component: {fileID: 1132538320}
   m_Layer: 9
   m_Name: Cube (15)
-  m_TagString: Respawn
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -33657,7 +34439,7 @@ GameObject:
   - component: {fileID: 1134700155}
   m_Layer: 9
   m_Name: Cube (12)
-  m_TagString: Respawn
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -33782,6 +34564,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1136168615}
   - component: {fileID: 1136168614}
+  - component: {fileID: 1136168616}
   m_Layer: 5
   m_Name: Fx Volume
   m_TagString: Untagged
@@ -33874,6 +34657,51 @@ RectTransform:
   m_AnchoredPosition: {x: -174, y: -72.8}
   m_SizeDelta: {x: 160, y: 29.272285}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1136168616
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1136168613}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7700597709660189910}
+          m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+          m_MethodName: Play
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: MenuClick
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7700597709660189910}
+          m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+          m_MethodName: Play
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: MenuHover
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1138098375
 GameObject:
   m_ObjectHideFlags: 0
@@ -33889,7 +34717,7 @@ GameObject:
   - component: {fileID: 1138098377}
   m_Layer: 9
   m_Name: Cube (9)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -34019,7 +34847,7 @@ GameObject:
   - component: {fileID: 1139203601}
   m_Layer: 9
   m_Name: Cube (12)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -34248,7 +35076,7 @@ GameObject:
   - component: {fileID: 1144031822}
   m_Layer: 9
   m_Name: Cube (7)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -34373,6 +35201,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1147305075}
   - component: {fileID: 1147305074}
+  - component: {fileID: 1147305076}
   m_Layer: 5
   m_Name: Fullscreen Toggle
   m_TagString: Untagged
@@ -34460,6 +35289,51 @@ RectTransform:
   m_AnchoredPosition: {x: -230.65, y: -136}
   m_SizeDelta: {x: 209.29025, y: 29.858044}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1147305076
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1147305073}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7700597709660189910}
+          m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+          m_MethodName: Play
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: MenuClick
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7700597709660189910}
+          m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+          m_MethodName: Play
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: MenuHover
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1150431466
 GameObject:
   m_ObjectHideFlags: 0
@@ -34571,6 +35445,7 @@ GameObject:
   - component: {fileID: 1151954628}
   - component: {fileID: 1151954627}
   - component: {fileID: 1151954626}
+  - component: {fileID: 1151954629}
   m_Layer: 0
   m_Name: Left
   m_TagString: Untagged
@@ -34692,6 +35567,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1151954624}
   m_CullTransparentMesh: 0
+--- !u!114 &1151954629
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1151954624}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7700597709660189910}
+          m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+          m_MethodName: Play
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: MenuClick
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7700597709660189910}
+          m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+          m_MethodName: Play
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: MenuHover
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1153337933
 GameObject:
   m_ObjectHideFlags: 0
@@ -34803,6 +35723,7 @@ GameObject:
   - component: {fileID: 1164527259}
   - component: {fileID: 1164527258}
   - component: {fileID: 1164527257}
+  - component: {fileID: 1164527260}
   m_Layer: 0
   m_Name: Back
   m_TagString: Untagged
@@ -34959,6 +35880,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1164527255}
   m_CullTransparentMesh: 0
+--- !u!114 &1164527260
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1164527255}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7700597709660189910}
+          m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+          m_MethodName: Play
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: MenuClick
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7700597709660189910}
+          m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+          m_MethodName: Play
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: MenuHover
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1166188237
 GameObject:
   m_ObjectHideFlags: 0
@@ -34974,7 +35940,7 @@ GameObject:
   - component: {fileID: 1166188239}
   m_Layer: 9
   m_Name: Pillar3
-  m_TagString: Untagged
+  m_TagString: Pillar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -35094,7 +36060,7 @@ GameObject:
   - component: {fileID: 1167039158}
   m_Layer: 9
   m_Name: Cube (14)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -35224,7 +36190,7 @@ GameObject:
   - component: {fileID: 1167821317}
   m_Layer: 9
   m_Name: Pillar3
-  m_TagString: Untagged
+  m_TagString: Pillar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -35344,7 +36310,7 @@ GameObject:
   - component: {fileID: 1172545970}
   m_Layer: 9
   m_Name: Pillar3
-  m_TagString: Untagged
+  m_TagString: Pillar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -35464,7 +36430,7 @@ GameObject:
   - component: {fileID: 1176559511}
   m_Layer: 9
   m_Name: Cube (11)
-  m_TagString: Respawn
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -35680,7 +36646,7 @@ GameObject:
   - component: {fileID: 1182214800}
   m_Layer: 9
   m_Name: Cube (17)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -35935,7 +36901,7 @@ GameObject:
   - component: {fileID: 1190662841}
   m_Layer: 9
   m_Name: Cube (17)
-  m_TagString: Respawn
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -36459,7 +37425,7 @@ GameObject:
   - component: {fileID: 1200384746}
   m_Layer: 9
   m_Name: Cube (8)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -36886,7 +37852,7 @@ GameObject:
   - component: {fileID: 1209733308}
   m_Layer: 9
   m_Name: Cube (10)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -37016,7 +37982,7 @@ GameObject:
   - component: {fileID: 1215222139}
   m_Layer: 9
   m_Name: Cube (10)
-  m_TagString: Respawn
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -37146,7 +38112,7 @@ GameObject:
   - component: {fileID: 1218912980}
   m_Layer: 9
   m_Name: Cube (12)
-  m_TagString: Respawn
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -37276,7 +38242,7 @@ GameObject:
   - component: {fileID: 1229146795}
   m_Layer: 9
   m_Name: Cube (9)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -37639,7 +38605,7 @@ GameObject:
   - component: {fileID: 1235223162}
   m_Layer: 9
   m_Name: Cube (7)
-  m_TagString: Respawn
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -37766,6 +38732,7 @@ GameObject:
   - component: {fileID: 1236329988}
   - component: {fileID: 1236329987}
   - component: {fileID: 1236329986}
+  - component: {fileID: 1236329989}
   m_Layer: 0
   m_Name: Memories
   m_TagString: Untagged
@@ -37910,6 +38877,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1236329984}
   m_CullTransparentMesh: 0
+--- !u!114 &1236329989
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1236329984}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7700597709660189910}
+          m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+          m_MethodName: Play
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: MenuClick
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7700597709660189910}
+          m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+          m_MethodName: Play
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: MenuHover
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1246946457
 GameObject:
   m_ObjectHideFlags: 0
@@ -37925,7 +38937,7 @@ GameObject:
   - component: {fileID: 1246946459}
   m_Layer: 9
   m_Name: Cube (10)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -38150,7 +39162,7 @@ GameObject:
   - component: {fileID: 1257453598}
   m_Layer: 9
   m_Name: Pillars
-  m_TagString: Untagged
+  m_TagString: Pillar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -38190,7 +39202,7 @@ GameObject:
   - component: {fileID: 1257576666}
   m_Layer: 9
   m_Name: Cube (7)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -38320,7 +39332,7 @@ GameObject:
   - component: {fileID: 1271743241}
   m_Layer: 9
   m_Name: Cube (10)
-  m_TagString: Respawn
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -38620,7 +39632,7 @@ GameObject:
   - component: {fileID: 1282032363}
   m_Layer: 9
   m_Name: Pillar3
-  m_TagString: Untagged
+  m_TagString: Pillar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -38740,7 +39752,7 @@ GameObject:
   - component: {fileID: 1282900759}
   m_Layer: 9
   m_Name: Cube (15)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -38870,7 +39882,7 @@ GameObject:
   - component: {fileID: 1284315799}
   m_Layer: 9
   m_Name: Cube (14)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -39213,7 +40225,7 @@ GameObject:
   - component: {fileID: 1288739669}
   m_Layer: 9
   m_Name: Cube (9)
-  m_TagString: Respawn
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -39481,7 +40493,7 @@ GameObject:
   - component: {fileID: 1292637930}
   m_Layer: 9
   m_Name: Cube (18)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -39611,7 +40623,7 @@ GameObject:
   - component: {fileID: 1293455063}
   m_Layer: 9
   m_Name: Cube (12)
-  m_TagString: Respawn
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -39816,7 +40828,7 @@ GameObject:
   - component: {fileID: 1298755199}
   m_Layer: 9
   m_Name: Cube (11)
-  m_TagString: Respawn
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -40018,6 +41030,7 @@ GameObject:
   - component: {fileID: 1300135854}
   - component: {fileID: 1300135853}
   - component: {fileID: 1300135852}
+  - component: {fileID: 1300135856}
   m_Layer: 0
   m_Name: Sound
   m_TagString: Untagged
@@ -40162,6 +41175,51 @@ RectTransform:
   m_AnchoredPosition: {x: 141.2, y: -106.8}
   m_SizeDelta: {x: 181.27765, y: 50.26448}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1300135856
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1300135851}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7700597709660189910}
+          m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+          m_MethodName: Play
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: MenuClick
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7700597709660189910}
+          m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+          m_MethodName: Play
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: MenuHover
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1302726617
 GameObject:
   m_ObjectHideFlags: 0
@@ -40311,7 +41369,7 @@ GameObject:
   - component: {fileID: 1307586483}
   m_Layer: 9
   m_Name: Cube (17)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -40441,7 +41499,7 @@ GameObject:
   - component: {fileID: 1321944253}
   m_Layer: 9
   m_Name: Cube (11)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -40571,7 +41629,7 @@ GameObject:
   - component: {fileID: 1325343351}
   m_Layer: 9
   m_Name: Cube (18)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -40701,7 +41759,7 @@ GameObject:
   - component: {fileID: 1331739530}
   m_Layer: 9
   m_Name: Cube (11)
-  m_TagString: Respawn
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -40966,7 +42024,7 @@ GameObject:
   - component: {fileID: 1337850150}
   m_Layer: 9
   m_Name: Cube (11)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -41096,7 +42154,7 @@ GameObject:
   - component: {fileID: 1338151186}
   m_Layer: 9
   m_Name: Pillar3
-  m_TagString: Untagged
+  m_TagString: Pillar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -41710,7 +42768,7 @@ GameObject:
   - component: {fileID: 1353728329}
   m_Layer: 9
   m_Name: Cube (11)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -41947,7 +43005,7 @@ GameObject:
   - component: {fileID: 1372740441}
   m_Layer: 9
   m_Name: Pillar3
-  m_TagString: Untagged
+  m_TagString: Pillar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -42099,7 +43157,7 @@ GameObject:
   - component: {fileID: 1389319925}
   m_Layer: 9
   m_Name: Cube (16)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -42229,7 +43287,7 @@ GameObject:
   - component: {fileID: 1397018288}
   m_Layer: 9
   m_Name: Cube (7)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -42533,7 +43591,7 @@ GameObject:
   - component: {fileID: 1402381037}
   m_Layer: 9
   m_Name: Pillar3
-  m_TagString: Untagged
+  m_TagString: Pillar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -42653,7 +43711,7 @@ GameObject:
   - component: {fileID: 1405862000}
   m_Layer: 9
   m_Name: Cube (21)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -43083,7 +44141,7 @@ GameObject:
   - component: {fileID: 1428815925}
   m_Layer: 9
   m_Name: Cube (17)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -43309,6 +44367,7 @@ GameObject:
   - component: {fileID: 1431837399}
   - component: {fileID: 1431837398}
   - component: {fileID: 1431837397}
+  - component: {fileID: 1431837400}
   m_Layer: 0
   m_Name: Secondary Attack
   m_TagString: Untagged
@@ -43430,6 +44489,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1431837395}
   m_CullTransparentMesh: 0
+--- !u!114 &1431837400
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1431837395}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7700597709660189910}
+          m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+          m_MethodName: Play
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: MenuClick
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7700597709660189910}
+          m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+          m_MethodName: Play
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: MenuHover
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1442282244
 GameObject:
   m_ObjectHideFlags: 0
@@ -43445,7 +44549,7 @@ GameObject:
   - component: {fileID: 1442282246}
   m_Layer: 9
   m_Name: Cube (10)
-  m_TagString: Respawn
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -43575,7 +44679,7 @@ GameObject:
   - component: {fileID: 1449063537}
   m_Layer: 9
   m_Name: Cube (7)
-  m_TagString: Respawn
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -43768,6 +44872,7 @@ GameObject:
   - component: {fileID: 1452898893}
   - component: {fileID: 1452898892}
   - component: {fileID: 1452898891}
+  - component: {fileID: 1452898894}
   m_Layer: 0
   m_Name: Right
   m_TagString: Untagged
@@ -43889,6 +44994,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1452898889}
   m_CullTransparentMesh: 0
+--- !u!114 &1452898894
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1452898889}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7700597709660189910}
+          m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+          m_MethodName: Play
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: MenuClick
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7700597709660189910}
+          m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+          m_MethodName: Play
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: MenuHover
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1456707193
 GameObject:
   m_ObjectHideFlags: 0
@@ -43904,7 +45054,7 @@ GameObject:
   - component: {fileID: 1456707195}
   m_Layer: 9
   m_Name: Pillar3
-  m_TagString: Untagged
+  m_TagString: Pillar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -44123,7 +45273,7 @@ GameObject:
   - component: {fileID: 1467403014}
   m_Layer: 9
   m_Name: Cube (7)
-  m_TagString: Respawn
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -44352,7 +45502,7 @@ GameObject:
   - component: {fileID: 1469092080}
   m_Layer: 9
   m_Name: Cube (16)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -44515,6 +45665,7 @@ GameObject:
   - component: {fileID: 1472270759}
   - component: {fileID: 1472270758}
   - component: {fileID: 1472270757}
+  - component: {fileID: 1472270761}
   m_Layer: 5
   m_Name: Graphics Dropdown
   m_TagString: Untagged
@@ -44654,6 +45805,51 @@ RectTransform:
   m_AnchoredPosition: {x: -150.3, y: -7}
   m_SizeDelta: {x: 136.79608, y: 42.49446}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1472270761
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1472270756}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7700597709660189910}
+          m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+          m_MethodName: Play
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: MenuClick
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7700597709660189910}
+          m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+          m_MethodName: Play
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: MenuHover
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1476592093
 GameObject:
   m_ObjectHideFlags: 0
@@ -44669,7 +45865,7 @@ GameObject:
   - component: {fileID: 1476592095}
   m_Layer: 9
   m_Name: Cube (13)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -44799,7 +45995,7 @@ GameObject:
   - component: {fileID: 1479764093}
   m_Layer: 9
   m_Name: Pillar3
-  m_TagString: Untagged
+  m_TagString: Pillar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -44916,6 +46112,7 @@ GameObject:
   - component: {fileID: 1480131590}
   - component: {fileID: 1480131589}
   - component: {fileID: 1480131588}
+  - component: {fileID: 1480131591}
   m_Layer: 0
   m_Name: Reset to Default
   m_TagString: Untagged
@@ -45036,6 +46233,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1480131586}
   m_CullTransparentMesh: 0
+--- !u!114 &1480131591
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1480131586}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7700597709660189910}
+          m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+          m_MethodName: Play
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: MenuClick
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7700597709660189910}
+          m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+          m_MethodName: Play
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: MenuHover
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1482204364
 GameObject:
   m_ObjectHideFlags: 0
@@ -45422,6 +46664,7 @@ GameObject:
   - component: {fileID: 1491426102}
   - component: {fileID: 1491426101}
   - component: {fileID: 1491426100}
+  - component: {fileID: 1491426103}
   m_Layer: 0
   m_Name: Back
   m_TagString: Untagged
@@ -45578,6 +46821,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1491426098}
   m_CullTransparentMesh: 0
+--- !u!114 &1491426103
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1491426098}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7700597709660189910}
+          m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+          m_MethodName: Play
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: MenuClick
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7700597709660189910}
+          m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+          m_MethodName: Play
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: MenuHover
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1491638736
 GameObject:
   m_ObjectHideFlags: 0
@@ -45593,7 +46881,7 @@ GameObject:
   - component: {fileID: 1491638738}
   m_Layer: 9
   m_Name: Pillar3
-  m_TagString: Untagged
+  m_TagString: Pillar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -46363,7 +47651,7 @@ GameObject:
   - component: {fileID: 1547077264}
   m_Layer: 9
   m_Name: Pillar3
-  m_TagString: Untagged
+  m_TagString: Pillar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -46483,7 +47771,7 @@ GameObject:
   - component: {fileID: 1547951676}
   m_Layer: 9
   m_Name: Pillar3
-  m_TagString: Untagged
+  m_TagString: Pillar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -46603,7 +47891,7 @@ GameObject:
   - component: {fileID: 1551312631}
   m_Layer: 9
   m_Name: Cube (17)
-  m_TagString: Respawn
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -46765,7 +48053,7 @@ GameObject:
   - component: {fileID: 1556237328}
   m_Layer: 9
   m_Name: Cube (14)
-  m_TagString: Respawn
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -46892,6 +48180,7 @@ GameObject:
   - component: {fileID: 1563651223}
   - component: {fileID: 1563651222}
   - component: {fileID: 1563651221}
+  - component: {fileID: 1563651224}
   m_Layer: 0
   m_Name: PrimaryAttack
   m_TagString: Untagged
@@ -47013,6 +48302,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1563651219}
   m_CullTransparentMesh: 0
+--- !u!114 &1563651224
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1563651219}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7700597709660189910}
+          m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+          m_MethodName: Play
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: MenuClick
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7700597709660189910}
+          m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+          m_MethodName: Play
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: MenuHover
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1564569810
 GameObject:
   m_ObjectHideFlags: 0
@@ -47028,7 +48362,7 @@ GameObject:
   - component: {fileID: 1564569812}
   m_Layer: 9
   m_Name: Cube (9)
-  m_TagString: Respawn
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -47158,7 +48492,7 @@ GameObject:
   - component: {fileID: 1565319773}
   m_Layer: 9
   m_Name: Cube (12)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -47592,7 +48926,7 @@ GameObject:
   - component: {fileID: 1575526593}
   m_Layer: 9
   m_Name: Cube (15)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -47722,7 +49056,7 @@ GameObject:
   - component: {fileID: 1588709820}
   m_Layer: 9
   m_Name: Cube (12)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -48157,6 +49491,7 @@ GameObject:
   - component: {fileID: 1598743580}
   - component: {fileID: 1598743579}
   - component: {fileID: 1598743578}
+  - component: {fileID: 1598743581}
   m_Layer: 0
   m_Name: Up
   m_TagString: Untagged
@@ -48278,6 +49613,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1598743576}
   m_CullTransparentMesh: 0
+--- !u!114 &1598743581
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1598743576}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7700597709660189910}
+          m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+          m_MethodName: Play
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: MenuClick
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7700597709660189910}
+          m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+          m_MethodName: Play
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: MenuHover
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1602615488
 GameObject:
   m_ObjectHideFlags: 0
@@ -48593,7 +49973,7 @@ GameObject:
   - component: {fileID: 1605528322}
   m_Layer: 9
   m_Name: Cube (9)
-  m_TagString: Respawn
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -48719,7 +50099,7 @@ GameObject:
   - component: {fileID: 1614552776}
   m_Layer: 9
   m_Name: Pillars
-  m_TagString: Untagged
+  m_TagString: Pillar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -48856,7 +50236,7 @@ GameObject:
   - component: {fileID: 1616494974}
   m_Layer: 9
   m_Name: Pillars
-  m_TagString: Untagged
+  m_TagString: Pillar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -48943,7 +50323,7 @@ GameObject:
   - component: {fileID: 1631073931}
   m_Layer: 9
   m_Name: Cube (11)
-  m_TagString: Respawn
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -49247,7 +50627,7 @@ GameObject:
   - component: {fileID: 1637887494}
   m_Layer: 9
   m_Name: Cube (13)
-  m_TagString: Respawn
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -49685,7 +51065,7 @@ GameObject:
   - component: {fileID: 1646322725}
   m_Layer: 9
   m_Name: Cube (7)
-  m_TagString: Respawn
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -49815,7 +51195,7 @@ GameObject:
   - component: {fileID: 1646479088}
   m_Layer: 9
   m_Name: Cube (12)
-  m_TagString: Respawn
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -49942,6 +51322,7 @@ GameObject:
   - component: {fileID: 1656844685}
   - component: {fileID: 1656844684}
   - component: {fileID: 1656844683}
+  - component: {fileID: 1656844686}
   m_Layer: 5
   m_Name: Resolution Dropdown
   m_TagString: Untagged
@@ -50081,6 +51462,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1656844681}
   m_CullTransparentMesh: 0
+--- !u!114 &1656844686
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1656844681}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7700597709660189910}
+          m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+          m_MethodName: Play
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: MenuClick
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7700597709660189910}
+          m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+          m_MethodName: Play
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: MenuHover
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1659370685
 GameObject:
   m_ObjectHideFlags: 0
@@ -50293,7 +51719,7 @@ GameObject:
   - component: {fileID: 1664461404}
   m_Layer: 9
   m_Name: Cube (13)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -50665,7 +52091,7 @@ GameObject:
   - component: {fileID: 1680263892}
   m_Layer: 9
   m_Name: Cube (15)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -50837,6 +52263,7 @@ GameObject:
   - component: {fileID: 1684216347}
   - component: {fileID: 1684216346}
   - component: {fileID: 1684216345}
+  - component: {fileID: 1684216348}
   m_Layer: 0
   m_Name: Resume
   m_TagString: Untagged
@@ -50957,6 +52384,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1684216343}
   m_CullTransparentMesh: 0
+--- !u!114 &1684216348
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1684216343}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7700597709660189910}
+          m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+          m_MethodName: Play
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: MenuClick
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7700597709660189910}
+          m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+          m_MethodName: Play
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: MenuHover
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1689436910
 GameObject:
   m_ObjectHideFlags: 0
@@ -50972,7 +52444,7 @@ GameObject:
   - component: {fileID: 1689436912}
   m_Layer: 9
   m_Name: Cube (7)
-  m_TagString: Respawn
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -51102,7 +52574,7 @@ GameObject:
   - component: {fileID: 1689531975}
   m_Layer: 9
   m_Name: Cube (11)
-  m_TagString: Respawn
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -51366,7 +52838,7 @@ GameObject:
   - component: {fileID: 1708940390}
   m_Layer: 9
   m_Name: Cube (8)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -51707,7 +53179,7 @@ GameObject:
   - component: {fileID: 1730804066}
   m_Layer: 9
   m_Name: Cube (20)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -51834,6 +53306,7 @@ GameObject:
   - component: {fileID: 1741364551}
   - component: {fileID: 1741364550}
   - component: {fileID: 1741364549}
+  - component: {fileID: 1741364552}
   m_Layer: 0
   m_Name: Back
   m_TagString: Untagged
@@ -51990,6 +53463,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1741364547}
   m_CullTransparentMesh: 0
+--- !u!114 &1741364552
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1741364547}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7700597709660189910}
+          m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+          m_MethodName: Play
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: MenuClick
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7700597709660189910}
+          m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+          m_MethodName: Play
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: MenuHover
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1745486979
 GameObject:
   m_ObjectHideFlags: 0
@@ -52308,7 +53826,7 @@ GameObject:
   - component: {fileID: 1757628477}
   m_Layer: 9
   m_Name: Cube (16)
-  m_TagString: Respawn
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -52438,7 +53956,7 @@ GameObject:
   - component: {fileID: 1760735804}
   m_Layer: 9
   m_Name: Cube (13)
-  m_TagString: Respawn
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -52819,7 +54337,7 @@ GameObject:
   - component: {fileID: 1774370953}
   m_Layer: 9
   m_Name: Cube (20)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -52949,7 +54467,7 @@ GameObject:
   - component: {fileID: 1777330374}
   m_Layer: 9
   m_Name: Cube (18)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -53075,7 +54593,7 @@ GameObject:
   - component: {fileID: 1779685827}
   m_Layer: 9
   m_Name: Pillars
-  m_TagString: Untagged
+  m_TagString: Pillar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -53116,7 +54634,7 @@ GameObject:
   - component: {fileID: 1782140422}
   m_Layer: 9
   m_Name: Pillar3
-  m_TagString: Untagged
+  m_TagString: Pillar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -53523,7 +55041,7 @@ GameObject:
   - component: {fileID: 1790189885}
   m_Layer: 9
   m_Name: Cube (17)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -53787,7 +55305,7 @@ GameObject:
   - component: {fileID: 1797429109}
   m_Layer: 9
   m_Name: Cube (16)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -54025,7 +55543,7 @@ GameObject:
   - component: {fileID: 1801357829}
   m_Layer: 9
   m_Name: Cube (8)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -54388,7 +55906,7 @@ GameObject:
   - component: {fileID: 1823247244}
   m_Layer: 9
   m_Name: Cube (16)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -54593,7 +56111,7 @@ GameObject:
   - component: {fileID: 1826177990}
   m_Layer: 9
   m_Name: Cube (8)
-  m_TagString: Respawn
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -54798,7 +56316,7 @@ GameObject:
   - component: {fileID: 1828373441}
   m_Layer: 9
   m_Name: Cube (18)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -54928,7 +56446,7 @@ GameObject:
   - component: {fileID: 1831543130}
   m_Layer: 9
   m_Name: Cube (14)
-  m_TagString: Respawn
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -55058,7 +56576,7 @@ GameObject:
   - component: {fileID: 1831543659}
   m_Layer: 9
   m_Name: Cube (10)
-  m_TagString: Respawn
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -55183,6 +56701,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1834279208}
   - component: {fileID: 1834279209}
+  - component: {fileID: 1834279210}
   m_Layer: 5
   m_Name: Enemy Timer
   m_TagString: Untagged
@@ -55263,6 +56782,51 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1834279210
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1834279207}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7700597709660189910}
+          m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+          m_MethodName: Play
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: MenuClick
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7700597709660189910}
+          m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+          m_MethodName: Play
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: MenuHover
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1835282708
 GameObject:
   m_ObjectHideFlags: 0
@@ -55408,7 +56972,7 @@ GameObject:
   - component: {fileID: 1837073801}
   m_Layer: 9
   m_Name: Pillars
-  m_TagString: Untagged
+  m_TagString: Pillar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -55623,7 +57187,7 @@ GameObject:
   - component: {fileID: 1843907994}
   m_Layer: 9
   m_Name: Cube (12)
-  m_TagString: Respawn
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -55750,6 +57314,7 @@ GameObject:
   - component: {fileID: 1849688043}
   - component: {fileID: 1849688042}
   - component: {fileID: 1849688041}
+  - component: {fileID: 1849688044}
   m_Layer: 0
   m_Name: switchA
   m_TagString: Untagged
@@ -55871,6 +57436,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1849688039}
   m_CullTransparentMesh: 0
+--- !u!114 &1849688044
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1849688039}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7700597709660189910}
+          m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+          m_MethodName: Play
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: MenuClick
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7700597709660189910}
+          m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+          m_MethodName: Play
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: MenuHover
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1850055644
 GameObject:
   m_ObjectHideFlags: 0
@@ -55886,7 +57496,7 @@ GameObject:
   - component: {fileID: 1850055646}
   m_Layer: 9
   m_Name: Cube (23)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -56012,7 +57622,7 @@ GameObject:
   - component: {fileID: 1863657066}
   m_Layer: 9
   m_Name: Pillars
-  m_TagString: Untagged
+  m_TagString: Pillar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -56511,6 +58121,7 @@ GameObject:
   - component: {fileID: 1880445543}
   - component: {fileID: 1880445542}
   - component: {fileID: 1880445541}
+  - component: {fileID: 1880445545}
   m_Layer: 0
   m_Name: Display
   m_TagString: Untagged
@@ -56655,6 +58266,51 @@ RectTransform:
   m_AnchoredPosition: {x: -156.3, y: -15.3}
   m_SizeDelta: {x: 181.27765, y: 50.26448}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1880445545
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1880445540}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7700597709660189910}
+          m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+          m_MethodName: Play
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: MenuClick
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7700597709660189910}
+          m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+          m_MethodName: Play
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: MenuHover
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1885912526
 GameObject:
   m_ObjectHideFlags: 0
@@ -57130,7 +58786,7 @@ GameObject:
   - component: {fileID: 1899361470}
   m_Layer: 9
   m_Name: Pillar3
-  m_TagString: Untagged
+  m_TagString: Pillar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -57325,7 +58981,7 @@ GameObject:
   - component: {fileID: 1900355857}
   m_Layer: 9
   m_Name: Cube (7)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -57455,7 +59111,7 @@ GameObject:
   - component: {fileID: 1903330897}
   m_Layer: 9
   m_Name: Cube (8)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -57585,7 +59241,7 @@ GameObject:
   - component: {fileID: 1903442056}
   m_Layer: 9
   m_Name: Cube (19)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -57712,6 +59368,7 @@ GameObject:
   - component: {fileID: 1909224790}
   - component: {fileID: 1909224789}
   - component: {fileID: 1909224788}
+  - component: {fileID: 1909224791}
   m_Layer: 5
   m_Name: Font Dropdown
   m_TagString: Untagged
@@ -57853,6 +59510,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1909224786}
   m_CullTransparentMesh: 0
+--- !u!114 &1909224791
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1909224786}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7700597709660189910}
+          m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+          m_MethodName: Play
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: MenuClick
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7700597709660189910}
+          m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+          m_MethodName: Play
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: MenuHover
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1910472957
 GameObject:
   m_ObjectHideFlags: 0
@@ -57868,7 +59570,7 @@ GameObject:
   - component: {fileID: 1910472959}
   m_Layer: 9
   m_Name: Cube (10)
-  m_TagString: Respawn
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -57998,7 +59700,7 @@ GameObject:
   - component: {fileID: 1915536632}
   m_Layer: 9
   m_Name: Pillar3
-  m_TagString: Untagged
+  m_TagString: Pillar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -58159,7 +59861,7 @@ GameObject:
   - component: {fileID: 1924597893}
   m_Layer: 9
   m_Name: Cube (14)
-  m_TagString: Respawn
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -58415,7 +60117,7 @@ GameObject:
   - component: {fileID: 1933147952}
   m_Layer: 9
   m_Name: Cube (19)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -58545,7 +60247,7 @@ GameObject:
   - component: {fileID: 1934586663}
   m_Layer: 9
   m_Name: Cube (20)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -58675,7 +60377,7 @@ GameObject:
   - component: {fileID: 1948771665}
   m_Layer: 9
   m_Name: Cube (14)
-  m_TagString: Respawn
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -58802,6 +60504,7 @@ GameObject:
   - component: {fileID: 1952554740}
   - component: {fileID: 1952554739}
   - component: {fileID: 1952554738}
+  - component: {fileID: 1952554741}
   m_Layer: 0
   m_Name: Reset to Default
   m_TagString: Untagged
@@ -58970,6 +60673,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1952554736}
   m_CullTransparentMesh: 0
+--- !u!114 &1952554741
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1952554736}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7700597709660189910}
+          m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+          m_MethodName: Play
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: MenuClick
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7700597709660189910}
+          m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+          m_MethodName: Play
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: MenuHover
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1952822839
 GameObject:
   m_ObjectHideFlags: 0
@@ -58985,7 +60733,7 @@ GameObject:
   - component: {fileID: 1952822841}
   m_Layer: 9
   m_Name: Cube (14)
-  m_TagString: Respawn
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -59650,7 +61398,7 @@ GameObject:
   - component: {fileID: 1964627205}
   m_Layer: 9
   m_Name: Cube (11)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -59898,7 +61646,7 @@ GameObject:
   - component: {fileID: 1968969302}
   m_Layer: 9
   m_Name: Cube (17)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -60028,7 +61776,7 @@ GameObject:
   - component: {fileID: 1972103637}
   m_Layer: 9
   m_Name: Pillar3
-  m_TagString: Untagged
+  m_TagString: Pillar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -60148,7 +61896,7 @@ GameObject:
   - component: {fileID: 1979569221}
   m_Layer: 9
   m_Name: Cube (14)
-  m_TagString: Respawn
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -60278,7 +62026,7 @@ GameObject:
   - component: {fileID: 1982006869}
   m_Layer: 9
   m_Name: Cube (8)
-  m_TagString: Respawn
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -60507,7 +62255,7 @@ GameObject:
   - component: {fileID: 1988820731}
   m_Layer: 9
   m_Name: Pillar3
-  m_TagString: Untagged
+  m_TagString: Pillar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -60624,6 +62372,7 @@ GameObject:
   - component: {fileID: 1997415279}
   - component: {fileID: 1997415278}
   - component: {fileID: 1997415277}
+  - component: {fileID: 1997415280}
   m_Layer: 0
   m_Name: Back
   m_TagString: Untagged
@@ -60768,6 +62517,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1997415275}
   m_CullTransparentMesh: 0
+--- !u!114 &1997415280
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1997415275}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7700597709660189910}
+          m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+          m_MethodName: Play
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: MenuClick
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7700597709660189910}
+          m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+          m_MethodName: Play
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: MenuHover
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &2000466353
 GameObject:
   m_ObjectHideFlags: 0
@@ -60991,7 +62785,7 @@ GameObject:
   - component: {fileID: 2012741361}
   m_Layer: 9
   m_Name: Cube (9)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -61298,7 +63092,7 @@ GameObject:
   - component: {fileID: 2038764382}
   m_Layer: 9
   m_Name: Cube (11)
-  m_TagString: Respawn
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -61527,7 +63321,7 @@ GameObject:
   - component: {fileID: 2046063248}
   m_Layer: 9
   m_Name: Cube (14)
-  m_TagString: Respawn
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -61657,7 +63451,7 @@ GameObject:
   - component: {fileID: 2046899843}
   m_Layer: 9
   m_Name: Cube (19)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -61787,7 +63581,7 @@ GameObject:
   - component: {fileID: 2051929480}
   m_Layer: 9
   m_Name: Cube (10)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -62051,7 +63845,7 @@ GameObject:
   - component: {fileID: 2061487552}
   m_Layer: 9
   m_Name: Cube (11)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -62524,7 +64318,7 @@ GameObject:
   - component: {fileID: 2074602050}
   m_Layer: 9
   m_Name: Cube (14)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -62654,7 +64448,7 @@ GameObject:
   - component: {fileID: 2076386712}
   m_Layer: 9
   m_Name: Cube (17)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -62927,7 +64721,7 @@ GameObject:
   - component: {fileID: 2086468250}
   m_Layer: 9
   m_Name: Cube (15)
-  m_TagString: Respawn
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -63057,7 +64851,7 @@ GameObject:
   - component: {fileID: 2087643402}
   m_Layer: 9
   m_Name: Pillar3
-  m_TagString: Untagged
+  m_TagString: Pillar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -63312,7 +65106,7 @@ GameObject:
   - component: {fileID: 2095910777}
   m_Layer: 9
   m_Name: Pillar3
-  m_TagString: Untagged
+  m_TagString: Pillar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -63432,7 +65226,7 @@ GameObject:
   - component: {fileID: 2097990861}
   m_Layer: 9
   m_Name: Pillar3
-  m_TagString: Untagged
+  m_TagString: Pillar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -63552,7 +65346,7 @@ GameObject:
   - component: {fileID: 2098781944}
   m_Layer: 9
   m_Name: Cube (15)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -63757,7 +65551,7 @@ GameObject:
   - component: {fileID: 2101096051}
   m_Layer: 9
   m_Name: Cube (11)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -63887,7 +65681,7 @@ GameObject:
   - component: {fileID: 2103690063}
   m_Layer: 9
   m_Name: Cube (8)
-  m_TagString: Respawn
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -64017,7 +65811,7 @@ GameObject:
   - component: {fileID: 2103977458}
   m_Layer: 9
   m_Name: Cube (17)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -64281,7 +66075,7 @@ GameObject:
   - component: {fileID: 2109819616}
   m_Layer: 9
   m_Name: Cube (7)
-  m_TagString: Respawn
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -64407,7 +66201,7 @@ GameObject:
   - component: {fileID: 2110443880}
   m_Layer: 9
   m_Name: Pillars
-  m_TagString: Untagged
+  m_TagString: Pillar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -64532,7 +66326,7 @@ GameObject:
   - component: {fileID: 2124381692}
   m_Layer: 9
   m_Name: Cube (11)
-  m_TagString: Respawn
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -64796,7 +66590,7 @@ GameObject:
   - component: {fileID: 2139879186}
   m_Layer: 9
   m_Name: Cube (10)
-  m_TagString: Respawn
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -64926,7 +66720,7 @@ GameObject:
   - component: {fileID: 2140268705}
   m_Layer: 9
   m_Name: Pillar3
-  m_TagString: Untagged
+  m_TagString: Pillar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -65121,7 +66915,7 @@ GameObject:
   - component: {fileID: 2145632293}
   m_Layer: 9
   m_Name: Cube (20)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -65325,6 +67119,36 @@ MonoBehaviour:
   - name: PlayerWalk
     clip: {fileID: 8300000, guid: 34c33d57074291744bd294bf16aa86b8, type: 3}
     volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: BossShieldBreak
+    clip: {fileID: 8300000, guid: a2452c014e00f0c45973528c463993bc, type: 3}
+    volume: 0.8
+    pitch: 0.5
+    loop: 0
+    source: {fileID: 0}
+  - name: BossReapplyingArmour
+    clip: {fileID: 8300000, guid: 238d9df68b18aa64f98c607a57c25288, type: 3}
+    volume: 0.8
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: ClickingStart
+    clip: {fileID: 8300000, guid: 574b0d6ead4d7f34e911c7e76b065958, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: MenuClick
+    clip: {fileID: 8300000, guid: 3dba2cb5755130a408458e5ee1e42f59, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: MenuHover
+    clip: {fileID: 8300000, guid: 7bf4f20289d624644a813868eba1523e, type: 3}
+    volume: 0.3
     pitch: 1
     loop: 0
     source: {fileID: 0}

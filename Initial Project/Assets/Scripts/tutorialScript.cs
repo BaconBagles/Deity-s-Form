@@ -36,5 +36,7 @@ public class tutorialScript : MonoBehaviour
         Time.timeScale = 1f;
         Options.GameIsPaused = false;
         tutorialParent.SetActive(false);
-    }
+    } 
+
+
 }

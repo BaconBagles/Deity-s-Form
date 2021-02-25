@@ -42,42 +42,54 @@ public class playerProjectileScript : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        enemy = other.gameObject.GetComponent<Enemy>();
-        StartCoroutine(enemy.GetComponent<Enemy>().Knockback(knockbackDuration, knockbackPower, this.transform));
-        if (gameObject.tag == "basicAttack")
+        if (other.gameObject.CompareTag("Pillar"))
         {
-            if (other.gameObject.CompareTag("basicEnemy"))
+            //damage pillar
+        }
+        else if (other.gameObject.CompareTag("Wall"))
+        {
+            //skip this, I suppose
+        }
+        else
+        {
+            enemy = other.gameObject.GetComponent<Enemy>();
+            StartCoroutine(enemy.GetComponent<Enemy>().Knockback(knockbackDuration, knockbackPower, this.transform));
+            if (gameObject.tag == "basicAttack")
             {
-                enemy.health -= 5;
+                if (other.gameObject.CompareTag("basicEnemy"))
+                {
+                    enemy.health -= 5;
+                }
+                else
+                {
+                    enemy.health -= 1;
+                }
             }
-            else
+            else if (gameObject.tag == "APAttack")
             {
-                enemy.health -= 1;
+                if (other.gameObject.CompareTag("armourEnemy"))
+                {
+                    enemy.health -= 7;
+                }
+                else
+                {
+                    enemy.health -= 1;
+                }
+            }
+            else if (gameObject.tag == "rangedAttack")
+            {
+                if (other.gameObject.CompareTag("spikyEnemy"))
+                {
+                    enemy.health -= 5;
+                }
+                else
+                {
+                    enemy.health -= 1;
+                }
             }
         }
-        else if (gameObject.tag == "APAttack")
-        {
-            if (other.gameObject.CompareTag("armourEnemy"))
-            {
-                enemy.health -= 7;
-            }
-            else
-            {
-                enemy.health -= 1;
-            }
-        }
-        else if (gameObject.tag == "rangedAttack")
-        {
-            if (other.gameObject.CompareTag("spikyEnemy"))
-            {
-                enemy.health -= 5;
-            }
-            else
-            {
-                enemy.health -= 1;
-            }
-        }
-
+    
+    
         GameObject effect = Instantiate(hitEffect, transform.position, Quaternion.identity);
         Destroy(effect, 0.5f);
         Destroy(this.gameObject);
