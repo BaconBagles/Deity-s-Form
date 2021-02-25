@@ -26,6 +26,7 @@ public class PlayerController : MonoBehaviour
     public Rigidbody2D rb;
     public Rigidbody2D frb;
     public int formNumber;
+    public TrailRenderer aura;
     public ParticleSystem attackEffect;
     public GameObject attackOrbiter;
     public GameObject[] attacks;
@@ -280,9 +281,15 @@ public class PlayerController : MonoBehaviour
         {
             case 0:
                 moveSpeed = 20 + speedBonus;
+                aura.material.color = Color.magenta;
+                break;
+            case 1:
+                moveSpeed = 15 + speedBonus;
+                aura.material.color = Color.yellow;
                 break;
             default:
                 moveSpeed = 15 + speedBonus;
+                aura.material.color = Color.blue;
                 break;
         }
     }
