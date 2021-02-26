@@ -19,6 +19,7 @@ public class Enemy : MonoBehaviour
     public float currentKnockback;
     public GameObject healthPickup;
     public Rigidbody2D rb;
+    AudioManager Audio;
 
 
 
@@ -34,7 +35,7 @@ public class Enemy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        Audio = FindObjectOfType<AudioManager>();
         player = GameObject.Find("Player");
         pCont = player.GetComponent<PlayerController>();
         goal = player.transform;
@@ -105,6 +106,7 @@ public class Enemy : MonoBehaviour
 
     public void Attack()
     {
+        Audio.Play("EnemyAttack");
         GameObject enemyProjectile = Instantiate(projectile, transform.position, Quaternion.identity);
         projectileScript proj = enemyProjectile.GetComponent<projectileScript>();
         proj.force = currentForce;

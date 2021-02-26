@@ -45,14 +45,18 @@ public class playerProjectileScript : MonoBehaviour
         if (other.gameObject.CompareTag("Pillar"))
         {
             //damage pillar
+            Destroy(this.gameObject);
         }
         else if (other.gameObject.CompareTag("Wall"))
         {
             //skip this, I suppose
+            Destroy(this.gameObject);
         }
         else
         {
             enemy = other.gameObject.GetComponent<Enemy>();
+            GameObject effect = Instantiate(hitEffect, transform.position, Quaternion.identity);
+            Destroy(effect, 0.5f);
             StartCoroutine(enemy.GetComponent<Enemy>().Knockback(knockbackDuration, knockbackPower, this.transform));
             if (gameObject.tag == "basicAttack")
             {
@@ -90,8 +94,6 @@ public class playerProjectileScript : MonoBehaviour
         }
     
     
-        GameObject effect = Instantiate(hitEffect, transform.position, Quaternion.identity);
-        Destroy(effect, 0.5f);
         Destroy(this.gameObject);
     }
 

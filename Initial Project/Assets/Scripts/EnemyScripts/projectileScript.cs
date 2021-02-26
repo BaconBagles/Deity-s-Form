@@ -12,6 +12,7 @@ public class projectileScript : MonoBehaviour
     public AudioManager Audio;
     public int damage;
     public float bossSize;
+    public GameObject hitEffect;
 
     //knockback stuff
     public float knockbackPower = 150;
@@ -37,6 +38,8 @@ public class projectileScript : MonoBehaviour
         if(other.gameObject.tag == "Player")
         {
             Audio.Play("PlayerDamage");
+            GameObject effect = Instantiate(hitEffect, transform.position, Quaternion.identity);
+            Destroy(effect, 0.5f);
             StartCoroutine(player.GetComponent<PlayerController>().Knockback(knockbackDuration, knockbackPower, this.transform));
             if (player.GetComponent<PlayerController>().shieldCount == 0)
             {

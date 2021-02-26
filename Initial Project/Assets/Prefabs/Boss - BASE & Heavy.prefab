@@ -153,6 +153,7 @@ MonoBehaviour:
   - {fileID: 5366621052071639061, guid: 835be9276eafc73468298a2068b4007e, type: 3}
   - {fileID: 4058296332798208554, guid: 143402749c6ca0f4488e7fc4d1686c1e, type: 3}
   enemyAnim: {fileID: 7956289166715365268}
+  Audio: {fileID: 0}
 --- !u!114 &3791742543417215833
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -172,7 +173,9 @@ MonoBehaviour:
   currentDamage: 0
   currentForce: 0
   currentSize: 0
+  currentKnockback: 0
   healthPickup: {fileID: 1104073636124065548, guid: 4bf49cacdd16a6b48a2e41e261616927, type: 3}
+  rb: {fileID: 0}
 --- !u!95 &7956289166715365268
 Animator:
   serializedVersion: 3
@@ -224,7 +227,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &3558286384342363929
 Transform:
   m_ObjectHideFlags: 0

@@ -5,7 +5,6 @@ using UnityEngine;
 public class BossEnemy : MonoBehaviour
 {
     GameObject controller;
-    GameObject audioManager;
     EnemyController controllerScript;
     public float switchthreshold;
     private int FormList;
@@ -21,8 +20,7 @@ public class BossEnemy : MonoBehaviour
         spriteR = GetComponent<SpriteRenderer>();
         enemyScript = GetComponent<Enemy>();
         controller = GameObject.Find("EnemyController");
-        audioManager = GameObject.Find("AudioManager");
-        Audio = audioManager.GetComponent<AudioManager>();
+        Audio = FindObjectOfType<AudioManager>();
         controllerScript = controller.GetComponent<EnemyController>();
         enemyScript.health = 25;
         switchthreshold = 15;

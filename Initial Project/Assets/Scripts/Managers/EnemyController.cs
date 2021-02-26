@@ -78,7 +78,6 @@ public class EnemyController : MonoBehaviour
             enemyScript.Attack();
         } 
 
-        Audio.Play("EnemyAttack");
         StartCoroutine(EnemyAttack());
     }
 

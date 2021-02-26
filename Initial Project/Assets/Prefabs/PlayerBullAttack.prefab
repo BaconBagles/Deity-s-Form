@@ -98,7 +98,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba53948f035ed8d48bec126991913893, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitEffect: {fileID: 121578373512880053, guid: e0e9462b25bdb6044b1701be07dddaba, type: 3}
+  hitEffect: {fileID: 4666360837771341105, guid: 588c5344bda692e4eb573df0c9fae7f2, type: 3}
   range: 0.2
   knockbackPower: 175
   knockbackDuration: 2
