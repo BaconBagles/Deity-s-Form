@@ -24,9 +24,14 @@ public class AudioManager : MonoBehaviour
 
         int sceneID = SceneManager.GetActiveScene().buildIndex;
 
-        if (sceneID > 0)
+        if (sceneID > 2)
         {
             PlayMusic("IntroMainTheme");
+        }
+        else if(sceneID == 2)
+        {
+            mainMenu = true;
+            PlayMusic("TutorialTheme");
         }
         else
         {

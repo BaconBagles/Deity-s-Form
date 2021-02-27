@@ -381,7 +381,7 @@ public class PlayerController : MonoBehaviour
 
     public void IncreaseKnockback()
     {
-        knockbackIncrease += 50f;
+        knockbackIncrease += 25f;
     }
 
     public void IncreaseAttackSize()

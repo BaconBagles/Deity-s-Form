@@ -5,10 +5,24 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuSceneControl : MonoBehaviour
 {
-    
+
+    public int isTutorialDone;
+
+    private void Start()
+    {
+        isTutorialDone = PlayerPrefs.GetInt("tutorialDone", 0);
+    }
+
     public void StartGame()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2); // Will load player into next scene, (only works in menu)
+        if(isTutorialDone == 0)
+        {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2); // Will load player into tutorial scene, only works once
+        }
+        else
+        {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 3); //Will load player into main game
+        }
     }
 
     public void QuitGame() // Will quit the game

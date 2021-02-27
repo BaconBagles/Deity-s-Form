@@ -8,6 +8,15 @@ public class DialogueTrigger : MonoBehaviour
     public bool response;
     public int responseNumber;
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == ("Player"))
+        {
+            TriggerDialogue();
+            Destroy(gameObject);
+        }
+    }
+
     public void TriggerDialogue()
     {
         FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
