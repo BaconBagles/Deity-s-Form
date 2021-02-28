@@ -39,6 +39,7 @@ public class PlayerController : MonoBehaviour
     public bool powerAttack;
     public bool superForm;
     public bool tempFormActive;
+    public bool playerDead;
 
     bool jackalSndAtk;
     bool hawkSndAtk;
@@ -71,6 +72,7 @@ public class PlayerController : MonoBehaviour
     {
         currentCooldown = attackCooldown;
         attacking = false;
+        playerDead = false;
         formNumber = 0;
         SwitchForm();
         maxHealth = PlayerPrefs.GetInt("playerHealth", 60);
@@ -111,7 +113,7 @@ public class PlayerController : MonoBehaviour
         fireObject.transform.position = rb.transform.position;
 
         //Update for Input
-        if (Options.GameIsPaused == false)
+        if (Options.GameIsPaused == false && playerDead == false)
         {
             //New Movement Code, no longer uses rigidbody
             //All inputs call playerpref 'keys' dictionary that carry between scenes
@@ -168,7 +170,8 @@ public class PlayerController : MonoBehaviour
             if (Input.GetKeyDown(keys["basicAttack"]) && attacking == false)
             {
                 //StartCoroutine(BasicAttack());
-                MainAttack();
+                anim.SetTrigger("Attack");
+                StartCoroutine(MainAttack());
             }
 
             if (Input.GetKeyDown(keys["secondaryAttack"]) && attacking == false && sndActive == false)
@@ -176,7 +179,7 @@ public class PlayerController : MonoBehaviour
                 StartCoroutine(SecondaryAttack());
             }
 
-            if(currentCooldown >= 0)
+            if (currentCooldown >= 0)
             {
                 currentCooldown -= Time.deltaTime;
             }
@@ -191,9 +194,9 @@ public class PlayerController : MonoBehaviour
                 sndActive = false;
             }
 
-           /* mousePos = Input.mousePosition;
-            mousePos.z = 0;
-            mousePos = Camera.main.ScreenToWorldPoint(mousePos); */
+            /* mousePos = Input.mousePosition;
+             mousePos.z = 0;
+             mousePos = Camera.main.ScreenToWorldPoint(mousePos); */
             normaliseDir = (mousePos - rb.position).normalized;
 
             if (bullSndAtk == true)
@@ -243,11 +246,12 @@ public class PlayerController : MonoBehaviour
 
         if (health <= 0)
         {
-            death.Dead();
+            StartCoroutine(Death());
+            
         }
 
         secondaryCooldown.SetTime(sndCurrentCooldown);
-        
+
     }
 
     private void FixedUpdate()
@@ -293,6 +297,13 @@ public class PlayerController : MonoBehaviour
                 break;
         }
     }
+    public IEnumerator Death()
+    {
+        anim.SetTrigger("Death");
+        playerDead = true;
+        yield return new WaitForSecondsRealtime(1f);
+        death.Dead();
+    }
 
     public IEnumerator Knockback(float knockBackDuration, float knockbackPower, Transform obj)
     {
@@ -308,10 +319,11 @@ public class PlayerController : MonoBehaviour
         yield return 0;
     }
 
-    void MainAttack()
+    public IEnumerator MainAttack()
     {
-        if (currentCooldown <= 0)
+         if (currentCooldown <= 0)
         {
+            yield return new WaitForSeconds(0.15f);
             if (formNumber == 0)
             {
                 GameObject JackalAttack = Instantiate(attackPrefabs[0], firePoint.position, firePoint.rotation);

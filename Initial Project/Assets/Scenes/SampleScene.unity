@@ -403,7 +403,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1036734569}
         m_TargetAssemblyTypeName: MainMenuSceneControl, Assembly-CSharp
-        m_MethodName: QuitGame
+        m_MethodName: MainMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -25558,7 +25558,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 0
-  health: 100
+  health: 60
   healthBar: {fileID: 869362989}
   secondaryCooldown: {fileID: 327667541}
   Options: {fileID: 1967495149}
