@@ -70,7 +70,7 @@ public class Pickup : MonoBehaviour
                 break;
             case 6:
                 //move speed up
-                pCont.moveSpeed += 1;
+                pCont.moveSpeed += 2;
                 break;
             case 7:
                 //armoured
@@ -94,8 +94,8 @@ public class Pickup : MonoBehaviour
                 break;
             case 11:
                 //Max health increased
-                pCont.maxHealth += 10;
-                pCont.health += 10;
+                pCont.maxHealth += 5;
+                pCont.health += 5;
                 break;
         }
     }

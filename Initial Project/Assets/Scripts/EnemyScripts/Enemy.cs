@@ -47,18 +47,18 @@ public class Enemy : MonoBehaviour
         if (gameObject.tag == "basicEnemy")
         {
             enemyAnim.SetInteger("EnemyType", 2);
-            spaceBetween = Random.Range(15, 25);
+            spaceBetween = Random.Range(10, 20);
         }
         else if (gameObject.tag == "armourEnemy")
         {
             health += 2;
             enemyAnim.SetInteger("EnemyType", 0);
-            spaceBetween = Random.Range(15, 20);
+            spaceBetween = Random.Range(10, 15);
         }
         else
         {
             enemyAnim.SetInteger("EnemyType", 1);
-            spaceBetween = Random.Range(10, 15);
+            spaceBetween = Random.Range(5, 10);
         }
         StartCoroutine(Shuffle());
     }
@@ -147,7 +147,7 @@ public class Enemy : MonoBehaviour
         }
         else if (other.gameObject.CompareTag("BullSpecial"))
         {
-            health -= 2;
+            health -= 3;
             spaceBetween += 5;
         }
         else if (other.gameObject.CompareTag("HawkSpecial"))

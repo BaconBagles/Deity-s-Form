@@ -73,7 +73,7 @@ public class PlayerController : MonoBehaviour
         attacking = false;
         formNumber = 0;
         SwitchForm();
-        maxHealth = PlayerPrefs.GetInt("playerHealth", 100);
+        maxHealth = PlayerPrefs.GetInt("playerHealth", 60);
         health = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
         sndCooldown = 5;

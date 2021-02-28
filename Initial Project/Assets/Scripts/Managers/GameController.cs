@@ -186,7 +186,7 @@ public class GameController : MonoBehaviour
                 PickupText.text = "Secondary Attack Range Increased";
                 break;
             case 10:
-                PickupText.text = "Knockback Reduced";
+                PickupText.text = "Enemy Knockback Reduced";
                 break;
             case 11:
                 PickupText.text = "Max Health Increased";
