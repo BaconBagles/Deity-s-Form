@@ -28,7 +28,7 @@ public class BossEnemy : MonoBehaviour
         SwitchForm();
         enemyScript.currentDamage = 5;
         enemyScript.currentSize = 3f;
-        
+        enemyScript.isBoss = true;
     }
 
     // Update is called once per frame

@@ -6,8 +6,7 @@ public class Enemy : MonoBehaviour
 {
     GameObject player;
     Transform goal;
-    GameObject controller;
-    EnemyController controllerScript;
+    EnemyController eCont;
     public float spaceBetween;
     PlayerController pCont;
     public float health;
@@ -20,7 +19,7 @@ public class Enemy : MonoBehaviour
     public GameObject healthPickup;
     public Rigidbody2D rb;
     AudioManager Audio;
-
+    public bool isBoss;
 
 
     private void Awake()
@@ -39,8 +38,7 @@ public class Enemy : MonoBehaviour
         player = GameObject.Find("Player");
         pCont = player.GetComponent<PlayerController>();
         goal = player.transform;
-        controller = GameObject.Find("EnemyController");
-        controllerScript = controller.GetComponent<EnemyController>();
+        eCont= FindObjectOfType<EnemyController>();
 
         rb = GetComponent<Rigidbody2D>();
 
@@ -98,8 +96,12 @@ public class Enemy : MonoBehaviour
             {
                 Instantiate(healthPickup, new Vector2(gameObject.transform.position.x, gameObject.transform.position.y), Quaternion.identity);
             }
-            controllerScript.enemies.Remove(this.gameObject);
+            eCont.enemies.Remove(this.gameObject);
             FindObjectOfType<AudioManager>().Play("EnemyDeath");
+            if (isBoss == true)
+            {
+                eCont.gameController.roomComplete = true;
+            }
             Destroy(this.gameObject);
         }
     }
