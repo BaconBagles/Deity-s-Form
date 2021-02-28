@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
@@ -43,6 +44,8 @@ public class GameController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        waveMax = eCont.diffLevel / 2;
+
         if (waveNum >= waveMax)
         {
             roomComplete = true;
@@ -55,7 +58,7 @@ public class GameController : MonoBehaviour
             Instantiate(pickup, new Vector2(0, 0), Quaternion.identity);
         }
 
-        if (currentRoom == 5)
+        if (currentRoom == 8)
         {
             bossRoom = true;
         }
@@ -197,5 +200,36 @@ public class GameController : MonoBehaviour
         yield return new WaitForSeconds(2);
 
         PickupText.gameObject.SetActive(false);
+    }
+
+    public void NewRoom()
+    {
+
+        if (bossRoom == false)
+        {
+            currentRoom++;
+            if (currentRoom % 2 == 0)
+            {
+                eCont.diffLevel++;
+            }
+            roomComplete = false;
+            RandomRoom();
+            pickupSpawned = false;
+            /*if (player.tempFormActive == true)
+            {
+                player.superForm = false;
+                player.powerAttack = false;
+                player.tempFormActive = false;
+            }
+            if (player.superForm == true || player.powerAttack == true)
+            {
+                player.tempFormActive = true;
+            }*/
+        }
+
+        if (bossRoom == true)
+        {
+            SceneManager.LoadScene(4);
+        }
     }
 }

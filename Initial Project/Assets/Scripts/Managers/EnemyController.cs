@@ -86,7 +86,7 @@ public class EnemyController : MonoBehaviour
         yield return new WaitForSeconds(spawnTime);
         Audio.Play("EnemySpawn");
 
-        if (gameController.currentRoom == 5 && bossSpawned == false)
+        if (gameController.currentRoom == 8 && bossSpawned == false)
         {
             bossSpawned = true;
             rndPos = new Vector2(Random.Range(-20, 20), Random.Range(-20, 20));
@@ -97,9 +97,22 @@ public class EnemyController : MonoBehaviour
             for (int i = 0; i < diffLevel; i++)
             {
                 rndPos = new Vector2(Random.Range(-20, 20), Random.Range(-20, 20));
-                enemies.Add((GameObject)Instantiate(basicEnemy, rndPos, Quaternion.identity));
+                int enemyType = Random.Range(0,3);
+                switch (enemyType)
+                {
+                    case 0:
+                        enemies.Add((GameObject)Instantiate(basicEnemy, rndPos, Quaternion.identity));
+                        break;
+                    case 1:
+                        enemies.Add((GameObject)Instantiate(armourEnemy, rndPos, Quaternion.identity));
+                        break;
+                    case 2:
+                        enemies.Add((GameObject)Instantiate(spikeEnemy, rndPos, Quaternion.identity));
+                        break;
+                }
+                
             }
-            for (int i = 0; i < diffLevel / 2; i++)
+            /*for (int i = 0; i < diffLevel / 2; i++)
             {
                 rndPos = new Vector2(Random.Range(-20, 20), Random.Range(-20, 20));
                 enemies.Add((GameObject)Instantiate(armourEnemy, rndPos, Quaternion.identity));
@@ -108,7 +121,7 @@ public class EnemyController : MonoBehaviour
             {
                 rndPos = new Vector2(Random.Range(-20, 20), Random.Range(-20, 20));
                 enemies.Add((GameObject)Instantiate(spikeEnemy, rndPos, Quaternion.identity));
-            }
+            }*/
         }
 
         gameController.waveNum += 1;
