@@ -23,6 +23,8 @@ public class GameController : MonoBehaviour
     public bool roomComplete;
     public bool bossRoom;
     public GameObject door;
+    public GameObject pSpawn;
+    public GameObject eSpawn;
     new BoxCollider2D collider;
 
     int currentScene;
@@ -69,12 +71,10 @@ public class GameController : MonoBehaviour
         roomComplete = false;
         waveNum = 0;
         roomNumber = Random.Range(0, rooms.Length);
-        for (int i = 0; i < rooms.Length; i++)
-        {
-            rooms[i].SetActive(false);
-        }
-        rooms[roomNumber].SetActive(true);
+        pSpawn = rooms[roomNumber].transform.Find("PlayerSpawn").gameObject;
+        eSpawn = rooms[roomNumber].transform.Find("EnemySpawn").gameObject;
         door = rooms[roomNumber].transform.Find("Door").gameObject;
+        player.transform.position = pSpawn.transform.position;
     }
 
     public void SetUpNextRoom()

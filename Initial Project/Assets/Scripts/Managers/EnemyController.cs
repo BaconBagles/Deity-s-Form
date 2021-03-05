@@ -96,7 +96,7 @@ public class EnemyController : MonoBehaviour
         {
             for (int i = 0; i < diffLevel; i++)
             {
-                rndPos = new Vector2(Random.Range(-20, 20), Random.Range(-20, 20));
+                rndPos = new Vector2(gameController.eSpawn.transform.position.x + Random.Range(-5, 5), gameController.eSpawn.transform.position.y + Random.Range(-5, 5));
                 int enemyType = Random.Range(0,3);
                 switch (enemyType)
                 {
