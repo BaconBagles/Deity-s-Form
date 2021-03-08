@@ -11,23 +11,44 @@ public class EnemyController : MonoBehaviour
     public bool attacking;
     public OptionsMenu Options;
 
-    public Enemy enemyScript;
+   // public Enemy enemyScript;
     public AudioManager Audio;
     public PlayerController player;
     public GameController gameController;
-    public List<GameObject> enemies = new List<GameObject>();
-    public GameObject basicEnemy;
-    public GameObject armourEnemy;
-    public GameObject spikeEnemy;
-    public GameObject bossEnemy;
-    Vector2 rndPos;
+    public List<Enemy> enemies = new List<Enemy>(); // use for Agents
+    public Enemy basicEnemy; // use for agentPrefab
+    public Enemy armourEnemy; // use for agentPrefab
+    public Enemy spikeEnemy; // use for agentPrefab
+    public Enemy bossEnemy; // use for agentPrefab
+    //Vector2 rndPos;
     public bool spawning;
     public int spawnTime;
     bool bossSpawned;
 
+    //Enemy AI stuff
+    public EnemyFlockBehaviour behaviour;
+    const float AgentDensity = 2f;
+    [Range(1f, 100f)]
+    public float driveFactor = 10f;
+    [Range(1f, 100f)]
+    public float maxSpeed = 5f;
+    [Range(1f, 10f)]
+    public float neightbourRadius = 1.5f;
+    [Range(0f, 1f)]
+    public float avoidanceRadiusMultiplier = 0.5f;
+    float squareMaxSpeed;
+    float squareNeighbourRadius;
+    float squareAvoidanceRadius;
+    public float SquareAvoidanceRadius { get { return squareAvoidanceRadius; } }
+    Vector2 spawnPoint;
+
     void Start()
     {
         attackTimer = PlayerPrefs.GetInt("turnTimer", 5);
+
+        squareMaxSpeed = maxSpeed * maxSpeed;
+        squareNeighbourRadius = neightbourRadius * neightbourRadius;
+        squareAvoidanceRadius = squareAvoidanceRadius * avoidanceRadiusMultiplier * avoidanceRadiusMultiplier;
 
         spawning = true;
        StartCoroutine(SpawnEnemies());
@@ -37,80 +58,120 @@ public class EnemyController : MonoBehaviour
     void Update()
     {
 
-        if (enemies.Count == 0 && spawning == false)
+        foreach (Enemy enemy in enemies)
         {
-            StopAllCoroutines();
-            if (gameController.roomComplete == false)
+            List<Transform> context = GetNearbyObjects(enemy);
+
+
+            Vector2 move = behaviour.CalculateMove(enemy, context, this);
+            move *= driveFactor;
+            if (move.sqrMagnitude > squareMaxSpeed)
             {
-                attacking = false;
-                spawning = true;
-                StartCoroutine(SpawnEnemies());
+                move = move.normalized * maxSpeed;
+            }
+            enemy.Move(move);
+
+            if (enemies.Count == 0 && spawning == false)
+            {
+                StopAllCoroutines();
+                if (gameController.roomComplete == false)
+                {
+                    attacking = false;
+                    spawning = true;
+                    StartCoroutine(SpawnEnemies());
+                }
+            }
+
+            if (attacking == true && timeLeft > 0)
+            {
+                timeLeft -= Time.deltaTime;
+                timeBar.SetTime(timeLeft);
+            }
+
+            if (attacking == false)
+            {
+                timeLeft = attackTimer;
+                timeBar.SetMaxTime(attackTimer);
             }
         }
-        if (attacking == true && timeLeft > 0)
-        {
-            timeLeft -= Time.deltaTime;
-            timeBar.SetTime(timeLeft);
-        }
-
-        if (attacking == false)
-        {
-            timeLeft = attackTimer;
-            timeBar.SetMaxTime(attackTimer);
-        }
     }
 
-    IEnumerator EnemyAttack()
-    {
-        StartTimer();
-        yield return new WaitForSeconds(attackTimer - 0.3f);
-        foreach (GameObject enemy in enemies)
+        List<Transform> GetNearbyObjects(Enemy enemy)
         {
-            enemyScript = enemy.GetComponent<Enemy>();
-            enemyScript.enemyAnim.SetTrigger("Attack");
-            
+            List<Transform> context = new List<Transform>();
+            Collider2D[] contextColliders = Physics2D.OverlapCircleAll(enemy.transform.position, neightbourRadius);
+            foreach (Collider2D c in contextColliders)
+            {
+                if (c != enemy.AgentCollider)
+                {
+                    context.Add(c.transform);
+                }
+            }
+
+            return context;
         }
-        yield return new WaitForSeconds(0.3f);
-        foreach (GameObject enemy in enemies)
+
+        IEnumerator EnemyAttack()
         {
-            enemyScript = enemy.GetComponent<Enemy>();
-            yield return new WaitForSeconds(0.1f);
-            enemyScript.Attack();
-        } 
+            StartTimer();
+            yield return new WaitForSeconds(attackTimer - 0.3f);
+            foreach (Enemy enemy in enemies)
+            {
+                //  enemyScript = enemy.GetComponent<Enemy>();
+                enemy.enemyAnim.SetTrigger("Attack");
 
-        StartCoroutine(EnemyAttack());
-    }
+            }
+            yield return new WaitForSeconds(0.3f);
+            foreach (Enemy enemy in enemies)
+            {
+                //  enemyScript = enemy.GetComponent<Enemy>();
+                yield return new WaitForSeconds(0.1f);
+                enemy.Attack();
+            }
 
+            StartCoroutine(EnemyAttack());
+        }
     public IEnumerator SpawnEnemies()
     {
         yield return new WaitForSeconds(spawnTime);
         Audio.Play("EnemySpawn");
 
+        spawnPoint = gameController.eSpawn.transform.position;
+
         if (gameController.currentRoom == 8 && bossSpawned == false)
         {
             bossSpawned = true;
-            rndPos = new Vector2(Random.Range(-20, 20), Random.Range(-20, 20));
-            enemies.Add((GameObject)Instantiate(bossEnemy, rndPos, Quaternion.identity));
+            // rndPos = new Vector2(Random.Range(-20, 20), Random.Range(-20, 20));
+            Enemy boss = Instantiate(bossEnemy, spawnPoint + Random.insideUnitCircle * diffLevel * AgentDensity, Quaternion.identity, transform);
+            boss.Initialize(this);
+            enemies.Add(boss);
         }
         else
         {
             for (int i = 0; i < diffLevel; i++)
             {
-                rndPos = new Vector2(gameController.eSpawn.transform.position.x + Random.Range(-5, 5), gameController.eSpawn.transform.position.y + Random.Range(-5, 5));
-                int enemyType = Random.Range(0,3);
+                //  rndPos = new Vector2(Random.Range(-20, 20), Random.Range(-20, 20));
+                int enemyType = Random.Range(0, 3);
                 switch (enemyType)
                 {
                     case 0:
-                        enemies.Add((GameObject)Instantiate(basicEnemy, rndPos, Quaternion.identity));
+                        
+                        Enemy basic = Instantiate(basicEnemy, spawnPoint + Random.insideUnitCircle * diffLevel * AgentDensity, Quaternion.identity, transform);
+                        basic.Initialize(this);
+                        enemies.Add(basic);
                         break;
                     case 1:
-                        enemies.Add((GameObject)Instantiate(armourEnemy, rndPos, Quaternion.identity));
+                        Enemy armour = Instantiate(armourEnemy, spawnPoint + Random.insideUnitCircle * diffLevel * AgentDensity, Quaternion.identity, transform);
+                        armour.Initialize(this);
+                        enemies.Add(armour);
                         break;
                     case 2:
-                        enemies.Add((GameObject)Instantiate(spikeEnemy, rndPos, Quaternion.identity));
+                        Enemy spike = Instantiate(spikeEnemy, spawnPoint + Random.insideUnitCircle * diffLevel * AgentDensity, Quaternion.identity, transform);
+                        spike.Initialize(this);
+                        enemies.Add(spike);
                         break;
                 }
-                
+
             }
             /*for (int i = 0; i < diffLevel / 2; i++)
             {

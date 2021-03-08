@@ -8,7 +8,7 @@ public class Pickup : MonoBehaviour
     PlayerController pCont;
     GameController gCont;
     OptionsMenu Options;
-    Enemy enemyScript;
+    //Enemy enemyScript;
 
 
     public Sprite[] images;
@@ -58,10 +58,10 @@ public class Pickup : MonoBehaviour
                 break;
             case 4:
                 //enemy projectile speed down
-                foreach (GameObject enemy in eCont.enemies)
+                foreach (Enemy enemy in eCont.enemies)
                 {
-                    enemyScript = enemy.GetComponent<Enemy>();
-                    enemyScript.currentForce /= 12.5f;
+                    //enemyScript = enemy.GetComponent<Enemy>();
+                    enemy.currentForce /= 12.5f;
                 }
                 break;
             case 5:
@@ -86,10 +86,10 @@ public class Pickup : MonoBehaviour
                 break;
             case 10:
                 //knockback reduced
-                foreach (GameObject enemy in eCont.enemies)
+                foreach (Enemy enemy in eCont.enemies)
                 {
-                    enemyScript = enemy.GetComponent<Enemy>();
-                    enemyScript.currentKnockback /= 12.5f;
+                    //enemyScript = enemy.GetComponent<Enemy>();
+                    enemy.currentKnockback /= 12.5f;
                 }
                 break;
             case 11:

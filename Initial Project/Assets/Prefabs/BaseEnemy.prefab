@@ -157,6 +157,7 @@ MonoBehaviour:
   currentKnockback: 0
   healthPickup: {fileID: 1104073636124065548, guid: 4bf49cacdd16a6b48a2e41e261616927, type: 3}
   rb: {fileID: 0}
+  isBoss: 0
 --- !u!95 &7049152765276969609
 Animator:
   serializedVersion: 3
@@ -202,6 +203,7 @@ GameObject:
   - component: {fileID: 7990590131490308667}
   - component: {fileID: 4310853995262732478}
   - component: {fileID: 2785166052189065777}
+  - component: {fileID: 7715686460523881235}
   m_Layer: 0
   m_Name: EnemyHealth
   m_TagString: Untagged
@@ -287,3 +289,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 7026609714722928751}
+--- !u!114 &7715686460523881235
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3061772750904369912}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8eadb34054e47444ad754b090287c18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sortingOrderBase: 5000
+  offset: 0
+  runOnlyOnce: 0
