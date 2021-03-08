@@ -24,7 +24,7 @@ public class door : MonoBehaviour
 
             gCont.NewRoom();
 
-            collision.gameObject.transform.position = new Vector2(0, 0);
+            //collision.gameObject.transform.position = new Vector2(0, 0);
             PlayerController player = collision.GetComponent<PlayerController>();
         }
     }
