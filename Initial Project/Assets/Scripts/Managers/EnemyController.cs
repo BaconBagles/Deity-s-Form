@@ -61,8 +61,7 @@ public class EnemyController : MonoBehaviour
         foreach (Enemy enemy in enemies)
         {
             List<Transform> context = GetNearbyObjects(enemy);
-
-
+            
             Vector2 move = behaviour.CalculateMove(enemy, context, this);
             move *= driveFactor;
             if (move.sqrMagnitude > squareMaxSpeed)
@@ -70,67 +69,68 @@ public class EnemyController : MonoBehaviour
                 move = move.normalized * maxSpeed;
             }
             enemy.Move(move);
+        }
 
-            if (enemies.Count == 0 && spawning == false)
+        if (enemies.Count == 0 && spawning == false)
+        {
+            StopAllCoroutines();
+            if (gameController.roomComplete == false)
             {
-                StopAllCoroutines();
-                if (gameController.roomComplete == false)
-                {
-                    attacking = false;
-                    spawning = true;
-                    StartCoroutine(SpawnEnemies());
-                }
+                attacking = false;
+                spawning = true;
+                StartCoroutine(SpawnEnemies());
             }
+        }
 
-            if (attacking == true && timeLeft > 0)
-            {
-                timeLeft -= Time.deltaTime;
-                timeBar.SetTime(timeLeft);
-            }
+        if (attacking == true && timeLeft > 0)
+        {
+            timeLeft -= Time.deltaTime;
+            timeBar.SetTime(timeLeft);
+        }
 
-            if (attacking == false)
-            {
-                timeLeft = attackTimer;
-                timeBar.SetMaxTime(attackTimer);
-            }
+        if (attacking == false)
+        {
+            timeLeft = attackTimer;
+            timeBar.SetMaxTime(attackTimer);
         }
     }
 
-        List<Transform> GetNearbyObjects(Enemy enemy)
+    List<Transform> GetNearbyObjects(Enemy enemy)
+    {
+        List<Transform> context = new List<Transform>();
+        Collider2D[] contextColliders = Physics2D.OverlapCircleAll(enemy.transform.position, neightbourRadius);
+        foreach (Collider2D c in contextColliders)
         {
-            List<Transform> context = new List<Transform>();
-            Collider2D[] contextColliders = Physics2D.OverlapCircleAll(enemy.transform.position, neightbourRadius);
-            foreach (Collider2D c in contextColliders)
+            if (c != enemy.AgentCollider)
             {
-                if (c != enemy.AgentCollider)
-                {
-                    context.Add(c.transform);
-                }
+                context.Add(c.transform);
             }
-
-            return context;
         }
 
-        IEnumerator EnemyAttack()
+        return context;
+    }
+
+    IEnumerator EnemyAttack()
+    {
+        StartTimer();
+        yield return new WaitForSeconds(attackTimer - 0.3f);
+        foreach (Enemy enemy in enemies)
         {
-            StartTimer();
-            yield return new WaitForSeconds(attackTimer - 0.3f);
-            foreach (Enemy enemy in enemies)
-            {
-                //  enemyScript = enemy.GetComponent<Enemy>();
-                enemy.enemyAnim.SetTrigger("Attack");
+            //  enemyScript = enemy.GetComponent<Enemy>();
+            enemy.enemyAnim.SetTrigger("Attack");
 
-            }
-            yield return new WaitForSeconds(0.3f);
-            foreach (Enemy enemy in enemies)
-            {
-                //  enemyScript = enemy.GetComponent<Enemy>();
-                yield return new WaitForSeconds(0.1f);
-                enemy.Attack();
-            }
-
-            StartCoroutine(EnemyAttack());
         }
+        yield return new WaitForSeconds(0.3f);
+        foreach (Enemy enemy in enemies)
+        {
+            //  enemyScript = enemy.GetComponent<Enemy>();
+            yield return new WaitForSeconds(0.1f);
+            enemy.Attack();
+        }
+
+        StartCoroutine(EnemyAttack());
+    }
+
     public IEnumerator SpawnEnemies()
     {
         yield return new WaitForSeconds(spawnTime);
