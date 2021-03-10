@@ -29,6 +29,8 @@ public class GameController : MonoBehaviour
 
     int currentScene;
 
+    public Image sceneFader;
+
     void Start()
     {
         if (PlayerPrefs.GetInt("Memory3", 0) == 1)
@@ -41,6 +43,7 @@ public class GameController : MonoBehaviour
         }
         RandomRoom();
         currentRoom = 1;
+        FadeIn();
     }
 
     // Update is called once per frame
@@ -231,5 +234,21 @@ public class GameController : MonoBehaviour
         {
             SceneManager.LoadScene(4);
         }
+
+        FadeIn();
+    }
+
+    public void FadeOut()
+    {
+        sceneFader.color = Color.black;
+        sceneFader.canvasRenderer.SetAlpha(0.0f);
+        sceneFader.CrossFadeAlpha(1.0f, 1f, false);
+    }
+
+    public void FadeIn()
+    {
+        sceneFader.color = Color.black;
+        sceneFader.canvasRenderer.SetAlpha(1.0f);
+        sceneFader.CrossFadeAlpha(0.0f, 1f, false);
     }
 }
