@@ -9,6 +9,7 @@ public class playerProjectileScript : MonoBehaviour
     PlayerController pContd;
     Enemy enemy;
     BossEnemy bossEnemy;
+    thePillarScript pillar;
 
     //knockback stuff
     public float knockbackPower = 175;
@@ -45,11 +46,17 @@ public class playerProjectileScript : MonoBehaviour
         if (other.gameObject.CompareTag("Pillar"))
         {
             //damage pillar
+            pillar = other.gameObject.GetComponent<thePillarScript>();
+           // GameObject effect = Instantiate(hitEffect, transform.position, Quaternion.identity);
+         //   Destroy(effect, 0.5f);
+            pillar.pillarState -= 1;
+            pillar.PillarDamage();
             Destroy(this.gameObject);
         }
         else if (other.gameObject.CompareTag("Wall"))
         {
-            //skip this, I suppose
+          //  GameObject effect = Instantiate(hitEffect, transform.position, Quaternion.identity);
+           // Destroy(effect, 0.5f);
             Destroy(this.gameObject);
         }
         else

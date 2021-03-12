@@ -11,6 +11,7 @@ public class Enemy : MonoBehaviour
    // public float spaceBetween;
     PlayerController pCont;
     public float health;
+    private bool isDead;
     public Animator enemyAnim;
     public GameObject projectile;
     public int currentDamage;
@@ -33,7 +34,7 @@ public class Enemy : MonoBehaviour
     {
         health = PlayerPrefs.GetInt("enemyHealth", 5);
         currentForce = 350;
-        currentDamage = 1;
+        currentDamage = 2;
         currentSize = 0f;
         currentKnockback = 175;
     }
@@ -46,6 +47,7 @@ public class Enemy : MonoBehaviour
         player = GameObject.Find("Player");
         pCont = player.GetComponent<PlayerController>();
         goal = player.transform;
+        isDead = false;
 
         rb = GetComponent<Rigidbody2D>();
 
@@ -103,36 +105,33 @@ public class Enemy : MonoBehaviour
           */
         if (health <= 0)
         {
-            float randomNum = Random.Range(0, 100);
-            if (randomNum > 95)
-            {
-                Instantiate(healthPickup, new Vector2(gameObject.transform.position.x, gameObject.transform.position.y), Quaternion.identity);
-            }
-            eCont.enemies.Remove(this);
-            FindObjectOfType<AudioManager>().Play("EnemyDeath");
-            if (isBoss == true)
-            {
-                eCont.gameController.roomComplete = true;
-            }
-            Destroy(this.gameObject);
+            StartCoroutine(Death());
         }
     }
 
     public void Move(Vector2 velocity)
     {
-        transform.up = velocity; //be prepared to crush this.
-        transform.position += (Vector3)velocity * Time.deltaTime;
+        if(isDead != true)
+        {
+            transform.up = velocity; //THE PROBLEM LINE
+            transform.position += (Vector3)velocity * Time.deltaTime;
+        }
+        
     }
 
     public void Attack()
     {
-        Audio.Play("EnemyAttack");
-        GameObject enemyProjectile = Instantiate(projectile, transform.position, Quaternion.identity);
-        projectileScript proj = enemyProjectile.GetComponent<projectileScript>();
-        proj.force = currentForce;
-        proj.damage = currentDamage;
-        proj.bossSize = currentSize;
-        proj.knockbackPower = currentKnockback;
+        if(isDead != true)
+        {
+            Audio.Play("EnemyAttack");
+            GameObject enemyProjectile = Instantiate(projectile, transform.position, Quaternion.identity);
+            projectileScript proj = enemyProjectile.GetComponent<projectileScript>();
+            proj.force = currentForce;
+            proj.damage = currentDamage;
+            proj.bossSize = currentSize;
+            proj.knockbackPower = currentKnockback;
+        }
+       
     }
 
     public IEnumerator Knockback(float knockBackDuration, float knockbackPower, Transform obj)
@@ -147,6 +146,29 @@ public class Enemy : MonoBehaviour
         }
 
         yield return 0;
+    }
+
+    public IEnumerator Death()
+    {
+        isDead = true;
+        enemyAnim.SetTrigger("Death");
+        FindObjectOfType<AudioManager>().Play("EnemyDeath");
+
+        yield return new WaitForSecondsRealtime(1f);
+
+        float randomNum = Random.Range(0, 100);
+        if (randomNum > 95)
+        {
+            Instantiate(healthPickup, new Vector2(gameObject.transform.position.x, gameObject.transform.position.y), Quaternion.identity);
+        }
+        eCont.enemies.Remove(this);
+
+        if (isBoss == true)
+        {
+            eCont.gameController.roomComplete = true;
+        }
+
+        Destroy(this.gameObject);
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -167,7 +189,9 @@ public class Enemy : MonoBehaviour
         }
         else if (other.gameObject.CompareTag("BullSpecial"))
         {
-            health -= 3;
+            health -= 4;
+            FindObjectOfType<AudioManager>().Play("EnemyDamaged");
+            StartCoroutine(Knockback(2f, 200f, other.gameObject.transform));
           //  spaceBetween += 5;
         }
         else if (other.gameObject.CompareTag("HawkSpecial"))
