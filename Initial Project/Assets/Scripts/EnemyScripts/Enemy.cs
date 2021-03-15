@@ -8,7 +8,7 @@ public class Enemy : MonoBehaviour
     GameObject player;
     Transform goal;
    
-   // public float spaceBetween;
+    public float spaceBetween;
     PlayerController pCont;
     public float health;
     private bool isDead;
@@ -23,9 +23,7 @@ public class Enemy : MonoBehaviour
     AudioManager Audio;
     public bool isBoss;
 
-    //flockingAI stuff
-    EnemyController ECont;
-    public EnemyController eCont { get { return ECont; } }
+    public EnemyController eCont;
 
     Collider2D agentCollider;
     public Collider2D AgentCollider { get { return agentCollider; } }
@@ -39,11 +37,11 @@ public class Enemy : MonoBehaviour
         currentKnockback = 175;
     }
 
-    // Start is called before the first frame update
     void Start()
     {
         agentCollider = GetComponent<Collider2D>();
         Audio = FindObjectOfType<AudioManager>();
+        eCont = FindObjectOfType<EnemyController>();
         player = GameObject.Find("Player");
         pCont = player.GetComponent<PlayerController>();
         goal = player.transform;
@@ -54,31 +52,30 @@ public class Enemy : MonoBehaviour
         if (gameObject.tag == "basicEnemy")
         {
             enemyAnim.SetInteger("EnemyType", 2);
-          //  spaceBetween = Random.Range(10, 20);
+            spaceBetween = Random.Range(10, 20);
         }
         else if (gameObject.tag == "armourEnemy")
         {
             health += 2;
             enemyAnim.SetInteger("EnemyType", 0);
-           // spaceBetween = Random.Range(10, 15);
+            spaceBetween = Random.Range(10, 15);
         }
         else
         {
             enemyAnim.SetInteger("EnemyType", 1);
-          //  spaceBetween = Random.Range(5, 10);
+            spaceBetween = Random.Range(5, 10);
         }
-        //StartCoroutine(Shuffle());
+        StartCoroutine(Shuffle());
     }
 
-    public void Initialize(EnemyController eContFlock)
+  /*  public void Initialize(EnemyController eContFlock)
     {
         ECont = eContFlock;
-    }
+    } */
 
-    // Update is called once per frame
     void Update()
     {
-        /* if (Vector2.Distance(goal.position, transform.position) >= 5)
+         if (Vector2.Distance(goal.position, transform.position) >= spaceBetween)
          {
              Vector2 direction = goal.position - transform.position;
              enemyAnim.SetFloat("Horizontal", direction.x);
@@ -102,14 +99,14 @@ public class Enemy : MonoBehaviour
          {
              spaceBetween = 0f;
          }
-          */
+          
         if (health <= 0)
         {
             StartCoroutine(Death());
         }
     }
 
-    public void Move(Vector2 velocity)
+   /* public void Move(Vector2 velocity)
     {
         if(isDead != true)
         {
@@ -117,7 +114,7 @@ public class Enemy : MonoBehaviour
             transform.position += (Vector3)velocity * Time.deltaTime;
         }
         
-    }
+    } */
 
     public void Attack()
     {
@@ -192,18 +189,15 @@ public class Enemy : MonoBehaviour
             health -= 4;
             FindObjectOfType<AudioManager>().Play("EnemyDamaged");
             StartCoroutine(Knockback(2f, 200f, other.gameObject.transform));
-          //  spaceBetween += 5;
+
         }
         else if (other.gameObject.CompareTag("HawkSpecial"))
         {
-           // spaceBetween = 0;
+           spaceBetween = 0;
         }
-
-
     }
 
-
-  /*  IEnumerator Shuffle()
+    IEnumerator Shuffle()
     {
         yield return new WaitForSecondsRealtime(4.0f);
         if (spaceBetween < 5f)
@@ -215,5 +209,5 @@ public class Enemy : MonoBehaviour
             spaceBetween += Random.Range(-7.5f, 7.5f);
         }
         StartCoroutine(Shuffle()); 
-    } */
+    } 
 }

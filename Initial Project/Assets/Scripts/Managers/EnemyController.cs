@@ -19,14 +19,14 @@ public class EnemyController : MonoBehaviour
     public Enemy basicEnemy; // use for agentPrefab
     public Enemy armourEnemy; // use for agentPrefab
     public Enemy spikeEnemy; // use for agentPrefab
-    public Enemy bossEnemy; // use for agentPrefab
-    //Vector2 rndPos;
+    public Enemy bossEnemy1; // use for agentPrefab
+    Vector2 rndPos;
     public bool spawning;
     public int spawnTime;
     bool bossSpawned;
 
     //Enemy AI stuff
-    public EnemyFlockBehaviour behaviour;
+    /*public EnemyFlockBehaviour behaviour;
     const float AgentDensity = 2f;
     [Range(1f, 100f)]
     public float driveFactor = 10f;
@@ -39,26 +39,26 @@ public class EnemyController : MonoBehaviour
     float squareMaxSpeed;
     float squareNeighbourRadius;
     float squareAvoidanceRadius;
-    public float SquareAvoidanceRadius { get { return squareAvoidanceRadius; } }
+    public float SquareAvoidanceRadius { get { return squareAvoidanceRadius; } } */
     Vector2 spawnPoint;
 
     void Start()
     {
         attackTimer = PlayerPrefs.GetInt("turnTimer", 5);
 
-        squareMaxSpeed = maxSpeed * maxSpeed;
+       /* squareMaxSpeed = maxSpeed * maxSpeed;
         squareNeighbourRadius = neightbourRadius * neightbourRadius;
-        squareAvoidanceRadius = squareAvoidanceRadius * avoidanceRadiusMultiplier * avoidanceRadiusMultiplier;
+        squareAvoidanceRadius = squareAvoidanceRadius * avoidanceRadiusMultiplier * avoidanceRadiusMultiplier; */
 
         spawning = true;
        StartCoroutine(SpawnEnemies());
     }
 
-    // Update is called once per frame
+
     void Update()
     {
 
-        foreach (Enemy enemy in enemies)
+       /* foreach (Enemy enemy in enemies)
         {
             List<Transform> context = GetNearbyObjects(enemy);
             
@@ -69,7 +69,7 @@ public class EnemyController : MonoBehaviour
                 move = move.normalized * maxSpeed;
             }
             enemy.Move(move);
-        }
+        } */
 
         if (enemies.Count == 0 && spawning == false)
         {
@@ -95,7 +95,7 @@ public class EnemyController : MonoBehaviour
         }
     }
 
-    List<Transform> GetNearbyObjects(Enemy enemy)
+   /* List<Transform> GetNearbyObjects(Enemy enemy)
     {
         List<Transform> context = new List<Transform>();
         Collider2D[] contextColliders = Physics2D.OverlapCircleAll(enemy.transform.position, neightbourRadius);
@@ -108,7 +108,7 @@ public class EnemyController : MonoBehaviour
         }
 
         return context;
-    }
+    } */
 
     IEnumerator EnemyAttack()
     {
@@ -141,33 +141,33 @@ public class EnemyController : MonoBehaviour
         if (gameController.currentRoom == 8 && bossSpawned == false)
         {
             bossSpawned = true;
-            // rndPos = new Vector2(Random.Range(-20, 20), Random.Range(-20, 20));
-            Enemy boss = Instantiate(bossEnemy, spawnPoint + Random.insideUnitCircle * diffLevel * AgentDensity, Quaternion.identity, transform);
-            boss.Initialize(this);
+             rndPos = new Vector2(Random.Range(-20, 20), Random.Range(-20, 20));
+            Enemy boss = Instantiate(bossEnemy1, spawnPoint + rndPos /* + Random.insideUnitCircle * diffLevel * AgentDensity */, Quaternion.identity, transform);
+           // boss.Initialize(this);
             enemies.Add(boss);
         }
         else
         {
             for (int i = 0; i < diffLevel; i++)
             {
-                //  rndPos = new Vector2(Random.Range(-20, 20), Random.Range(-20, 20));
+                rndPos = new Vector2(Random.Range(-20, 20), Random.Range(-20, 20));
                 int enemyType = Random.Range(0, 3);
                 switch (enemyType)
                 {
                     case 0:
                         
-                        Enemy basic = Instantiate(basicEnemy, spawnPoint + Random.insideUnitCircle * diffLevel * AgentDensity, Quaternion.identity, transform);
-                        basic.Initialize(this);
+                        Enemy basic = Instantiate(basicEnemy, spawnPoint + rndPos /*+ Random.insideUnitCircle * diffLevel * AgentDensity */, Quaternion.identity, transform);
+                      //  basic.Initialize(this);
                         enemies.Add(basic);
                         break;
                     case 1:
-                        Enemy armour = Instantiate(armourEnemy, spawnPoint + Random.insideUnitCircle * diffLevel * AgentDensity, Quaternion.identity, transform);
-                        armour.Initialize(this);
+                        Enemy armour = Instantiate(armourEnemy, spawnPoint + rndPos /*+ Random.insideUnitCircle * diffLevel * AgentDensity*/, Quaternion.identity, transform);
+                        //armour.Initialize(this);
                         enemies.Add(armour);
                         break;
                     case 2:
-                        Enemy spike = Instantiate(spikeEnemy, spawnPoint + Random.insideUnitCircle * diffLevel * AgentDensity, Quaternion.identity, transform);
-                        spike.Initialize(this);
+                        Enemy spike = Instantiate(spikeEnemy, spawnPoint + rndPos /*+ Random.insideUnitCircle * diffLevel * AgentDensity */, Quaternion.identity, transform);
+                       // spike.Initialize(this);
                         enemies.Add(spike);
                         break;
                 }
