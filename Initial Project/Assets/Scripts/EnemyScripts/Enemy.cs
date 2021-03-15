@@ -10,7 +10,9 @@ public class Enemy : MonoBehaviour
    
     public float spaceBetween;
     PlayerController pCont;
+    public EnemyHealthBar healthBar;
     public float health;
+    float maxHealth;
     private bool isDead;
     public Animator enemyAnim;
     public GameObject projectile;
@@ -30,7 +32,8 @@ public class Enemy : MonoBehaviour
 
     private void Awake()
     {
-        health = PlayerPrefs.GetInt("enemyHealth", 5);
+        maxHealth = PlayerPrefs.GetInt("enemyHealth", 5);
+        health = maxHealth;
         currentForce = 350;
         currentDamage = 2;
         currentSize = 0f;
@@ -99,7 +102,10 @@ public class Enemy : MonoBehaviour
          {
              spaceBetween = 0f;
          }
-          
+
+
+        healthBar.SetHealth(health, maxHealth);
+
         if (health <= 0)
         {
             StartCoroutine(Death());
