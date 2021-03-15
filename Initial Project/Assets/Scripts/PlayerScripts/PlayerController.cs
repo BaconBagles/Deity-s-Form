@@ -26,7 +26,7 @@ public class PlayerController : MonoBehaviour
     public Rigidbody2D rb;
     public Rigidbody2D frb;
     public int formNumber;
-    public TrailRenderer aura;
+    public ParticleSystem auraObj;
     public ParticleSystem attackEffect;
     public GameObject attackOrbiter;
     public GameObject[] attacks;
@@ -85,6 +85,8 @@ public class PlayerController : MonoBehaviour
         frb = fireObject.GetComponent<Rigidbody2D>();
         orbitPos = attackOrbiter.GetComponent<attackOrbit>();
 
+        
+
         //Adds our stored keys to the dictionary
         //This will need to be done again if the player changes keybinds during game
         keys.Add("Up", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("Up", "W")));
@@ -100,14 +102,14 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        if (superForm == true)
+        /*if (superForm == true)
         {
             sr.color = Color.yellow;
         }
         else
         {
             sr.color = Color.white;
-        }
+        }*/
 
         mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
         fireObject.transform.position = rb.transform.position;
@@ -280,20 +282,22 @@ public class PlayerController : MonoBehaviour
 
         anim.SetInteger("form", formNumber);
         Audio.Play("FormChange");
+        ParticleSystem aura = auraObj.GetComponent<ParticleSystem>();
+        ParticleSystem.MainModule auraMain = aura.main;
 
         switch (formNumber)
         {
             case 0:
                 moveSpeed = 20 + speedBonus;
-                aura.material.color = Color.magenta;
+                auraMain.startColor = Color.magenta;
                 break;
             case 1:
                 moveSpeed = 15 + speedBonus;
-                aura.material.color = Color.yellow;
+                auraMain.startColor = Color.yellow;
                 break;
             default:
                 moveSpeed = 15 + speedBonus;
-                aura.material.color = Color.blue;
+                auraMain.startColor = Color.blue;
                 break;
         }
     }
