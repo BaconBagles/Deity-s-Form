@@ -22028,17 +22028,21 @@ MonoBehaviour:
   timeBar: {fileID: 513245255}
   attacking: 0
   Options: {fileID: 1967495149}
-  enemyScript: {fileID: 0}
   Audio: {fileID: 7700597709660189910}
   player: {fileID: 881548572}
   gameController: {fileID: 1452527724}
   enemies: []
-  basicEnemy: {fileID: 529861034411739998, guid: 15b927307a3bbc04ab092078097192ac, type: 3}
-  armourEnemy: {fileID: 1557396358725871626, guid: 42e6620f441864e468c12ff74cfe9617, type: 3}
-  spikeEnemy: {fileID: 2929758767139285992, guid: 74370bdf42bb5ed47933cef5ad168030, type: 3}
-  bossEnemy: {fileID: 1557396358725871626, guid: 7d0def1df506d7941b6b6ded5520e208, type: 3}
+  basicEnemy: {fileID: 0}
+  armourEnemy: {fileID: 0}
+  spikeEnemy: {fileID: 0}
+  bossEnemy: {fileID: 0}
   spawning: 0
   spawnTime: 2
+  behaviour: {fileID: 0}
+  driveFactor: 10
+  maxSpeed: 5
+  neightbourRadius: 1.5
+  avoidanceRadiusMultiplier: 0.5
 --- !u!4 &753775460
 Transform:
   m_ObjectHideFlags: 0
@@ -25587,6 +25591,7 @@ MonoBehaviour:
   powerAttack: 0
   superForm: 0
   tempFormActive: 0
+  playerDead: 0
   cam: {fileID: 519420031}
   firePoint: {fileID: 38970872}
   fireObject: {fileID: 38970871}
@@ -25659,7 +25664,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 881548568}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.52, y: 0.41, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 519420032}
@@ -29201,7 +29206,7 @@ TrailRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Time: 0.25
+  m_Time: 0.3
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 1
@@ -29210,22 +29215,49 @@ TrailRenderer:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.7623768
-        inSlope: 0
-        outSlope: 0
+        value: 0.99949014
+        inSlope: 0.06221721
+        outSlope: 0.06221721
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
-        outWeight: 0.33333334
+        outWeight: 1
       - serializedVersion: 3
-        time: 0.7056321
-        value: 0.21980208
-        inSlope: -0.39166412
-        outSlope: -0.39166412
+        time: 0.1681973
+        value: 0.5462055
+        inSlope: 3.759685
+        outSlope: 3.759685
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.7119366
+      - serializedVersion: 3
+        time: 0.3893458
+        value: 0.45704103
+        inSlope: 1.4808564
+        outSlope: 1.4808564
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.72270536
+      - serializedVersion: 3
+        time: 0.60735023
+        value: 0.2713539
+        inSlope: 2.1447592
+        outSlope: 2.1447592
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.29376572
-        outWeight: 0
+        outWeight: 0.5163265
+      - serializedVersion: 3
+        time: 0.82154703
+        value: 0.21054244
+        inSlope: 1.8635448
+        outSlope: 1.8635448
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.8611049
       - serializedVersion: 3
         time: 0.99999994
         value: 0
@@ -29241,7 +29273,7 @@ TrailRenderer:
     colorGradient:
       serializedVersion: 2
       key0: {r: 1, g: 1, b: 1, a: 1}
-      key1: {r: 1, g: 1, b: 1, a: 1}
+      key1: {r: 1, g: 1, b: 1, a: 0.29411766}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
@@ -29249,7 +29281,7 @@ TrailRenderer:
       key6: {r: 0, g: 0, b: 0, a: 0}
       key7: {r: 0, g: 0, b: 0, a: 0}
       ctime0: 0
-      ctime1: 65535
+      ctime1: 44140
       ctime2: 0
       ctime3: 0
       ctime4: 0
@@ -43481,6 +43513,9 @@ MonoBehaviour:
   roomComplete: 0
   bossRoom: 0
   door: {fileID: 0}
+  pSpawn: {fileID: 0}
+  eSpawn: {fileID: 0}
+  sceneFader: {fileID: 0}
 --- !u!4 &1452527725
 Transform:
   m_ObjectHideFlags: 0
