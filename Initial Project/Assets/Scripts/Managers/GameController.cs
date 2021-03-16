@@ -41,8 +41,8 @@ public class GameController : MonoBehaviour
         {
             allMemories = false;
         }
-        RandomRoom();
         currentRoom = 1;
+        RandomRoom();
         FadeIn();
     }
 
@@ -60,7 +60,7 @@ public class GameController : MonoBehaviour
         {
             pickupSpawned = true;
             RandomPickup();
-            Instantiate(pickup, new Vector2(0, 0), Quaternion.identity);
+            Instantiate(pickup, eSpawn.transform.position, Quaternion.identity);
         }
 
         if (currentRoom == 8)
@@ -73,7 +73,18 @@ public class GameController : MonoBehaviour
     {
         roomComplete = false;
         waveNum = 0;
-        roomNumber = Random.Range(0, rooms.Length);
+        switch (currentRoom)
+        {
+            case 1:
+                roomNumber = 0;
+                break;
+            case 8:
+                roomNumber = 7;
+                break;
+            default:
+                roomNumber = Random.Range(1, rooms.Length-1);
+                break;
+        }
         pSpawn = rooms[roomNumber].transform.Find("PlayerSpawn").gameObject;
         eSpawn = rooms[roomNumber].transform.Find("EnemySpawn").gameObject;
         door = rooms[roomNumber].transform.Find("Door").gameObject;
@@ -234,18 +245,20 @@ public class GameController : MonoBehaviour
         {
             SceneManager.LoadScene(4);
         }
-
-        FadeIn();
+        
     }
 
-    public void FadeOut()
+    public IEnumerator FadeOut()
     {
         sceneFader.color = Color.black;
         sceneFader.canvasRenderer.SetAlpha(0.0f);
         sceneFader.CrossFadeAlpha(1.0f, 1f, false);
+        yield return new WaitForSeconds(1);
+        NewRoom();
+        FadeIn();
     }
 
-    public void FadeIn()
+    void FadeIn()
     {
         sceneFader.color = Color.black;
         sceneFader.canvasRenderer.SetAlpha(1.0f);

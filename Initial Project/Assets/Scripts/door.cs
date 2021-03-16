@@ -16,13 +16,12 @@ public class door : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            gCont.FadeOut();
             BoxCollider2D collider = gameObject.GetComponent<BoxCollider2D>();
             MeshRenderer renderer = gameObject.GetComponent<MeshRenderer>();
             collider.isTrigger = false;
             renderer.enabled = false;
-            
-            gCont.NewRoom();
+
+            gCont.StartCoroutine(gCont.FadeOut());
             
             PlayerController player = collision.GetComponent<PlayerController>();
         }
