@@ -13,6 +13,11 @@ public class BossEnemy : MonoBehaviour
     private SpriteRenderer spriteR;
     public Animator enemyAnim;
     public AudioManager Audio;
+    public int firstForm;
+    public int secondForm;
+    public bool isFinalBoss;
+    public int bossHealth;
+    public int bossDamage;
 
     // Start is called before the first frame update
     void Start()
@@ -22,11 +27,11 @@ public class BossEnemy : MonoBehaviour
         controller = GameObject.Find("EnemyController");
         Audio = FindObjectOfType<AudioManager>();
         controllerScript = controller.GetComponent<EnemyController>();
-        enemyScript.health = 25;
+        enemyScript.health = bossHealth;
         switchthreshold = 15;
-        FormList = 1;
+        FormList = firstForm;
         SwitchForm();
-        enemyScript.currentDamage = 5;
+        enemyScript.currentDamage = bossDamage;
         enemyScript.currentSize = 3f;
         enemyScript.isBoss = true;
     }
@@ -34,16 +39,23 @@ public class BossEnemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       
-        if (enemyScript.health <= switchthreshold)
+
+        if (enemyScript.health <= switchthreshold && isFinalBoss == false)
         {
             Audio.Play("BossShieldBreak");
-            FormList = 0;
+            FormList = secondForm;
             SwitchForm();
             switchthreshold = enemyScript.health / 2;
             StartCoroutine(SwitchBack());
         }
-
+        else if (enemyScript.health <= switchthreshold && FormList <= 2)
+        {
+            Audio.Play("BossShieldBreak");
+            FormList++;
+            SwitchForm();
+            switchthreshold = enemyScript.health / 2;
+        } 
+        
        if (controllerScript.attacking == true && controllerScript.enemies.Count == 1)
        {
           controllerScript.StopAllCoroutines();
@@ -55,6 +67,7 @@ public class BossEnemy : MonoBehaviour
 
     public void SwitchForm()
     {
+
         switch (FormList)
         {
             case 0:
@@ -70,16 +83,18 @@ public class BossEnemy : MonoBehaviour
                 
                 
                 break;
-           /* case 2:
+            case 2:
                 gameObject.tag = "spikyEnemy";
-                break; */
+                spriteR.sprite = spriteList[2];
+                enemyAnim.SetInteger("EnemyType", 1);
+                break; 
         }
     }
 
     IEnumerator SwitchBack()
     {
         yield return new WaitForSeconds(10f);
-        FormList = 1;
+        FormList = firstForm;
         Audio.Play("BossReapplyingArmour");
         SwitchForm();
     }

@@ -28073,14 +28073,9 @@ MonoBehaviour:
   basicEnemy: {fileID: 7026609714722928751, guid: 15b927307a3bbc04ab092078097192ac, type: 3}
   armourEnemy: {fileID: 1347843649691882203, guid: 42e6620f441864e468c12ff74cfe9617, type: 3}
   spikeEnemy: {fileID: 9078318220567786660, guid: 74370bdf42bb5ed47933cef5ad168030, type: 3}
-  bossEnemy: {fileID: 3791742543417215833, guid: 7d0def1df506d7941b6b6ded5520e208, type: 3}
+  bossEnemy1: {fileID: 0}
   spawning: 0
   spawnTime: 2
-  behaviour: {fileID: 11400000, guid: f2e831097718381429b5819c7b93544d, type: 2}
-  driveFactor: 10
-  maxSpeed: 10
-  neightbourRadius: 8
-  avoidanceRadiusMultiplier: 0.8
 --- !u!4 &842512287
 Transform:
   m_ObjectHideFlags: 0
