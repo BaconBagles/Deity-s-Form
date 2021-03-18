@@ -12,7 +12,7 @@ public class Enemy : MonoBehaviour
     PlayerController pCont;
     public EnemyHealthBar healthBar;
     public float health;
-    float maxHealth;
+    public float maxHealth;
     private bool isDead;
     public Animator enemyAnim;
     public GameObject projectile;
@@ -59,7 +59,8 @@ public class Enemy : MonoBehaviour
         }
         else if (gameObject.tag == "armourEnemy")
         {
-            health += 2;
+            maxHealth += 2;
+            health = maxHealth;
             enemyAnim.SetInteger("EnemyType", 0);
             spaceBetween = Random.Range(10, 15);
         }

@@ -8,6 +8,8 @@ public class DeathScript : MonoBehaviour
 
     public void Dead()
     {
+        PlayerPrefs.SetInt("tutorialDone", 0);
+        PlayerPrefs.Save();
         SceneManager.LoadScene(1);
     }
 

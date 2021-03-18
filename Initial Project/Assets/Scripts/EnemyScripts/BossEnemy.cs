@@ -27,6 +27,7 @@ public class BossEnemy : MonoBehaviour
         controller = GameObject.Find("EnemyController");
         Audio = FindObjectOfType<AudioManager>();
         controllerScript = controller.GetComponent<EnemyController>();
+        enemyScript.maxHealth = bossHealth;
         enemyScript.health = bossHealth;
         switchthreshold = 15;
         FormList = firstForm;
