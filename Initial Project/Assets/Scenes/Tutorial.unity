@@ -1730,7 +1730,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 0
-  health: 100
+  health: 60
   healthBar: {fileID: 1137747527}
   secondaryCooldown: {fileID: 1236250376}
   Options: {fileID: 9018089}
