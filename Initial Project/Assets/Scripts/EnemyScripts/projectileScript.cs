@@ -44,7 +44,8 @@ public class projectileScript : MonoBehaviour
             if (player.GetComponent<PlayerController>().shieldCount == 0)
             {
                 player.GetComponent<PlayerController>().health -= damage;
-
+                CameraShake cam = FindObjectOfType<CameraShake>();
+                cam.StartCoroutine(cam.Shake(.2f, .5f));
             }
             else
             {
