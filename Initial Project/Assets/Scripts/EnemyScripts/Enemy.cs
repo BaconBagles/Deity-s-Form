@@ -7,15 +7,16 @@ public class Enemy : MonoBehaviour
 {
     GameObject player;
     Transform goal;
-
     Vector2 raycastOrigin;
     Vector3 raycastDirection;
-   
+    int enemysecondaryType;
+    public int switchthreshold;
+    public int enemyType;
     public float spaceBetween;
     PlayerController pCont;
     public EnemyHealthBar healthBar;
-    public float health;
-    public float maxHealth;
+    public int health;
+    public int maxHealth;
     private bool isDead;
     public Animator enemyAnim;
     public GameObject projectile;
@@ -27,6 +28,7 @@ public class Enemy : MonoBehaviour
     public Rigidbody2D rb;
     AudioManager Audio;
     public bool isBoss;
+    string secondarytag;
 
     public EnemyController eCont;
 
@@ -55,30 +57,56 @@ public class Enemy : MonoBehaviour
 
         rb = GetComponent<Rigidbody2D>();
 
-        if (gameObject.tag == "basicEnemy")
-        {
+        if (enemyType == 0)
+        { //Base
             enemyAnim.SetInteger("EnemyType", 2);
             spaceBetween = Random.Range(10, 20);
         }
-        else if (gameObject.tag == "armourEnemy")
-        {
+        else if (enemyType == 1)
+        { //heavy
             maxHealth += 2;
             health = maxHealth;
             enemyAnim.SetInteger("EnemyType", 0);
             spaceBetween = Random.Range(10, 15);
         }
-        else
-        {
+        else if (enemyType == 2)
+        { //spike
             enemyAnim.SetInteger("EnemyType", 1);
             spaceBetween = Random.Range(5, 10);
         }
+        else if (enemyType == 3)
+        { //heavybase
+            maxHealth += 5;
+            health = maxHealth;
+            switchthreshold = (maxHealth / 2);
+            enemyAnim.SetInteger("EnemyType", 0);
+            enemysecondaryType = 2;
+            secondarytag = "basicEnemy";
+            spaceBetween = Random.Range(10, 15);
+        }
+        else if (enemyType == 4)
+        { //spikebase
+            maxHealth += 5;
+            health = maxHealth;
+            switchthreshold = (maxHealth / 2);
+            enemyAnim.SetInteger("EnemyType", 1);
+            enemysecondaryType = 2;
+            secondarytag = "basicEnemy";
+            spaceBetween = Random.Range(5, 10);
+        }
+        else if (enemyType == 5)
+        { //spikeheavy
+            maxHealth += 5;
+            health = maxHealth;
+            switchthreshold = (maxHealth / 2);
+            enemyAnim.SetInteger("EnemyType", 1);
+            enemysecondaryType = 0;
+            secondarytag = "armourEnemy";
+            spaceBetween = Random.Range(5, 10);
+        }
+
         StartCoroutine(Shuffle());
     }
-
-  /*  public void Initialize(EnemyController eContFlock)
-    {
-        ECont = eContFlock;
-    } */
 
     void Update()
     {
@@ -97,7 +125,13 @@ public class Enemy : MonoBehaviour
              transform.Translate(direction * Time.deltaTime);
          }
 
-         if (spaceBetween > 30f)
+        if (health <= switchthreshold && enemyType > 2)
+        {
+            gameObject.tag = secondarytag;
+            enemyAnim.SetInteger("EnemyType", enemysecondaryType);
+        }
+
+        if (spaceBetween > 30f)
          {
              spaceBetween = 30f;
          }
@@ -139,16 +173,6 @@ public class Enemy : MonoBehaviour
             //Debug.DrawLine(raycastOrigin, hit.point, Color.red, 3f);
         }
     }
-
-    /* public void Move(Vector2 velocity)
-     {
-         if(isDead != true)
-         {
-             transform.up = velocity; //THE PROBLEM LINE
-             transform.position += (Vector3)velocity * Time.deltaTime;
-         }
-
-     } */
 
     public void Attack()
     {
