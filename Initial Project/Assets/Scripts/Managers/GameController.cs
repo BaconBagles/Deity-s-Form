@@ -22,6 +22,7 @@ public class GameController : MonoBehaviour
     public int waveNum;
     public bool roomComplete;
     public bool bossRoom;
+    public int bRoomNum;
     public GameObject door;
     public GameObject pSpawn;
     public GameObject eSpawn;
@@ -63,7 +64,7 @@ public class GameController : MonoBehaviour
             Instantiate(pickup, eSpawn.transform.position, Quaternion.identity);
         }
 
-        if (currentRoom == 8)
+        if (currentRoom == bRoomNum)
         {
             bossRoom = true;
         }
@@ -73,17 +74,21 @@ public class GameController : MonoBehaviour
     {
         roomComplete = false;
         waveNum = 0;
-        switch (currentRoom)
+        if (bossRoom == true)
         {
-            case 1:
-                roomNumber = 0;
-                break;
-            case 8:
-                roomNumber = 7;
-                break;
-            default:
-                roomNumber = Random.Range(1, rooms.Length-1);
-                break;
+            roomNumber = 2;
+        }
+        else
+        {
+            switch (currentRoom)
+            {
+                case 1:
+                    roomNumber = 0;
+                    break;
+                default:
+                    roomNumber = Random.Range(2, rooms.Length - 1);
+                    break;
+            }
         }
         pSpawn = rooms[roomNumber].transform.Find("PlayerSpawn").gameObject;
         eSpawn = rooms[roomNumber].transform.Find("EnemySpawn").gameObject;

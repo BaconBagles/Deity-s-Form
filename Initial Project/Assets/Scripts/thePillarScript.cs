@@ -18,7 +18,6 @@ public class thePillarScript : MonoBehaviour
     {
         if (other.gameObject.CompareTag("BullSpecial"))
         {
-            Debug.Log("Damage");
             pillarState -= 2;
 
             PillarDamage();
@@ -36,6 +35,8 @@ public class thePillarScript : MonoBehaviour
         switch (pillarState)
         {
             case 0:
+                CameraShake cam = FindObjectOfType<CameraShake>();
+                cam.StartCoroutine(cam.Shake(0.3f, 0.8f));
                 Destroy(this.gameObject);
                 break;
             case 1:

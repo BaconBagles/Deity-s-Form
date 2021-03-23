@@ -7,6 +7,9 @@ public class Enemy : MonoBehaviour
 {
     GameObject player;
     Transform goal;
+
+    Vector2 raycastOrigin;
+    Vector3 raycastDirection;
    
     public float spaceBetween;
     PlayerController pCont;
@@ -111,17 +114,41 @@ public class Enemy : MonoBehaviour
         {
             StartCoroutine(Death());
         }
+
+
+        
     }
 
-   /* public void Move(Vector2 velocity)
+    void FixedUpdate()
     {
-        if(isDead != true)
+        raycastOrigin = new Vector2(transform.position.x, transform.position.y - 2);
+        raycastDirection = new Vector2(raycastOrigin.x + Random.Range(-180, 180), raycastOrigin.y + Random.Range(-180, 180));
+        //raycastDirection = transform.position - goal.transform.position;
+        //Debug.DrawRay(raycastOrigin, raycastDirection, Color.red);
+
+        RaycastHit2D hit = Physics2D.Raycast(raycastOrigin, raycastDirection, 5f);
+
+        if (hit.collider)
         {
-            transform.up = velocity; //THE PROBLEM LINE
-            transform.position += (Vector3)velocity * Time.deltaTime;
+            if (hit.collider.tag == "Wall" && hit.distance < 2f)
+            {
+                spaceBetween -= 2;
+            }
+            //Debug.Log("Hit: " + hit.collider.tag);// + ", distance: " + hit.distance);
+            // Draw line in Scene view from `origin` to `hit.point` for 3 seconds.
+            //Debug.DrawLine(raycastOrigin, hit.point, Color.red, 3f);
         }
-        
-    } */
+    }
+
+    /* public void Move(Vector2 velocity)
+     {
+         if(isDead != true)
+         {
+             transform.up = velocity; //THE PROBLEM LINE
+             transform.position += (Vector3)velocity * Time.deltaTime;
+         }
+
+     } */
 
     public void Attack()
     {

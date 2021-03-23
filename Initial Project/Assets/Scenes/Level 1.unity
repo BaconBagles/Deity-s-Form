@@ -7699,12 +7699,12 @@ MonoBehaviour:
   player: {fileID: 1549041492}
   rooms:
   - {fileID: 1041129566}
+  - {fileID: 1675610155}
   - {fileID: 1994957358}
   - {fileID: 1750335338}
   - {fileID: 529727258}
   - {fileID: 1947833265}
   - {fileID: 167206198}
-  - {fileID: 1675610155}
   pickup: {fileID: 8876447283324357626, guid: 779758a5009ec7344970c1af30a5464f, type: 3}
   PickupText: {fileID: 767092260}
   roomNumber: 0
@@ -7716,6 +7716,7 @@ MonoBehaviour:
   waveNum: 0
   roomComplete: 0
   bossRoom: 0
+  bRoomNum: 8
   door: {fileID: 0}
   pSpawn: {fileID: 0}
   eSpawn: {fileID: 0}
