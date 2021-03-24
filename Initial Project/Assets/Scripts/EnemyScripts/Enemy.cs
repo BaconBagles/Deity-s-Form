@@ -30,6 +30,9 @@ public class Enemy : MonoBehaviour
     public bool isBoss;
     string secondarytag;
 
+    int latDirRnd;
+    bool lateralDirection;
+
     public EnemyController eCont;
 
     Collider2D agentCollider;
@@ -54,6 +57,10 @@ public class Enemy : MonoBehaviour
         pCont = player.GetComponent<PlayerController>();
         goal = player.transform;
         isDead = false;
+
+        latDirRnd = Random.Range(0, 2);
+
+        
 
         rb = GetComponent<Rigidbody2D>();
 
@@ -110,20 +117,43 @@ public class Enemy : MonoBehaviour
 
     void Update()
     {
-         if (Vector2.Distance(goal.position, transform.position) >= spaceBetween)
-         {
+        /*if (lateralDirection == true)
+        {
+            Vector2 movDir = new Vector2(goal.transform.position.x + Random.Range(10, -10), goal.transform.position.y + Random.Range(10, -10));
+            Vector2 direction = goal.position - transform.position;
+            transform.Translate((direction - movDir) * Time.deltaTime);
+        }
+        else
+        {
+            Vector2 movDir = new Vector2(goal.transform.position.x + Random.Range(10, -10), goal.transform.position.y + Random.Range(10, -10));
+            Vector2 direction = goal.position - transform.position;
+            transform.Translate((direction + movDir) * Time.deltaTime);
+        }*/
+
+        if (Vector2.Distance(goal.position, transform.position) >= spaceBetween)
+        {
              Vector2 direction = goal.position - transform.position;
              enemyAnim.SetFloat("Horizontal", direction.x);
              enemyAnim.SetFloat("Vertical", direction.y);
              transform.Translate(direction * Time.deltaTime);
-         }
-         else
-         {
+        }
+        else
+        {
              Vector2 direction = transform.position - goal.transform.position;
              enemyAnim.SetFloat("Horizontal", -direction.x);
              enemyAnim.SetFloat("Vertical", -direction.y);
              transform.Translate(direction * Time.deltaTime);
-         }
+        }
+
+        if (lateralDirection == true)
+        {
+            transform.RotateAround(goal.transform.position, Vector3.forward, 50 * Time.deltaTime);
+        }
+        else
+        {
+            transform.RotateAround(goal.transform.position, Vector3.forward, -50 * Time.deltaTime);
+        }
+        transform.rotation = Quaternion.identity;
 
         if (health <= switchthreshold && enemyType > 2)
         {
@@ -149,8 +179,15 @@ public class Enemy : MonoBehaviour
             StartCoroutine(Death());
         }
 
+        if (latDirRnd == 0)
+        {
+            lateralDirection = true;
+        }
+        else
+        {
+            lateralDirection = false;
+        }
 
-        
     }
 
     void FixedUpdate()
@@ -266,6 +303,7 @@ public class Enemy : MonoBehaviour
         {
             spaceBetween += Random.Range(-7.5f, 7.5f);
         }
+        latDirRnd = Random.Range(0, 2);
         StartCoroutine(Shuffle()); 
     } 
 }
