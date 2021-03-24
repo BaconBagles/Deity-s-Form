@@ -12,15 +12,12 @@ public class tutorialScript : MonoBehaviour
     public attackTimer timeBar;
     public bool attacking;
     public OptionsMenu Options;
-
-    public EnemyT enemyScript;
     public AudioManager Audio;
     public PlayerController player;
-    public List<GameObject> enemies = new List<GameObject>();
-    public GameObject basicEnemy;
-    public GameObject armourEnemy;
-    public GameObject spikeEnemy;
+    public List<EnemyT> enemies = new List<EnemyT>();
+    public EnemyT[] EnemyType;
     public Vector2 enemySpawnPoint;
+    Vector2 rndPos;
     public int spawnTime;
     public int wave;
     public GameObject door;
@@ -57,18 +54,16 @@ public class tutorialScript : MonoBehaviour
     {
         StartTimer();
         yield return new WaitForSeconds(attackTimer - 0.3f);
-        foreach (GameObject enemy in enemies)
+        foreach (EnemyT enemy in enemies)
         {
-            enemyScript = enemy.GetComponent<EnemyT>();
-            enemyScript.enemyAnim.SetTrigger("Attack");
+            enemy.enemyAnim.SetTrigger("Attack");
 
         }
         yield return new WaitForSeconds(0.3f);
-        foreach (GameObject enemy in enemies)
+        foreach (EnemyT enemy in enemies)
         {
-            enemyScript = enemy.GetComponent<EnemyT>();
             yield return new WaitForSeconds(0.1f);
-            enemyScript.Attack();
+            enemy.Attack();
         }
 
         StartCoroutine(EnemyAttack());
@@ -80,35 +75,45 @@ public class tutorialScript : MonoBehaviour
         
         if (wave < 4)
             {
-
                 Audio.Play("EnemySpawn"); 
 
                 if (wave == 0)
                 {
-                    enemies.Add((GameObject)Instantiate(basicEnemy, enemySpawnPoint, Quaternion.identity));
-                    wave += 1;
+                rndPos = new Vector2(Random.Range(-10, 10), Random.Range(-10, 10));
+                EnemyT enemy = Instantiate(EnemyType[0], enemySpawnPoint + rndPos, Quaternion.identity, transform);
+                enemies.Add(enemy);
+                wave += 1;
                 }
 
                 else if (wave == 1)
                 {
-                    enemies.Add((GameObject)Instantiate(armourEnemy, enemySpawnPoint, Quaternion.identity));
-                    wave += 1;
+                rndPos = new Vector2(Random.Range(-10, 10), Random.Range(-10, 10));
+                EnemyT enemy = Instantiate(EnemyType[1], enemySpawnPoint + rndPos, Quaternion.identity, transform);
+                enemies.Add(enemy);
+                wave += 1;
                 }
 
                 else if (wave == 2)
                 {
-                    enemies.Add((GameObject)Instantiate(spikeEnemy, enemySpawnPoint, Quaternion.identity));
-                    wave += 1;
+                rndPos = new Vector2(Random.Range(-10, 10), Random.Range(-10, 10));
+                EnemyT enemy = Instantiate(EnemyType[2], enemySpawnPoint + rndPos, Quaternion.identity, transform);
+                enemies.Add(enemy);
+                wave += 1;
                 }
 
                 else if (wave == 3)
                 {
-                    enemies.Add((GameObject)Instantiate(basicEnemy, enemySpawnPoint, Quaternion.identity));
+                  rndPos = new Vector2(Random.Range(-10, 10), Random.Range(-10, 10));
+                  EnemyT enemy = Instantiate(EnemyType[0], enemySpawnPoint + rndPos, Quaternion.identity, transform);
+                  enemies.Add(enemy);
 
-                    enemies.Add((GameObject)Instantiate(armourEnemy, enemySpawnPoint, Quaternion.identity));
+                  EnemyT enemy1 = Instantiate(EnemyType[1], enemySpawnPoint + rndPos, Quaternion.identity, transform);
+                  enemies.Add(enemy1);
 
-                    enemies.Add((GameObject)Instantiate(spikeEnemy, enemySpawnPoint, Quaternion.identity));
-                    wave += 1;
+                  EnemyT enemy2 = Instantiate(EnemyType[2], enemySpawnPoint + rndPos, Quaternion.identity, transform);
+                  enemies.Add(enemy2);
+
+                  wave += 1;
                 }
 
                 StartCoroutine(EnemyAttack());

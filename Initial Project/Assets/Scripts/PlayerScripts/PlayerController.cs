@@ -178,6 +178,7 @@ public class PlayerController : MonoBehaviour
 
             if (Input.GetKeyDown(keys["secondaryAttack"]) && attacking == false && sndActive == false)
             {
+                anim.SetTrigger("SpecialAttack");
                 StartCoroutine(SecondaryAttack());
             }
 
@@ -210,6 +211,7 @@ public class PlayerController : MonoBehaviour
                     secondaryAttacks[formNumber].SetActive(false);
                     bullSndAtk = false;
                     sndCurrentCooldown = sndCooldown;
+                    anim.SetBool("Charging", false);
                     sndActive = true;
                 }
             }
@@ -369,6 +371,7 @@ public class PlayerController : MonoBehaviour
 
         if (formNumber == 2)
         {
+            anim.SetBool("Charging", true);
             secondaryAttacks[formNumber].SetActive(true);
             currentCooldown = attackCooldown * 4;
             bullSndAtk = true;

@@ -1,0 +1,1018 @@
+fileFormatVersion: 2
+guid: d52994865ccdef54cb2063c52084a8b1
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1829855135751142878
+    second: Archer_Attack_Backward_0
+  - first:
+      213: -792607502608441154
+    second: Archer_Attack_Backward_1
+  - first:
+      213: -2984375994365066372
+    second: Archer_Attack_Backward_2
+  - first:
+      213: -7470780099392976218
+    second: Archer_Attack_Backward_3
+  - first:
+      213: -2688286739191795399
+    second: Archer_Attack_Backward_4
+  - first:
+      213: 4078958092797611319
+    second: Archer_Attack_Backward_5
+  - first:
+      213: -116701458021692619
+    second: Archer_Attack_Backward_6
+  - first:
+      213: 5999022818901348588
+    second: Archer_Attack_Backward_7
+  - first:
+      213: -1942896420774045745
+    second: Archer_Attack_Backward_8
+  - first:
+      213: 7624600721499635186
+    second: Archer_Attack_Backward_9
+  - first:
+      213: 3490554313829338980
+    second: Archer_Attack_Backward_10
+  - first:
+      213: 3136400290961492407
+    second: Archer_Attack_Backward_11
+  - first:
+      213: 2762976284055674780
+    second: Archer_Attack_Backward_12
+  - first:
+      213: -3150764293500698534
+    second: Archer_Attack_Backward_13
+  - first:
+      213: 2710328755114071252
+    second: Archer_Attack_Backward_14
+  - first:
+      213: -649060733186354259
+    second: Archer_Attack_Backward_15
+  - first:
+      213: -5643682108711712810
+    second: Archer_Attack_Backward_16
+  - first:
+      213: -3667983838197395738
+    second: Archer_Attack_Backward_17
+  - first:
+      213: 4812159133659869170
+    second: Archer_Attack_Backward_18
+  - first:
+      213: -4083318226907903763
+    second: Archer_Attack_Backward_19
+  - first:
+      213: -8853574388348679461
+    second: Archer_Attack_Backward_20
+  - first:
+      213: 278359964733219661
+    second: Archer_Attack_Backward_21
+  - first:
+      213: 7001720634595404016
+    second: Archer_Attack_Backward_22
+  - first:
+      213: 3309875162591486106
+    second: Archer_Attack_Backward_23
+  - first:
+      213: 9200008599018319211
+    second: Archer_Attack_Backward_24
+  - first:
+      213: 9042687498391198095
+    second: Archer_Attack_Backward_25
+  - first:
+      213: -8837784310960370764
+    second: Archer_Attack_Backward_26
+  - first:
+      213: 420847782602955900
+    second: Archer_Attack_Backward_27
+  - first:
+      213: 773280015166748359
+    second: Archer_Attack_Backward_28
+  - first:
+      213: 897239690806730730
+    second: Archer_Attack_Backward_29
+  - first:
+      213: -859246784014675531
+    second: Archer_Attack_Backward_30
+  - first:
+      213: -4755733408674558784
+    second: Archer_Attack_Backward_31
+  - first:
+      213: -3146603562712671338
+    second: Archer_Attack_Backward_32
+  - first:
+      213: -1841464043025295090
+    second: Archer_Attack_Backward_33
+  - first:
+      213: -2276038950187451872
+    second: Archer_Attack_Backward_34
+  - first:
+      213: -2923603022332711820
+    second: Archer_Attack_Backward_35
+  - first:
+      213: 6282590613379677035
+    second: Archer_Attack_Backward_36
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 160
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Archer_Attack_Backward_0
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 71
+        width: 361
+        height: 886
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eddfedc0d83f46910800000000000000
+      internalID: 1829855135751142878
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Archer_Attack_Backward_1
+      rect:
+        serializedVersion: 2
+        x: 531
+        y: 68
+        width: 417
+        height: 886
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb0e6b00da71005f0800000000000000
+      internalID: -792607502608441154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Archer_Attack_Backward_2
+      rect:
+        serializedVersion: 2
+        x: 992
+        y: 103
+        width: 398
+        height: 845
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c73caa358dd5596d0800000000000000
+      internalID: -2984375994365066372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Archer_Attack_Backward_3
+      rect:
+        serializedVersion: 2
+        x: 1437
+        y: 89
+        width: 542
+        height: 862
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6aacf9cd415725890800000000000000
+      internalID: -7470780099392976218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Archer_Attack_Backward_4
+      rect:
+        serializedVersion: 2
+        x: 2060
+        y: 75
+        width: 479
+        height: 875
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9317410347941bad0800000000000000
+      internalID: -2688286739191795399
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Archer_Attack_Backward_5
+      rect:
+        serializedVersion: 2
+        x: 2574
+        y: 525
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73d08ee26ce5b9830800000000000000
+      internalID: 4078958092797611319
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Archer_Attack_Backward_6
+      rect:
+        serializedVersion: 2
+        x: 2585
+        y: 78
+        width: 402
+        height: 875
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53bc8d964a4616ef0800000000000000
+      internalID: -116701458021692619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Archer_Attack_Backward_7
+      rect:
+        serializedVersion: 2
+        x: 3027
+        y: 529
+        width: 45
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce0d318387fc04350800000000000000
+      internalID: 5999022818901348588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Archer_Attack_Backward_8
+      rect:
+        serializedVersion: 2
+        x: 981
+        y: 501
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc7926ccff17905e0800000000000000
+      internalID: -1942896420774045745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Archer_Attack_Backward_9
+      rect:
+        serializedVersion: 2
+        x: 461
+        y: 410
+        width: 10
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2fd3c2795f500d960800000000000000
+      internalID: 7624600721499635186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Archer_Attack_Backward_10
+      rect:
+        serializedVersion: 2
+        x: 1980
+        y: 180
+        width: 7
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46f410997a0f07030800000000000000
+      internalID: 3490554313829338980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Archer_Attack_Backward_11
+      rect:
+        serializedVersion: 2
+        x: 1987
+        y: 165
+        width: 6
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b90130827bb68b20800000000000000
+      internalID: 3136400290961492407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Archer_Attack_Backward_12
+      rect:
+        serializedVersion: 2
+        x: 1329
+        y: 90
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9f97fd9a40185620800000000000000
+      internalID: 2762976284055674780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Archer_Attack_Backward_13
+      rect:
+        serializedVersion: 2
+        x: 1272
+        y: 83
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5008ea819c3644d0800000000000000
+      internalID: -3150764293500698534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Archer_Attack_Backward_14
+      rect:
+        serializedVersion: 2
+        x: 1334
+        y: 75
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d4d91194a50d9520800000000000000
+      internalID: 2710328755114071252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Archer_Attack_Backward_15
+      rect:
+        serializedVersion: 2
+        x: 411
+        y: 63
+        width: 8
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da3d5c8b3b21ef6f0800000000000000
+      internalID: -649060733186354259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Archer_Attack_Backward_16
+      rect:
+        serializedVersion: 2
+        x: 860
+        y: 60
+        width: 6
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d7c20d060d9da1b0800000000000000
+      internalID: -5643682108711712810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Archer_Attack_Backward_17
+      rect:
+        serializedVersion: 2
+        x: 1665
+        y: 56
+        width: 13
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6eece5a0224b81dc0800000000000000
+      internalID: -3667983838197395738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Archer_Attack_Backward_18
+      rect:
+        serializedVersion: 2
+        x: 2626
+        y: 54
+        width: 13
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ffa2747c3938c240800000000000000
+      internalID: 4812159133659869170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Archer_Attack_Backward_19
+      rect:
+        serializedVersion: 2
+        x: 354
+        y: 57
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de8c64cf4b32557c0800000000000000
+      internalID: -4083318226907903763
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Archer_Attack_Backward_20
+      rect:
+        serializedVersion: 2
+        x: 563
+        y: 47
+        width: 12
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bda0bf58009c12580800000000000000
+      internalID: -8853574388348679461
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Archer_Attack_Backward_21
+      rect:
+        serializedVersion: 2
+        x: 802
+        y: 54
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d432d91c9eeecd300800000000000000
+      internalID: 278359964733219661
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Archer_Attack_Backward_22
+      rect:
+        serializedVersion: 2
+        x: 1012
+        y: 52
+        width: 13
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f8e49902db1b2160800000000000000
+      internalID: 7001720634595404016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Archer_Attack_Backward_23
+      rect:
+        serializedVersion: 2
+        x: 1689
+        y: 54
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9067258ce90fed20800000000000000
+      internalID: 3309875162591486106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Archer_Attack_Backward_24
+      rect:
+        serializedVersion: 2
+        x: 2135
+        y: 51
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6da60bb31ffcaf70800000000000000
+      internalID: 9200008599018319211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Archer_Attack_Backward_25
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 43
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f89197c9e541e7d70800000000000000
+      internalID: 9042687498391198095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Archer_Attack_Backward_26
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 47
+        width: 5
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4bbcfa76ef1e95580800000000000000
+      internalID: -8837784310960370764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Archer_Attack_Backward_27
+      rect:
+        serializedVersion: 2
+        x: 1035
+        y: 48
+        width: 6
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7c5f8a14d627d500800000000000000
+      internalID: 420847782602955900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Archer_Attack_Backward_28
+      rect:
+        serializedVersion: 2
+        x: 2159
+        y: 48
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c63ce7a31e3bba00800000000000000
+      internalID: 773280015166748359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Archer_Attack_Backward_29
+      rect:
+        serializedVersion: 2
+        x: 2650
+        y: 51
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aef9ae8beb2a37c00800000000000000
+      internalID: 897239690806730730
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Archer_Attack_Backward_30
+      rect:
+        serializedVersion: 2
+        x: 173
+        y: 44
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b198683a975314f0800000000000000
+      internalID: -859246784014675531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Archer_Attack_Backward_31
+      rect:
+        serializedVersion: 2
+        x: 586
+        y: 45
+        width: 6
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ccce7969ad300eb0800000000000000
+      internalID: -4755733408674558784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Archer_Attack_Backward_32
+      rect:
+        serializedVersion: 2
+        x: 827
+        y: 44
+        width: 6
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69b588b2bb40554d0800000000000000
+      internalID: -3146603562712671338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Archer_Attack_Backward_33
+      rect:
+        serializedVersion: 2
+        x: 864
+        y: 44
+        width: 5
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0992d8953ec176e0800000000000000
+      internalID: -1841464043025295090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Archer_Attack_Backward_34
+      rect:
+        serializedVersion: 2
+        x: 1275
+        y: 34
+        width: 7
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02abf1f32a2e960e0800000000000000
+      internalID: -2276038950187451872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Archer_Attack_Backward_35
+      rect:
+        serializedVersion: 2
+        x: 829
+        y: 28
+        width: 5
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47ca9958a864d67d0800000000000000
+      internalID: -2923603022332711820
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Archer_Attack_Backward_36
+      rect:
+        serializedVersion: 2
+        x: 1277
+        y: 17
+        width: 5
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6bf2b350ee303750800000000000000
+      internalID: 6282590613379677035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

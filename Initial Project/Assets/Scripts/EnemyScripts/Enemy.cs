@@ -5,6 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(Collider2D))]
 public class Enemy : MonoBehaviour
 {
+
     GameObject player;
     Transform goal;
     Vector2 raycastOrigin;
@@ -29,10 +30,8 @@ public class Enemy : MonoBehaviour
     AudioManager Audio;
     public bool isBoss;
     string secondarytag;
-
     int latDirRnd;
     bool lateralDirection;
-
     public EnemyController eCont;
 
     Collider2D agentCollider;
@@ -42,7 +41,7 @@ public class Enemy : MonoBehaviour
     {
         maxHealth = PlayerPrefs.GetInt("enemyHealth", 5);
         health = maxHealth;
-        currentForce = 350;
+        currentForce = 5.5f;
         currentDamage = 2;
         currentSize = 0f;
         currentKnockback = 175;
@@ -275,13 +274,13 @@ public class Enemy : MonoBehaviour
         }
         else if (other.gameObject.CompareTag("JackalSpecial"))
         {
-            health -= 3;
+            health -= 2;
             pCont.health += 1;
             FindObjectOfType<AudioManager>().Play("EnemyDamaged");
         }
         else if (other.gameObject.CompareTag("BullSpecial"))
         {
-            health -= 4;
+            health -= 3;
             FindObjectOfType<AudioManager>().Play("EnemyDamaged");
             StartCoroutine(Knockback(2f, 200f, other.gameObject.transform));
 

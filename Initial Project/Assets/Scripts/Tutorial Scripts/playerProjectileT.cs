@@ -8,7 +8,7 @@ public class playerProjectileT : MonoBehaviour
     public float range = 0.2f;
     PlayerController pContd;
     EnemyT enemy;
-    BossEnemy bossEnemy;
+    thePillarScript pillar;
 
     //knockback stuff
     public float knockbackPower = 175;
@@ -45,11 +45,17 @@ public class playerProjectileT : MonoBehaviour
         if (other.gameObject.CompareTag("Pillar"))
         {
             //damage pillar
+            pillar = other.gameObject.GetComponent<thePillarScript>();
+            // GameObject effect = Instantiate(hitEffect, transform.position, Quaternion.identity);
+            //   Destroy(effect, 0.5f);
+            pillar.pillarState -= 1;
+            pillar.PillarDamage();
             Destroy(this.gameObject);
         }
         else if (other.gameObject.CompareTag("Wall"))
         {
-            //skip this, I suppose
+            //  GameObject effect = Instantiate(hitEffect, transform.position, Quaternion.identity);
+            // Destroy(effect, 0.5f);
             Destroy(this.gameObject);
         }
         else
@@ -93,6 +99,10 @@ public class playerProjectileT : MonoBehaviour
             }
         }
 
+        if (other.gameObject.CompareTag("spikyEnemy") && gameObject.tag != "rangedAttack")
+        {
+            pContd.health -= 1;
+        }
 
         Destroy(this.gameObject);
     }
@@ -106,7 +116,7 @@ public class playerProjectileT : MonoBehaviour
 
     IEnumerator HawkSelfDestruct()
     {
-        yield return new WaitForSeconds(range * 2);
+        yield return new WaitForSeconds(range * 2.5f);
 
         Destroy(this.gameObject);
     }

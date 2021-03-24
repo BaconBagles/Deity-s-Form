@@ -8,7 +8,6 @@ public class playerProjectileScript : MonoBehaviour
     public float range = 0.2f;
     PlayerController pContd;
     Enemy enemy;
-    BossEnemy bossEnemy;
     thePillarScript pillar;
 
     //knockback stuff
@@ -99,8 +98,12 @@ public class playerProjectileScript : MonoBehaviour
                 }
             }
         }
-    
-    
+
+        if (other.gameObject.CompareTag("spikyEnemy") && gameObject.tag != "rangedAttack")
+        {
+            pContd.health -= 1;
+        }
+
         Destroy(this.gameObject);
     }
 
@@ -113,7 +116,7 @@ public class playerProjectileScript : MonoBehaviour
 
     IEnumerator HawkSelfDestruct()
     {
-        yield return new WaitForSeconds(range * 2);
+        yield return new WaitForSeconds(range * 2.5f);
 
         Destroy(this.gameObject);
     }
