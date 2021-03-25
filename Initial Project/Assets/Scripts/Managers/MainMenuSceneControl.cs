@@ -15,14 +15,14 @@ public class MainMenuSceneControl : MonoBehaviour
 
     public void StartGame()
     {
-        if(isTutorialDone == 0)
-        {
+       // if(isTutorialDone == 0)
+       // {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2); // Will load player into tutorial scene, only works once
-        }
-        else
-        {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 3); //Will load player into main game
-        }
+      //  }
+      //  else
+       // {
+      //  SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 3); //Will load player into main game
+        //}
     }
 
     public void MainMenu()
