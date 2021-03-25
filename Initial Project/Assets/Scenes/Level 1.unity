@@ -28738,6 +28738,7 @@ MonoBehaviour:
   Boss: {fileID: 3791742543417215833, guid: 7d0def1df506d7941b6b6ded5520e208, type: 3}
   spawning: 0
   spawnTime: 2
+  spawnPoint: {x: 0, y: 0}
 --- !u!4 &842512287
 Transform:
   m_ObjectHideFlags: 0
@@ -65995,20 +65996,11 @@ MonoBehaviour:
   auraObj: {fileID: 600947046}
   attackEffect: {fileID: 4907821312957067333, guid: ee9a125ed9521a84293d1197fbd41e75, type: 3}
   attackOrbiter: {fileID: 549520820}
-  attacks:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 1769353036}
   secondaryAttacks:
   - {fileID: 1677274238}
-  - {fileID: 562785701}
+  - {fileID: 1769353036}
   - {fileID: 1856711726}
   anim: {fileID: 1549041494}
-  attackDuration: 0.2
-  powerAttack: 0
-  superForm: 0
-  tempFormActive: 0
   playerDead: 0
   cam: {fileID: 1056802393}
   firePoint: {fileID: 1139533225}
@@ -72379,7 +72371,7 @@ GameObject:
   - component: {fileID: 1769353038}
   m_Layer: 0
   m_Name: powerAttack
-  m_TagString: basicAttack
+  m_TagString: HawkSpecial
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

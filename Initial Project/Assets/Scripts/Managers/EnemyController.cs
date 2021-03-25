@@ -20,7 +20,7 @@ public class EnemyController : MonoBehaviour
     public bool spawning;
     public int spawnTime;
     bool bossSpawned;
-    Vector2 spawnPoint;
+    public Vector2 spawnPoint;
 
     void Start()
     {

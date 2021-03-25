@@ -266,11 +266,7 @@ public class Enemy : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Respawn"))
         {
-            transform.position = new Vector2(0, 0);
-        }
-        if (pCont.superForm == true)
-        {
-            health -= 10;
+            transform.position = eCont.spawnPoint;
         }
         else if (other.gameObject.CompareTag("JackalSpecial"))
         {
@@ -287,7 +283,10 @@ public class Enemy : MonoBehaviour
         }
         else if (other.gameObject.CompareTag("HawkSpecial"))
         {
-           spaceBetween = 0;
+            health -= 1;
+            FindObjectOfType<AudioManager>().Play("EnemyDamaged");
+            StartCoroutine(Knockback(2f, 200f, other.gameObject.transform));
+            spaceBetween += 5;
         }
     }
 

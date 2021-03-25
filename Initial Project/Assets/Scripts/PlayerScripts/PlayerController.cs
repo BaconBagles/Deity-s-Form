@@ -29,16 +29,17 @@ public class PlayerController : MonoBehaviour
     public ParticleSystem auraObj;
     public ParticleSystem attackEffect;
     public GameObject attackOrbiter;
-    public GameObject[] attacks;
+    
     public GameObject[] secondaryAttacks;
 
     public Animator anim;
 
+    /*public GameObject[] attacks;
     public float attackDuration;
 
     public bool powerAttack;
     public bool superForm;
-    public bool tempFormActive;
+    public bool tempFormActive;*/
     public bool playerDead;
 
     bool jackalSndAtk;

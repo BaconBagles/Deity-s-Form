@@ -211,10 +211,10 @@ public class EnemyT : MonoBehaviour
         {
             transform.position = new Vector2(0, 0);
         }
-        if (pCont.superForm == true)
+        /*if (pCont.superForm == true)
         {
             health -= 10;
-        }
+        }*/
         else if (other.gameObject.CompareTag("JackalSpecial"))
         {
             health -= 2;
