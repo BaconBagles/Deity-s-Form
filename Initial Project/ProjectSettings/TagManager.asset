@@ -19,6 +19,7 @@ TagManager:
   - Wall
   - River
   - Lava
+  - Torch
   layers:
   - Default
   - TransparentFX
@@ -34,7 +35,7 @@ TagManager:
   - PlayerProjectile
   - EnemyProjectile
   - Pickup
-  - 
+  - Light
   - 
   - 
   - 

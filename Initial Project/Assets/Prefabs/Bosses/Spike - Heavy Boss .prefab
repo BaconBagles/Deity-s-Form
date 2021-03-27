@@ -260,9 +260,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01699a3e0df9e494dae5e127490511a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  switchthreshold: 0
+  enemyType: 1
   spaceBetween: 0
   healthBar: {fileID: 5410916875750099760}
   health: 0
+  maxHealth: 0
   enemyAnim: {fileID: 7956289166715365268}
   projectile: {fileID: 1573355114100768558, guid: 6996c5613b83a934fad343f1a18c7969, type: 3}
   currentDamage: 0

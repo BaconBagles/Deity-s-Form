@@ -286,7 +286,7 @@ public class Enemy : MonoBehaviour
             health -= 1;
             FindObjectOfType<AudioManager>().Play("EnemyDamaged");
             StartCoroutine(Knockback(2f, 200f, other.gameObject.transform));
-            spaceBetween += 5;
+            spaceBetween += 10;
         }
     }
 

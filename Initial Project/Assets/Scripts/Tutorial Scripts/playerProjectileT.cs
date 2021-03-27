@@ -9,6 +9,7 @@ public class playerProjectileT : MonoBehaviour
     PlayerController pContd;
     EnemyT enemy;
     thePillarScript pillar;
+    theTorchScript torch;
 
     //knockback stuff
     public float knockbackPower = 175;
@@ -50,6 +51,14 @@ public class playerProjectileT : MonoBehaviour
             //   Destroy(effect, 0.5f);
             pillar.pillarState -= 1;
             pillar.PillarDamage();
+            Destroy(this.gameObject);
+        }
+        else if (other.gameObject.CompareTag("Torch"))
+        {
+            torch = other.gameObject.GetComponent<theTorchScript>();
+            //  GameObject effect = Instantiate(hitEffect, transform.position, Quaternion.identity);
+            // Destroy(effect, 0.5f);
+            torch.LightsOut();
             Destroy(this.gameObject);
         }
         else if (other.gameObject.CompareTag("Wall"))

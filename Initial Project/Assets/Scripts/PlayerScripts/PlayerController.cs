@@ -173,13 +173,11 @@ public class PlayerController : MonoBehaviour
             if (Input.GetKeyDown(keys["basicAttack"]) && attacking == false)
             {
                 //StartCoroutine(BasicAttack());
-                anim.SetTrigger("Attack");
                 StartCoroutine(MainAttack());
             }
 
             if (Input.GetKeyDown(keys["secondaryAttack"]) && attacking == false && sndActive == false)
             {
-                anim.SetTrigger("SpecialAttack");
                 StartCoroutine(SecondaryAttack());
             }
 
@@ -328,9 +326,11 @@ public class PlayerController : MonoBehaviour
 
     public IEnumerator MainAttack()
     {
-         if (currentCooldown <= 0)
+
+        if (currentCooldown <= 0)
         {
-            yield return new WaitForSeconds(0.15f);
+            anim.SetTrigger("Attack");
+            yield return new WaitForSeconds(0.25f);
             if (formNumber == 0)
             {
                 GameObject JackalAttack = Instantiate(attackPrefabs[0], firePoint.position, firePoint.rotation);
@@ -372,6 +372,7 @@ public class PlayerController : MonoBehaviour
 
         if (formNumber == 2)
         {
+            anim.SetTrigger("SpecialAttack");
             anim.SetBool("Charging", true);
             secondaryAttacks[formNumber].SetActive(true);
             currentCooldown = attackCooldown * 4;
@@ -379,12 +380,16 @@ public class PlayerController : MonoBehaviour
         }
         else if (formNumber == 1)
         {
+            anim.SetTrigger("SpecialAttack");
+            yield return new WaitForSeconds(0.35f);
             secondaryAttacks[formNumber].SetActive(true);
             currentCooldown = attackCooldown;
             hawkSndAtk = true;
         }
         else
         {
+            anim.SetTrigger("SpecialAttack");
+            yield return new WaitForSeconds(0.25f);
             secondaryAttacks[formNumber].SetActive(true);
             currentCooldown = attackCooldown/2;
             jackalSndAtk = true;

@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.Experimental.Rendering.Universal;
+
 
 public class GameController : MonoBehaviour
 {
@@ -235,11 +237,20 @@ public class GameController : MonoBehaviour
             RandomRoom();
             pickupSpawned = false;
             thePillarScript[] allPillars;
+            theTorchScript[] alltorches;
             allPillars = FindObjectsOfType<thePillarScript>();
+            alltorches = FindObjectsOfType<theTorchScript>();
             for (int i = 0; i < allPillars.Length; i++)
             {
-                allPillars[i].pillarState = 3;
+                allPillars[i].pillarState = allPillars[i].state.Length-1;
+                allPillars[i].mylight.SetActive(true);
+                allPillars[i].mycollider.enabled = true;
                 allPillars[i].PillarDamage();
+            }
+            for (int i = 0; i < alltorches.Length; i++)
+            {
+                alltorches[i].mylight.enabled = true;
+                alltorches[i].torchparticles.SetActive(true);
             }
         }
 
