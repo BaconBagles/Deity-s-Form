@@ -249,9 +249,8 @@ public class GameController : MonoBehaviour
             }
             for (int i = 0; i < alltorches.Length; i++)
             {
-                alltorches[i].mylight.enabled = true;
-                alltorches[i].torchparticles.SetActive(true);
-            }
+                alltorches[i].LightsOn();
+            } 
         }
 
         if (bossRoom == true)
