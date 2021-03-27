@@ -234,16 +234,13 @@ public class GameController : MonoBehaviour
             roomComplete = false;
             RandomRoom();
             pickupSpawned = false;
-            /*if (player.tempFormActive == true)
+            thePillarScript[] allPillars;
+            allPillars = FindObjectsOfType<thePillarScript>();
+            for (int i = 0; i < allPillars.Length; i++)
             {
-                player.superForm = false;
-                player.powerAttack = false;
-                player.tempFormActive = false;
+                allPillars[i].pillarState = 3;
+                allPillars[i].PillarDamage();
             }
-            if (player.superForm == true || player.powerAttack == true)
-            {
-                player.tempFormActive = true;
-            }*/
         }
 
         if (bossRoom == true)

@@ -68,7 +68,7 @@ public class EnemyController : MonoBehaviour
         foreach (Enemy enemy in enemies)
         {
             yield return new WaitForSeconds(0.1f);
-            enemy.Attack();
+            enemy.StartCoroutine(enemy.Attack());
         }
 
         StartCoroutine(EnemyAttack());

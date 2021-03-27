@@ -210,19 +210,19 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    public void Attack()
+    public IEnumerator Attack()
     {
         if(isDead != true)
         {
             Audio.Play("EnemyAttack");
             GameObject enemyProjectile = Instantiate(projectile, transform.position, Quaternion.identity);
             projectileScript proj = enemyProjectile.GetComponent<projectileScript>();
+            yield return new WaitForSeconds(0.1f);
             proj.force = currentForce;
             proj.damage = currentDamage;
             proj.bossSize = currentSize;
             proj.knockbackPower = currentKnockback;
         }
-       
     }
 
     public IEnumerator Knockback(float knockBackDuration, float knockbackPower, Transform obj)

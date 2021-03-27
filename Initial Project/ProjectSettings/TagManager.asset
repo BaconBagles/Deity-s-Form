@@ -17,6 +17,8 @@ TagManager:
   - HawkSpecial
   - Pillar
   - Wall
+  - River
+  - Lava
   layers:
   - Default
   - TransparentFX
