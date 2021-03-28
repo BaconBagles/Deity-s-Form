@@ -98097,8 +98097,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slider: {fileID: 1679097699}
-  low: {r: 0, g: 0, b: 0, a: 0}
-  high: {r: 0, g: 0, b: 0, a: 0}
+  low: {r: 1, g: 0, b: 0, a: 1}
+  high: {r: 0.023620605, g: 1, b: 0, a: 1}
 --- !u!1 &1682553687
 GameObject:
   m_ObjectHideFlags: 0
@@ -113554,8 +113554,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slider: {fileID: 1753013374}
-  low: {r: 0, g: 0, b: 0, a: 0}
-  high: {r: 0, g: 0, b: 0, a: 0}
+  low: {r: 1, g: 0, b: 0, a: 1}
+  high: {r: 0, g: 1, b: 0.083200455, a: 1}
 --- !u!114 &1753013374
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -147092,8 +147092,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slider: {fileID: 2121604445}
-  low: {r: 0, g: 0, b: 0, a: 0}
-  high: {r: 0, g: 0, b: 0, a: 0}
+  low: {r: 0, g: 1, b: 0.074855804, a: 1}
+  high: {r: 1, g: 0, b: 0, a: 1}
 --- !u!114 &2121604445
 MonoBehaviour:
   m_ObjectHideFlags: 0
