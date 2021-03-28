@@ -76,7 +76,7 @@ public class GameController : MonoBehaviour
     {
         roomComplete = false;
         waveNum = 0;
-        if (currentRoom == (bRoomNum-1))
+        if (currentRoom == (bRoomNum))
         {
             roomNumber = 0;
         }
