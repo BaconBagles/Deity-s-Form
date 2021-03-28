@@ -6,6 +6,8 @@ using UnityEngine.UI;
 public class SecondaryCooldown : MonoBehaviour
 {
     public Slider slider;
+    public Color low;
+    public Color high;
 
     public void SetMaxTime(int time)
     {
@@ -16,5 +18,6 @@ public class SecondaryCooldown : MonoBehaviour
     public void SetTime(float time)
     {
         slider.value = time;
+        slider.fillRect.GetComponentInChildren<Image>().color = Color.Lerp(low, high, slider.normalizedValue);
     }
 }

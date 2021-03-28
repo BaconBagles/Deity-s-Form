@@ -45,7 +45,7 @@ public class projectileScript : MonoBehaviour
             {
                 player.GetComponent<PlayerController>().health -= damage;
                 CameraShake cam = FindObjectOfType<CameraShake>();
-                cam.StartCoroutine(cam.Shake(.2f, .5f));
+                cam.StartCoroutine(cam.Shake(.2f, .6f));
             }
             else
             {

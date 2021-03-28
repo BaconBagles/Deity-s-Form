@@ -18,6 +18,7 @@ public class BossEnemy : MonoBehaviour
     public bool isFinalBoss;
     public int bossHealth;
     public int bossDamage;
+    public ParticleSystem deathEffect;
 
     // Start is called before the first frame update
     void Start()
@@ -63,7 +64,11 @@ public class BossEnemy : MonoBehaviour
           StartCoroutine(controllerScript.SpawnEnemies());
           controllerScript.attacking = false;
        }
-      
+
+       if (enemyScript.health == 0)
+        {
+            Instantiate(deathEffect, transform.position, Quaternion.identity);
+        }
     }
 
     public void SwitchForm()

@@ -84,15 +84,14 @@ public class EnemyController : MonoBehaviour
         if (gameController.currentRoom == 8 && bossSpawned == false)
         {
              bossSpawned = true;
-             rndPos = new Vector2(Random.Range(-10, 10), Random.Range(-10, 10));
-             Enemy boss = Instantiate(Boss, spawnPoint + rndPos, Quaternion.identity, transform);
+             Enemy boss = Instantiate(Boss, spawnPoint, Quaternion.identity, transform);
              enemies.Add(boss);
          }
         else
         {
             for (int i = 0; i < diffLevel; i++)
             {
-                rndPos = new Vector2(Random.Range(-10, 10), Random.Range(-10, 10));
+                rndPos = new Vector2(Random.Range(-5, 5), Random.Range(-5, 5));
                 int enemyType = Random.Range(0, EnemyType.Length);
                 Enemy enemy = Instantiate(EnemyType[enemyType], spawnPoint + rndPos , Quaternion.identity, transform);
                 enemies.Add(enemy);

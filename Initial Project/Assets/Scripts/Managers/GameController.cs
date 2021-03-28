@@ -76,16 +76,16 @@ public class GameController : MonoBehaviour
     {
         roomComplete = false;
         waveNum = 0;
-        if (bossRoom == true)
+        if (currentRoom == (bRoomNum-1))
         {
-            roomNumber = 2;
+            roomNumber = 0;
         }
         else
         {
             switch (currentRoom)
             {
                 case 1:
-                    roomNumber = 0;
+                    roomNumber = 1;
                     break;
                 default:
                     roomNumber = Random.Range(2, rooms.Length - 1);
@@ -255,7 +255,7 @@ public class GameController : MonoBehaviour
 
         if (bossRoom == true)
         {
-            SceneManager.LoadScene(4);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
         
     }
