@@ -13,6 +13,7 @@ public class projectileScript : MonoBehaviour
     public int damage;
     public float bossSize;
     public GameObject hitEffect;
+    public int projType;
 
     //knockback stuff
     public float knockbackPower = 150;
