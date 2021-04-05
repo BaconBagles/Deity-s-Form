@@ -10,6 +10,7 @@ public class GameController : MonoBehaviour
 {
     public EnemyController eCont;
     public PlayerController player;
+    public Pointer pointer;
     public GameObject[] rooms;
     public GameObject pickup;
     public TMPro.TextMeshProUGUI PickupText;
@@ -64,6 +65,8 @@ public class GameController : MonoBehaviour
             pickupSpawned = true;
             RandomPickup();
             Instantiate(pickup, eSpawn.transform.position, Quaternion.identity);
+            pointer.gameObject.SetActive(true);
+            pointer.isPickup = true;
         }
 
         if (currentRoom == bRoomNum)

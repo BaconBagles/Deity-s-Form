@@ -9,7 +9,7 @@ public class Pointer : MonoBehaviour
     public GameObject door;
     public GameObject pickup;
     public Vector3 pointTo;
-    Vector3 v3Pos;
+    //Vector3 v3Pos;
     float angle;
     float distance = .24f;
     public float xPos;
@@ -38,9 +38,11 @@ public class Pointer : MonoBehaviour
         {
             pointTo = door.transform.position;
         }
-        angle = Mathf.Atan2(v3Pos.y, v3Pos.x) * Mathf.Rad2Deg;
+        //pointTo = pointTo - player.transform.position;
+        angle = Mathf.Atan2(pointTo.y, pointTo.x) * Mathf.Rad2Deg;
         if (angle < 0.0f) angle += 360.0f;
-        transform.localEulerAngles = new Vector3(0, 0, angle);
+        transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+        //transform.localEulerAngles = new Vector3(0, 0, angle);
         //as pos is transformed, maintain .24 radius;
         xPos = Mathf.Cos(Mathf.Deg2Rad * angle) + distance;
         yPos = Mathf.Sin(Mathf.Deg2Rad * angle) + distance - 1;

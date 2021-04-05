@@ -20,6 +20,8 @@ public class door : MonoBehaviour
             MeshRenderer renderer = gameObject.GetComponent<MeshRenderer>();
             collider.isTrigger = false;
             renderer.enabled = false;
+            gCont.pointer.isDoor = false;
+            gCont.pointer.gameObject.SetActive(false);
 
             gCont.StartCoroutine(gCont.FadeOut());
             

@@ -32,6 +32,8 @@ public class Pickup : MonoBehaviour
         PickupBonus();
         FindObjectOfType<AudioManager>().Play("Pickup");
         gCont.SetUpNextRoom();
+        gCont.pointer.isPickup = false;
+        gCont.pointer.isDoor = true;
         Destroy(this.gameObject);
     }
 
