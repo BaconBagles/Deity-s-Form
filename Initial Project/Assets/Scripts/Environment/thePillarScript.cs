@@ -42,7 +42,7 @@ public class thePillarScript : MonoBehaviour
         {
             case 0:
                 CameraShake cam = FindObjectOfType<CameraShake>();
-                cam.StartCoroutine(cam.Shake(0.3f, 0.8f));
+                cam.StartCoroutine(cam.Shake(0.5f, 1.5f));
                 spriteRenderer.sprite = state[pillarState];
                 mylight.SetActive(false);
                 mycollider.enabled = false;

@@ -17,11 +17,14 @@ public class DialogueManager : MonoBehaviour
     public DialogueTrigger[] triggers;
     public bool response;
     public int responseNumber;
+
+    bool sentenceFinished;
     
 
     void Start()
     {
         sentences = new Queue<string>();
+        sentenceFinished = false;
     }
 
     public void StartDialogue(Dialogue dialogue)
@@ -45,7 +48,7 @@ public class DialogueManager : MonoBehaviour
     public void DisplayNextSentence()
     {
         if (sentences.Count == 0)
-        {          
+        {
             EndDialogue();
             return;
         }
@@ -53,20 +56,32 @@ public class DialogueManager : MonoBehaviour
         string sentence = sentences.Dequeue();
         StopAllCoroutines();
         StartCoroutine(TypeSentence(sentence));
+        sentenceFinished = false;
     }
 
     IEnumerator TypeSentence(string sentence)
     {
         dialogueText.text = "";
-        foreach (char letter in sentence.ToCharArray())
+        if (sentenceFinished == false)
         {
-            dialogueText.text += letter;
-            yield return new WaitForSecondsRealtime(0.05f);
+            foreach (char letter in sentence.ToCharArray())
+            {
+                dialogueText.text += letter;
+                yield return new WaitForSecondsRealtime(0.05f);
+            }
+        }
+        else if (sentenceFinished == true)
+        {
+            foreach (char letter in sentence.ToCharArray())
+            {
+                dialogueText.text += letter;
+            }
         }
     }
 
     void EndDialogue()
     {
+        sentenceFinished = false;
         if (response == true)
         {
             response = false;
