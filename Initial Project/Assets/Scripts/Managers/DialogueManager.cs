@@ -19,6 +19,7 @@ public class DialogueManager : MonoBehaviour
     public int responseNumber;
 
     bool sentenceFinished;
+    bool talking;
     
 
     void Start()
@@ -47,36 +48,43 @@ public class DialogueManager : MonoBehaviour
 
     public void DisplayNextSentence()
     {
-        if (sentences.Count == 0)
+        if (talking == false)
         {
-            EndDialogue();
-            return;
-        }
+            if (sentences.Count == 0)
+            {
+                EndDialogue();
+                return;
+            }
 
-        string sentence = sentences.Dequeue();
-        StopAllCoroutines();
-        StartCoroutine(TypeSentence(sentence));
-        sentenceFinished = false;
+            string sentence = sentences.Dequeue();
+            StopAllCoroutines();
+            StartCoroutine(TypeSentence(sentence));
+            sentenceFinished = false;
+        }
+        else
+        {
+            sentenceFinished = true;
+        }
     }
 
     IEnumerator TypeSentence(string sentence)
     {
         dialogueText.text = "";
-        if (sentenceFinished == false)
+        talking = true;
+        foreach (char letter in sentence.ToCharArray())
         {
-            foreach (char letter in sentence.ToCharArray())
+            if (sentenceFinished == false)
             {
                 dialogueText.text += letter;
                 yield return new WaitForSecondsRealtime(0.05f);
             }
-        }
-        else if (sentenceFinished == true)
-        {
-            foreach (char letter in sentence.ToCharArray())
+            else if (sentenceFinished == true)
             {
                 dialogueText.text += letter;
             }
         }
+        sentenceFinished = true;
+        talking = false;
     }
 
     void EndDialogue()

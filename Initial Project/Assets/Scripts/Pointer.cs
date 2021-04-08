@@ -29,7 +29,7 @@ public class Pointer : MonoBehaviour
         {
             pointTo = door.transform.position;
         }
-        transform.up = (pointTo - transform.position).normalized;
+        transform.up = (pointTo - player.transform.position).normalized;
     }
 
 }
