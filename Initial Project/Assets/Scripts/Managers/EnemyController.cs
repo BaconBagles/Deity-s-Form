@@ -26,7 +26,7 @@ public class EnemyController : MonoBehaviour
     {
         attackTimer = PlayerPrefs.GetInt("turnTimer", 5);
         spawning = true;
-       StartCoroutine(SpawnEnemies());
+        StartCoroutine(SpawnEnemies());
     }
 
 
@@ -81,19 +81,19 @@ public class EnemyController : MonoBehaviour
 
         spawnPoint = gameController.eSpawn.transform.position;
 
-        if (gameController.currentRoom == 8 && bossSpawned == false)
+        if (gameController.currentRoom == gameController.bRoomNum && bossSpawned == false)
         {
-             bossSpawned = true;
-             Enemy boss = Instantiate(Boss, spawnPoint, Quaternion.identity, transform);
-             enemies.Add(boss);
-         }
+            bossSpawned = true;
+            Enemy boss = Instantiate(Boss, spawnPoint, Quaternion.identity, transform);
+            enemies.Add(boss);
+        }
         else
         {
             for (int i = 0; i < diffLevel; i++)
             {
                 rndPos = new Vector2(Random.Range(-5, 5), Random.Range(-5, 5));
                 int enemyType = Random.Range(0, EnemyType.Length);
-                Enemy enemy = Instantiate(EnemyType[enemyType], spawnPoint + rndPos , Quaternion.identity, transform);
+                Enemy enemy = Instantiate(EnemyType[enemyType], spawnPoint + rndPos, Quaternion.identity, transform);
                 enemies.Add(enemy);
             }
         }
