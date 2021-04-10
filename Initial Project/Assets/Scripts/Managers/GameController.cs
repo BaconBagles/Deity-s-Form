@@ -10,6 +10,7 @@ public class GameController : MonoBehaviour
 {
     public EnemyController eCont;
     public PlayerController player;
+    public AudioManager aMan;
     public Pointer pointer;
     public GameObject[] rooms;
     public GameObject pickup;
@@ -31,7 +32,7 @@ public class GameController : MonoBehaviour
     public GameObject eSpawn;
     new BoxCollider2D collider;
 
-    int currentScene;
+    public int currentScene;
 
     public Image sceneFader;
 
@@ -73,6 +74,41 @@ public class GameController : MonoBehaviour
         {
             bossRoom = true;
         }
+    }
+
+    public void SaveGame()
+    {
+        SaveSystem.SaveGame(eCont, player, this, aMan);
+    }
+
+    public void LoadGame()
+    {
+        PlayerData data = SaveSystem.LoadGame();
+
+        player.health = data.playerCurrentHealth;
+        player.maxHealth = data.playerMaxHealth;
+        player.shieldCount = data.playerShieldCount;
+        player.speedBonus = data.playerSpeedBonus;
+        player.force = data.playerForce;
+        player.attackIncrease = data.playerAttackIncrease;
+        player.rangeIncrease = data.playerRangeIncrease;
+        player.attackCooldown = data.playerattackCooldown;
+        player.knockbackIncrease = data.playerKnockbackIncrease;
+        player.sndCooldown = data.playerSndCooldown;
+
+        eCont.diffLevel = data.gameDifficultyLevel;
+        eCont.attackTimer = data.enemyAttackTimer;
+        eCont.Force = data.enemyForce;
+        eCont.Knockback = data.enemyKnockback;
+
+        currentRoom = data.currentRoom;
+        currentScene = data.currentScene;
+        bRoomNum = data.bossRoomNum;
+        roomComplete = data.roomComplete;
+        bossRoom = data.bossRoom;
+        pickupSpawned = data.pickupSpawned;
+
+        aMan.bossStageOne = data.bossStageOne;
     }
 
     public void RandomRoom()

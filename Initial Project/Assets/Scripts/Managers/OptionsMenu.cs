@@ -55,7 +55,6 @@ public class OptionsMenu : MonoBehaviour
         turnTimerSlider.value = PlayerPrefs.GetInt("turnTimer", 5); 
         enemyHealthSlider.value = PlayerPrefs.GetInt("enemyHealth", 5);
         
-        
         if (memory1 != 1)
         {
             PlayerPrefs.SetInt("Memory1", 0);
@@ -80,6 +79,7 @@ public class OptionsMenu : MonoBehaviour
         keys.Add("Escape", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("Escape", "Escape")));
         MemoryCheck();
     }
+
 
     public void Update()
     {

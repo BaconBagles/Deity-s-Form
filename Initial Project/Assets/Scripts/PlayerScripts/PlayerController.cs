@@ -7,7 +7,6 @@ public class PlayerController : MonoBehaviour
 {
     //Dictionary for Storing Keybinds
     private Dictionary<string, KeyCode> keys = new Dictionary<string, KeyCode>();
-
     public int maxHealth;
     public int health;
     public HealthBar healthBar;
@@ -15,11 +14,8 @@ public class PlayerController : MonoBehaviour
     public OptionsMenu Options;
     public AudioManager Audio;
     public DeathScript death;
-
     bool attacking;
-
     public int shieldCount;
-
     Vector2 movement;
     public float moveSpeed;
     public float speedBonus;
@@ -29,29 +25,16 @@ public class PlayerController : MonoBehaviour
     public ParticleSystem auraObj;
     public ParticleSystem attackEffect;
     public GameObject attackOrbiter;
-    
     public GameObject[] secondaryAttacks;
-
     public Animator anim;
-
-    /*public GameObject[] attacks;
-    public float attackDuration;
-
-    public bool powerAttack;
-    public bool superForm;
-    public bool tempFormActive;*/
     public bool playerDead;
-
     bool jackalSndAtk;
     bool hawkSndAtk;
     bool bullSndAtk;
     Vector2 mousePos;
     private Vector3 normaliseDir;
-
     attackOrbit orbitPos;
-
     SpriteRenderer sr;
-
     public Camera cam;
 
     //New Primary Attack Stuff

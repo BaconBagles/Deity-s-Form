@@ -41,14 +41,15 @@ public class Enemy : MonoBehaviour
     {
         maxHealth = PlayerPrefs.GetInt("enemyHealth", 5);
         health = maxHealth;
-        currentForce = 5.5f;
         currentDamage = 2;
         currentSize = 0f;
-        currentKnockback = 175;
+
     }
 
     void Start()
     {
+        currentForce = eCont.Force;
+        currentKnockback = eCont.Knockback;
         agentCollider = GetComponent<Collider2D>();
         Audio = FindObjectOfType<AudioManager>();
         eCont = FindObjectOfType<EnemyController>();

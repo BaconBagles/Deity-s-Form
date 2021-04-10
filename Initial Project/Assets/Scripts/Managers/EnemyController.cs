@@ -20,10 +20,14 @@ public class EnemyController : MonoBehaviour
     public bool spawning;
     public int spawnTime;
     bool bossSpawned;
+    public float Force;
+    public float Knockback;
     public Vector2 spawnPoint;
 
     void Start()
     {
+        Force = 5.5f;
+        Knockback = 175;
         attackTimer = PlayerPrefs.GetInt("turnTimer", 5);
         spawning = true;
         StartCoroutine(SpawnEnemies());

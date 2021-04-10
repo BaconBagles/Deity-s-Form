@@ -7,8 +7,6 @@ public class Pickup : MonoBehaviour
     EnemyController eCont;
     PlayerController pCont;
     GameController gCont;
-    OptionsMenu Options;
-    //Enemy enemyScript;
 
 
     public Sprite[] images;
@@ -20,7 +18,6 @@ public class Pickup : MonoBehaviour
         eCont = FindObjectOfType<EnemyController>();
         pCont = FindObjectOfType<PlayerController>();
         gCont = FindObjectOfType<GameController>();
-        Options = FindObjectOfType<OptionsMenu>();
 
         pickupNumber = gCont.pickupNumber;
         SpriteRenderer render = gameObject.GetComponent<SpriteRenderer>();
@@ -48,7 +45,7 @@ public class Pickup : MonoBehaviour
                 break;
             case 1:
                 //attack speed up
-                pCont.attackCooldown -= 0.05f;
+                pCont.attackCooldown *= 0.75f;
                 break;
             case 2:
                 //attack size up
@@ -56,15 +53,11 @@ public class Pickup : MonoBehaviour
                 break;
             case 3:
                 //Secondary attack cooldown reduced
-                pCont.sndCooldown -= 0.5f;
+                pCont.sndCooldown *= 0.75f;
                 break;
             case 4:
                 //enemy projectile speed down
-                foreach (Enemy enemy in eCont.enemies)
-                {
-                    //enemyScript = enemy.GetComponent<Enemy>();
-                    enemy.currentForce /= 12.5f;
-                }
+                 eCont.Force *= 0.75f;
                 break;
             case 5:
                 //attack timer up
@@ -72,7 +65,7 @@ public class Pickup : MonoBehaviour
                 break;
             case 6:
                 //move speed up
-                pCont.moveSpeed += 5;
+                pCont.speedBonus += 10;
                 break;
             case 7:
                 //armoured
@@ -88,16 +81,13 @@ public class Pickup : MonoBehaviour
                 break;
             case 10:
                 //knockback reduced
-                foreach (Enemy enemy in eCont.enemies)
-                {
-                    //enemyScript = enemy.GetComponent<Enemy>();
-                    enemy.currentKnockback /= 12.5f;
-                }
+                 eCont.Knockback *= 0.75f;
+                
                 break;
             case 11:
                 //Max health increased
-                pCont.maxHealth += 5;
-                pCont.health += 5;
+                pCont.maxHealth += 10;
+                pCont.health += 10;
                 break;
         }
     }

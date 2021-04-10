@@ -14,7 +14,7 @@ public class AudioManager : MonoBehaviour
     //AudioSource audioSource;
     bool introComplete;
     bool mainMenu;
-    bool bossStageOne;
+    public bool bossStageOne;
 
     public AudioSource[] MusicSources;
 
