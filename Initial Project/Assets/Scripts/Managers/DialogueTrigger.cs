@@ -6,6 +6,7 @@ public class DialogueTrigger : MonoBehaviour
 {
     public Dialogue dialogue;
     public bool response;
+    public bool playerTalking;
     public int responseNumber;
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -19,11 +20,18 @@ public class DialogueTrigger : MonoBehaviour
 
     public void TriggerDialogue()
     {
-        FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
+
+        if (playerTalking == true)
+        {
+            FindObjectOfType<DialogueManager>().playerTalking = true;
+        }
+
         if (response == true)
         {
             FindObjectOfType<DialogueManager>().response = true;
             FindObjectOfType<DialogueManager>().responseNumber = responseNumber;
         }
+
+        FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
     }
 }

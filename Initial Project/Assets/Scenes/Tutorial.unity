@@ -2985,9 +2985,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue:
     name: You
+    portrait: {fileID: 21300000, guid: 8728f8ad03b3ef04fbc5ab0c3fd087d2, type: 3}
     sentences:
     - I hear someone coming...
   response: 1
+  playerTalking: 1
   responseNumber: 2
 --- !u!114 &121188107
 MonoBehaviour:
@@ -3278,9 +3280,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue:
     name: Guard
+    portrait: {fileID: -5009755796137697180, guid: d348088212a336747b1783ef10326b57, type: 3}
     sentences:
     - Sound the Alarm! It's broken free!
   response: 0
+  playerTalking: 0
   responseNumber: 0
 --- !u!4 &124134822
 Transform:
@@ -28030,6 +28034,81 @@ CircleCollider2D:
   m_Offset: {x: -1, y: -4.5}
   serializedVersion: 2
   m_Radius: 1.5
+--- !u!1 &352744265
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 352744266}
+  - component: {fileID: 352744268}
+  - component: {fileID: 352744267}
+  m_Layer: 5
+  m_Name: otherPortrait
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &352744266
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 352744265}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1758900148}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -78, y: 75.2}
+  m_SizeDelta: {x: 156.94537, y: 150.29973}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &352744267
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 352744265}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &352744268
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 352744265}
+  m_CullTransparentMesh: 0
 --- !u!1 &359583003
 GameObject:
   m_ObjectHideFlags: 0
@@ -28907,10 +28986,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue:
     name: You
+    portrait: {fileID: 21300000, guid: 8728f8ad03b3ef04fbc5ab0c3fd087d2, type: 3}
     sentences:
     - I can't stop, but this is a marathon, not a sprint. I should take breaks where
       I can...
   response: 0
+  playerTalking: 1
   responseNumber: 0
 --- !u!102 &434241458
 TextMesh:
@@ -47414,9 +47495,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue:
     name: You
+    portrait: {fileID: 21300000, guid: 8728f8ad03b3ef04fbc5ab0c3fd087d2, type: 3}
     sentences:
     - I'm not a monster...
   response: 1
+  playerTalking: 1
   responseNumber: 7
 --- !u!1 &637738948
 GameObject:
@@ -47635,7 +47718,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &640625073
 RectTransform:
   m_ObjectHideFlags: 0
@@ -51187,6 +51270,8 @@ MonoBehaviour:
   nameText: {fileID: 810590251}
   dialogueText: {fileID: 153853535}
   textBox: {fileID: 1758900147}
+  portrait: {fileID: 1893558064}
+  playerTalking: 0
   triggers:
   - {fileID: 872316715}
   - {fileID: 121188106}
@@ -51382,12 +51467,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue:
     name: You
+    portrait: {fileID: 21300000, guid: 8728f8ad03b3ef04fbc5ab0c3fd087d2, type: 3}
     sentences:
     - It's them or me. I'm not stopping here.
     - I will be free. They can't stop me.
     - But they're not stupid, they won't be coming one at a time now...
     - They time their attacks to strike together, I will need to watch for that pattern...
   response: 0
+  playerTalking: 1
   responseNumber: 0
 --- !u!102 &794719772
 TextMesh:
@@ -52465,9 +52552,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue:
     name: You
+    portrait: {fileID: 21300000, guid: 8728f8ad03b3ef04fbc5ab0c3fd087d2, type: 3}
     sentences:
     - I thought not... Sorry about this.
   response: 0
+  playerTalking: 1
   responseNumber: 0
 --- !u!1 &846200630
 GameObject:
@@ -52769,6 +52858,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue:
     name: You
+    portrait: {fileID: 21300000, guid: 8728f8ad03b3ef04fbc5ab0c3fd087d2, type: 3}
     sentences:
     - The chains... broken...
     - I can finally move... and breathe.
@@ -52778,6 +52868,7 @@ MonoBehaviour:
       One foot in front of the
       other, come on...'
   response: 0
+  playerTalking: 1
   responseNumber: 0
 --- !u!58 &872316716
 CircleCollider2D:
@@ -59356,9 +59447,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue:
     name: Guard
+    portrait: {fileID: -6989975526304650251, guid: e506e453440ca1447bc62b853ed3c522, type: 3}
     sentences:
     - Get on your knees, monster!
   response: 1
+  playerTalking: 0
   responseNumber: 5
 --- !u!1 &943843165
 GameObject:
@@ -59754,9 +59847,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue:
     name: Guard
+    portrait: {fileID: 8374724632389235551, guid: eaefffcaf0309a8489bb5ad3594353bc, type: 3}
     sentences:
     - The Monster is loose!
   response: 1
+  playerTalking: 0
   responseNumber: 8
 --- !u!1 &965954612
 GameObject:
@@ -80193,9 +80288,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue:
     name: You
+    portrait: {fileID: 21300000, guid: 8728f8ad03b3ef04fbc5ab0c3fd087d2, type: 3}
     sentences:
     - Don't suppose you'd be willing to let me leave?
   response: 1
+  playerTalking: 1
   responseNumber: 4
 --- !u!1 &1378724154
 GameObject:
@@ -97526,6 +97623,7 @@ MonoBehaviour:
     loop: 1
     source: {fileID: 0}
   Options: {fileID: 280636754}
+  bossStageOne: 0
   MusicSources: []
 --- !u!4 &1602839601
 Transform:
@@ -108965,9 +109063,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue:
     name: Guard
+    portrait: {fileID: -6989975526304650251, guid: e506e453440ca1447bc62b853ed3c522, type: 3}
     sentences:
     - What the? How did you get out!?
   response: 1
+  playerTalking: 0
   responseNumber: 3
 --- !u!1 &1725915429
 GameObject:
@@ -114521,6 +114621,8 @@ RectTransform:
   - {fileID: 810590253}
   - {fileID: 153853537}
   - {fileID: 1359330878}
+  - {fileID: 1893558065}
+  - {fileID: 352744266}
   m_Father: {fileID: 2071113524}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -139348,6 +139450,81 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1888347244}
   m_CullTransparentMesh: 0
+--- !u!1 &1893558064
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1893558065}
+  - component: {fileID: 1893558067}
+  - component: {fileID: 1893558066}
+  m_Layer: 5
+  m_Name: playerPortrait
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &1893558065
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1893558064}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1758900148}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 77.899994, y: 75.2}
+  m_SizeDelta: {x: 156.94537, y: 150.29973}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1893558066
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1893558064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1893558067
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1893558064}
+  m_CullTransparentMesh: 0
 --- !u!1 &1894952865
 GameObject:
   m_ObjectHideFlags: 0
@@ -140938,9 +141115,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue:
     name: You
+    portrait: {fileID: 21300000, guid: 8728f8ad03b3ef04fbc5ab0c3fd087d2, type: 3}
     sentences:
     - I am NOT a Monster!
   response: 0
+  playerTalking: 1
   responseNumber: 0
 --- !u!1 &1984628858
 GameObject:
@@ -147855,6 +148034,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue:
     name: You
+    portrait: {fileID: 21300000, guid: 8728f8ad03b3ef04fbc5ab0c3fd087d2, type: 3}
     sentences:
     - 'That wasn''t as easy as it should''ve been... '
     - I will need to use every form I can muster.
@@ -147873,6 +148053,7 @@ MonoBehaviour:
       comes with a powerful CHARGE to break both pillars and people.)
     - It's only a matter of countering what they send at me.
   response: 1
+  playerTalking: 1
   responseNumber: 10
 --- !u!102 &2118075474
 TextMesh:

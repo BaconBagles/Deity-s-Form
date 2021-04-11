@@ -11,6 +11,8 @@ public class DialogueManager : MonoBehaviour
     public TMPro.TextMeshProUGUI dialogueText;
 
     public GameObject textBox;
+    public GameObject portrait;
+    public bool playerTalking;
 
     Queue<string> sentences;
 
@@ -31,6 +33,7 @@ public class DialogueManager : MonoBehaviour
     public void StartDialogue(Dialogue dialogue)
     {
         textBox.SetActive(true);
+        
         Time.timeScale = 0f;
         options.GameIsPaused = true;
 
@@ -42,12 +45,23 @@ public class DialogueManager : MonoBehaviour
         {
             sentences.Enqueue(sentence);
         }
+        if (playerTalking == true)
+        {
+            portrait = textBox.transform.Find("playerPortrait").gameObject;
+        }
+        else
+        {
+            portrait = textBox.transform.Find("otherPortrait").gameObject;
+        }
+        portrait.GetComponent<Image>().sprite = dialogue.portrait;
+        portrait.gameObject.SetActive(true);
 
         DisplayNextSentence();
     }
 
     public void DisplayNextSentence()
     {
+
         if (talking == false)
         {
             if (sentences.Count == 0)
@@ -89,6 +103,8 @@ public class DialogueManager : MonoBehaviour
 
     void EndDialogue()
     {
+        portrait.gameObject.SetActive(false);
+        playerTalking = false;
         sentenceFinished = false;
         if (response == true)
         {
