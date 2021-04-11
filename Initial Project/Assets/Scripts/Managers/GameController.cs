@@ -38,6 +38,7 @@ public class GameController : MonoBehaviour
 
     void Start()
     {
+       // LoadGame();
         if (PlayerPrefs.GetInt("Memory3", 0) == 1)
         {
             allMemories = true;
@@ -109,6 +110,12 @@ public class GameController : MonoBehaviour
         pickupSpawned = data.pickupSpawned;
 
         aMan.bossStageOne = data.bossStageOne;
+    }
+
+    public void RefreshLevel()
+    {
+        SaveGame();
+        Scene scene = SceneManager.GetActiveScene(); SceneManager.LoadScene(scene.name);
     }
 
     public void RandomRoom()
@@ -264,7 +271,7 @@ public class GameController : MonoBehaviour
 
     public void NewRoom()
     {
-
+        SaveGame();
         if (bossRoom == false)
         {
             currentRoom++;

@@ -48,13 +48,13 @@ public class Enemy : MonoBehaviour
 
     void Start()
     {
-        currentForce = eCont.Force;
-        currentKnockback = eCont.Knockback;
         agentCollider = GetComponent<Collider2D>();
         Audio = FindObjectOfType<AudioManager>();
         eCont = FindObjectOfType<EnemyController>();
         player = GameObject.Find("Player");
         pCont = player.GetComponent<PlayerController>();
+        currentForce = eCont.Force;
+        currentKnockback = eCont.Knockback;
         goal = player.transform;
         isDead = false;
 
@@ -129,31 +129,34 @@ public class Enemy : MonoBehaviour
             Vector2 direction = goal.position - transform.position;
             transform.Translate((direction + movDir) * Time.deltaTime);
         }*/
+        if (isDead != true)
+        {
+            if (Vector2.Distance(goal.position, transform.position) >= spaceBetween)
+            {
+                Vector2 direction = goal.position - transform.position;
+                enemyAnim.SetFloat("Horizontal", direction.x);
+                enemyAnim.SetFloat("Vertical", direction.y);
+                transform.Translate(direction * Time.deltaTime);
+            }
+            else
+            {
+                Vector2 direction = transform.position - goal.transform.position;
+                enemyAnim.SetFloat("Horizontal", -direction.x);
+                enemyAnim.SetFloat("Vertical", -direction.y);
+                transform.Translate(direction * Time.deltaTime);
+            }
 
-        if (Vector2.Distance(goal.position, transform.position) >= spaceBetween)
-        {
-             Vector2 direction = goal.position - transform.position;
-             enemyAnim.SetFloat("Horizontal", direction.x);
-             enemyAnim.SetFloat("Vertical", direction.y);
-             transform.Translate(direction * Time.deltaTime);
-        }
-        else
-        {
-             Vector2 direction = transform.position - goal.transform.position;
-             enemyAnim.SetFloat("Horizontal", -direction.x);
-             enemyAnim.SetFloat("Vertical", -direction.y);
-             transform.Translate(direction * Time.deltaTime);
-        }
 
-        if (lateralDirection == true)
-        {
-            transform.RotateAround(goal.transform.position, Vector3.forward, 50 * Time.deltaTime);
+            if (lateralDirection == true)
+            {
+                transform.RotateAround(goal.transform.position, Vector3.forward, 50 * Time.deltaTime);
+            }
+            else
+            {
+                transform.RotateAround(goal.transform.position, Vector3.forward, -50 * Time.deltaTime);
+            }
+            transform.rotation = Quaternion.identity;
         }
-        else
-        {
-            transform.RotateAround(goal.transform.position, Vector3.forward, -50 * Time.deltaTime);
-        }
-        transform.rotation = Quaternion.identity;
 
         if (health <= switchthreshold && enemyType > 2)
         {
@@ -246,7 +249,11 @@ public class Enemy : MonoBehaviour
         enemyAnim.SetTrigger("Death");
         FindObjectOfType<AudioManager>().Play("EnemyDeath");
 
-        yield return new WaitForSecondsRealtime(1f);
+        yield return new WaitForSecondsRealtime(0.5f);
+
+        rb.constraints = RigidbodyConstraints2D.FreezePosition;
+
+        yield return new WaitForSecondsRealtime(0.5f);
 
         float randomNum = Random.Range(0, 100);
         if (randomNum > 95)

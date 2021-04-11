@@ -22,7 +22,6 @@ public class door : MonoBehaviour
             renderer.enabled = false;
             gCont.pointer.isDoor = false;
             gCont.pointer.gameObject.SetActive(false);
-
             gCont.StartCoroutine(gCont.FadeOut());
             
             PlayerController player = collision.GetComponent<PlayerController>();
