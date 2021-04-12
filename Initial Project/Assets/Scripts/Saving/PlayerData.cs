@@ -25,6 +25,7 @@ public class PlayerData
     public float enemyKnockback;
 
     //gCont
+    public int roomNumber;
     public int currentRoom;
     public int currentScene;
     public int bossRoomNum;
@@ -54,12 +55,13 @@ public class PlayerData
         enemyForce = eCont.Force;
         enemyKnockback = eCont.Knockback;
 
+        roomNumber = gCont.roomNumber;
         currentRoom = gCont.currentRoom;
         currentScene = gCont.currentScene;
         bossRoomNum = gCont.bRoomNum;
-        roomComplete = gCont.roomComplete;
+        //roomComplete = gCont.roomComplete;
         bossRoom = gCont.bossRoom;
-        pickupSpawned = gCont.pickupSpawned;
+        //pickupSpawned = gCont.pickupSpawned;
 
         bossStageOne = aMan.bossStageOne;
     }

@@ -36,9 +36,9 @@ public class GameController : MonoBehaviour
 
     public Image sceneFader;
 
-    void Start()
+    void Awake()
     {
-       // LoadGame();
+       
         if (PlayerPrefs.GetInt("Memory3", 0) == 1)
         {
             allMemories = true;
@@ -47,9 +47,14 @@ public class GameController : MonoBehaviour
         {
             allMemories = false;
         }
-        currentRoom = 1;
-        RandomRoom();
+        currentRoom = 0;
         FadeIn();
+    }
+
+     void Start()
+    {
+        LoadGame();
+        RandomRoom();
     }
 
     // Update is called once per frame
@@ -102,12 +107,13 @@ public class GameController : MonoBehaviour
         eCont.Force = data.enemyForce;
         eCont.Knockback = data.enemyKnockback;
 
+        roomNumber = data.roomNumber;
         currentRoom = data.currentRoom;
         currentScene = data.currentScene;
         bRoomNum = data.bossRoomNum;
-        roomComplete = data.roomComplete;
+       // roomComplete = data.roomComplete;
         bossRoom = data.bossRoom;
-        pickupSpawned = data.pickupSpawned;
+       // pickupSpawned = data.pickupSpawned;
 
         aMan.bossStageOne = data.bossStageOne;
     }
@@ -130,11 +136,11 @@ public class GameController : MonoBehaviour
         {
             switch (currentRoom)
             {
-                case 1:
+                case 0:
                     roomNumber = 1;
                     break;
                 default:
-                    roomNumber = Random.Range(2, rooms.Length - 1);
+                    roomNumber = Random.Range(2, rooms.Length);
                     break;
             }
         }
@@ -271,7 +277,7 @@ public class GameController : MonoBehaviour
 
     public void NewRoom()
     {
-        SaveGame();
+       
         if (bossRoom == false)
         {
             currentRoom++;
@@ -303,7 +309,7 @@ public class GameController : MonoBehaviour
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
-        
+        SaveGame();
     }
 
     public IEnumerator FadeOut()

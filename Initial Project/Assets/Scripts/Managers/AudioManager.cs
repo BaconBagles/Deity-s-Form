@@ -18,29 +18,6 @@ public class AudioManager : MonoBehaviour
 
     public AudioSource[] MusicSources;
 
-    private void Start()
-    {
-        gCont = FindObjectOfType<GameController>();
-
-        int sceneID = SceneManager.GetActiveScene().buildIndex;
-
-        if (sceneID > 2)
-        {
-            PlayMusic("IntroMainTheme");
-        }
-        else if(sceneID == 2)
-        {
-            mainMenu = true;
-            PlayMusic("TutorialTheme");
-        }
-        else
-        {
-            mainMenu = true;
-            PlayMusic("MenuTheme");
-        }
-
-    }
-
     void Awake()
     {
         
@@ -69,7 +46,24 @@ public class AudioManager : MonoBehaviour
             s.source.loop = s.loop;
         }
 
-        
+        gCont = FindObjectOfType<GameController>();
+
+        int sceneID = SceneManager.GetActiveScene().buildIndex;
+
+        if (sceneID > 2)
+        {
+            PlayMusic("IntroMainTheme");
+        }
+        else if (sceneID == 2)
+        {
+            mainMenu = true;
+            PlayMusic("TutorialTheme");
+        }
+        else
+        {
+            mainMenu = true;
+            PlayMusic("MenuTheme");
+        }
     }
 
     void Update()
