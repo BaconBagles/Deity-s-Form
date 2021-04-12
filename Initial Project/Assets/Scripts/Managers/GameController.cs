@@ -36,9 +36,9 @@ public class GameController : MonoBehaviour
 
     public Image sceneFader;
 
-    void Awake()
+    void Start()
     {
-      
+       // LoadGame();
         if (PlayerPrefs.GetInt("Memory3", 0) == 1)
         {
             allMemories = true;
@@ -47,17 +47,9 @@ public class GameController : MonoBehaviour
         {
             allMemories = false;
         }
-        currentRoom = 0;
-
-        FadeIn();
-
-     
-    }
-
-    void Start()
-    {
-        LoadGame();
+        currentRoom = 1;
         RandomRoom();
+        FadeIn();
     }
 
     // Update is called once per frame
@@ -111,12 +103,11 @@ public class GameController : MonoBehaviour
         eCont.Knockback = data.enemyKnockback;
 
         currentRoom = data.currentRoom;
-        roomNumber = data.roomNumber;
         currentScene = data.currentScene;
         bRoomNum = data.bossRoomNum;
-       // roomComplete = data.roomComplete;
+        roomComplete = data.roomComplete;
         bossRoom = data.bossRoom;
-        // pickupSpawned = data.pickupSpawned;
+        pickupSpawned = data.pickupSpawned;
 
         aMan.bossStageOne = data.bossStageOne;
     }
@@ -125,7 +116,6 @@ public class GameController : MonoBehaviour
     {
         SaveGame();
         Scene scene = SceneManager.GetActiveScene(); SceneManager.LoadScene(scene.name);
-       // LoadGame(); 
     }
 
     public void RandomRoom()
@@ -140,11 +130,11 @@ public class GameController : MonoBehaviour
         {
             switch (currentRoom)
             {
-                case 0:
+                case 1:
                     roomNumber = 1;
                     break;
                 default:
-                    roomNumber = Random.Range(2, rooms.Length);
+                    roomNumber = Random.Range(2, rooms.Length - 1);
                     break;
             }
         }
@@ -281,7 +271,7 @@ public class GameController : MonoBehaviour
 
     public void NewRoom()
     {
-
+        SaveGame();
         if (bossRoom == false)
         {
             currentRoom++;
@@ -306,16 +296,14 @@ public class GameController : MonoBehaviour
             for (int i = 0; i < alltorches.Length; i++)
             {
                 alltorches[i].LightsOn();
-            }
-            
+            } 
         }
 
         if (bossRoom == true)
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
-
-        SaveGame();
+        
     }
 
     public IEnumerator FadeOut()

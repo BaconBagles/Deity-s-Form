@@ -221,12 +221,11 @@ public class Enemy : MonoBehaviour
             Audio.Play("EnemyAttack");
             GameObject enemyProjectile = Instantiate(projectile, transform.position, Quaternion.identity);
             projectileScript proj = enemyProjectile.GetComponent<projectileScript>();
+            yield return new WaitForSeconds(0.1f);
+            proj.force = currentForce;
             proj.damage = currentDamage;
             proj.bossSize = currentSize;
             proj.knockbackPower = currentKnockback;
-            yield return new WaitForSeconds(0.1f);
-            proj.force = currentForce;
-           
         }
     }
 
