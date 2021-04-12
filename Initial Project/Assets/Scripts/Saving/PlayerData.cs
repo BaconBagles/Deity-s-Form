@@ -26,6 +26,7 @@ public class PlayerData
 
     //gCont
     public int currentRoom;
+    public int roomNumber;
     public int currentScene;
     public int bossRoomNum;
     public bool roomComplete;
@@ -55,11 +56,12 @@ public class PlayerData
         enemyKnockback = eCont.Knockback;
 
         currentRoom = gCont.currentRoom;
+        roomNumber = gCont.roomNumber;
         currentScene = gCont.currentScene;
         bossRoomNum = gCont.bRoomNum;
-        roomComplete = gCont.roomComplete;
+      //  roomComplete = gCont.roomComplete;
         bossRoom = gCont.bossRoom;
-        pickupSpawned = gCont.pickupSpawned;
+       // pickupSpawned = gCont.pickupSpawned;
 
         bossStageOne = aMan.bossStageOne;
     }

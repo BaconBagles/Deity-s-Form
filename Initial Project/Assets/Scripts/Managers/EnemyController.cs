@@ -24,7 +24,7 @@ public class EnemyController : MonoBehaviour
     public float Knockback;
     public Vector2 spawnPoint;
 
-    void Start()
+    void Awake()
     {
         Force = 5.5f;
         Knockback = 175;

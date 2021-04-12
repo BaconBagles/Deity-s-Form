@@ -52,7 +52,7 @@ public class PlayerController : MonoBehaviour
     float sndCurrentCooldown;
     public float sndCooldown;
 
-    void Start()
+    void Awake()
     {
         currentCooldown = attackCooldown;
         attacking = false;
