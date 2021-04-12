@@ -297,7 +297,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01699a3e0df9e494dae5e127490511a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemysecondaryType: 0
   switchthreshold: 0
   enemyType: 2
   spaceBetween: 0
@@ -314,6 +313,8 @@ MonoBehaviour:
   rb: {fileID: 0}
   isBoss: 0
   eCont: {fileID: 0}
+  projRenderer: {fileID: 0}
+  projSprite: {fileID: 21300000, guid: de2514da6bff24f49ba07f13c9b9596f, type: 3}
 --- !u!95 &-4914434019838112790
 Animator:
   serializedVersion: 3

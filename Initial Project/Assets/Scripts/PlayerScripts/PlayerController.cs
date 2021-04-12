@@ -316,7 +316,7 @@ public class PlayerController : MonoBehaviour
             yield return new WaitForSeconds(0.25f);
             if (formNumber == 0)
             {
-                GameObject JackalAttack = Instantiate(attackPrefabs[0], firePoint.position, firePoint.rotation);
+                GameObject JackalAttack = Instantiate(attackPrefabs[0], firePoint.position, firePoint.rotation * Quaternion.Euler(0,0,-90));
                 Rigidbody2D brb = JackalAttack.GetComponent<Rigidbody2D>();
                 playerProjectileScript jProj = JackalAttack.GetComponent<playerProjectileScript>();
                 brb.AddForce(firePoint.up * force, ForceMode2D.Impulse);
@@ -324,14 +324,14 @@ public class PlayerController : MonoBehaviour
             }
             else if (formNumber == 1)
             {
-                GameObject HawkAttack = Instantiate(attackPrefabs[2], firePoint.position, firePoint.rotation);
+                GameObject HawkAttack = Instantiate(attackPrefabs[2], firePoint.position, firePoint.rotation * Quaternion.Euler(0, 0, -90));
                 Rigidbody2D brb = HawkAttack.GetComponent<Rigidbody2D>();
                 playerProjectileScript hProj = HawkAttack.GetComponent<playerProjectileScript>();
                 brb.AddForce(firePoint.up * force, ForceMode2D.Impulse);
             }
             else if (formNumber == 2)
             {
-                GameObject BullAttack = Instantiate(attackPrefabs[1], firePoint.position, firePoint.rotation);
+                GameObject BullAttack = Instantiate(attackPrefabs[1], firePoint.position, firePoint.rotation * Quaternion.Euler(0, 0, -90));
                 Rigidbody2D brb = BullAttack.GetComponent<Rigidbody2D>();
                 playerProjectileScript bProj = BullAttack.GetComponent<playerProjectileScript>();
                 brb.AddForce(firePoint.up * force, ForceMode2D.Impulse);

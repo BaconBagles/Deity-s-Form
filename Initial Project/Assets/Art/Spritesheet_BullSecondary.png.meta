@@ -1,0 +1,292 @@
+fileFormatVersion: 2
+guid: 64796d5a729de7144bbf1407bb54640a
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -3754346287187164230
+    second: Spritesheet_BullSecondary_0
+  - first:
+      213: 304459794602134877
+    second: Spritesheet_BullSecondary_1
+  - first:
+      213: 2807329888161795891
+    second: Spritesheet_BullSecondary_2
+  - first:
+      213: -7743401575987293665
+    second: Spritesheet_BullSecondary_3
+  - first:
+      213: -4343792379094279551
+    second: Spritesheet_BullSecondary_4
+  - first:
+      213: -3041526678861296132
+    second: Spritesheet_BullSecondary_5
+  - first:
+      213: -2226998993327081484
+    second: Spritesheet_BullSecondary_6
+  - first:
+      213: 4133377961033225983
+    second: Spritesheet_BullSecondary_7
+  - first:
+      213: 5735217709429322885
+    second: Spritesheet_BullSecondary_8
+  - first:
+      213: 4218806115072941743
+    second: Spritesheet_BullSecondary_9
+  - first:
+      213: 6168627816236541585
+    second: Spritesheet_BullSecondary_10
+  - first:
+      213: -7927655832369505217
+    second: Spritesheet_BullSecondary_11
+  - first:
+      213: 5495159726420472646
+    second: Spritesheet_BullSecondary_12
+  - first:
+      213: 5012666050274524730
+    second: Spritesheet_BullSecondary_13
+  - first:
+      213: 1349666399907428544
+    second: Spritesheet_BullSecondary_14
+  - first:
+      213: 6519040210246234967
+    second: Spritesheet_BullSecondary_15
+  - first:
+      213: -2626858155514021883
+    second: Spritesheet_BullSecondary_16
+  - first:
+      213: -1307118278483512217
+    second: Spritesheet_BullSecondary_17
+  - first:
+      213: -2284031275855532158
+    second: Spritesheet_BullSecondary_18
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 160
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Spritesheet_BullSecondary_0
+      rect:
+        serializedVersion: 2
+        x: 440
+        y: 142
+        width: 719
+        height: 1593
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab3076471f1e5ebc0800000000000000
+      internalID: -3754346287187164230
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spritesheet_BullSecondary_1
+      rect:
+        serializedVersion: 2
+        x: 1255
+        y: 142
+        width: 719
+        height: 1593
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5d06a1f198a93400800000000000000
+      internalID: 304459794602134877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spritesheet_BullSecondary_2
+      rect:
+        serializedVersion: 2
+        x: 2043
+        y: 142
+        width: 719
+        height: 1593
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33f883fc8a3a5f620800000000000000
+      internalID: 2807329888161795891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spritesheet_BullSecondary_3
+      rect:
+        serializedVersion: 2
+        x: 2939
+        y: 142
+        width: 719
+        height: 1593
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f12d31efa49e98490800000000000000
+      internalID: -7743401575987293665
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spritesheet_BullSecondary_5
+      rect:
+        serializedVersion: 2
+        x: 961
+        y: 545
+        width: 14
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cfd499ba9935ac5d0800000000000000
+      internalID: -3041526678861296132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

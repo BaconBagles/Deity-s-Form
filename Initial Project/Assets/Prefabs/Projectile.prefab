@@ -103,6 +103,7 @@ MonoBehaviour:
   damage: 0
   bossSize: 0
   hitEffect: {fileID: 4300051744228209792, guid: bde82cd1c857ed44bad117d320956271, type: 3}
+  projType: 0
   knockbackPower: 150
   knockbackDuration: 1.5
 --- !u!114 &95872913172333198
@@ -154,6 +155,6 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0000000081987555, y: -0.06877615}
-  m_Size: {x: 1.2162726, y: 0.32062367}
+  m_Offset: {x: -0.000000007458615, y: -0.08}
+  m_Size: {x: 1.2162728, y: 0.45721605}
   m_Direction: 1

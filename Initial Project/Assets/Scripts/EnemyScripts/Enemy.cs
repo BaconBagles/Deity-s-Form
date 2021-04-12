@@ -33,6 +33,8 @@ public class Enemy : MonoBehaviour
     int latDirRnd;
     bool lateralDirection;
     public EnemyController eCont;
+    public SpriteRenderer projRenderer;
+    public Sprite projSprite;
 
     Collider2D agentCollider;
     public Collider2D AgentCollider { get { return agentCollider; } }
@@ -221,6 +223,8 @@ public class Enemy : MonoBehaviour
             Audio.Play("EnemyAttack");
             GameObject enemyProjectile = Instantiate(projectile, transform.position, Quaternion.identity);
             projectileScript proj = enemyProjectile.GetComponent<projectileScript>();
+            projRenderer = proj.GetComponent<SpriteRenderer>();
+            projRenderer.sprite = projSprite;
             proj.damage = currentDamage;
             proj.bossSize = currentSize;
             proj.knockbackPower = currentKnockback;
