@@ -14,6 +14,7 @@ public class GameController : MonoBehaviour
     public Pointer pointer;
     public GameObject[] rooms;
     public GameObject pickup;
+    public GameObject memory;
     public TMPro.TextMeshProUGUI PickupText;
     public int roomNumber;
 
@@ -30,7 +31,9 @@ public class GameController : MonoBehaviour
     public GameObject door;
     public GameObject pSpawn;
     public GameObject eSpawn;
+    public GameObject memSpawn;
     new BoxCollider2D collider;
+    bool spawnMemory;
 
     public int currentScene;
 
@@ -38,7 +41,6 @@ public class GameController : MonoBehaviour
 
     void Awake()
     {
-       
         if (PlayerPrefs.GetInt("Memory3", 0) == 1)
         {
             allMemories = true;
@@ -144,9 +146,19 @@ public class GameController : MonoBehaviour
                     break;
             }
         }
+        CheckMemory();
         pSpawn = rooms[roomNumber].transform.Find("PlayerSpawn").gameObject;
         eSpawn = rooms[roomNumber].transform.Find("EnemySpawn").gameObject;
         door = rooms[roomNumber].transform.Find("Door").gameObject;
+        memSpawn = rooms[roomNumber].transform.Find("MemorySpawn").gameObject;
+        if (memSpawn)
+        {
+            Debug.Log("spawn point confirmed");
+        }
+        else
+        {
+            Debug.Log("No spawn point detected");
+        }
         player.transform.position = pSpawn.transform.position;
     }
 
@@ -303,6 +315,10 @@ public class GameController : MonoBehaviour
             {
                 alltorches[i].LightsOn();
             } 
+            if (spawnMemory == true)
+            {
+                Instantiate(memory, memSpawn.transform.position, Quaternion.identity);
+            }
         }
 
         if (bossRoom == true)
@@ -310,6 +326,19 @@ public class GameController : MonoBehaviour
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
         SaveGame();
+    }
+
+    void CheckMemory()
+    {
+        int randomizer = Random.Range(0, 100);
+        if (randomizer <= 5)
+        {
+            spawnMemory = true;
+        }
+        else
+        {
+            spawnMemory = false;
+        }
     }
 
     public IEnumerator FadeOut()
