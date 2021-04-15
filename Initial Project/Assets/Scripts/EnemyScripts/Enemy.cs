@@ -29,6 +29,7 @@ public class Enemy : MonoBehaviour
     public Rigidbody2D rb;
     AudioManager Audio;
     public bool isBoss;
+    public int bossNum;
     string secondarytag;
     int latDirRnd;
     bool lateralDirection;
@@ -119,18 +120,7 @@ public class Enemy : MonoBehaviour
 
     void Update()
     {
-        /*if (lateralDirection == true)
-        {
-            Vector2 movDir = new Vector2(goal.transform.position.x + Random.Range(10, -10), goal.transform.position.y + Random.Range(10, -10));
-            Vector2 direction = goal.position - transform.position;
-            transform.Translate((direction - movDir) * Time.deltaTime);
-        }
-        else
-        {
-            Vector2 movDir = new Vector2(goal.transform.position.x + Random.Range(10, -10), goal.transform.position.y + Random.Range(10, -10));
-            Vector2 direction = goal.position - transform.position;
-            transform.Translate((direction + movDir) * Time.deltaTime);
-        }*/
+        
         if (isDead != true)
         {
             if (Vector2.Distance(goal.position, transform.position) >= spaceBetween)
@@ -220,17 +210,47 @@ public class Enemy : MonoBehaviour
     {
         if(isDead != true)
         {
-            Audio.Play("EnemyAttack");
-            GameObject enemyProjectile = Instantiate(projectile, transform.position, Quaternion.identity);
-            projectileScript proj = enemyProjectile.GetComponent<projectileScript>();
-            projRenderer = proj.GetComponent<SpriteRenderer>();
-            projRenderer.sprite = projSprite;
-            proj.damage = currentDamage;
-            proj.bossSize = currentSize;
-            proj.knockbackPower = currentKnockback;
-            yield return new WaitForSeconds(0.1f);
-            proj.force = currentForce;
-            
+            if (isBoss != true)
+            {
+                Audio.Play("EnemyAttack");
+                GameObject enemyProjectile = Instantiate(projectile, transform.position, Quaternion.identity);
+                projectileScript proj = enemyProjectile.GetComponent<projectileScript>();
+                projRenderer = proj.GetComponent<SpriteRenderer>();
+                projRenderer.sprite = projSprite;
+                proj.damage = currentDamage;
+                proj.bossSize = currentSize;
+                proj.knockbackPower = currentKnockback;
+                yield return new WaitForSeconds(0.1f);
+                proj.force = currentForce;
+            }
+            else
+            {
+                switch(bossNum)
+                {
+                    case 0:
+                        for (int i = 0; i < 2; i++)
+                        {
+                            Audio.Play("EnemyAttack");
+                            GameObject enemyProjectile = Instantiate(projectile, transform.position, Quaternion.identity);
+                            projectileScript proj = enemyProjectile.GetComponent<projectileScript>();
+                            projRenderer = proj.GetComponent<SpriteRenderer>();
+                            projRenderer.sprite = projSprite;
+                            proj.damage = currentDamage;
+                            proj.bossSize = currentSize;
+                            proj.knockbackPower = currentKnockback;
+                            yield return new WaitForSeconds(0.1f);
+                            proj.force = currentForce;
+                        }
+                        break;
+                    case 1:
+
+                        break;
+                    case 2:
+                        break;
+                    case 3:
+                        break;
+                }
+            }
         }
     }
 

@@ -13,6 +13,7 @@ public class BossEnemy : MonoBehaviour
     private SpriteRenderer spriteR;
     public Animator enemyAnim;
     public AudioManager Audio;
+    public int bossNum;
     public int firstForm;
     public int secondForm;
     public bool isFinalBoss;
@@ -36,6 +37,7 @@ public class BossEnemy : MonoBehaviour
         enemyScript.currentDamage = bossDamage;
         enemyScript.currentSize = 3f;
         enemyScript.isBoss = true;
+        enemyScript.bossNum = bossNum;
     }
 
     // Update is called once per frame
@@ -66,9 +68,9 @@ public class BossEnemy : MonoBehaviour
        }
 
        if (enemyScript.health == 0)
-        {
-            Instantiate(deathEffect, transform.position, Quaternion.identity);
-        }
+       {
+           Instantiate(deathEffect, transform.position, Quaternion.identity);
+       }
     }
 
     public void SwitchForm()
