@@ -14,6 +14,7 @@ public class projectileScript : MonoBehaviour
     public float bossSize;
     public GameObject hitEffect;
     public int projType;
+    bool finalBoss;
 
     //knockback stuff
     public float knockbackPower = 150;
@@ -60,7 +61,17 @@ public class projectileScript : MonoBehaviour
     IEnumerator SelfDestruct()
     {
         yield return new WaitForSeconds(1f);
-
-        Destroy(this.gameObject);
+        if (finalBoss == true)
+        {
+            GameObject boomerang = Instantiate(gameObject);
+            projectileScript bScript = boomerang.GetComponent<projectileScript>();
+            bScript.player = GameObject.Find("FINAL BOSS");
+            bScript.finalBoss = false;
+            bScript.SelfDestruct();
+        }
+        else
+        {
+            Destroy(this.gameObject);
+        }
     }
 }

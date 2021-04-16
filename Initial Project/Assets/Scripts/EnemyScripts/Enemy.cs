@@ -208,13 +208,15 @@ public class Enemy : MonoBehaviour
 
     public IEnumerator Attack()
     {
-        if(isDead != true)
+        GameObject enemyProjectile;
+        projectileScript proj;
+        if (isDead != true)
         {
             if (isBoss != true)
             {
                 Audio.Play("EnemyAttack");
-                GameObject enemyProjectile = Instantiate(projectile, transform.position, Quaternion.identity);
-                projectileScript proj = enemyProjectile.GetComponent<projectileScript>();
+                enemyProjectile = Instantiate(projectile, transform.position, Quaternion.identity);
+                proj = enemyProjectile.GetComponent<projectileScript>();
                 projRenderer = proj.GetComponent<SpriteRenderer>();
                 projRenderer.sprite = projSprite;
                 proj.damage = currentDamage;
@@ -231,8 +233,8 @@ public class Enemy : MonoBehaviour
                         for (int i = 0; i < 2; i++)
                         {
                             Audio.Play("EnemyAttack");
-                            GameObject enemyProjectile = Instantiate(projectile, transform.position, Quaternion.identity);
-                            projectileScript proj = enemyProjectile.GetComponent<projectileScript>();
+                            enemyProjectile = Instantiate(projectile, transform.position, Quaternion.identity);
+                            proj = enemyProjectile.GetComponent<projectileScript>();
                             projRenderer = proj.GetComponent<SpriteRenderer>();
                             projRenderer.sprite = projSprite;
                             proj.damage = currentDamage;
@@ -243,11 +245,40 @@ public class Enemy : MonoBehaviour
                         }
                         break;
                     case 1:
-
+                        Audio.Play("EnemyAttack");
+                        enemyProjectile = Instantiate(projectile, transform.position, Quaternion.identity);
+                        proj = enemyProjectile.GetComponent<projectileScript>();
+                        projRenderer = proj.GetComponent<SpriteRenderer>();
+                        projRenderer.sprite = projSprite;
+                        proj.damage = currentDamage;
+                        proj.bossSize = currentSize;
+                        proj.knockbackPower = (currentKnockback * 2);
+                        yield return new WaitForSeconds(0.1f);
+                        proj.force = (currentForce/2);
                         break;
                     case 2:
+                        Audio.Play("EnemyAttack");
+                        enemyProjectile = Instantiate(projectile, transform.position, Quaternion.identity);
+                        proj = enemyProjectile.GetComponent<projectileScript>();
+                        projRenderer = proj.GetComponent<SpriteRenderer>();
+                        projRenderer.sprite = projSprite;
+                        proj.damage = currentDamage;
+                        proj.bossSize = currentSize;
+                        proj.knockbackPower = currentKnockback;
+                        yield return new WaitForSeconds(0.1f);
+                        proj.force = currentForce;
                         break;
                     case 3:
+                        Audio.Play("EnemyAttack");
+                        enemyProjectile = Instantiate(projectile, transform.position, Quaternion.identity);
+                        proj = enemyProjectile.GetComponent<projectileScript>();
+                        projRenderer = proj.GetComponent<SpriteRenderer>();
+                        projRenderer.sprite = projSprite;
+                        proj.damage = currentDamage;
+                        proj.bossSize = currentSize;
+                        proj.knockbackPower = currentKnockback;
+                        yield return new WaitForSeconds(0.1f);
+                        proj.force = currentForce;
                         break;
                 }
             }
