@@ -231,7 +231,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Restart
+  m_text: Back to Menu
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2a49702e19e168c4eb06504a73e9cc22, type: 2}
   m_sharedMaterial: {fileID: -4568627204592645429, guid: 2a49702e19e168c4eb06504a73e9cc22, type: 2}
@@ -691,6 +691,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fbcb8dc04f48b34e89c3ca3e5dae9dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  LastScene: 0
 --- !u!1 &883811540
 GameObject:
   m_ObjectHideFlags: 0

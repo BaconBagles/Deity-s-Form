@@ -7,15 +7,21 @@ public class MainMenuSceneControl : MonoBehaviour
 {
 
     public int isTutorialDone;
+    public int lastScene;
+    public int saveExists;
 
     private void Start()
     {
         isTutorialDone = PlayerPrefs.GetInt("tutorialDone", 0);
+        lastScene = PlayerPrefs.GetInt("lastScene", 0);
+        saveExists = PlayerPrefs.GetInt("saveExists", 0);
         Debug.Log(isTutorialDone);
     }
 
     public void StartGame()
     {
+        PlayerPrefs.SetInt("deleteSave", 0);
+
         if (isTutorialDone == 0)
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2); // Will load player into tutorial scene, only works once
@@ -24,6 +30,19 @@ public class MainMenuSceneControl : MonoBehaviour
         {
          SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 3); //Will load player into main game
         }
+    }
+
+    public void ResumeGame()
+    {
+        if(saveExists == 1)
+        {
+            SceneManager.LoadScene(lastScene);
+        }
+        else
+        {
+            return;
+        }
+
     }
 
     public void MainMenu()

@@ -21,6 +21,7 @@ public class GameController : MonoBehaviour
     public int pickupNumber;
     public bool pickupSpawned;
     public bool allMemories;
+    public int deleteSave;
 
     public int currentRoom;
     public int waveMax;
@@ -41,6 +42,8 @@ public class GameController : MonoBehaviour
 
     void Awake()
     {
+        deleteSave = PlayerPrefs.GetInt("deleteSave", 0);
+        PlayerPrefs.Save();
         if (PlayerPrefs.GetInt("Memory3", 0) == 1)
         {
             allMemories = true;
@@ -55,7 +58,10 @@ public class GameController : MonoBehaviour
 
      void Start()
     {
-        LoadGame();
+        if(deleteSave == 1)
+        {
+            LoadGame();
+        }
         RandomRoom();
     }
 
@@ -86,7 +92,12 @@ public class GameController : MonoBehaviour
 
     public void SaveGame()
     {
+        currentScene = SceneManager.GetActiveScene().buildIndex;
+        PlayerPrefs.SetInt("lastScene", currentScene);
         SaveSystem.SaveGame(eCont, player, this, aMan);
+        PlayerPrefs.SetInt("saveExists", 1);
+        PlayerPrefs.SetInt("deleteSave", 1);
+        PlayerPrefs.Save();
     }
 
     public void LoadGame()
@@ -120,11 +131,6 @@ public class GameController : MonoBehaviour
         aMan.bossStageOne = data.bossStageOne;
     }
 
-    public void RefreshLevel()
-    {
-        SaveGame();
-        Scene scene = SceneManager.GetActiveScene(); SceneManager.LoadScene(scene.name);
-    }
 
     public void RandomRoom()
     {

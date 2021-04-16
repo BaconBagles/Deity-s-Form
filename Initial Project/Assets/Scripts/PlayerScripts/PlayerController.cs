@@ -60,8 +60,6 @@ public class PlayerController : MonoBehaviour
         formNumber = 0;
         SwitchForm();
         maxHealth = PlayerPrefs.GetInt("playerHealth", 60);
-        health = maxHealth;
-        healthBar.SetMaxHealth(maxHealth);
         sndCooldown = 5;
 
         sr = GetComponent<SpriteRenderer>();
@@ -82,6 +80,12 @@ public class PlayerController : MonoBehaviour
         keys.Add("switchB", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("switchB", "E")));
         keys.Add("basicAttack", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("basicAttack", "Mouse0")));
         keys.Add("secondaryAttack", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("secondaryAttack", "Mouse1")));
+    }
+
+     void Start()
+    {
+        health = maxHealth;
+        healthBar.SetMaxHealth(maxHealth);
     }
 
     void Update()

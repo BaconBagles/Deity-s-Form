@@ -93,13 +93,16 @@ public class EnemyController : MonoBehaviour
         }
         else
         {
-            for (int i = 0; i < diffLevel; i++)
-            {
-                rndPos = new Vector2(Random.Range(-5, 5), Random.Range(-5, 5));
-                int enemyType = Random.Range(0, EnemyType.Length);
-                Enemy enemy = Instantiate(EnemyType[enemyType], spawnPoint + rndPos, Quaternion.identity, transform);
-                enemies.Add(enemy);
-            }
+           
+                for (int i = 0; i < diffLevel; i++)
+                {
+                    rndPos = new Vector2(Random.Range(-5, 5), Random.Range(-5, 5));
+                    int enemyType = Random.Range(0, EnemyType.Length);
+                    Enemy enemy = Instantiate(EnemyType[enemyType], spawnPoint + rndPos, Quaternion.identity, transform);
+                    enemies.Add(enemy);
+                }
+           
+            
         }
 
         gameController.waveNum += 1;

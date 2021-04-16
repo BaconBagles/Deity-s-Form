@@ -38,31 +38,33 @@ public class PlayerData
 
     public PlayerData ( EnemyController eCont, PlayerController pCont, GameController gCont, AudioManager aMan)
     {
-        //variable = script.variable;
-        playerCurrentHealth = pCont.health;
-        playerMaxHealth = pCont.maxHealth;
-        playerShieldCount = pCont.shieldCount;
-        playerSpeedBonus = pCont.speedBonus;
-        playerForce = pCont.force;
-        playerAttackIncrease = pCont.attackIncrease;
-        playerRangeIncrease = pCont.rangeIncrease;
-        playerattackCooldown = pCont.attackCooldown;
-        playerKnockbackIncrease = pCont.knockbackIncrease;
-        playerSndCooldown = pCont.sndCooldown;
+            //variable = script.variable;
+            playerCurrentHealth = pCont.health;
+            playerMaxHealth = pCont.maxHealth;
+            playerShieldCount = pCont.shieldCount;
+            playerSpeedBonus = pCont.speedBonus;
+            playerForce = pCont.force;
+            playerAttackIncrease = pCont.attackIncrease;
+            playerRangeIncrease = pCont.rangeIncrease;
+            playerattackCooldown = pCont.attackCooldown;
+            playerKnockbackIncrease = pCont.knockbackIncrease;
+            playerSndCooldown = pCont.sndCooldown;
 
-        gameDifficultyLevel = eCont.diffLevel;
-        enemyAttackTimer = eCont.attackTimer;
-        enemyForce = eCont.Force;
-        enemyKnockback = eCont.Knockback;
+            gameDifficultyLevel = eCont.diffLevel;
+            enemyAttackTimer = eCont.attackTimer;
+            enemyForce = eCont.Force;
+            enemyKnockback = eCont.Knockback;
 
-        roomNumber = gCont.roomNumber;
-        currentRoom = gCont.currentRoom;
-        currentScene = gCont.currentScene;
-        bossRoomNum = gCont.bRoomNum;
-        //roomComplete = gCont.roomComplete;
-        bossRoom = gCont.bossRoom;
-        //pickupSpawned = gCont.pickupSpawned;
-
-        bossStageOne = aMan.bossStageOne;
+            roomNumber = gCont.roomNumber;
+            currentRoom = gCont.currentRoom;
+            currentScene = gCont.currentScene;
+            bossRoomNum = gCont.bRoomNum;
+            //roomComplete = gCont.roomComplete;
+            bossRoom = gCont.bossRoom;
+            //pickupSpawned = gCont.pickupSpawned;
+            bossStageOne = aMan.bossStageOne;
+        
+      
     }
-}
+
+ }
