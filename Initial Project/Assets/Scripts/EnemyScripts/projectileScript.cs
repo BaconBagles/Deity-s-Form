@@ -30,6 +30,13 @@ public class projectileScript : MonoBehaviour
         Vector2 targetPos = target.position;
         targetPos.y -= 3;
         Direction = targetPos - (Vector2)transform.position;
+        StartCoroutine(Launch());
+       
+    }
+
+    public IEnumerator Launch()
+    {
+        yield return new WaitForSeconds(0.2f);
         GetComponent<Rigidbody2D>().AddForce(Direction * force, ForceMode2D.Impulse);
         StartCoroutine(SelfDestruct());
         gameObject.transform.localScale = new Vector3(transform.localScale.x + bossSize, transform.localScale.y + bossSize, 0);

@@ -36,6 +36,7 @@ public class PlayerController : MonoBehaviour
     attackOrbit orbitPos;
     SpriteRenderer sr;
     public Camera cam;
+    public GameController gCont;
 
     //New Primary Attack Stuff
     public Transform firePoint;
@@ -84,7 +85,6 @@ public class PlayerController : MonoBehaviour
 
      void Start()
     {
-        health = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
     }
 
@@ -294,6 +294,8 @@ public class PlayerController : MonoBehaviour
         anim.SetTrigger("Death");
         playerDead = true;
         yield return new WaitForSecondsRealtime(1f);
+        health = maxHealth;
+        gCont.SaveGame();
         death.Dead();
     }
 

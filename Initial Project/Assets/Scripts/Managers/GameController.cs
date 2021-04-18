@@ -58,9 +58,13 @@ public class GameController : MonoBehaviour
 
      void Start()
     {
-        if(deleteSave == 1)
+        if (deleteSave == 1)
         {
             LoadGame();
+        }
+        else if (deleteSave == 2)
+        {
+            LoadReset();
         }
         RandomRoom();
     }
@@ -98,6 +102,33 @@ public class GameController : MonoBehaviour
         PlayerPrefs.SetInt("saveExists", 1);
         PlayerPrefs.SetInt("deleteSave", 1);
         PlayerPrefs.Save();
+    }
+
+    public void LoadReset()
+    {
+        PlayerData data = SaveSystem.LoadGame();
+
+        player.health = data.playerCurrentHealth;
+        player.maxHealth = data.playerMaxHealth;
+        player.shieldCount = data.playerShieldCount;
+        player.speedBonus = data.playerSpeedBonus;
+        player.force = data.playerForce;
+        player.attackIncrease = data.playerAttackIncrease;
+        player.rangeIncrease = data.playerRangeIncrease;
+        player.attackCooldown = data.playerattackCooldown;
+        player.knockbackIncrease = data.playerKnockbackIncrease;
+        player.sndCooldown = data.playerSndCooldown;
+
+        eCont.diffLevel = data.gameDifficultyLevel;
+        eCont.attackTimer = data.enemyAttackTimer;
+        eCont.Force = data.enemyForce;
+        eCont.Knockback = data.enemyKnockback;
+
+       /* roomNumber = data.roomNumber;
+        currentRoom = data.currentRoom;
+        currentScene = data.currentScene;
+        bRoomNum = data.bossRoomNum;
+        bossRoom = data.bossRoom; */
     }
 
     public void LoadGame()
@@ -325,13 +356,17 @@ public class GameController : MonoBehaviour
             {
                 Instantiate(memory, memSpawn.transform.position, Quaternion.identity);
             }
+            SaveGame();
         }
-
-        if (bossRoom == true)
+        else if (bossRoom == true)
         {
+            aMan.bossStageOne = false;
+            SaveGame();
+            PlayerPrefs.SetInt("deleteSave", 2);
+            PlayerPrefs.Save();
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
-        SaveGame();
+
     }
 
     void CheckMemory()

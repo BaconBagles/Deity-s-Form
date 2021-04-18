@@ -23,11 +23,13 @@ public class EnemyController : MonoBehaviour
     public float Force;
     public float Knockback;
     public Vector2 spawnPoint;
+    public int enemyNumber;
 
     void Awake()
     {
         Force = 5.5f;
         Knockback = 175;
+        enemyNumber = PlayerPrefs.GetInt("lastScene", 3);
         attackTimer = PlayerPrefs.GetInt("turnTimer", 5);
         spawning = true;
         StartCoroutine(SpawnEnemies());
@@ -66,13 +68,20 @@ public class EnemyController : MonoBehaviour
         yield return new WaitForSeconds(attackTimer - 0.4f);
         foreach (Enemy enemy in enemies)
         {
-          enemy.enemyAnim.SetTrigger("Attack");
+            if(enemy != null)
+            {
+                enemy.enemyAnim.SetTrigger("Attack");
+            }
+
         }
         yield return new WaitForSeconds(0.4f);
         foreach (Enemy enemy in enemies)
         {
-            yield return new WaitForSeconds(0.1f);
-            enemy.StartCoroutine(enemy.Attack());
+            if (enemy != null)
+            {
+                yield return new WaitForSeconds(0.1f);
+                enemy.StartCoroutine(enemy.Attack());
+            }
         }
 
         StartCoroutine(EnemyAttack());
@@ -93,7 +102,38 @@ public class EnemyController : MonoBehaviour
         }
         else
         {
-           
+            if(enemyNumber == 3)
+            {
+                for (int i = 0; i < diffLevel; i++)
+                {
+                    rndPos = new Vector2(Random.Range(-5, 5), Random.Range(-5, 5));
+                    int enemyType = Random.Range(0, EnemyType.Length - 3);
+                    Enemy enemy = Instantiate(EnemyType[enemyType], spawnPoint + rndPos, Quaternion.identity, transform);
+                    enemies.Add(enemy);
+                }
+            }
+            else if (enemyNumber == 4)
+            {
+                for (int i = 0; i < diffLevel; i++)
+                {
+                    rndPos = new Vector2(Random.Range(-5, 5), Random.Range(-5, 5));
+                    int enemyType = Random.Range(0, EnemyType.Length - 2);
+                    Enemy enemy = Instantiate(EnemyType[enemyType], spawnPoint + rndPos, Quaternion.identity, transform);
+                    enemies.Add(enemy);
+                }
+            }
+            else if (enemyNumber == 5)
+            {
+                for (int i = 0; i < diffLevel; i++)
+                {
+                    rndPos = new Vector2(Random.Range(-5, 5), Random.Range(-5, 5));
+                    int enemyType = Random.Range(0, EnemyType.Length - 1);
+                    Enemy enemy = Instantiate(EnemyType[enemyType], spawnPoint + rndPos, Quaternion.identity, transform);
+                    enemies.Add(enemy);
+                }
+            }
+            else if (enemyNumber == 6)
+            {
                 for (int i = 0; i < diffLevel; i++)
                 {
                     rndPos = new Vector2(Random.Range(-5, 5), Random.Range(-5, 5));
@@ -101,8 +141,7 @@ public class EnemyController : MonoBehaviour
                     Enemy enemy = Instantiate(EnemyType[enemyType], spawnPoint + rndPos, Quaternion.identity, transform);
                     enemies.Add(enemy);
                 }
-           
-            
+            }
         }
 
         gameController.waveNum += 1;

@@ -9,13 +9,22 @@ public class MainMenuSceneControl : MonoBehaviour
     public int isTutorialDone;
     public int lastScene;
     public int saveExists;
+    public GameObject Resumebutton;
 
     private void Start()
     {
         isTutorialDone = PlayerPrefs.GetInt("tutorialDone", 0);
-        lastScene = PlayerPrefs.GetInt("lastScene", 0);
+        lastScene = PlayerPrefs.GetInt("lastScene", 3);
         saveExists = PlayerPrefs.GetInt("saveExists", 0);
         Debug.Log(isTutorialDone);
+        if (saveExists == 1)
+        {
+            Resumebutton.SetActive(true);
+        }
+        else
+        {
+            Resumebutton.SetActive(false);
+        }
     }
 
     public void StartGame()
