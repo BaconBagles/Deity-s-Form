@@ -72,26 +72,15 @@ public class AudioManager : MonoBehaviour
         {
             if (!MusicSources[0].isPlaying)
             {
-                if (!MusicSources[2].isPlaying && gCont.bossRoom == true)
+                if (!MusicSources[4].isPlaying && gCont.bossRoom == true)
                 {
-                    if (!MusicSources[4].isPlaying && bossStageOne == false)
-                    {
-                        bossStageOne = true;
-                        PlayMusic("BossTheme01");
-                    }
-                    if (!MusicSources[4].isPlaying && !MusicSources[5].isPlaying && bossStageOne == true)
-                    {
-                        PlayMusic("BossTheme02");
-                    }
+                    StopMusic("MainTheme");
+                    PlayMusic("BossTheme01");
                 }
-                else
+                else if (!MusicSources[2].isPlaying)
                 {
-                    if (!MusicSources[2].isPlaying)
-                    {
-                        PlayMusic("MainTheme");
-                    }
+                    PlayMusic("MainTheme");
                 }
-
             }
         }
 
@@ -120,5 +109,16 @@ public class AudioManager : MonoBehaviour
               return;
           }
           m.source.Play();
+    }
+
+    public void StopMusic(string name)
+    {
+        Sound m = Array.Find(sounds, sound => sound.name == name);
+        if (m == null)
+        {
+            Debug.LogWarning("Sound: " + name + " not found");
+            return;
+        }
+        m.source.Stop();
     }
 }

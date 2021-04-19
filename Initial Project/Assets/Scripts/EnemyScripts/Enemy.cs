@@ -222,7 +222,7 @@ public class Enemy : MonoBehaviour
                 proj.damage = currentDamage;
                 proj.bossSize = currentSize;
                 proj.knockbackPower = currentKnockback;
-                yield return new WaitForSeconds(0f);
+                yield return new WaitForSeconds(0.1f);
                 proj.force = currentForce;
             }
             else
@@ -240,7 +240,7 @@ public class Enemy : MonoBehaviour
                             proj.damage = currentDamage;
                             proj.bossSize = currentSize;
                             proj.knockbackPower = currentKnockback;
-                            yield return new WaitForSeconds(0f);
+                            yield return new WaitForSeconds(0.2f);
                             proj.force = currentForce;
                         }
                         break;
@@ -253,7 +253,7 @@ public class Enemy : MonoBehaviour
                         proj.damage = currentDamage;
                         proj.bossSize = currentSize;
                         proj.knockbackPower = (currentKnockback * 2);
-                        yield return new WaitForSeconds(0f);
+                        yield return new WaitForSeconds(0.1f);
                         proj.force = (currentForce/2);
                         break;
                     case 2:
@@ -265,7 +265,7 @@ public class Enemy : MonoBehaviour
                         proj.damage = currentDamage;
                         proj.bossSize = currentSize;
                         proj.knockbackPower = currentKnockback;
-                        yield return new WaitForSeconds(0f);
+                        yield return new WaitForSeconds(0.1f);
                         proj.force = currentForce;
                         break;
                     case 3:
@@ -277,7 +277,7 @@ public class Enemy : MonoBehaviour
                         proj.damage = currentDamage;
                         proj.bossSize = currentSize;
                         proj.knockbackPower = currentKnockback;
-                        yield return new WaitForSeconds(0f);
+                        yield return new WaitForSeconds(0.1f);
                         proj.force = currentForce;
                         break;
                 }
