@@ -53,6 +53,10 @@ public class PlayerController : MonoBehaviour
     float sndCurrentCooldown;
     public float sndCooldown;
 
+    Material mat;
+    bool isChanging = false;
+    float fade = 1f;
+
     void Awake()
     {
         currentCooldown = attackCooldown;
@@ -66,7 +70,7 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         frb = fireObject.GetComponent<Rigidbody2D>();
         orbitPos = attackOrbiter.GetComponent<attackOrbit>();
-
+        mat = GetComponent<SpriteRenderer>().material;
         
 
         //Adds our stored keys to the dictionary
@@ -90,14 +94,27 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        /*if (superForm == true)
+        if (isChanging == true)
         {
-            sr.color = Color.yellow;
+            fade -= Time.deltaTime * 2;
+            if (fade <= 0.5f)
+            {
+                fade = 0.5f;
+                isChanging = false;
+            }
+            mat.SetFloat("_Fade", fade);
         }
-        else
+
+        if (isChanging == false)
         {
-            sr.color = Color.white;
-        }*/
+            fade += Time.deltaTime * 2;
+            if (fade >= 1f)
+            {
+                fade = 1f;
+            }
+            mat.SetFloat("_Fade", fade);
+        }
+
 
         mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
         fireObject.transform.position = rb.transform.position;
@@ -259,6 +276,7 @@ public class PlayerController : MonoBehaviour
 
     void SwitchForm()
     {
+        isChanging = true;
         if (formNumber > 2)
         {
             formNumber = 0;
