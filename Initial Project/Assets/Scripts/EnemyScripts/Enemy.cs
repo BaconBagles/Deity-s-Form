@@ -37,6 +37,15 @@ public class Enemy : MonoBehaviour
     public SpriteRenderer projRenderer;
     public Sprite projSprite;
 
+    Material mat;
+    float fade;
+    bool isDying;
+
+    float time;
+    float currentTime;
+    public bool inLava;
+    
+
     Collider2D agentCollider;
     public Collider2D AgentCollider { get { return agentCollider; } }
 
@@ -63,7 +72,12 @@ public class Enemy : MonoBehaviour
 
         latDirRnd = Random.Range(0, 2);
 
-        
+        fade = 1f;
+        mat = GetComponent<SpriteRenderer>().material;
+        mat.SetFloat("_Fade", fade);
+
+        time = 1;
+        currentTime = time;
 
         rb = GetComponent<Rigidbody2D>();
 
@@ -183,6 +197,22 @@ public class Enemy : MonoBehaviour
             lateralDirection = false;
         }
 
+        if (isDying == true)
+        {
+            fade -= Time.deltaTime;
+        }
+        mat.SetFloat("_Fade", fade);
+
+        if (inLava == true)
+        {
+            currentTime -= Time.deltaTime;
+        }
+
+        if (currentTime < 0)
+        {
+            health -= 2;
+            currentTime = time;
+        }
     }
 
     void FixedUpdate()
@@ -308,8 +338,9 @@ public class Enemy : MonoBehaviour
         yield return new WaitForSecondsRealtime(0.5f);
 
         rb.constraints = RigidbodyConstraints2D.FreezePosition;
+        isDying = true;
 
-        yield return new WaitForSecondsRealtime(0.5f);
+        yield return new WaitForSecondsRealtime(1f);
 
         float randomNum = Random.Range(0, 100);
         if (randomNum > 90)

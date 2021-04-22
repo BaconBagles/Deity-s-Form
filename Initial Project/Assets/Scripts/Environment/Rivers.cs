@@ -63,6 +63,24 @@ public class Rivers : MonoBehaviour
                 player.moveSpeed  = player.moveSpeed/2f;
             }
         }
+
+        if (coll.gameObject.tag == "basicEnemy")
+        {
+            Enemy enemy = coll.GetComponent<Enemy>();
+            enemy.inLava = true;
+        }
+
+        if (coll.gameObject.tag == "armourEnemy")
+        {
+            Enemy enemy = coll.GetComponent<Enemy>();
+            enemy.inLava = true;
+        }
+
+        if (coll.gameObject.tag == "spikyEnemy")
+        {
+            Enemy enemy = coll.GetComponent<Enemy>();
+            enemy.inLava = true;
+        }
     }
 
     void OnTriggerExit2D(Collider2D coll)
@@ -86,6 +104,23 @@ public class Rivers : MonoBehaviour
                         break;
                 }
             }
+        }
+        if (coll.gameObject.tag == "basicEnemy")
+        {
+            Enemy enemy = coll.GetComponent<Enemy>();
+            enemy.inLava = false;
+        }
+
+        if (coll.gameObject.tag == "armourEnemy")
+        {
+            Enemy enemy = coll.GetComponent<Enemy>();
+            enemy.inLava = false;
+        }
+
+        if (coll.gameObject.tag == "spikyEnemy")
+        {
+            Enemy enemy = coll.GetComponent<Enemy>();
+            enemy.inLava = false;
         }
     }
 

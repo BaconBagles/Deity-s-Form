@@ -54,7 +54,6 @@ public class PlayerController : MonoBehaviour
     public float sndCooldown;
 
     Material mat;
-    bool isChanging = false;
     float fade = 1f;
 
     void Awake()
@@ -94,26 +93,13 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        if (isChanging == true)
+        
+        fade += Time.deltaTime * 2;
+        if (fade >= 1f)
         {
-            fade -= Time.deltaTime * 2;
-            if (fade <= 0.5f)
-            {
-                fade = 0.5f;
-                isChanging = false;
-            }
-            mat.SetFloat("_Fade", fade);
+            fade = 1f;
         }
-
-        if (isChanging == false)
-        {
-            fade += Time.deltaTime * 2;
-            if (fade >= 1f)
-            {
-                fade = 1f;
-            }
-            mat.SetFloat("_Fade", fade);
-        }
+        mat.SetFloat("_Fade", fade);
 
 
         mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
@@ -276,7 +262,8 @@ public class PlayerController : MonoBehaviour
 
     void SwitchForm()
     {
-        isChanging = true;
+        fade = 0.5f;
+        mat.SetFloat("_Fade", fade);
         if (formNumber > 2)
         {
             formNumber = 0;
