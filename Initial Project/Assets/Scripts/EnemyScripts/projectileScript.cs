@@ -6,15 +6,15 @@ public class projectileScript : MonoBehaviour
 {
     GameObject player;
     GameObject AudioManager;
-    private Transform target;
-    Vector2 Direction;
+    public Transform target;
+    public Vector2 Direction;
     public float force;
     public AudioManager Audio;
     public int damage;
     public float bossSize;
     public GameObject hitEffect;
     public int projType;
-    bool finalBoss;
+    public bool finalBoss;
 
     //knockback stuff
     public float knockbackPower = 150;
@@ -74,7 +74,11 @@ public class projectileScript : MonoBehaviour
             projectileScript bScript = boomerang.GetComponent<projectileScript>();
             bScript.player = GameObject.Find("FINAL BOSS");
             bScript.finalBoss = false;
-            bScript.SelfDestruct();
+            bScript.damage = damage;
+            bScript.bossSize = bossSize;
+            bScript.knockbackPower = knockbackPower;
+            bScript.force = force;
+            Destroy(this.gameObject);
         }
         else
         {

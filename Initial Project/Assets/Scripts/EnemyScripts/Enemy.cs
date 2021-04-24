@@ -270,7 +270,7 @@ public class Enemy : MonoBehaviour
                             proj.damage = currentDamage;
                             proj.bossSize = currentSize;
                             proj.knockbackPower = currentKnockback;
-                            yield return new WaitForSeconds(0.2f);
+                            yield return new WaitForSeconds(0.3f);
                             proj.force = currentForce;
                         }
                         break;
@@ -287,16 +287,27 @@ public class Enemy : MonoBehaviour
                         proj.force = (currentForce/2);
                         break;
                     case 2:
-                        Audio.Play("EnemyAttack");
-                        enemyProjectile = Instantiate(projectile, transform.position, Quaternion.identity);
-                        proj = enemyProjectile.GetComponent<projectileScript>();
-                        projRenderer = proj.GetComponent<SpriteRenderer>();
-                        projRenderer.sprite = projSprite;
-                        proj.damage = currentDamage;
-                        proj.bossSize = currentSize;
-                        proj.knockbackPower = currentKnockback;
-                        yield return new WaitForSeconds(0.1f);
-                        proj.force = currentForce;
+                        for (int i = 0; i < 3; i++)
+                        {
+                            Audio.Play("EnemyAttack");
+                            enemyProjectile = Instantiate(projectile, transform.position, Quaternion.identity);
+                            proj = enemyProjectile.GetComponent<projectileScript>();
+                            projRenderer = proj.GetComponent<SpriteRenderer>();
+                            projRenderer.sprite = projSprite;
+                            proj.damage = currentDamage;
+                            proj.bossSize = currentSize/2;
+                            proj.knockbackPower = currentKnockback/2;
+                            yield return new WaitForSeconds(0.1f);
+                            if (i == 0)
+                            {
+                                proj.Direction = Quaternion.Euler(0, 0, 60) * (proj.target.position - transform.position);
+                            }
+                            if (i == 2)
+                            {
+                                proj.Direction = Quaternion.Euler(0, 0, -60) * (proj.target.position - transform.position);
+                            }
+                            proj.force = currentForce;
+                        }
                         break;
                     case 3:
                         Audio.Play("EnemyAttack");
@@ -307,6 +318,7 @@ public class Enemy : MonoBehaviour
                         proj.damage = currentDamage;
                         proj.bossSize = currentSize;
                         proj.knockbackPower = currentKnockback;
+                        proj.finalBoss = true;
                         yield return new WaitForSeconds(0.1f);
                         proj.force = currentForce;
                         break;
