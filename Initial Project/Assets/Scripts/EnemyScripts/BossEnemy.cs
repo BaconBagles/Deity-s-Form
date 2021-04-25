@@ -82,19 +82,30 @@ public class BossEnemy : MonoBehaviour
                 gameObject.tag = "basicEnemy";
                 spriteR.sprite = spriteList[1];
                 enemyAnim.SetInteger("EnemyType", 2);
-               
+                if (isFinalBoss == true)
+                {
+                    enemyScript.currentSprite = 0;
+                }
+
                 break;
             case 1:
                 gameObject.tag = "armourEnemy";
                 spriteR.sprite = spriteList[0];
                 enemyAnim.SetInteger("EnemyType", 0);
-                
-                
+                if(isFinalBoss == true)
+                {
+                    enemyScript.currentSprite = 1;
+                }
+                                
                 break;
             case 2:
                 gameObject.tag = "spikyEnemy";
                 spriteR.sprite = spriteList[2];
                 enemyAnim.SetInteger("EnemyType", 1);
+                if (isFinalBoss == true)
+                {
+                    enemyScript.currentSprite = 2;
+                }
                 break; 
         }
     }

@@ -356,7 +356,7 @@ public class PlayerController : MonoBehaviour
     {
         foreach (GameObject attack in secondaryAttacks)
         {
-            attack.transform.localScale = new Vector2(attack.gameObject.transform.localScale.x + 1, attack.gameObject.transform.localScale.y);
+            attack.transform.localScale = new Vector2(attack.gameObject.transform.localScale.x * 1.40f, attack.gameObject.transform.localScale.y);
         }
     }
     
@@ -395,17 +395,17 @@ public class PlayerController : MonoBehaviour
 
     public void IncreaseAttackRange()
     {
-        rangeIncrease += 0.5f;
+        rangeIncrease *= 1.40f;
     }
 
     public void IncreaseKnockback()
     {
-        knockbackIncrease += 25f;
+        knockbackIncrease *= 1.40f;
     }
 
     public void IncreaseAttackSize()
     {
-        attackIncrease += 1f;
+        attackIncrease *= 1.40f;
     }
     
     

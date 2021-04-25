@@ -35,7 +35,8 @@ public class Enemy : MonoBehaviour
     bool lateralDirection;
     public EnemyController eCont;
     public SpriteRenderer projRenderer;
-    public Sprite projSprite;
+    public Sprite[] projSprite;
+    public int currentSprite;
 
     Material mat;
     float fade;
@@ -55,6 +56,7 @@ public class Enemy : MonoBehaviour
         health = maxHealth;
         currentDamage = 2;
         currentSize = 0f;
+        currentSprite = 0;
 
     }
 
@@ -248,7 +250,7 @@ public class Enemy : MonoBehaviour
                 enemyProjectile = Instantiate(projectile, transform.position, Quaternion.identity);
                 proj = enemyProjectile.GetComponent<projectileScript>();
                 projRenderer = proj.GetComponent<SpriteRenderer>();
-                projRenderer.sprite = projSprite;
+                projRenderer.sprite = projSprite[currentSprite];
                 proj.damage = currentDamage;
                 proj.bossSize = currentSize;
                 proj.knockbackPower = currentKnockback;
@@ -266,7 +268,7 @@ public class Enemy : MonoBehaviour
                             enemyProjectile = Instantiate(projectile, transform.position, Quaternion.identity);
                             proj = enemyProjectile.GetComponent<projectileScript>();
                             projRenderer = proj.GetComponent<SpriteRenderer>();
-                            projRenderer.sprite = projSprite;
+                            projRenderer.sprite = projSprite[currentSprite];
                             proj.damage = currentDamage;
                             proj.bossSize = currentSize;
                             proj.knockbackPower = currentKnockback;
@@ -279,7 +281,7 @@ public class Enemy : MonoBehaviour
                         enemyProjectile = Instantiate(projectile, transform.position, Quaternion.identity);
                         proj = enemyProjectile.GetComponent<projectileScript>();
                         projRenderer = proj.GetComponent<SpriteRenderer>();
-                        projRenderer.sprite = projSprite;
+                        projRenderer.sprite = projSprite[currentSprite];
                         proj.damage = currentDamage;
                         proj.bossSize = currentSize;
                         proj.knockbackPower = (currentKnockback * 2);
@@ -293,7 +295,7 @@ public class Enemy : MonoBehaviour
                             enemyProjectile = Instantiate(projectile, transform.position, Quaternion.identity);
                             proj = enemyProjectile.GetComponent<projectileScript>();
                             projRenderer = proj.GetComponent<SpriteRenderer>();
-                            projRenderer.sprite = projSprite;
+                            projRenderer.sprite = projSprite[currentSprite];
                             proj.damage = currentDamage;
                             proj.bossSize = currentSize/2;
                             proj.knockbackPower = currentKnockback/2;
@@ -314,7 +316,7 @@ public class Enemy : MonoBehaviour
                         enemyProjectile = Instantiate(projectile, transform.position, Quaternion.identity);
                         proj = enemyProjectile.GetComponent<projectileScript>();
                         projRenderer = proj.GetComponent<SpriteRenderer>();
-                        projRenderer.sprite = projSprite;
+                        projRenderer.sprite = projSprite[currentSprite];
                         proj.damage = currentDamage;
                         proj.bossSize = currentSize;
                         proj.knockbackPower = currentKnockback;

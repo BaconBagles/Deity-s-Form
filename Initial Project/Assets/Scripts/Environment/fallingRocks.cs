@@ -22,7 +22,7 @@ public class fallingRocks : MonoBehaviour
         float rate = 1 / time;
 
         Vector3 oldScale = transform.localScale;
-        Vector3 newScale = new Vector3(10, 10, 0);
+        Vector3 newScale = new Vector3(15, 15, 0);
 
         while (i < 1)
         {
@@ -36,7 +36,7 @@ public class fallingRocks : MonoBehaviour
         Destroy(effect, 0.5f);
         CameraShake cam = FindObjectOfType<CameraShake>();
         cam.StartCoroutine(cam.Shake(0.5f, 1.5f));
-        Destroy(this.gameObject, 0.5f);
+        Destroy(this.gameObject);
 
 
     }
