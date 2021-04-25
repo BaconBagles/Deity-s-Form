@@ -193,7 +193,7 @@ public class PlayerController : MonoBehaviour
 
             if (bullSndAtk == true)
             {
-                transform.Translate(normaliseDir * (moveSpeed * 2) * Time.deltaTime);
+               transform.Translate(normaliseDir * (moveSpeed * 2) * Time.deltaTime);
                 if (currentCooldown <= 0f)
                 {
                     attacking = false;

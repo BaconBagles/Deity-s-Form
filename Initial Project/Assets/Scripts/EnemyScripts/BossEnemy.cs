@@ -31,7 +31,7 @@ public class BossEnemy : MonoBehaviour
         controllerScript = controller.GetComponent<EnemyController>();
         enemyScript.maxHealth = bossHealth;
         enemyScript.health = bossHealth;
-        switchthreshold = 15;
+        switchthreshold = enemyScript.health * 0.75f;
         FormList = firstForm;
         SwitchForm();
         enemyScript.currentDamage = bossDamage;
@@ -49,7 +49,7 @@ public class BossEnemy : MonoBehaviour
             Audio.Play("BossShieldBreak");
             FormList = secondForm;
             SwitchForm();
-            switchthreshold = enemyScript.health / 2;
+            switchthreshold = enemyScript.health * 0.75f;
             StartCoroutine(SwitchBack());
         }
         else if (enemyScript.health <= switchthreshold && FormList <= 2)
@@ -57,7 +57,7 @@ public class BossEnemy : MonoBehaviour
             Audio.Play("BossShieldBreak");
             FormList++;
             SwitchForm();
-            switchthreshold = enemyScript.health / 2;
+            switchthreshold = enemyScript.health * 0.75f;
         } 
         
        if (controllerScript.attacking == true && controllerScript.enemies.Count == 1)
@@ -71,6 +71,11 @@ public class BossEnemy : MonoBehaviour
        {
            Instantiate(deathEffect, transform.position, Quaternion.identity);
        }
+
+       if(FormList > 2)
+        {
+            FormList = 0;
+        }
     }
 
     public void SwitchForm()

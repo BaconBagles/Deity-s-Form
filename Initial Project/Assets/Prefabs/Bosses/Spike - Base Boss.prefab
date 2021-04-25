@@ -276,7 +276,7 @@ MonoBehaviour:
   currentKnockback: 0
   healthPickup: {fileID: 1104073636124065548, guid: 4bf49cacdd16a6b48a2e41e261616927, type: 3}
   rb: {fileID: 0}
-  isBoss: 0
+  isBoss: 1
   bossNum: 0
   eCont: {fileID: 0}
   projRenderer: {fileID: 0}
