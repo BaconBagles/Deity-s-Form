@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
-    public int diffLevel;
     public int attackTimer;
     float timeLeft;
     public attackTimer timeBar;
@@ -24,6 +23,9 @@ public class EnemyController : MonoBehaviour
     public float Knockback;
     public Vector2 spawnPoint;
     public int enemyNumber;
+    public int maxEnemies;
+    public int diffHealthMod;
+    public int diffDamageMod;
 
     void Awake()
     {
@@ -104,41 +106,49 @@ public class EnemyController : MonoBehaviour
         {
             if(enemyNumber == 3)
             {
-                for (int i = 0; i < diffLevel; i++)
+                for (int i = 0; i < maxEnemies; i++)
                 {
                     rndPos = new Vector2(Random.Range(-5, 5), Random.Range(-5, 5));
                     int enemyType = Random.Range(0, EnemyType.Length - 3);
                     Enemy enemy = Instantiate(EnemyType[enemyType], spawnPoint + rndPos, Quaternion.identity, transform);
+                    enemy.health += diffHealthMod;
+                    enemy.currentDamage += diffDamageMod;
                     enemies.Add(enemy);
                 }
             }
             else if (enemyNumber == 4)
             {
-                for (int i = 0; i < diffLevel; i++)
+                for (int i = 0; i < maxEnemies; i++)
                 {
                     rndPos = new Vector2(Random.Range(-5, 5), Random.Range(-5, 5));
                     int enemyType = Random.Range(0, EnemyType.Length - 2);
                     Enemy enemy = Instantiate(EnemyType[enemyType], spawnPoint + rndPos, Quaternion.identity, transform);
+                    enemy.health += diffHealthMod;
+                    enemy.currentDamage += diffDamageMod;
                     enemies.Add(enemy);
                 }
             }
             else if (enemyNumber == 5)
             {
-                for (int i = 0; i < diffLevel; i++)
+                for (int i = 0; i < maxEnemies; i++)
                 {
                     rndPos = new Vector2(Random.Range(-5, 5), Random.Range(-5, 5));
                     int enemyType = Random.Range(0, EnemyType.Length - 1);
                     Enemy enemy = Instantiate(EnemyType[enemyType], spawnPoint + rndPos, Quaternion.identity, transform);
+                    enemy.health += diffHealthMod;
+                    enemy.currentDamage += diffDamageMod;
                     enemies.Add(enemy);
                 }
             }
             else if (enemyNumber == 6)
             {
-                for (int i = 0; i < diffLevel; i++)
+                for (int i = 0; i < maxEnemies; i++)
                 {
                     rndPos = new Vector2(Random.Range(-5, 5), Random.Range(-5, 5));
                     int enemyType = Random.Range(0, EnemyType.Length);
                     Enemy enemy = Instantiate(EnemyType[enemyType], spawnPoint + rndPos, Quaternion.identity, transform);
+                    enemy.health += diffHealthMod;
+                    enemy.currentDamage += diffDamageMod;
                     enemies.Add(enemy);
                 }
             }

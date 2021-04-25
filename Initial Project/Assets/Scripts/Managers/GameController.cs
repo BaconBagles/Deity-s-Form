@@ -10,6 +10,7 @@ public class GameController : MonoBehaviour
 {
     public EnemyController eCont;
     public PlayerController player;
+    public DifficultyManager dCont;
     public AudioManager aMan;
     public Pointer pointer;
     public GameObject[] rooms;
@@ -66,14 +67,13 @@ public class GameController : MonoBehaviour
         {
             LoadReset();
         }
+        dCont.CheckDiff();
         RandomRoom();
     }
 
     // Update is called once per frame
     void Update()
     {
-        waveMax = eCont.diffLevel / 2;
-
         if (waveNum >= waveMax)
         {
             roomComplete = true;
@@ -98,7 +98,7 @@ public class GameController : MonoBehaviour
     {
         currentScene = SceneManager.GetActiveScene().buildIndex;
         PlayerPrefs.SetInt("lastScene", currentScene);
-        SaveSystem.SaveGame(eCont, player, this, aMan);
+        SaveSystem.SaveGame(eCont, player, this, aMan, dCont);
         PlayerPrefs.SetInt("saveExists", 1);
         PlayerPrefs.SetInt("deleteSave", 1);
         PlayerPrefs.Save();
@@ -119,7 +119,8 @@ public class GameController : MonoBehaviour
         player.knockbackIncrease = data.playerKnockbackIncrease;
         player.sndCooldown = data.playerSndCooldown;
 
-        eCont.diffLevel = data.gameDifficultyLevel;
+        dCont.diffLevel = data.gameDifficultyLevel;
+        dCont.diffScale = data.gameDifficultyScale;
         eCont.attackTimer = data.enemyAttackTimer;
         eCont.Force = data.enemyForce;
         eCont.Knockback = data.enemyKnockback;
@@ -146,7 +147,8 @@ public class GameController : MonoBehaviour
         player.knockbackIncrease = data.playerKnockbackIncrease;
         player.sndCooldown = data.playerSndCooldown;
 
-        eCont.diffLevel = data.gameDifficultyLevel;
+        dCont.diffLevel = data.gameDifficultyLevel;
+        dCont.diffScale = data.gameDifficultyScale;
         eCont.attackTimer = data.enemyAttackTimer;
         eCont.Force = data.enemyForce;
         eCont.Knockback = data.enemyKnockback;
@@ -330,10 +332,8 @@ public class GameController : MonoBehaviour
         if (bossRoom == false)
         {
             currentRoom++;
-            if (currentRoom % 2 == 0)
-            {
-                eCont.diffLevel++;
-            }
+            dCont.diffLevel++;
+            dCont.CheckDiff();
             roomComplete = false;
             RandomRoom();
             pickupSpawned = false;

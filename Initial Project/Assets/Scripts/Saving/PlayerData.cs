@@ -20,6 +20,7 @@ public class PlayerData
 
     //eCont
     public int gameDifficultyLevel;
+    public int gameDifficultyScale;
     public int enemyAttackTimer;
     public float enemyForce;
     public float enemyKnockback;
@@ -36,7 +37,7 @@ public class PlayerData
     //aMan
     public bool bossStageOne;
 
-    public PlayerData ( EnemyController eCont, PlayerController pCont, GameController gCont, AudioManager aMan)
+    public PlayerData ( EnemyController eCont, PlayerController pCont, GameController gCont, AudioManager aMan, DifficultyManager dCont)
     {
             //variable = script.variable;
             playerCurrentHealth = pCont.health;
@@ -50,7 +51,8 @@ public class PlayerData
             playerKnockbackIncrease = pCont.knockbackIncrease;
             playerSndCooldown = pCont.sndCooldown;
 
-            gameDifficultyLevel = eCont.diffLevel;
+            gameDifficultyLevel = dCont.diffLevel;
+            gameDifficultyScale = dCont.diffScale;
             enemyAttackTimer = eCont.attackTimer;
             enemyForce = eCont.Force;
             enemyKnockback = eCont.Knockback;
