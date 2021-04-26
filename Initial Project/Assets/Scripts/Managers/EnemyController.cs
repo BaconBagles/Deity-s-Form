@@ -111,6 +111,7 @@ public class EnemyController : MonoBehaviour
                     rndPos = new Vector2(Random.Range(-5, 5), Random.Range(-5, 5));
                     int enemyType = Random.Range(0, EnemyType.Length - 3);
                     Enemy enemy = Instantiate(EnemyType[enemyType], spawnPoint + rndPos, Quaternion.identity, transform);
+                    enemy.maxHealth += diffHealthMod;
                     enemy.health += diffHealthMod;
                     enemy.currentDamage += diffDamageMod;
                     enemies.Add(enemy);
@@ -123,6 +124,7 @@ public class EnemyController : MonoBehaviour
                     rndPos = new Vector2(Random.Range(-5, 5), Random.Range(-5, 5));
                     int enemyType = Random.Range(0, EnemyType.Length - 2);
                     Enemy enemy = Instantiate(EnemyType[enemyType], spawnPoint + rndPos, Quaternion.identity, transform);
+                    enemy.maxHealth += diffHealthMod;
                     enemy.health += diffHealthMod;
                     enemy.currentDamage += diffDamageMod;
                     enemies.Add(enemy);
@@ -135,6 +137,7 @@ public class EnemyController : MonoBehaviour
                     rndPos = new Vector2(Random.Range(-5, 5), Random.Range(-5, 5));
                     int enemyType = Random.Range(0, EnemyType.Length - 1);
                     Enemy enemy = Instantiate(EnemyType[enemyType], spawnPoint + rndPos, Quaternion.identity, transform);
+                    enemy.maxHealth += diffHealthMod;
                     enemy.health += diffHealthMod;
                     enemy.currentDamage += diffDamageMod;
                     enemies.Add(enemy);
@@ -147,6 +150,7 @@ public class EnemyController : MonoBehaviour
                     rndPos = new Vector2(Random.Range(-5, 5), Random.Range(-5, 5));
                     int enemyType = Random.Range(0, EnemyType.Length);
                     Enemy enemy = Instantiate(EnemyType[enemyType], spawnPoint + rndPos, Quaternion.identity, transform);
+                    enemy.maxHealth += diffHealthMod;
                     enemy.health += diffHealthMod;
                     enemy.currentDamage += diffDamageMod;
                     enemies.Add(enemy);
