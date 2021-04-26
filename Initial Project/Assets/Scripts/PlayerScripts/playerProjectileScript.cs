@@ -77,7 +77,7 @@ public class playerProjectileScript : MonoBehaviour
             {
                 if (other.gameObject.CompareTag("basicEnemy"))
                 {
-                    enemy.health -= 5;
+                    enemy.health -= 7;
                 }
                 else
                 {
@@ -88,7 +88,7 @@ public class playerProjectileScript : MonoBehaviour
             {
                 if (other.gameObject.CompareTag("armourEnemy"))
                 {
-                    enemy.health -= 7;
+                    enemy.health -= 9;
                 }
                 else
                 {
@@ -99,7 +99,7 @@ public class playerProjectileScript : MonoBehaviour
             {
                 if (other.gameObject.CompareTag("spikyEnemy"))
                 {
-                    enemy.health -= 5;
+                    enemy.health -= 7;
                 }
                 else
                 {

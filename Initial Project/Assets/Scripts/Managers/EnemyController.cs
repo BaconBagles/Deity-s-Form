@@ -67,21 +67,14 @@ public class EnemyController : MonoBehaviour
     IEnumerator EnemyAttack()
     {
         StartTimer();
-        yield return new WaitForSeconds(attackTimer - 0.4f);
-        foreach (Enemy enemy in enemies)
-        {
-            if(enemy != null)
-            {
-                enemy.enemyAnim.SetTrigger("Attack");
-            }
-
-        }
-        yield return new WaitForSeconds(0.4f);
+        yield return new WaitForSeconds(attackTimer - 0.25f);
+        
         foreach (Enemy enemy in enemies)
         {
             if (enemy != null)
             {
-                yield return new WaitForSeconds(0.1f);
+                enemy.enemyAnim.SetTrigger("Attack");
+                yield return new WaitForSeconds(0.25f);
                 enemy.StartCoroutine(enemy.Attack());
             }
         }

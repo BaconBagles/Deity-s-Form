@@ -102,7 +102,7 @@ public class Enemy : MonoBehaviour
         }
         else if (enemyType == 3)
         { //heavybase
-            maxHealth += 5;
+            maxHealth += 7;
             health = maxHealth;
             switchthreshold = (maxHealth / 2);
             enemyAnim.SetInteger("EnemyType", 0);
