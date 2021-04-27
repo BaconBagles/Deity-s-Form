@@ -203,10 +203,8 @@ public class GameController : MonoBehaviour
 
     public void SetUpNextRoom()
     {
-        BoxCollider2D collider = door.GetComponent<BoxCollider2D>();
-        MeshRenderer renderer = door.GetComponent<MeshRenderer>();
+        Collider2D collider = door.GetComponent<Collider2D>();
         collider.isTrigger = true;
-        renderer.enabled = true;
     }
 
     void RandomPickup()

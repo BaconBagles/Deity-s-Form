@@ -26,6 +26,7 @@ public class PlayerController : MonoBehaviour
     public ParticleSystem attackEffect;
     public GameObject attackOrbiter;
     public GameObject[] secondaryAttacks;
+    public GameObject[] secondaryEffects;
     public Animator anim;
     public bool playerDead;
     bool jackalSndAtk;
@@ -370,6 +371,9 @@ public class PlayerController : MonoBehaviour
             anim.SetBool("Charging", true);
             secondaryAttacks[formNumber].SetActive(true);
             currentCooldown = attackCooldown * 4;
+            GameObject effect = Instantiate(secondaryEffects[2], transform.position, Quaternion.identity);
+            effect.transform.parent = this.transform;
+            Destroy(effect, 1f);
             bullSndAtk = true;
         }
         else if (formNumber == 1)
@@ -378,6 +382,9 @@ public class PlayerController : MonoBehaviour
             yield return new WaitForSeconds(0.35f);
             secondaryAttacks[formNumber].SetActive(true);
             currentCooldown = attackCooldown;
+            GameObject effect = Instantiate(secondaryEffects[1], transform.position, Quaternion.identity);
+            effect.transform.parent = this.transform;
+            Destroy(effect, 0.5f);
             hawkSndAtk = true;
         }
         else
@@ -386,6 +393,9 @@ public class PlayerController : MonoBehaviour
             yield return new WaitForSeconds(0.25f);
             secondaryAttacks[formNumber].SetActive(true);
             currentCooldown = attackCooldown/2;
+            GameObject effect = Instantiate(secondaryEffects[0], transform.position, Quaternion.identity);
+            effect.transform.parent = this.transform;
+            Destroy(effect, 0.5f);
             jackalSndAtk = true;
         }
 

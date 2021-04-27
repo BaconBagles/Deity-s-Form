@@ -16,10 +16,8 @@ public class door : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            BoxCollider2D collider = gameObject.GetComponent<BoxCollider2D>();
-            MeshRenderer renderer = gameObject.GetComponent<MeshRenderer>();
+            Collider2D collider = gameObject.GetComponent<Collider2D>();
             collider.isTrigger = false;
-            renderer.enabled = false;
             gCont.pointer.isDoor = false;
             gCont.pointer.gameObject.SetActive(false);
             gCont.StartCoroutine(gCont.FadeOut());

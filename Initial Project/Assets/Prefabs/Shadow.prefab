@@ -128,4 +128,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bac8cfaff737cc242b8fba143d601fc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  landEffect: {fileID: 4666360837771341105, guid: c5dd3826c5b9b974398559e2f51d2192, type: 3}
+  landEffect: {fileID: 3264333658500055302, guid: c5dd3826c5b9b974398559e2f51d2192, type: 3}
