@@ -56,6 +56,7 @@ public class PlayerController : MonoBehaviour
 
     Material mat;
     float fade = 1f;
+    
 
     void Awake()
     {
@@ -392,10 +393,10 @@ public class PlayerController : MonoBehaviour
             anim.SetTrigger("SpecialAttack");
             yield return new WaitForSeconds(0.25f);
             secondaryAttacks[formNumber].SetActive(true);
-            currentCooldown = attackCooldown/2;
+            currentCooldown = attackCooldown / 2;
             GameObject effect = Instantiate(secondaryEffects[0], transform.position, Quaternion.identity);
             effect.transform.parent = this.transform;
-            Destroy(effect, 0.5f);
+            Destroy(effect, 1f);
             jackalSndAtk = true;
         }
 

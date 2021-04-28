@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8520889743348523007}
   - component: {fileID: 1669404993833045218}
   - component: {fileID: 5717983096644506727}
+  - component: {fileID: 2138845871408177314}
   m_Layer: 0
   m_Name: JackalEffect
   m_TagString: Untagged
@@ -4871,3 +4872,17 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!114 &2138845871408177314
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4671537570554407988}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b67c2ed2d5e63b546b646b42b5e57b63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startTime: 0.3
+  simulationSpeedScale: 1
