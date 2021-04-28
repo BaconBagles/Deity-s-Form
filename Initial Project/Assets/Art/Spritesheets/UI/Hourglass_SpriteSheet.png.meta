@@ -31,7 +31,7 @@ TextureImporter:
     second: Hourglass_SpriteSheet_8
   - first:
       213: -9217969399102099950
-    second: Hourglass_SpriteSheet_9
+    second: Hourglass_SpriteSheet_4
   - first:
       213: -7512021480503559315
     second: Hourglass_SpriteSheet_10
@@ -41,15 +41,6 @@ TextureImporter:
   - first:
       213: -3349719873128992128
     second: Hourglass_SpriteSheet_12
-  - first:
-      213: -3713384347447637991
-    second: Hourglass_SpriteSheet_13
-  - first:
-      213: 9221697780100008754
-    second: Hourglass_SpriteSheet_14
-  - first:
-      213: -4627488104053784648
-    second: Hourglass_SpriteSheet_15
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -164,12 +155,12 @@ TextureImporter:
       name: Hourglass_SpriteSheet_0
       rect:
         serializedVersion: 2
-        x: 19
-        y: 70
+        x: 17
+        y: 66
         width: 259
-        height: 362
-      alignment: 9
-      pivot: {x: 0.5127006, y: 0.5060579}
+        height: 363
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -185,12 +176,12 @@ TextureImporter:
       name: Hourglass_SpriteSheet_1
       rect:
         serializedVersion: 2
-        x: 310
-        y: 262
-        width: 164
-        height: 112
-      alignment: 9
-      pivot: {x: 0.49331385, y: -0.10698632}
+        x: 307
+        y: 89
+        width: 166
+        height: 285
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -206,12 +197,12 @@ TextureImporter:
       name: Hourglass_SpriteSheet_2
       rect:
         serializedVersion: 2
-        x: 486
+        x: 485
         y: 89
         width: 166
-        height: 271
-      alignment: 9
-      pivot: {x: 0.5, y: 0.6173366}
+        height: 285
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -227,12 +218,12 @@ TextureImporter:
       name: Hourglass_SpriteSheet_3
       rect:
         serializedVersion: 2
-        x: 1282
-        y: 348
-        width: 20
-        height: 129
-      alignment: 9
-      pivot: {x: 0.4999939, y: 0.98449564}
+        x: 681
+        y: 89
+        width: 166
+        height: 285
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -245,106 +236,106 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
+      name: Hourglass_SpriteSheet_5
+      rect:
+        serializedVersion: 2
+        x: 1455
+        y: 302
+        width: 23
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91fa61a3020274500800000000000000
+      internalID: 380308016321703705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
       name: Hourglass_SpriteSheet_4
       rect:
         serializedVersion: 2
-        x: 1405
-        y: 345
-        width: 23
-        height: 132
-      alignment: 9
-      pivot: {x: 0.45231828, y: 0.98179096}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5048962d0e97d3180800000000000000
-      internalID: -9134010462727732219
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Hourglass_SpriteSheet_6
-      rect:
-        serializedVersion: 2
-        x: 683
+        x: 875
         y: 89
-        width: 165
-        height: 250
-      alignment: 9
-      pivot: {x: 0.49999925, y: 0.6622805}
+        width: 166
+        height: 285
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a14bb53c16e83c150800000000000000
-      internalID: 5891709288071279642
+      spriteID: 21e2910aba1331080800000000000000
+      internalID: -9217969399102099950
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hourglass_SpriteSheet_13
+      name: Hourglass_SpriteSheet_10
       rect:
         serializedVersion: 2
-        x: 877
-        y: 88
-        width: 164
-        height: 235
-      alignment: 9
-      pivot: {x: 0.47994176, y: 0.7099663}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 91843ef3c98677cc0800000000000000
-      internalID: -3713384347447637991
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Hourglass_SpriteSheet_14
-      rect:
-        serializedVersion: 2
-        x: 1059
+        x: 1062
         y: 89
-        width: 170
-        height: 217
-      alignment: 9
-      pivot: {x: 0.5128992, y: 0.7728595}
+        width: 166
+        height: 285
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 23b8ed8b54d0aff70800000000000000
-      internalID: 9221697780100008754
+      spriteID: d6b3b7d8340ffb790800000000000000
+      internalID: -7512021480503559315
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hourglass_SpriteSheet_15
+      name: Hourglass_SpriteSheet_11
       rect:
         serializedVersion: 2
         x: 1260
-        y: 88
-        width: 169
-        height: 114
-      alignment: 9
-      pivot: {x: 0.52595115, y: 1.4906889}
+        y: 89
+        width: 166
+        height: 285
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8bf378b361cd7cfb0800000000000000
-      internalID: -4627488104053784648
+      spriteID: 58471e651db2850a0800000000000000
+      internalID: -6892711051584768891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hourglass_SpriteSheet_12
+      rect:
+        serializedVersion: 2
+        x: 1456
+        y: 66
+        width: 23
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0827411e5876381d0800000000000000
+      internalID: -3349719873128992128
       vertices: []
       indices: 
       edges: []
