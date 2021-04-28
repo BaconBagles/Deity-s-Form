@@ -36,15 +36,17 @@ public class GameController : MonoBehaviour
     public GameObject memSpawn;
     new BoxCollider2D collider;
     bool spawnMemory;
-
     public int currentScene;
-
     public Image sceneFader;
+    public GameObject hourglass;
+    public Animator hourAnim;
+    public float animSpeed;
 
     void Awake()
     {
         deleteSave = PlayerPrefs.GetInt("deleteSave", 0);
         PlayerPrefs.Save();
+        hourAnim = hourglass.GetComponent<Animator>();
         if (PlayerPrefs.GetInt("Memory3", 0) == 1)
         {
             allMemories = true;
@@ -67,13 +69,19 @@ public class GameController : MonoBehaviour
         {
             LoadReset();
         }
+
+        animSpeed = 1f / eCont.attackTimer;
+        hourAnim.SetFloat("speed", animSpeed);
+
         dCont.CheckDiff();
         RandomRoom();
+        
     }
 
     // Update is called once per frame
     void Update()
     {
+
         if (waveNum >= waveMax)
         {
             roomComplete = true;
@@ -297,6 +305,7 @@ public class GameController : MonoBehaviour
                 break;
             case 5:
                 PickupText.text = "Enemy Attack Timer Increased";
+                hourAnim.SetFloat("speed", animSpeed);
                 break;
             case 6:
                 PickupText.text = "Move Speed Increased";

@@ -21,7 +21,10 @@ public class tutorialScript : MonoBehaviour
     public int spawnTime;
     public int wave;
     public GameObject door;
-    
+    public GameObject hourglass;
+    public Animator hourAnim;
+    public float animSpeed;
+
 
     void Start()
     {
@@ -30,7 +33,9 @@ public class tutorialScript : MonoBehaviour
 
         wave = -1;
         attackTimer = PlayerPrefs.GetInt("turnTimer", 5);
-
+        hourAnim = hourglass.GetComponent<Animator>();
+        animSpeed = 1f / attackTimer;
+        hourAnim.SetFloat("speed", animSpeed);
         Audio.Play("BossReapplyingArmour");
     }
 
@@ -47,6 +52,11 @@ public class tutorialScript : MonoBehaviour
         {
             timeLeft = attackTimer;
             timeBar.SetMaxTime(attackTimer);
+        }
+
+        if(enemies.Count == 0)
+        {
+            hourAnim.SetBool("fightTime", false);
         }
     }
 
@@ -72,7 +82,8 @@ public class tutorialScript : MonoBehaviour
     public IEnumerator SpawnEnemies()
     {
         yield return new WaitForSeconds(0.5f);
-        
+        hourAnim.SetBool("fightTime", true);
+
         if (wave < 4)
             {
                 Audio.Play("EnemySpawn"); 
