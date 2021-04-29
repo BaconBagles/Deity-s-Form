@@ -16,7 +16,6 @@ public class MainMenuSceneControl : MonoBehaviour
         isTutorialDone = PlayerPrefs.GetInt("tutorialDone", 0);
         lastScene = PlayerPrefs.GetInt("lastScene", 3);
         saveExists = PlayerPrefs.GetInt("saveExists", 0);
-        Debug.Log(isTutorialDone);
         if (saveExists == 1)
         {
             Resumebutton.SetActive(true);
@@ -31,14 +30,14 @@ public class MainMenuSceneControl : MonoBehaviour
     {
         PlayerPrefs.SetInt("deleteSave", 0);
 
-        if (isTutorialDone == 0)
+        /*if (isTutorialDone == 0)
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2); // Will load player into tutorial scene, only works once
         }
         else if (isTutorialDone == 1)
-        {
+        { */
          SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 3); //Will load player into main game
-        }
+   //     }
     }
 
     public void ResumeGame()

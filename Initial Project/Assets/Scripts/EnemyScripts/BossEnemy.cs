@@ -31,6 +31,7 @@ public class BossEnemy : MonoBehaviour
         controllerScript = controller.GetComponent<EnemyController>();
         enemyScript.maxHealth = bossHealth;
         enemyScript.health = bossHealth;
+        enemyScript.spaceBetween = Random.Range(15, 20);
         switchthreshold = enemyScript.health * 0.75f;
         FormList = firstForm;
         SwitchForm();
@@ -87,6 +88,7 @@ public class BossEnemy : MonoBehaviour
                 gameObject.tag = "basicEnemy";
                 spriteR.sprite = spriteList[1];
                 enemyAnim.SetInteger("EnemyType", 2);
+                enemyScript.spaceBetween = Random.Range(15, 20);
                 if (isFinalBoss == true)
                 {
                     enemyScript.currentSprite = 0;
@@ -97,7 +99,8 @@ public class BossEnemy : MonoBehaviour
                 gameObject.tag = "armourEnemy";
                 spriteR.sprite = spriteList[0];
                 enemyAnim.SetInteger("EnemyType", 0);
-                if(isFinalBoss == true)
+                enemyScript.spaceBetween = Random.Range(15, 20);
+                if (isFinalBoss == true)
                 {
                     enemyScript.currentSprite = 1;
                 }
@@ -107,6 +110,7 @@ public class BossEnemy : MonoBehaviour
                 gameObject.tag = "spikyEnemy";
                 spriteR.sprite = spriteList[2];
                 enemyAnim.SetInteger("EnemyType", 1);
+                enemyScript.spaceBetween = Random.Range(15, 20);
                 if (isFinalBoss == true)
                 {
                     enemyScript.currentSprite = 2;
