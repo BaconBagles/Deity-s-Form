@@ -7,9 +7,11 @@ public class fallingRocks : MonoBehaviour
      CircleCollider2D mycollider;
     public GameObject landEffect;
     Enemy enemy;
+    AudioManager Audio;
 
     void Start()
     {
+        Audio = FindObjectOfType<AudioManager>();
         mycollider = GetComponent<CircleCollider2D>();
         mycollider.enabled = false;
         StartCoroutine(ScaleUp(2f));
@@ -33,6 +35,7 @@ public class fallingRocks : MonoBehaviour
 
         mycollider.enabled = true;
         GameObject effect = Instantiate(landEffect, transform.position, Quaternion.identity);
+        Audio.Play("Stalactites");
         Destroy(effect, 0.5f);
         CameraShake cam = FindObjectOfType<CameraShake>();
         cam.StartCoroutine(cam.Shake(0.5f, 1.5f));

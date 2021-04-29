@@ -342,6 +342,7 @@ public class GameController : MonoBehaviour
             dCont.diffLevel++;
             dCont.CheckDiff();
             roomComplete = false;
+            ResetSounds();
             RandomRoom();
             pickupSpawned = false;
             thePillarScript[] allPillars;
@@ -374,6 +375,22 @@ public class GameController : MonoBehaviour
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
 
+    }
+
+    void ResetSounds()
+    {
+        Scene currentScene = SceneManager.GetActiveScene();
+        int buildIndex = currentScene.buildIndex;
+        aMan.StopSound("Water");
+        aMan.StopSound("Lava");
+        if (buildIndex == 4)
+        {
+            aMan.Play("Water");
+        }
+        if (buildIndex == 6)
+        {
+            aMan.Play("Lava");
+        }
     }
 
     void CheckMemory()
