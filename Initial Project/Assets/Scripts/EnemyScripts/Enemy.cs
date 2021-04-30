@@ -185,7 +185,7 @@ public class Enemy : MonoBehaviour
 
         healthBar.SetHealth(health, maxHealth);
 
-        if (health <= 0)
+        if (health <= 0 && isDead != true)
         {
             StartCoroutine(Death());
         }
@@ -347,12 +347,12 @@ public class Enemy : MonoBehaviour
     {
         isDead = true;
         enemyAnim.SetTrigger("Death");
-        FindObjectOfType<AudioManager>().Play("EnemyDeath");
 
         yield return new WaitForSecondsRealtime(0.5f);
 
         rb.constraints = RigidbodyConstraints2D.FreezePosition;
         isDying = true;
+        FindObjectOfType<AudioManager>().Play("EnemyDeath");
 
         yield return new WaitForSecondsRealtime(1f);
 
@@ -367,7 +367,6 @@ public class Enemy : MonoBehaviour
         {
             eCont.gameController.roomComplete = true;
         }
-
         Destroy(this.gameObject);
     }
 

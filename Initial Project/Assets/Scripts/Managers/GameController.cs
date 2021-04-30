@@ -340,6 +340,7 @@ public class GameController : MonoBehaviour
         {
             currentRoom++;
             dCont.diffLevel++;
+            dCont.enemyNum++;
             dCont.CheckDiff();
             roomComplete = false;
             ResetSounds();

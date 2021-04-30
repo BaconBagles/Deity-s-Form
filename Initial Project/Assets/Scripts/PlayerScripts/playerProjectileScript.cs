@@ -22,6 +22,7 @@ public class playerProjectileScript : MonoBehaviour
         range += pContd.rangeIncrease;
         knockbackPower += pContd.knockbackIncrease;
         gameObject.transform.localScale = new Vector3(transform.localScale.x + pContd.attackIncrease, transform.localScale.y, 0);
+        FindObjectOfType<AudioManager>().Play("PlayerAttack");
 
         if (this.gameObject.tag == "basicAttack")
         {
@@ -79,10 +80,12 @@ public class playerProjectileScript : MonoBehaviour
                 if (other.gameObject.CompareTag("basicEnemy"))
                 {
                     enemy.health -= 7;
+                    FindObjectOfType<AudioManager>().Play("EnemyKilled");
                 }
                 else
                 {
                     enemy.health -= 1;
+                    FindObjectOfType<AudioManager>().Play("EnemyDamaged");
                 }
             }
             else if (gameObject.tag == "APAttack")
@@ -90,10 +93,12 @@ public class playerProjectileScript : MonoBehaviour
                 if (other.gameObject.CompareTag("armourEnemy"))
                 {
                     enemy.health -= 9;
+                    FindObjectOfType<AudioManager>().Play("EnemyKilled");
                 }
                 else
                 {
                     enemy.health -= 1;
+                    FindObjectOfType<AudioManager>().Play("EnemyDamaged");
                 }
             }
             else if (gameObject.tag == "rangedAttack")
@@ -101,10 +106,12 @@ public class playerProjectileScript : MonoBehaviour
                 if (other.gameObject.CompareTag("spikyEnemy"))
                 {
                     enemy.health -= 7;
+                    FindObjectOfType<AudioManager>().Play("EnemyKilled");
                 }
                 else
                 {
                     enemy.health -= 1;
+                    FindObjectOfType<AudioManager>().Play("EnemyDamaged");
                 }
             }
         }
