@@ -90,7 +90,7 @@ public class PlayerController : MonoBehaviour
      void Start()
     {
         healthBar.SetMaxHealth(maxHealth);
-        SwitchForm();
+        //SwitchForm();
     }
 
     void Update()
