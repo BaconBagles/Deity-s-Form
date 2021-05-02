@@ -36,7 +36,7 @@ public class playerTutorial : MonoBehaviour
     attackOrbit orbitPos;
     SpriteRenderer sr;
     public Camera cam;
-    public GameController gCont;
+    public tutorialScript tCont;
 
     //New Primary Attack Stuff
     public Transform firePoint;
@@ -154,12 +154,41 @@ public class playerTutorial : MonoBehaviour
 
             if (Input.GetKeyDown(keys["switchA"]) && attacking == false)
             {
-                formNumber -= 1;
+                if (formlocked == false && hawklocked == false)
+                {
+                    formNumber -= 1;
+                }
+                else if (formlocked == false && hawklocked == true)
+                {
+                    if (formNumber > 2)
+                    {
+                        formNumber += 1;
+                    }
+                    if (formNumber < 0)
+                    {
+                        formNumber -= 1;
+                    }
+                }
                 SwitchForm();
             }
+
             if (Input.GetKeyDown(keys["switchB"]) && attacking == false)
             {
-                formNumber += 1;
+                if (formlocked == false && hawklocked == false)
+                {
+                    formNumber += 1;
+                }
+                else if (formlocked == false && hawklocked == true)
+                {
+                    if (formNumber > 2)
+                    {
+                        formNumber -= 1;
+                    }
+                    if (formNumber < 0)
+                    {
+                        formNumber += 1;
+                    }
+                }
                 SwitchForm();
             }
 
@@ -266,52 +295,7 @@ public class playerTutorial : MonoBehaviour
 
     void SwitchForm()
     {
-     
-        if (formlocked == true)
-        {
-            formNumber = 2;
-        }
-        else if (formlocked == false && hawklocked == true)
-        {
-            if (formNumber > 2)
-            {
-                formNumber = 0;
-            }
-            if (formNumber < 0)
-            {
-                formNumber = 2;
-            }
-            if(formNumber == 1)
-            {
-
-            }
-            fade = 0.5f;
-            mat.SetFloat("_Fade", fade);
-
-            anim.SetInteger("form", formNumber);
-            Audio.Play("FormChange");
-            ParticleSystem aura = auraObj.GetComponent<ParticleSystem>();
-            ParticleSystem.MainModule auraMain = aura.main;
-
-            switch (formNumber)
-            {
-                case 0:
-                    moveSpeed = 20 + speedBonus;
-                    auraMain.startColor = Color.magenta;
-                    break;
-                case 1:
-                    moveSpeed = 15 + speedBonus;
-                    auraMain.startColor = Color.yellow;
-                    break;
-                default:
-                    moveSpeed = 15 + speedBonus;
-                    auraMain.startColor = Color.blue;
-                    break;
-            }
-        }
-        else
-        {
-            if (formNumber > 2)
+             if (formNumber > 2)
             {
                 formNumber = 0;
             }
@@ -342,17 +326,14 @@ public class playerTutorial : MonoBehaviour
                     auraMain.startColor = Color.blue;
                     break;
             }
-        }
-        
-       
-    }
+     }
+
     public IEnumerator Death()
     {
         anim.SetTrigger("Death");
         playerDead = true;
         yield return new WaitForSecondsRealtime(1f);
         health = maxHealth;
-        gCont.SaveGame();
         death.Dead();
     }
 
@@ -381,7 +362,7 @@ public class playerTutorial : MonoBehaviour
             {
                 GameObject JackalAttack = Instantiate(attackPrefabs[0], firePoint.position, firePoint.rotation * Quaternion.Euler(0, 0, -90));
                 Rigidbody2D brb = JackalAttack.GetComponent<Rigidbody2D>();
-                playerProjectileScript jProj = JackalAttack.GetComponent<playerProjectileScript>();
+                playerProjectileT jProj = JackalAttack.GetComponent<playerProjectileT>();
                 brb.AddForce(firePoint.up * force, ForceMode2D.Impulse);
 
             }
@@ -389,14 +370,14 @@ public class playerTutorial : MonoBehaviour
             {
                 GameObject HawkAttack = Instantiate(attackPrefabs[2], firePoint.position, firePoint.rotation * Quaternion.Euler(0, 0, -90));
                 Rigidbody2D brb = HawkAttack.GetComponent<Rigidbody2D>();
-                playerProjectileScript hProj = HawkAttack.GetComponent<playerProjectileScript>();
+                playerProjectileT hProj = HawkAttack.GetComponent<playerProjectileT>();
                 brb.AddForce(firePoint.up * force, ForceMode2D.Impulse);
             }
             else if (formNumber == 2)
             {
                 GameObject BullAttack = Instantiate(attackPrefabs[1], firePoint.position, firePoint.rotation * Quaternion.Euler(0, 0, -90));
                 Rigidbody2D brb = BullAttack.GetComponent<Rigidbody2D>();
-                playerProjectileScript bProj = BullAttack.GetComponent<playerProjectileScript>();
+                playerProjectileT bProj = BullAttack.GetComponent<playerProjectileT>();
                 brb.AddForce(firePoint.up * force, ForceMode2D.Impulse);
             }
             currentCooldown = attackCooldown;

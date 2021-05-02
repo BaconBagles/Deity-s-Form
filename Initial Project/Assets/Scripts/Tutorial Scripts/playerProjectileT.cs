@@ -22,6 +22,7 @@ public class playerProjectileT : MonoBehaviour
         range += pContd.rangeIncrease;
         knockbackPower += pContd.knockbackIncrease;
         gameObject.transform.localScale = new Vector3(transform.localScale.x + pContd.attackIncrease, transform.localScale.y, 0);
+        FindObjectOfType<AudioManager>().Play("PlayerAttack");
 
         if (this.gameObject.tag == "basicAttack")
         {
@@ -71,42 +72,50 @@ public class playerProjectileT : MonoBehaviour
         {
             enemy = other.gameObject.GetComponent<EnemyT>();
             GameObject effect = Instantiate(hitEffect, transform.position, Quaternion.identity);
+            effect.transform.parent = enemy.gameObject.transform;
             Destroy(effect, 0.5f);
-            StartCoroutine(enemy.GetComponent<EnemyT>().Knockback(knockbackDuration, knockbackPower, this.transform));
+            StartCoroutine(enemy.GetComponent<Enemy>().Knockback(knockbackDuration, knockbackPower, this.transform));
             if (gameObject.tag == "basicAttack")
             {
                 if (other.gameObject.CompareTag("basicEnemy"))
                 {
-                    enemy.health -= 5;
+                    enemy.health -= 7;
+                    FindObjectOfType<AudioManager>().Play("EnemyKilled");
                 }
                 else
                 {
                     enemy.health -= 1;
+                    FindObjectOfType<AudioManager>().Play("EnemyDamaged");
                 }
             }
             else if (gameObject.tag == "APAttack")
             {
                 if (other.gameObject.CompareTag("armourEnemy"))
                 {
-                    enemy.health -= 7;
+                    enemy.health -= 9;
+                    FindObjectOfType<AudioManager>().Play("EnemyKilled");
                 }
                 else
                 {
                     enemy.health -= 1;
+                    FindObjectOfType<AudioManager>().Play("EnemyDamaged");
                 }
             }
             else if (gameObject.tag == "rangedAttack")
             {
                 if (other.gameObject.CompareTag("spikyEnemy"))
                 {
-                    enemy.health -= 5;
+                    enemy.health -= 7;
+                    FindObjectOfType<AudioManager>().Play("EnemyKilled");
                 }
                 else
                 {
                     enemy.health -= 1;
+                    FindObjectOfType<AudioManager>().Play("EnemyDamaged");
                 }
             }
         }
+    
 
         if (other.gameObject.CompareTag("spikyEnemy") && gameObject.tag != "rangedAttack")
         {

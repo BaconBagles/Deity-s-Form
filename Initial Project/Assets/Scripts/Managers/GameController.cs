@@ -141,8 +141,8 @@ public class GameController : MonoBehaviour
         player.knockbackIncrease = data.playerKnockbackIncrease;
         player.sndCooldown = data.playerSndCooldown;
 
-        dCont.diffLevel = data.gameDifficultyLevel;
-        dCont.diffScale = data.gameDifficultyScale;
+      //  dCont.diffLevel = data.gameDifficultyLevel;
+      //  dCont.diffScale = data.gameDifficultyScale;
         eCont.attackTimer = data.enemyAttackTimer;
         eCont.Force = data.enemyForce;
         eCont.Knockback = data.enemyKnockback;

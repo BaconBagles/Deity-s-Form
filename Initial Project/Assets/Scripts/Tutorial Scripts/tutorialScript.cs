@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class tutorialScript : MonoBehaviour
 {
@@ -16,25 +17,51 @@ public class tutorialScript : MonoBehaviour
     public PlayerController player;
     public List<EnemyT> enemies = new List<EnemyT>();
     public EnemyT[] EnemyType;
-    public Vector2 enemySpawnPoint;
+    public Vector2 spawnPoint;
     Vector2 rndPos;
+    public bool spawning;
     public int spawnTime;
     public int wave;
     public GameObject door;
     public GameObject hourglass;
     public Animator hourAnim;
     public float animSpeed;
+    public float Force;
+    public float Knockback;
+    public int enemyNumber;
+    public Pointer pointer;
+    public GameObject[] rooms;
+    public int roomNumber;
+    public int currentRoom;
+    public bool roomComplete;
+    public GameObject pSpawn;
+    public GameObject eSpawn;
+    new BoxCollider2D collider;
+    public Image sceneFader;
+    public TextMeshProUGUI PickupText;
 
-
-    void Start()
+    void Awake()
     {
         PlayerPrefs.SetInt("tutorialDone", 1);
         PlayerPrefs.Save();
 
-        wave = -1;
+        Force = 5.5f;
+        Knockback = 175;
+        enemyNumber = PlayerPrefs.GetInt("lastScene", 3);
+        attackTimer = PlayerPrefs.GetInt("turnTimer", 5);
+        spawning = true;
+        hourAnim = hourglass.GetComponent<Animator>();
+
+        currentRoom = 0;
+        FadeIn();
+    }
+
+    void Start()
+    {
         attackTimer = PlayerPrefs.GetInt("turnTimer", 5);
         hourAnim = hourglass.GetComponent<Animator>();
         animSpeed = 1f / attackTimer;
+
         hourAnim.SetFloat("speed", animSpeed);
         Audio.Play("BossReapplyingArmour");
     }
@@ -42,6 +69,12 @@ public class tutorialScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (enemies.Count == 0 && spawning == false)
+        {
+            StopAllCoroutines();
+            hourAnim.SetBool("fightTime", false);
+        }
+
         if (attacking == true && timeLeft > 0)
         {
             timeLeft -= Time.deltaTime;
@@ -54,26 +87,26 @@ public class tutorialScript : MonoBehaviour
             timeBar.SetMaxTime(attackTimer);
         }
 
-        if(enemies.Count == 0)
+        if (roomComplete == true && enemies.Count == 0)
         {
-            hourAnim.SetBool("fightTime", false);
+            pointer.gameObject.SetActive(true);
+            pointer.isDoor = true;
         }
     }
 
     IEnumerator EnemyAttack()
     {
         StartTimer();
-        yield return new WaitForSeconds(attackTimer - 0.3f);
-        foreach (EnemyT enemy in enemies)
-        {
-            enemy.enemyAnim.SetTrigger("Attack");
+        yield return new WaitForSeconds(attackTimer - 0.25f);
 
-        }
-        yield return new WaitForSeconds(0.3f);
         foreach (EnemyT enemy in enemies)
         {
-            yield return new WaitForSeconds(0.1f);
-            enemy.Attack();
+            if (enemy != null)
+            {
+                enemy.enemyAnim.SetTrigger("Attack");
+                yield return new WaitForSeconds(0.25f);
+                enemy.StartCoroutine(enemy.Attack());
+            }
         }
 
         StartCoroutine(EnemyAttack());
@@ -81,59 +114,53 @@ public class tutorialScript : MonoBehaviour
 
     public IEnumerator SpawnEnemies()
     {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(spawnTime);
+        Audio.Play("EnemySpawn");
+
+        spawnPoint = eSpawn.transform.position;
+
+        // Spawn enemy here
+
+        StartCoroutine(EnemyAttack());
         hourAnim.SetBool("fightTime", true);
+        spawning = false;
+    }
 
-        if (wave < 4)
-            {
-                Audio.Play("EnemySpawn"); 
+    public void SetUpNextRoom()
+    {
+        Collider2D collider = door.GetComponent<Collider2D>();
+        collider.isTrigger = true;
+    }
 
-                if (wave == 0)
-                {
-                rndPos = new Vector2(Random.Range(-10, 10), Random.Range(-10, 10));
-                EnemyT enemy = Instantiate(EnemyType[0], enemySpawnPoint + rndPos, Quaternion.identity, transform);
-                enemies.Add(enemy);
-                wave += 1;
-                }
+    public IEnumerator HealthAdded()
+    {
+        PickupText.text = "Health regained";
+        PickupText.gameObject.SetActive(true);
+        yield return new WaitForSeconds(2);
+        PickupText.gameObject.SetActive(false);
+    }
 
-                else if (wave == 1)
-                {
-                rndPos = new Vector2(Random.Range(-10, 10), Random.Range(-10, 10));
-                EnemyT enemy = Instantiate(EnemyType[1], enemySpawnPoint + rndPos, Quaternion.identity, transform);
-                enemies.Add(enemy);
-                wave += 1;
-                }
+    public IEnumerator FadeOut()
+    {
+        sceneFader.color = Color.black;
+        sceneFader.canvasRenderer.SetAlpha(0.0f);
+        sceneFader.CrossFadeAlpha(1.0f, 1f, false);
+        yield return new WaitForSeconds(1);
+        NewRoom();
+        FadeIn();
+    }
 
-                else if (wave == 2)
-                {
-                rndPos = new Vector2(Random.Range(-10, 10), Random.Range(-10, 10));
-                EnemyT enemy = Instantiate(EnemyType[2], enemySpawnPoint + rndPos, Quaternion.identity, transform);
-                enemies.Add(enemy);
-                wave += 1;
-                }
+    public void NewRoom()
+    {
+       currentRoom++;
+       roomComplete = false;
+    }
 
-                else if (wave == 3)
-                {
-                  rndPos = new Vector2(Random.Range(-10, 10), Random.Range(-10, 10));
-                  EnemyT enemy = Instantiate(EnemyType[0], enemySpawnPoint + rndPos, Quaternion.identity, transform);
-                  enemies.Add(enemy);
-
-                  EnemyT enemy1 = Instantiate(EnemyType[1], enemySpawnPoint + rndPos, Quaternion.identity, transform);
-                  enemies.Add(enemy1);
-
-                  EnemyT enemy2 = Instantiate(EnemyType[2], enemySpawnPoint + rndPos, Quaternion.identity, transform);
-                  enemies.Add(enemy2);
-
-                  wave += 1;
-                }
-
-                StartCoroutine(EnemyAttack());
-        }
-            else
-            {
-                door.SetActive(true);
-            }
-        
+    void FadeIn()
+    {
+        sceneFader.color = Color.black;
+        sceneFader.canvasRenderer.SetAlpha(1.0f);
+        sceneFader.CrossFadeAlpha(0.0f, 1f, false);
     }
 
     void StartTimer()

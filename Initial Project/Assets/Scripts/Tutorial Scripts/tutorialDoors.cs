@@ -4,15 +4,25 @@ using UnityEngine;
 
 public class tutorialDoors : MonoBehaviour
 {
-    // Start is called before the first frame update
+    tutorialScript tCont;
+
     void Start()
     {
-        
+        tCont = FindObjectOfType<tutorialScript>();
     }
 
-    // Update is called once per frame
-    void Update()
+    void OnTriggerEnter2D(Collider2D collision)
     {
-        
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            Collider2D collider = gameObject.GetComponent<Collider2D>();
+            collider.isTrigger = false;
+            tCont.pointer.isDoor = false;
+            tCont.pointer.gameObject.SetActive(false);
+            tCont.StartCoroutine(tCont.FadeOut());
+
+            PlayerController player = collision.GetComponent<PlayerController>();
+        }
     }
 }
+

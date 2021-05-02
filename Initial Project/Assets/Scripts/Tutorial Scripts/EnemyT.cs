@@ -2,17 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Collider2D))]
 public class EnemyT : MonoBehaviour
 {
     GameObject player;
-    Transform goal;
     GameObject controller;
+    Transform goal;
     Vector2 raycastOrigin;
     Vector3 raycastDirection;
     public int enemyType;
     tutorialScript controllerScript;
     public float spaceBetween;
-    PlayerController pCont;
+    playerTutorial pCont;
     public EnemyHealthBar healthBar;
     public float health;
     public int maxHealth;
@@ -29,6 +30,16 @@ public class EnemyT : MonoBehaviour
     string secondarytag;
     int latDirRnd;
     bool lateralDirection;
+    public SpriteRenderer projRenderer;
+    public Sprite[] projSprite;
+    public int currentSprite;
+
+    Material mat;
+    float fade;
+    bool isDying;
+
+    float time;
+    float currentTime;
 
     Collider2D agentCollider;
     public Collider2D AgentCollider { get { return agentCollider; } }
@@ -37,12 +48,12 @@ public class EnemyT : MonoBehaviour
 
     private void Awake()
     {
-        health = PlayerPrefs.GetInt("enemyHealth", 5);
+        maxHealth = PlayerPrefs.GetInt("enemyHealth", 5);
         health = maxHealth;
-        currentForce = 5.5f;
         currentDamage = 2;
         currentSize = 0f;
-        currentKnockback = 175;
+        currentSprite = 0;
+
     }
 
     // Start is called before the first frame update
@@ -50,13 +61,22 @@ public class EnemyT : MonoBehaviour
     {
         agentCollider = GetComponent<Collider2D>();
         Audio = FindObjectOfType<AudioManager>();
+        controllerScript = FindObjectOfType<tutorialScript>();
         player = GameObject.Find("Player");
-        pCont = player.GetComponent<PlayerController>();
+        pCont = player.GetComponent<playerTutorial>();
+        currentForce = controllerScript.Force;
+        currentKnockback = controllerScript.Knockback;
         goal = player.transform;
-        controller = GameObject.Find("TUTORIAL");
-        controllerScript = controller.GetComponent<tutorialScript>();
+        isDead = false;
 
         latDirRnd = Random.Range(0, 2);
+
+        fade = 1f;
+        mat = GetComponent<SpriteRenderer>().material;
+        mat.SetFloat("_Fade", fade);
+
+        time = 1;
+        currentTime = time;
 
         rb = GetComponent<Rigidbody2D>();
 
@@ -83,30 +103,35 @@ public class EnemyT : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Vector2.Distance(goal.position, transform.position) >= spaceBetween)
-        {
-            Vector2 direction = goal.position - transform.position;
-            enemyAnim.SetFloat("Horizontal", direction.x);
-            enemyAnim.SetFloat("Vertical", direction.y);
-            transform.Translate(direction * Time.deltaTime);
-        }
-        else
-        {
-            Vector2 direction = transform.position - goal.transform.position;
-            enemyAnim.SetFloat("Horizontal", -direction.x);
-            enemyAnim.SetFloat("Vertical", -direction.y);
-            transform.Translate(direction * Time.deltaTime);
-        }
 
-        if (lateralDirection == true)
+        if (isDead != true)
         {
-            transform.RotateAround(goal.transform.position, Vector3.forward, 50 * Time.deltaTime);
+            if (Vector2.Distance(goal.position, transform.position) >= spaceBetween)
+            {
+                Vector2 direction = goal.position - transform.position;
+                enemyAnim.SetFloat("Horizontal", direction.x);
+                enemyAnim.SetFloat("Vertical", direction.y);
+                transform.Translate(direction * Time.deltaTime);
+            }
+            else
+            {
+                Vector2 direction = transform.position - goal.transform.position;
+                enemyAnim.SetFloat("Horizontal", -direction.x);
+                enemyAnim.SetFloat("Vertical", -direction.y);
+                transform.Translate(direction * Time.deltaTime);
+            }
+
+
+            if (lateralDirection == true)
+            {
+                transform.RotateAround(goal.transform.position, Vector3.forward, 50 * Time.deltaTime);
+            }
+            else
+            {
+                transform.RotateAround(goal.transform.position, Vector3.forward, -50 * Time.deltaTime);
+            }
+            transform.rotation = Quaternion.identity;
         }
-        else
-        {
-            transform.RotateAround(goal.transform.position, Vector3.forward, -50 * Time.deltaTime);
-        }
-        transform.rotation = Quaternion.identity;
 
         if (spaceBetween > 30f)
         {
@@ -118,9 +143,10 @@ public class EnemyT : MonoBehaviour
             spaceBetween = 0f;
         }
 
+
         healthBar.SetHealth(health, maxHealth);
 
-        if (health <= 0)
+        if (health <= 0 && isDead != true)
         {
             StartCoroutine(Death());
         }
@@ -133,16 +159,25 @@ public class EnemyT : MonoBehaviour
         {
             lateralDirection = false;
         }
-        
-        
+
+        if (isDying == true)
+        {
+            fade -= Time.deltaTime;
+        }
+        mat.SetFloat("_Fade", fade);
+
+        if (currentTime < 0)
+        {
+            health -= 2;
+            currentTime = time;
+        }
+
     }
 
     void FixedUpdate()
     {
         raycastOrigin = new Vector2(transform.position.x, transform.position.y - 2);
         raycastDirection = new Vector2(raycastOrigin.x + Random.Range(-180, 180), raycastOrigin.y + Random.Range(-180, 180));
-        //raycastDirection = transform.position - goal.transform.position;
-        //Debug.DrawRay(raycastOrigin, raycastDirection, Color.red);
 
         RaycastHit2D hit = Physics2D.Raycast(raycastOrigin, raycastDirection, 5f);
 
@@ -152,25 +187,27 @@ public class EnemyT : MonoBehaviour
             {
                 spaceBetween -= 2;
             }
-            //Debug.Log("Hit: " + hit.collider.tag);// + ", distance: " + hit.distance);
-            // Draw line in Scene view from `origin` to `hit.point` for 3 seconds.
-            //Debug.DrawLine(raycastOrigin, hit.point, Color.red, 3f);
         }
     }
 
-    public void Attack()
+    public IEnumerator Attack()
     {
+        GameObject enemyProjectile;
+        projectileScript proj;
         if (isDead != true)
         {
             Audio.Play("EnemyAttack");
-            GameObject enemyProjectile = Instantiate(projectile, transform.position, Quaternion.identity);
-            projectileScript proj = enemyProjectile.GetComponent<projectileScript>();
-            proj.force = currentForce;
+            enemyProjectile = Instantiate(projectile, transform.position, Quaternion.identity);
+            proj = enemyProjectile.GetComponent<projectileScript>();
+            projRenderer = proj.GetComponent<SpriteRenderer>();
+            projRenderer.sprite = projSprite[currentSprite];
             proj.damage = currentDamage;
             proj.bossSize = currentSize;
             proj.knockbackPower = currentKnockback;
-        }
+            yield return new WaitForSeconds(0.1f);
+            proj.force = currentForce;
 
+        }
     }
 
     public IEnumerator Knockback(float knockBackDuration, float knockbackPower, Transform obj)
@@ -191,17 +228,21 @@ public class EnemyT : MonoBehaviour
     {
         isDead = true;
         enemyAnim.SetTrigger("Death");
+
+        yield return new WaitForSecondsRealtime(0.5f);
+
+        rb.constraints = RigidbodyConstraints2D.FreezePosition;
+        isDying = true;
         FindObjectOfType<AudioManager>().Play("EnemyDeath");
 
         yield return new WaitForSecondsRealtime(1f);
 
         float randomNum = Random.Range(0, 100);
-        if (randomNum > 95)
+        if (randomNum > 90)
         {
             Instantiate(healthPickup, new Vector2(gameObject.transform.position.x, gameObject.transform.position.y), Quaternion.identity);
         }
         controllerScript.enemies.Remove(this);
-
         Destroy(this.gameObject);
     }
 
@@ -209,12 +250,8 @@ public class EnemyT : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Respawn"))
         {
-            transform.position = new Vector2(0, 0);
+            transform.position = controllerScript.spawnPoint;
         }
-        /*if (pCont.superForm == true)
-        {
-            health -= 10;
-        }*/
         else if (other.gameObject.CompareTag("JackalSpecial"))
         {
             health -= 2;
@@ -230,7 +267,10 @@ public class EnemyT : MonoBehaviour
         }
         else if (other.gameObject.CompareTag("HawkSpecial"))
         {
-            spaceBetween = 0;
+            health -= 1;
+            FindObjectOfType<AudioManager>().Play("EnemyDamaged");
+            StartCoroutine(Knockback(2f, 200f, other.gameObject.transform));
+            spaceBetween += 10;
         }
     }
 
