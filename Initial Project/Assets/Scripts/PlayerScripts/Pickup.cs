@@ -26,12 +26,18 @@ public class Pickup : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D other)
     {
-        PickupBonus();
-        FindObjectOfType<AudioManager>().Play("Pickup");
-        gCont.SetUpNextRoom();
-        gCont.pointer.isPickup = false;
-        gCont.pointer.isDoor = true;
-        Destroy(this.gameObject);
+        if (other.gameObject.tag == "Player")
+        {
+            PickupBonus();
+            FindObjectOfType<AudioManager>().Play("Pickup");
+            gCont.SetUpNextRoom();
+            gCont.pointer.isPickup = false;
+            gCont.pointer.isDoor = true;
+            for (int i = 0; i < gCont.pickups.Count; i++)
+            {
+                Destroy(gCont.pickups[i]);
+            }
+        }
     }
 
     void PickupBonus()

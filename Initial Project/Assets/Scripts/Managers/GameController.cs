@@ -42,6 +42,9 @@ public class GameController : MonoBehaviour
     public Animator hourAnim;
     public float animSpeed;
 
+    public List<GameObject> pickups = new List<GameObject>();
+    Vector3 pickupDist;
+
     void Awake()
     {
         deleteSave = PlayerPrefs.GetInt("deleteSave", 0);
@@ -59,7 +62,7 @@ public class GameController : MonoBehaviour
         FadeIn();
     }
 
-     void Start()
+    void Start()
     {
         if (deleteSave == 1)
         {
@@ -75,7 +78,8 @@ public class GameController : MonoBehaviour
 
         dCont.CheckDiff();
         RandomRoom();
-        
+
+        pickupDist = new Vector3(10, 0, 0);
     }
 
     // Update is called once per frame
@@ -89,9 +93,7 @@ public class GameController : MonoBehaviour
 
         if (roomComplete == true && eCont.enemies.Count == 0 && pickupSpawned == false)
         {
-            pickupSpawned = true;
-            RandomPickup();
-            Instantiate(pickup, eSpawn.transform.position, Quaternion.identity);
+            StartCoroutine(SpawnPickups());
             pointer.gameObject.SetActive(true);
             pointer.isPickup = true;
         }
@@ -100,6 +102,18 @@ public class GameController : MonoBehaviour
         {
             bossRoom = true;
         }
+    }
+
+    IEnumerator SpawnPickups()
+    {
+        pickupSpawned = true;
+        RandomPickup();
+        GameObject pickup1 = Instantiate(pickup, eSpawn.transform.position + pickupDist, Quaternion.identity);
+        pickups.Add(pickup1);
+        yield return new WaitForSeconds(0.1f);
+        RandomPickup();
+        GameObject pickup2 = Instantiate(pickup, eSpawn.transform.position - pickupDist, Quaternion.identity);
+        pickups.Add(pickup2);
     }
 
     public void SaveGame()
