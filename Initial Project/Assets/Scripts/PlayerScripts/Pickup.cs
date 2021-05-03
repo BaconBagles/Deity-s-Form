@@ -30,6 +30,7 @@ public class Pickup : MonoBehaviour
         {
             PickupBonus();
             FindObjectOfType<AudioManager>().Play("Pickup");
+            FindObjectOfType<AudioManager>().StopSound("Glimmer");
             gCont.SetUpNextRoom();
             gCont.pointer.isPickup = false;
             gCont.pointer.isDoor = true;

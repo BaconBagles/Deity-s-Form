@@ -108,10 +108,14 @@ public class GameController : MonoBehaviour
     {
         pickupSpawned = true;
         RandomPickup();
+        aMan.Play("Glimmer");
         GameObject pickup1 = Instantiate(pickup, eSpawn.transform.position + pickupDist, Quaternion.identity);
         pickups.Add(pickup1);
-        yield return new WaitForSeconds(0.1f);
-        RandomPickup();
+        yield return new WaitForSeconds(0.02f);
+        while (pickupNumber == pickup1.GetComponent<Pickup>().pickupNumber)
+        {
+            RandomPickup();
+        }
         GameObject pickup2 = Instantiate(pickup, eSpawn.transform.position - pickupDist, Quaternion.identity);
         pickups.Add(pickup2);
     }
