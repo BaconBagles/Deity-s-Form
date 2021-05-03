@@ -14,31 +14,35 @@ public class tutorialScript : MonoBehaviour
     public bool attacking;
     public OptionsMenu Options;
     public AudioManager Audio;
-    public PlayerController player;
+    public playerTutorial player;
+    public tutorialTipsScript[] tTips;
     public List<EnemyT> enemies = new List<EnemyT>();
     public EnemyT[] EnemyType;
-    public Vector2 spawnPoint;
+    public GameObject[] spawnPoint;
     Vector2 rndPos;
     public bool spawning;
     public int spawnTime;
     public int wave;
-    public GameObject door;
+    public GameObject[] door;
     public GameObject hourglass;
     public Animator hourAnim;
     public float animSpeed;
     public float Force;
     public float Knockback;
     public int enemyNumber;
-    public Pointer pointer;
+    public pointerTutorial pointer;
     public GameObject[] rooms;
     public int roomNumber;
     public int currentRoom;
     public bool roomComplete;
-    public GameObject pSpawn;
-    public GameObject eSpawn;
+    public GameObject[] pSpawn;
     new BoxCollider2D collider;
     public Image sceneFader;
     public TextMeshProUGUI PickupText;
+    public bool enemySpawn;
+    public int tutorialStage;
+    public int tutorialWave;
+    public bool fightOver;
 
     void Awake()
     {
@@ -50,8 +54,11 @@ public class tutorialScript : MonoBehaviour
         enemyNumber = PlayerPrefs.GetInt("lastScene", 3);
         attackTimer = PlayerPrefs.GetInt("turnTimer", 5);
         spawning = true;
+        roomComplete = false;
+        fightOver = true;
         hourAnim = hourglass.GetComponent<Animator>();
-
+        tutorialStage = 0;
+        tutorialWave = 0;
         currentRoom = 0;
         FadeIn();
     }
@@ -69,10 +76,12 @@ public class tutorialScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (enemies.Count == 0 && spawning == false)
+        if (enemies.Count == 0 && spawning == false && fightOver == false)
         {
             StopAllCoroutines();
+            TutorialStep();
             hourAnim.SetBool("fightTime", false);
+            fightOver = true;
         }
 
         if (attacking == true && timeLeft > 0)
@@ -112,25 +121,148 @@ public class tutorialScript : MonoBehaviour
         StartCoroutine(EnemyAttack());
     }
 
+    public void TutorialStep()
+    {
+        switch (tutorialStage)
+        {
+            case 0:
+                {
+                tTips[0].nextDots.SetActive(true);
+                tutorialStage++;
+                }
+                break;
+            case 1:
+                StartCoroutine(SpawnEnemies());
+                break;
+            case 2:
+                tTips[1].nextDots.SetActive(true);
+                tutorialStage++;
+                break;
+            case 3:
+                tutorialWave = 1;
+                StartCoroutine(SpawnEnemies());
+                break;
+            case 4:
+                tTips[2].nextDots.SetActive(true);
+                tutorialStage++;
+                break;
+            case 5:
+                tutorialWave = 2;
+                StartCoroutine(SpawnEnemies());
+                break;
+            case 6:
+                tTips[3].nextDots.SetActive(true);
+                tutorialStage++;
+                break;
+            case 7:
+                roomComplete = true;
+                door[0].SetActive(true);
+                break;
+            case 8:
+                player.formlocked = false;
+                tTips[4].nextDots.SetActive(true);
+                tutorialStage++;
+                break;
+            case 9:
+                tutorialWave = 3;
+                StartCoroutine(SpawnEnemies());
+                break;
+            case 10:
+                tTips[5].nextDots.SetActive(true);
+                tutorialStage++;
+                break;
+            case 11:
+                tutorialWave = 4;
+                StartCoroutine(SpawnEnemies());
+                break;
+            case 12:
+                tTips[6].nextDots.SetActive(true);
+                tutorialStage++;
+                break;
+            case 13:
+                tutorialWave = 5;
+                StartCoroutine(SpawnEnemies());
+                break;
+            case 14:
+                tTips[7].nextDots.SetActive(true);
+                tutorialStage++;
+                break;
+            case 15:
+                roomComplete = true;
+                door[1].SetActive(true);
+                break;
+        }
+    }
+
     public IEnumerator SpawnEnemies()
     {
         yield return new WaitForSeconds(spawnTime);
         Audio.Play("EnemySpawn");
 
-        spawnPoint = eSpawn.transform.position;
 
-        // Spawn enemy here
+        switch (tutorialWave)
+        {
+            case 0:
+                EnemyT enemy = Instantiate(EnemyType[0], spawnPoint[0].transform.position, Quaternion.identity, transform);
+                enemies.Add(enemy);
+                break;
+            case 1:
+                EnemyT enemy1 = Instantiate(EnemyType[0], spawnPoint[0].transform.position, Quaternion.identity, transform);
+                enemies.Add(enemy1);
+                EnemyT enemy2 = Instantiate(EnemyType[0], spawnPoint[0].transform.position, Quaternion.identity, transform);
+                enemies.Add(enemy2);
+                break;
+            case 2:
+                EnemyT enemy3 = Instantiate(EnemyType[1], spawnPoint[0].transform.position, Quaternion.identity, transform);
+                enemies.Add(enemy3);
+                break;
+            case 3:
+                EnemyT enemy4 = Instantiate(EnemyType[1], spawnPoint[1].transform.position, Quaternion.identity, transform);
+                enemies.Add(enemy4);
+                break;
+            case 4:
+                EnemyT enemy5 = Instantiate(EnemyType[0], spawnPoint[1].transform.position, Quaternion.identity, transform);
+                enemies.Add(enemy5);
+                break;
+            case 5:
+                EnemyT enemy6 = Instantiate(EnemyType[0], spawnPoint[1].transform.position, Quaternion.identity, transform);
+                enemies.Add(enemy6);
+                EnemyT enemy7 = Instantiate(EnemyType[1], spawnPoint[1].transform.position, Quaternion.identity, transform);
+                enemies.Add(enemy7);
+                EnemyT enemy8 = Instantiate(EnemyType[0], spawnPoint[1].transform.position, Quaternion.identity, transform);
+                enemies.Add(enemy8);
+                EnemyT enemy9 = Instantiate(EnemyType[1], spawnPoint[1].transform.position, Quaternion.identity, transform);
+                enemies.Add(enemy9);
+                break;
+            case 6:
+                EnemyT enemy10 = Instantiate(EnemyType[2], spawnPoint[2].transform.position, Quaternion.identity, transform);
+                enemies.Add(enemy10);
+                EnemyT enemy11 = Instantiate(EnemyType[2], spawnPoint[2].transform.position, Quaternion.identity, transform);
+                enemies.Add(enemy11);
+                break;
+            case 7:
+                EnemyT enemy12 = Instantiate(EnemyType[0], spawnPoint[2].transform.position, Quaternion.identity, transform);
+                enemies.Add(enemy12);
+                EnemyT enemy13 = Instantiate(EnemyType[1], spawnPoint[2].transform.position, Quaternion.identity, transform);
+                enemies.Add(enemy13);
+                EnemyT enemy14 = Instantiate(EnemyType[2], spawnPoint[2].transform.position, Quaternion.identity, transform);
+                enemies.Add(enemy14);
+                EnemyT enemy15 = Instantiate(EnemyType[0], spawnPoint[2].transform.position, Quaternion.identity, transform);
+                enemies.Add(enemy15);
+                EnemyT enemy16 = Instantiate(EnemyType[1], spawnPoint[2].transform.position, Quaternion.identity, transform);
+                enemies.Add(enemy16);
+                EnemyT enemy17 = Instantiate(EnemyType[2], spawnPoint[2].transform.position, Quaternion.identity, transform);
+                enemies.Add(enemy17);
+                break;
+        }
+
 
         StartCoroutine(EnemyAttack());
+        fightOver = false;
         hourAnim.SetBool("fightTime", true);
         spawning = false;
     }
 
-    public void SetUpNextRoom()
-    {
-        Collider2D collider = door.GetComponent<Collider2D>();
-        collider.isTrigger = true;
-    }
 
     public IEnumerator HealthAdded()
     {
@@ -153,6 +285,7 @@ public class tutorialScript : MonoBehaviour
     public void NewRoom()
     {
        currentRoom++;
+       transform.position = pSpawn[currentRoom].transform.position;
        roomComplete = false;
     }
 
@@ -161,6 +294,7 @@ public class tutorialScript : MonoBehaviour
         sceneFader.color = Color.black;
         sceneFader.canvasRenderer.SetAlpha(1.0f);
         sceneFader.CrossFadeAlpha(0.0f, 1f, false);
+
     }
 
     void StartTimer()

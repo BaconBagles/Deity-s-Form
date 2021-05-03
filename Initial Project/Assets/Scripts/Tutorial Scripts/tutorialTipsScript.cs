@@ -17,15 +17,20 @@ public class tutorialTipsScript : MonoBehaviour
         {
             groundText.SetActive(true);
             previousTip.SetActive(false);
-            nextDots.SetActive(true);
+
+            tutorialWave.TutorialStep();
+            tutorialWave.tutorialStage++;
+            
+
+         /*   nextDots.SetActive(true);
             if (tutorialWave.wave < 0)
             {
                 tutorialWave.wave++;
             }
             else
             {
-                tutorialWave.StartCoroutine(tutorialWave.SpawnEnemies());
-            }
+                );
+            } */
         }
     }
 }

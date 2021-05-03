@@ -65,6 +65,8 @@ public class playerTutorial : MonoBehaviour
         currentCooldown = attackCooldown;
         attacking = false;
         playerDead = false;
+        formlocked = true;
+        hawklocked = true;
         formNumber = 2;
         maxHealth = 10;
         sndCooldown = 5;
