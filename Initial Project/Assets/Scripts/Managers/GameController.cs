@@ -30,6 +30,7 @@ public class GameController : MonoBehaviour
     public bool roomComplete;
     public bool bossRoom;
     public int bRoomNum;
+    public DialogueTrigger[] bossConversations;
     public GameObject door;
     public GameObject pSpawn;
     public GameObject eSpawn;
@@ -80,6 +81,9 @@ public class GameController : MonoBehaviour
         RandomRoom();
 
         pickupDist = new Vector3(10, 0, 0);
+
+        int random = Random.Range(0, 5);
+        bossConversations[random].gameObject.SetActive(true);
     }
 
     // Update is called once per frame
