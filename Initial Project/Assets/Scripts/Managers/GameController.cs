@@ -82,7 +82,11 @@ public class GameController : MonoBehaviour
 
         pickupDist = new Vector3(10, 0, 0);
 
-        int random = Random.Range(0, 5);
+        int random = Random.Range(0, bossConversations.Length+1);
+        for (int i = 0; i< bossConversations.Length; i++)
+        {
+            bossConversations[i].gameObject.SetActive(false);
+        }
         bossConversations[random].gameObject.SetActive(true);
     }
 
