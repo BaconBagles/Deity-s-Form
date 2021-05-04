@@ -1,0 +1,88 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class enemyProjTutorial : MonoBehaviour
+{
+    GameObject player;
+    GameObject AudioManager;
+    public Transform target;
+    public Vector2 Direction;
+    public float force;
+    public AudioManager Audio;
+    public int damage;
+    public float bossSize;
+    public GameObject hitEffect;
+    public int projType;
+    public bool finalBoss;
+
+    //knockback stuff
+    public float knockbackPower = 150;
+    public float knockbackDuration = 1.5f;
+
+    void Start()
+    {
+        player = GameObject.Find("Player");
+        AudioManager = GameObject.Find("AudioManager");
+        Audio = AudioManager.GetComponent<AudioManager>();
+        target = player.transform;
+        transform.right = target.position - transform.position;
+        Vector2 targetPos = target.position;
+        targetPos.y -= 3;
+        Direction = targetPos - (Vector2)transform.position;
+        StartCoroutine(Launch());
+
+    }
+
+    public IEnumerator Launch()
+    {
+        yield return new WaitForSeconds(0.2f);
+        GetComponent<Rigidbody2D>().AddForce(Direction * force, ForceMode2D.Impulse);
+        StartCoroutine(SelfDestruct());
+        gameObject.transform.localScale = new Vector3(transform.localScale.x + bossSize, transform.localScale.y + bossSize, 0);
+    }
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            Audio.Play("PlayerDamage");
+            GameObject effect = Instantiate(hitEffect, transform.position, Quaternion.identity);
+            Destroy(effect, 0.5f);
+            StartCoroutine(player.GetComponent<playerTutorial>().Knockback(knockbackDuration, knockbackPower, this.transform));
+            if (player.GetComponent<playerTutorial>().shieldCount == 0)
+            {
+                player.GetComponent<playerTutorial>().health -= damage;
+                CameraShake cam = FindObjectOfType<CameraShake>();
+                cam.StartCoroutine(cam.Shake(.5f, 1f));
+            }
+            else
+            {
+                player.GetComponent<playerTutorial>().shieldCount -= damage;
+            }
+        }
+
+        Destroy(this.gameObject);
+    }
+
+    IEnumerator SelfDestruct()
+    {
+        yield return new WaitForSeconds(1f);
+        if (finalBoss == true)
+        {
+            GameObject boomerang = Instantiate(gameObject);
+            enemyProjTutorial bScript = boomerang.GetComponent<enemyProjTutorial>();
+            bScript.player = GameObject.Find("FINAL BOSS");
+            bScript.finalBoss = false;
+            bScript.damage = damage;
+            bScript.bossSize = bossSize;
+            bScript.knockbackPower = knockbackPower;
+            bScript.force = force;
+            Destroy(this.gameObject);
+        }
+        else
+        {
+            Destroy(this.gameObject);
+        }
+    }
+}

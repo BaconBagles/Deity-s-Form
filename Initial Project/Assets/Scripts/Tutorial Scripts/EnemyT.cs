@@ -24,7 +24,6 @@ public class EnemyT : MonoBehaviour
     public float currentForce;
     public float currentSize;
     public float currentKnockback;
-    public GameObject healthPickup;
     public Rigidbody2D rb;
     AudioManager Audio;
     string secondarytag;
@@ -83,14 +82,14 @@ public class EnemyT : MonoBehaviour
         if (enemyType == 0)
         { //Base
             enemyAnim.SetInteger("EnemyType", 2);
-            spaceBetween = Random.Range(10, 20);
+            spaceBetween = Random.Range(10, 15);
         }
         else if (enemyType == 1)
         { //heavy
             maxHealth += 2;
             health = maxHealth;
             enemyAnim.SetInteger("EnemyType", 0);
-            spaceBetween = Random.Range(10, 15);
+            spaceBetween = Random.Range(5, 15);
         }
         else if (enemyType == 2)
         { //spike
@@ -193,12 +192,12 @@ public class EnemyT : MonoBehaviour
     public IEnumerator Attack()
     {
         GameObject enemyProjectile;
-        projectileScript proj;
+        enemyProjTutorial proj;
         if (isDead != true)
         {
             Audio.Play("EnemyAttack");
             enemyProjectile = Instantiate(projectile, transform.position, Quaternion.identity);
-            proj = enemyProjectile.GetComponent<projectileScript>();
+            proj = enemyProjectile.GetComponent<enemyProjTutorial>();
             projRenderer = proj.GetComponent<SpriteRenderer>();
             projRenderer.sprite = projSprite[currentSprite];
             proj.damage = currentDamage;
@@ -238,10 +237,7 @@ public class EnemyT : MonoBehaviour
         yield return new WaitForSecondsRealtime(1f);
 
         float randomNum = Random.Range(0, 100);
-        if (randomNum > 90)
-        {
-            Instantiate(healthPickup, new Vector2(gameObject.transform.position.x, gameObject.transform.position.y), Quaternion.identity);
-        }
+       
         controllerScript.enemies.Remove(this);
         Destroy(this.gameObject);
     }

@@ -57,6 +57,7 @@ public class tutorialScript : MonoBehaviour
         roomComplete = false;
         fightOver = true;
         hourAnim = hourglass.GetComponent<Animator>();
+        spawnTime = 1;
         tutorialStage = 0;
         tutorialWave = 0;
         currentRoom = 0;
@@ -79,6 +80,7 @@ public class tutorialScript : MonoBehaviour
         if (enemies.Count == 0 && spawning == false && fightOver == false)
         {
             StopAllCoroutines();
+            tutorialStage++;
             TutorialStep();
             hourAnim.SetBool("fightTime", false);
             fightOver = true;
@@ -123,73 +125,99 @@ public class tutorialScript : MonoBehaviour
 
     public void TutorialStep()
     {
+
         switch (tutorialStage)
         {
             case 0:
                 {
-                tTips[0].nextDots.SetActive(true);
-                tutorialStage++;
+                    tTips[0].nextDots.gameObject.SetActive(true);
+                    tutorialStage = 1;
                 }
                 break;
             case 1:
+                tutorialWave = 0;
                 StartCoroutine(SpawnEnemies());
+
                 break;
             case 2:
-                tTips[1].nextDots.SetActive(true);
-                tutorialStage++;
+                tTips[1].nextDots.gameObject.SetActive(true);
+                tutorialStage = 3;
                 break;
             case 3:
                 tutorialWave = 1;
                 StartCoroutine(SpawnEnemies());
                 break;
             case 4:
-                tTips[2].nextDots.SetActive(true);
-                tutorialStage++;
+                tTips[2].nextDots.gameObject.SetActive(true);
+                tutorialStage = 5;
                 break;
             case 5:
                 tutorialWave = 2;
                 StartCoroutine(SpawnEnemies());
                 break;
             case 6:
-                tTips[3].nextDots.SetActive(true);
-                tutorialStage++;
+                tTips[3].nextDots.gameObject.SetActive(true);
+                tutorialStage = 7;
                 break;
             case 7:
                 roomComplete = true;
                 door[0].SetActive(true);
+                tutorialStage = 8;
                 break;
             case 8:
                 player.formlocked = false;
-                tTips[4].nextDots.SetActive(true);
-                tutorialStage++;
+                tTips[5].nextDots.gameObject.SetActive(true);
+                tutorialStage = 9;
                 break;
             case 9:
                 tutorialWave = 3;
                 StartCoroutine(SpawnEnemies());
                 break;
             case 10:
-                tTips[5].nextDots.SetActive(true);
-                tutorialStage++;
+                tTips[6].nextDots.gameObject.SetActive(true);
+                tutorialStage = 11;
                 break;
             case 11:
                 tutorialWave = 4;
                 StartCoroutine(SpawnEnemies());
                 break;
             case 12:
-                tTips[6].nextDots.SetActive(true);
-                tutorialStage++;
+                tTips[7].nextDots.gameObject.SetActive(true);
+                tutorialStage = 13;
                 break;
             case 13:
                 tutorialWave = 5;
                 StartCoroutine(SpawnEnemies());
                 break;
             case 14:
-                tTips[7].nextDots.SetActive(true);
-                tutorialStage++;
+                tTips[8].nextDots.gameObject.SetActive(true);
+                tutorialStage = 15;
                 break;
             case 15:
                 roomComplete = true;
                 door[1].SetActive(true);
+                tutorialStage = 16;
+                break;
+            case 16:
+                player.hawklocked = false;
+                tutorialWave = 6;
+                StartCoroutine(SpawnEnemies());
+                break;
+            case 17:
+                tTips[10].nextDots.gameObject.SetActive(true);
+                tutorialStage = 18;
+                break;
+            case 18:
+                tutorialWave = 7;
+                StartCoroutine(SpawnEnemies());
+                break;
+            case 19:
+                tTips[11].nextDots.gameObject.SetActive(true);
+                tutorialStage = 20;
+                break;
+            case 20:
+                roomComplete = true;
+                door[2].SetActive(true);
                 break;
         }
     }
@@ -284,9 +312,12 @@ public class tutorialScript : MonoBehaviour
 
     public void NewRoom()
     {
-       currentRoom++;
-       transform.position = pSpawn[currentRoom].transform.position;
-       roomComplete = false;
+        currentRoom++;
+        roomComplete = false;
+        pointer.gameObject.SetActive(false);
+        pointer.isDoor = false;
+        player.transform.position = pSpawn[currentRoom].transform.position;
+
     }
 
     void FadeIn()

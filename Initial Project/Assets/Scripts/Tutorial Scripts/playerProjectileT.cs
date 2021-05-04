@@ -6,7 +6,7 @@ public class playerProjectileT : MonoBehaviour
 {
     public GameObject hitEffect;
     public float range = 0.2f;
-    PlayerController pContd;
+    playerTutorial pContd;
     EnemyT enemy;
     thePillarScript pillar;
     theTorchScript torch;
@@ -17,7 +17,7 @@ public class playerProjectileT : MonoBehaviour
 
     void Start()
     {
-        pContd = FindObjectOfType<PlayerController>();
+        pContd = FindObjectOfType<playerTutorial>();
 
         range += pContd.rangeIncrease;
         knockbackPower += pContd.knockbackIncrease;
@@ -74,7 +74,7 @@ public class playerProjectileT : MonoBehaviour
             GameObject effect = Instantiate(hitEffect, transform.position, Quaternion.identity);
             effect.transform.parent = enemy.gameObject.transform;
             Destroy(effect, 0.5f);
-            StartCoroutine(enemy.GetComponent<Enemy>().Knockback(knockbackDuration, knockbackPower, this.transform));
+            StartCoroutine(enemy.GetComponent<EnemyT>().Knockback(knockbackDuration, knockbackPower, this.transform));
             if (gameObject.tag == "basicAttack")
             {
                 if (other.gameObject.CompareTag("basicEnemy"))

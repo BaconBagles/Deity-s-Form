@@ -15,22 +15,11 @@ public class tutorialTipsScript : MonoBehaviour
     {
         if (collision.gameObject.tag == ("Player"))
         {
+            tutorialWave.TutorialStep();
+          //  tutorialWave.tutorialStage++;
             groundText.SetActive(true);
             previousTip.SetActive(false);
 
-            tutorialWave.TutorialStep();
-            tutorialWave.tutorialStage++;
-            
-
-         /*   nextDots.SetActive(true);
-            if (tutorialWave.wave < 0)
-            {
-                tutorialWave.wave++;
-            }
-            else
-            {
-                );
-            } */
         }
     }
 }

@@ -16,12 +16,14 @@ public class tutorialDoors : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             Collider2D collider = gameObject.GetComponent<Collider2D>();
-            collider.isTrigger = false;
+
             tCont.pointer.isDoor = false;
             tCont.pointer.gameObject.SetActive(false);
             tCont.StartCoroutine(tCont.FadeOut());
 
-            PlayerController player = collision.GetComponent<PlayerController>();
+
+            playerTutorial player = collision.GetComponent<playerTutorial>();
+            collider.isTrigger = false;
         }
     }
 }

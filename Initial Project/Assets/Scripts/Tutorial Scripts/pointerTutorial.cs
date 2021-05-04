@@ -7,11 +7,9 @@ public class pointerTutorial : MonoBehaviour
     public GameObject player;
     public tutorialScript gCont;
     public GameObject door;
-    public GameObject pickup;
     public Vector3 pointTo;
     Vector3 pointFrom;
 
-    public bool isPickup;
     public bool isDoor;
 
 

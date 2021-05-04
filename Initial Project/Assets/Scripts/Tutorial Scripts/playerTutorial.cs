@@ -68,7 +68,8 @@ public class playerTutorial : MonoBehaviour
         formlocked = true;
         hawklocked = true;
         formNumber = 2;
-        maxHealth = 10;
+        anim.SetInteger("form", formNumber);
+        maxHealth = 60;
         sndCooldown = 5;
 
         sr = GetComponent<SpriteRenderer>();
@@ -160,15 +161,16 @@ public class playerTutorial : MonoBehaviour
                 {
                     formNumber -= 1;
                 }
-                else if (formlocked == false && hawklocked == true)
+
+                if (formlocked == false && hawklocked == true)
                 {
-                    if (formNumber > 2)
+                    if (formNumber == 2)
                     {
-                        formNumber += 1;
+                        formNumber = 0;
                     }
-                    if (formNumber < 0)
+                    else if (formNumber == 0)
                     {
-                        formNumber -= 1;
+                        formNumber = 2;
                     }
                 }
                 SwitchForm();
@@ -180,17 +182,18 @@ public class playerTutorial : MonoBehaviour
                 {
                     formNumber += 1;
                 }
-                else if (formlocked == false && hawklocked == true)
-                {
-                    if (formNumber > 2)
-                    {
-                        formNumber -= 1;
-                    }
-                    if (formNumber < 0)
-                    {
-                        formNumber += 1;
-                    }
-                }
+
+              if (formlocked == false && hawklocked == true)
+               {
+                 if (formNumber == 2)
+                 {
+                        formNumber = 0;
+                 }
+                 else if (formNumber == 0)
+                  {
+                        formNumber = 2;
+                 }
+               }
                 SwitchForm();
             }
 
