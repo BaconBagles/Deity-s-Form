@@ -11,14 +11,47 @@ public class DifficultyManager : MonoBehaviour
     public int enemyNum;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         gCont = FindObjectOfType<GameController>();
         eCont = FindObjectOfType<EnemyController>();
+        CheckDiff();
     }
 
     public void CheckDiff()
     {
+        enemyNum = gCont.currentRoom;
+        switch (enemyNum)
+        {
+            case 1:
+                eCont.maxEnemies = 4;
+                break;
+            case 2:
+                eCont.maxEnemies = 4;
+                break;
+            case 3:
+                eCont.maxEnemies = 5;
+                break;
+            case 4:
+                eCont.maxEnemies = 5;
+                break;
+            case 5:
+                eCont.maxEnemies = 6;
+                break;
+            case 6:
+                eCont.maxEnemies = 6;
+                break;
+            case 7:
+                eCont.maxEnemies = 7;
+                break;
+            case 8:
+                eCont.maxEnemies = 7;
+                break;
+            default:
+                eCont.maxEnemies = 0;
+                break;
+        }
+
         switch (diffLevel)
         {
             case 1:
@@ -100,32 +133,6 @@ public class DifficultyManager : MonoBehaviour
                 break;
         }
 
-        switch (enemyNum)
-        {
-            case 1:
-                eCont.maxEnemies = 4;
-                break;
-            case 2:
-                eCont.maxEnemies = 4;
-                break;
-            case 3:
-                eCont.maxEnemies = 5;
-                break;
-            case 4:
-                eCont.maxEnemies = 5;
-                break;
-            case 5:
-                eCont.maxEnemies = 6;
-                break;
-            case 6:
-                eCont.maxEnemies = 6;
-                break;
-            case 7:
-                eCont.maxEnemies = 7;
-                break;
-            case 8:
-                eCont.maxEnemies = 7;
-                break;
-        }
+        
     }
 }

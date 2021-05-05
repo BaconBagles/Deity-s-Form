@@ -60,12 +60,6 @@ public class GameController : MonoBehaviour
         {
             allMemories = false;
         }
-        currentRoom = 0;
-        FadeIn();
-    }
-
-    void Start()
-    {
         if (deleteSave == 1)
         {
             LoadGame();
@@ -74,11 +68,17 @@ public class GameController : MonoBehaviour
         {
             LoadReset();
         }
+        dCont.CheckDiff();
+        FadeIn();
+    }
+
+    void Start()
+    {
+        
 
         animSpeed = 1f / eCont.attackTimer;
         hourAnim.SetFloat("speed", animSpeed);
 
-        dCont.CheckDiff();
         RandomRoom();
         
 
@@ -372,7 +372,6 @@ public class GameController : MonoBehaviour
         {
             currentRoom++;
             dCont.diffLevel++;
-            dCont.enemyNum++;
             dCont.CheckDiff();
             roomComplete = false;
             ResetSounds();

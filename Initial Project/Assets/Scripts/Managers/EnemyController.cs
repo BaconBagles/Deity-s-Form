@@ -32,6 +32,7 @@ public class EnemyController : MonoBehaviour
         enemyNumber = PlayerPrefs.GetInt("lastScene", 3);
         attackTimer = PlayerPrefs.GetInt("turnTimer", 5);
         spawning = true;
+        gameController.dCont.CheckDiff();
         StartCoroutine(SpawnEnemies());
     }
 
@@ -71,6 +72,7 @@ public class EnemyController : MonoBehaviour
 
     public IEnumerator SpawnEnemies()
     {
+        spawning = true;
         yield return new WaitForSeconds(spawnTime);
         Audio.Play("EnemySpawn");
 
