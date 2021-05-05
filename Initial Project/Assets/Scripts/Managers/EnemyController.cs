@@ -5,8 +5,6 @@ using UnityEngine;
 public class EnemyController : MonoBehaviour
 {
     public int attackTimer;
-    float timeLeft;
-    public attackTimer timeBar;
     public bool attacking;
     public OptionsMenu Options;
     public AudioManager Audio;
@@ -51,23 +49,11 @@ public class EnemyController : MonoBehaviour
                 StartCoroutine(SpawnEnemies());
             }
         }
-
-        if (attacking == true && timeLeft > 0)
-        {
-            timeLeft -= Time.deltaTime;
-            timeBar.SetTime(timeLeft);
-        }
-
-        if (attacking == false)
-        {
-            timeLeft = attackTimer;
-            timeBar.SetMaxTime(attackTimer);
-        }
     }
 
     IEnumerator EnemyAttack()
     {
-        StartTimer();
+        attacking = true;
         yield return new WaitForSeconds(attackTimer - 0.25f);
         
         foreach (Enemy enemy in enemies)
@@ -157,11 +143,5 @@ public class EnemyController : MonoBehaviour
         gameController.hourAnim.SetBool("fightTime", true);
         spawning = false;
     }
-
-    void StartTimer()
-    {
-        timeLeft = attackTimer;
-        timeBar.SetMaxTime(attackTimer);
-        attacking = true;
-    }
+    
 }

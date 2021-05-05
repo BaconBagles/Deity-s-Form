@@ -18,6 +18,7 @@ public class GameController : MonoBehaviour
     public GameObject memory;
     public TMPro.TextMeshProUGUI PickupText;
     public int roomNumber;
+    public ProgressBar progressBar;
 
     public int pickupNumber;
     public bool pickupSpawned;
@@ -44,7 +45,7 @@ public class GameController : MonoBehaviour
     public float animSpeed;
 
     public List<GameObject> pickups = new List<GameObject>();
-    Vector3 pickupDist;
+    Vector3 pickupDist = new Vector3(10, 0, 0);
 
     void Awake()
     {
@@ -79,15 +80,17 @@ public class GameController : MonoBehaviour
 
         dCont.CheckDiff();
         RandomRoom();
+        
 
-        pickupDist = new Vector3(10, 0, 0);
-
-        int random = Random.Range(0, bossConversations.Length+1);
+        int random = Random.Range(0, bossConversations.Length);
         for (int i = 0; i< bossConversations.Length; i++)
         {
             bossConversations[i].gameObject.SetActive(false);
         }
         bossConversations[random].gameObject.SetActive(true);
+
+        progressBar.SetMaxProgress(bRoomNum);
+        progressBar.SetProgress(currentRoom);
     }
 
     // Update is called once per frame
@@ -118,6 +121,7 @@ public class GameController : MonoBehaviour
         RandomPickup();
         aMan.Play("Glimmer");
         GameObject pickup1 = Instantiate(pickup, eSpawn.transform.position + pickupDist, Quaternion.identity);
+        pickup1.GetComponent<Pickup>().pickupNumber = pickupNumber;
         pickups.Add(pickup1);
         yield return new WaitForSeconds(0.02f);
         while (pickupNumber == pickup1.GetComponent<Pickup>().pickupNumber)
@@ -125,6 +129,7 @@ public class GameController : MonoBehaviour
             RandomPickup();
         }
         GameObject pickup2 = Instantiate(pickup, eSpawn.transform.position - pickupDist, Quaternion.identity);
+        pickup2.GetComponent<Pickup>().pickupNumber = pickupNumber;
         pickups.Add(pickup2);
     }
 
@@ -206,6 +211,7 @@ public class GameController : MonoBehaviour
         if (currentRoom == (bRoomNum))
         {
             roomNumber = 0;
+            eCont.maxEnemies = 8;
         }
         else
         {
@@ -310,9 +316,9 @@ public class GameController : MonoBehaviour
         PickupText.gameObject.SetActive(false);
     }
 
-    public IEnumerator PickupGained()
+    public IEnumerator PickupGained(int pNum)
     {
-        switch (pickupNumber)
+        switch (pNum)
         {
             case 0:
                 PickupText.text = "Attack Range Increased";
@@ -371,6 +377,7 @@ public class GameController : MonoBehaviour
             roomComplete = false;
             ResetSounds();
             RandomRoom();
+            progressBar.SetProgress(currentRoom);
             pickupSpawned = false;
             thePillarScript[] allPillars;
             theTorchScript[] alltorches;

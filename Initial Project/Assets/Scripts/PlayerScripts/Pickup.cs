@@ -18,8 +18,7 @@ public class Pickup : MonoBehaviour
         eCont = FindObjectOfType<EnemyController>();
         pCont = FindObjectOfType<PlayerController>();
         gCont = FindObjectOfType<GameController>();
-
-        pickupNumber = gCont.pickupNumber;
+        
         SpriteRenderer render = gameObject.GetComponent<SpriteRenderer>();
         render.sprite = images[pickupNumber];
     }
@@ -43,7 +42,7 @@ public class Pickup : MonoBehaviour
 
     void PickupBonus()
     {
-        gCont.StartCoroutine(gCont.PickupGained());
+        gCont.StartCoroutine(gCont.PickupGained(pickupNumber));
         switch (pickupNumber)
         {
             case 0:

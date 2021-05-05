@@ -105,13 +105,25 @@ public class DifficultyManager : MonoBehaviour
             case 1:
                 eCont.maxEnemies = 4;
                 break;
+            case 2:
+                eCont.maxEnemies = 4;
+                break;
             case 3:
+                eCont.maxEnemies = 5;
+                break;
+            case 4:
                 eCont.maxEnemies = 5;
                 break;
             case 5:
                 eCont.maxEnemies = 6;
                 break;
+            case 6:
+                eCont.maxEnemies = 6;
+                break;
             case 7:
+                eCont.maxEnemies = 7;
+                break;
+            case 8:
                 eCont.maxEnemies = 7;
                 break;
         }

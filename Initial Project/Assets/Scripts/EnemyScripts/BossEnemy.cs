@@ -61,7 +61,7 @@ public class BossEnemy : MonoBehaviour
             switchthreshold = enemyScript.health * 0.75f;
         } 
         
-       if (controllerScript.attacking == true && controllerScript.enemies.Count == 1)
+       if (controllerScript.attacking == true && controllerScript.enemies.Count <= 1)
        {
           controllerScript.StopAllCoroutines();
           StartCoroutine(controllerScript.SpawnEnemies());

@@ -9,8 +9,6 @@ public class tutorialScript : MonoBehaviour
 {
    
     public int attackTimer;
-    float timeLeft;
-    public attackTimer timeBar;
     public bool attacking;
     public OptionsMenu Options;
     public AudioManager Audio;
@@ -85,19 +83,7 @@ public class tutorialScript : MonoBehaviour
             hourAnim.SetBool("fightTime", false);
             fightOver = true;
         }
-
-        if (attacking == true && timeLeft > 0)
-        {
-            timeLeft -= Time.deltaTime;
-            timeBar.SetTime(timeLeft);
-        }
-
-        if (attacking == false)
-        {
-            timeLeft = attackTimer;
-            timeBar.SetMaxTime(attackTimer);
-        }
-
+        
         if (roomComplete == true && enemies.Count == 0)
         {
             pointer.gameObject.SetActive(true);
@@ -107,7 +93,6 @@ public class tutorialScript : MonoBehaviour
 
     IEnumerator EnemyAttack()
     {
-        StartTimer();
         yield return new WaitForSeconds(attackTimer - 0.25f);
 
         foreach (EnemyT enemy in enemies)
@@ -326,12 +311,5 @@ public class tutorialScript : MonoBehaviour
         sceneFader.canvasRenderer.SetAlpha(1.0f);
         sceneFader.CrossFadeAlpha(0.0f, 1f, false);
 
-    }
-
-    void StartTimer()
-    {
-        timeLeft = attackTimer;
-        timeBar.SetMaxTime(attackTimer);
-        attacking = true;
     }
 }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -56,7 +57,10 @@ public class PlayerController : MonoBehaviour
 
     Material mat;
     float fade = 1f;
-    
+
+    public GameObject healthBox;
+    Material healthBoxMat;
+    float outline = 0f;
 
     void Awake()
     {
@@ -72,6 +76,7 @@ public class PlayerController : MonoBehaviour
         frb = fireObject.GetComponent<Rigidbody2D>();
         orbitPos = attackOrbiter.GetComponent<attackOrbit>();
         mat = GetComponent<SpriteRenderer>().material;
+        healthBoxMat = healthBox.GetComponent<Image>().material;
         
 
         //Adds our stored keys to the dictionary
@@ -103,6 +108,16 @@ public class PlayerController : MonoBehaviour
         }
         mat.SetFloat("_Fade", fade);
 
+
+        if (shieldCount > 0)
+        {
+            outline = 1;
+        }
+        else
+        {
+            outline = 0;
+        }
+        healthBoxMat.SetFloat("_OutlineThickness", outline);
 
         mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
         fireObject.transform.position = rb.transform.position;
@@ -187,6 +202,7 @@ public class PlayerController : MonoBehaviour
             {
                 sndActive = false;
             }
+
 
             /* mousePos = Input.mousePosition;
              mousePos.z = 0;
