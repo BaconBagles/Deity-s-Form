@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class DialogueManager : MonoBehaviour
 {
     public OptionsMenu options;
+    public AudioManager aCont;
 
     public TMPro.TextMeshProUGUI nameText;
     public TMPro.TextMeshProUGUI dialogueText;
@@ -33,7 +34,15 @@ public class DialogueManager : MonoBehaviour
     public void StartDialogue(Dialogue dialogue)
     {
         textBox.SetActive(true);
-        
+
+        if (response == true && !aCont.MusicSources[6].isPlaying)
+        {
+            aCont.StopMusic("IntroMainTheme");
+            aCont.StopMusic("MainTheme");
+            aCont.StopMusic("BossTheme01");
+            aCont.StopMusic("BossTheme02");
+            aCont.PlayMusic("Dialogue");
+        }
         Time.timeScale = 0f;
         options.GameIsPaused = true;
 
@@ -115,8 +124,9 @@ public class DialogueManager : MonoBehaviour
         {
             Time.timeScale = 1f;
             options.GameIsPaused = false;
-
+            aCont.StopMusic("Dialogue");
             textBox.SetActive(false);
         }
+
     }
 }

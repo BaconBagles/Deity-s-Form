@@ -21,7 +21,6 @@ public class AudioManager : MonoBehaviour
     void Awake()
     {
         
-
         foreach (Sound m in music)
         {
             m.source = gameObject.AddComponent<AudioSource>();
@@ -70,16 +69,19 @@ public class AudioManager : MonoBehaviour
     {
         if (mainMenu == false)
         {
-            if (!MusicSources[0].isPlaying)
+            if (!MusicSources[6].isPlaying)
             {
-                if (!MusicSources[4].isPlaying && gCont.bossRoom == true)
+                if (!MusicSources[0].isPlaying)
                 {
-                    StopMusic("MainTheme");
-                    PlayMusic("BossTheme01");
-                }
-                else if (!MusicSources[2].isPlaying)
-                {
-                    PlayMusic("MainTheme");
+                    if (!MusicSources[4].isPlaying && gCont.bossRoom == true)
+                    {
+                        StopMusic("MainTheme");
+                        PlayMusic("BossTheme01");
+                    }
+                    else if (!MusicSources[2].isPlaying && gCont.bossRoom == false)
+                    {
+                        PlayMusic("MainTheme");
+                    }
                 }
             }
         }
