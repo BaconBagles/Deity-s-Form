@@ -50,7 +50,7 @@ public class projectileScript : MonoBehaviour
             GameObject effect = Instantiate(hitEffect, transform.position, Quaternion.identity);
             Destroy(effect, 0.5f);
             StartCoroutine(player.GetComponent<PlayerController>().Knockback(knockbackDuration, knockbackPower, this.transform));
-            if (player.GetComponent<PlayerController>().shieldCount == 0)
+            if (player.GetComponent<PlayerController>().shieldCount <= 0)
             {
                 player.GetComponent<PlayerController>().health -= damage;
                 CameraShake cam = FindObjectOfType<CameraShake>();
