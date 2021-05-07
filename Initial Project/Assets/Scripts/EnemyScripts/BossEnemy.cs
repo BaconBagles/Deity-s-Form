@@ -54,7 +54,7 @@ public class BossEnemy : MonoBehaviour
             switchthreshold = enemyScript.health * 0.75f;
             StartCoroutine(SwitchBack());
         }
-        else if (enemyScript.health <= switchthreshold && FormList <= 2)
+        else if (enemyScript.health <= switchthreshold && isFinalBoss == true)
         {
             Audio.Play("BossShieldBreak");
             FormList++;

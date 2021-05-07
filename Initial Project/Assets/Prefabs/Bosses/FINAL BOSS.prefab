@@ -106,7 +106,7 @@ GameObject:
   - component: {fileID: 7422532054927458531}
   m_Layer: 10
   m_Name: FINAL BOSS
-  m_TagString: spikyEnemy
+  m_TagString: basicEnemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -246,7 +246,7 @@ MonoBehaviour:
   enemyAnim: {fileID: 7956289166715365268}
   Audio: {fileID: 0}
   bossNum: 3
-  firstForm: 0
+  firstForm: 2
   secondForm: 0
   isFinalBoss: 1
   bossHealth: 100

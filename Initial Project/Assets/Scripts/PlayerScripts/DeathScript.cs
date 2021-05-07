@@ -27,6 +27,26 @@ public class DeathScript : MonoBehaviour
         SceneManager.LoadScene(0);
     }
 
+    public void WarEnd()
+    {
+        PlayerPrefs.SetInt("deleteSave", 0);
+        PlayerPrefs.SetInt("saveExists", 0);
+        PlayerPrefs.SetInt("lastScene", 3);
+        PlayerPrefs.SetInt("firstGameComplete", 1);
+        PlayerPrefs.Save();
+        SceneManager.LoadScene(8);
+    }
+
+    public void PeaceEnd()
+    {
+        PlayerPrefs.SetInt("deleteSave", 0);
+        PlayerPrefs.SetInt("saveExists", 0);
+        PlayerPrefs.SetInt("lastScene", 3);
+        PlayerPrefs.SetInt("firstGameComplete", 1);
+        PlayerPrefs.Save();
+        SceneManager.LoadScene(9);
+    }
+
     public void Continue()
     {
         PlayerPrefs.SetInt("deleteSave", 0);
