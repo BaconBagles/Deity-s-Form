@@ -147,7 +147,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: e30636a4a01b02f468ecd7dfa4b2dd9a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -251,8 +251,8 @@ MonoBehaviour:
   isFinalBoss: 1
   bossHealth: 100
   bossDamage: 10
-  deathEffect: {fileID: 7203177334950900981, guid: 588c5344bda692e4eb573df0c9fae7f2, type: 3}
-  bossCrown: {fileID: 7399996566726880958, guid: 35d7955d4d13df14398d159a4ea38381, type: 3}
+  deathEffect: {fileID: 4666360837771341105, guid: 588c5344bda692e4eb573df0c9fae7f2, type: 3}
+  bossCrown: {fileID: 2638355135410931929, guid: 2468d982ab860b94b870ea0179affc28, type: 3}
 --- !u!114 &3791742543417215833
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -19,7 +19,7 @@ public class BossEnemy : MonoBehaviour
     public bool isFinalBoss;
     public int bossHealth;
     public int bossDamage;
-    public ParticleSystem deathEffect;
+    public GameObject deathEffect;
     public GameObject bossCrown;
 
     // Start is called before the first frame update
@@ -145,7 +145,8 @@ public class BossEnemy : MonoBehaviour
         while (dead)
         {
             Vector3 rand = new Vector3(Random.Range(-5, 5), Random.Range(-5, 5), Random.Range(-5, 5));
-            Instantiate(deathEffect, transform.position + rand, Quaternion.identity);
+            GameObject effect = Instantiate(deathEffect, transform.position, Quaternion.identity);
+            Destroy(effect, 0.5f);
             yield return new WaitForSeconds(0.5f);
         }
     }
@@ -156,7 +157,8 @@ public class BossEnemy : MonoBehaviour
         while (dead)
         {
             Vector3 rand = new Vector3(Random.Range(-5, 5), Random.Range(-5, 5), Random.Range(-5, 5));
-            Instantiate(deathEffect, transform.position + rand, Quaternion.identity);
+            GameObject effect = Instantiate(deathEffect, transform.position, Quaternion.identity);
+            Destroy(effect, 0.5f);
             yield return new WaitForSeconds(0.5f);
         }
     }
