@@ -62,6 +62,8 @@ public class PlayerController : MonoBehaviour
     Material healthBoxMat;
     float outline = 0f;
 
+    public bool finalBossAnim;
+
     void Awake()
     {
         currentCooldown = attackCooldown;
@@ -125,124 +127,127 @@ public class PlayerController : MonoBehaviour
         //Update for Input
         if (Options.GameIsPaused == false && playerDead == false)
         {
-            //New Movement Code, no longer uses rigidbody
-            //All inputs call playerpref 'keys' dictionary that carry between scenes
-            if (Input.GetKey(keys["Up"]))
+            if (!finalBossAnim)
             {
-
-                transform.Translate(Vector2.up * moveSpeed * Time.deltaTime);
-                anim.SetFloat("horizontal", 0);
-                anim.SetFloat("vertical", 1);
-            }
-
-            if (Input.GetKey(keys["Down"]))
-            {
-
-                transform.Translate(Vector2.down * moveSpeed * Time.deltaTime);
-                anim.SetFloat("horizontal", -0);
-                anim.SetFloat("vertical", -1);
-            }
-
-            if (Input.GetKey(keys["Left"]))
-            {
-
-                transform.Translate(Vector2.left * moveSpeed * Time.deltaTime);
-                anim.SetFloat("vertical", 0);
-                anim.SetFloat("horizontal", -1);
-            }
-
-            if (!Input.GetKey(keys["Left"]) && !Input.GetKey(keys["Right"]) && !Input.GetKey(keys["Up"]) && !Input.GetKey(keys["Down"]))
-            {
-                anim.SetFloat("vertical", 0);
-                anim.SetFloat("horizontal", 0);
-            }
-
-            if (Input.GetKey(keys["Right"]))
-            {
-
-                transform.Translate(Vector2.right * moveSpeed * Time.deltaTime);
-                anim.SetFloat("vertical", 0);
-                anim.SetFloat("horizontal", 1);
-            }
-
-            if (Input.GetKeyDown(keys["switchA"]) && attacking == false)
-            {
-                formNumber -= 1;
-                SwitchForm();
-            }
-            if (Input.GetKeyDown(keys["switchB"]) && attacking == false)
-            {
-                formNumber += 1;
-                SwitchForm();
-            }
-
-            //attackCode (Mouse)
-            if (Input.GetKeyDown(keys["basicAttack"]) && attacking == false)
-            {
-                //StartCoroutine(BasicAttack());
-                StartCoroutine(MainAttack());
-            }
-
-            if (Input.GetKeyDown(keys["secondaryAttack"]) && attacking == false && sndActive == false)
-            {
-                StartCoroutine(SecondaryAttack());
-            }
-
-            if (currentCooldown >= 0)
-            {
-                currentCooldown -= Time.deltaTime;
-            }
-
-            if (sndCurrentCooldown >= 0)
-            {
-                sndCurrentCooldown -= Time.deltaTime;
-            }
-
-            if (sndCurrentCooldown < 0)
-            {
-                sndActive = false;
-            }
-
-
-            /* mousePos = Input.mousePosition;
-             mousePos.z = 0;
-             mousePos = Camera.main.ScreenToWorldPoint(mousePos); */
-            normaliseDir = (mousePos - rb.position).normalized;
-
-            if (bullSndAtk == true)
-            {
-               transform.Translate(normaliseDir * (moveSpeed * 2) * Time.deltaTime);
-                if (currentCooldown <= 0f)
+                //New Movement Code, no longer uses rigidbody
+                //All inputs call playerpref 'keys' dictionary that carry between scenes
+                if (Input.GetKey(keys["Up"]))
                 {
-                    attacking = false;
-                    secondaryAttacks[formNumber].SetActive(false);
-                    bullSndAtk = false;
-                    sndCurrentCooldown = sndCooldown;
-                    anim.SetBool("Charging", false);
-                    sndActive = true;
+
+                    transform.Translate(Vector2.up * moveSpeed * Time.deltaTime);
+                    anim.SetFloat("horizontal", 0);
+                    anim.SetFloat("vertical", 1);
                 }
-            }
-            if (jackalSndAtk == true)
-            {
-                transform.Translate(normaliseDir * (moveSpeed * 2) * Time.deltaTime);
-                if (currentCooldown <= 0f)
+
+                if (Input.GetKey(keys["Down"]))
                 {
-                    attacking = false;
-                    secondaryAttacks[formNumber].SetActive(false);
-                    jackalSndAtk = false;
-                    sndCurrentCooldown = sndCooldown;
-                    sndActive = true;
+
+                    transform.Translate(Vector2.down * moveSpeed * Time.deltaTime);
+                    anim.SetFloat("horizontal", -0);
+                    anim.SetFloat("vertical", -1);
                 }
-            }
-            if (hawkSndAtk == true)
-            {
-                if (currentCooldown <= 0f)
+
+                if (Input.GetKey(keys["Left"]))
                 {
-                    attacking = false;
-                    secondaryAttacks[formNumber].SetActive(false);
-                    hawkSndAtk = false;
-                    sndCurrentCooldown = sndCooldown;
-                    sndActive = true;
+
+                    transform.Translate(Vector2.left * moveSpeed * Time.deltaTime);
+                    anim.SetFloat("vertical", 0);
+                    anim.SetFloat("horizontal", -1);
+                }
+
+                if (!Input.GetKey(keys["Left"]) && !Input.GetKey(keys["Right"]) && !Input.GetKey(keys["Up"]) && !Input.GetKey(keys["Down"]))
+                {
+                    anim.SetFloat("vertical", 0);
+                    anim.SetFloat("horizontal", 0);
+                }
+
+                if (Input.GetKey(keys["Right"]))
+                {
+
+                    transform.Translate(Vector2.right * moveSpeed * Time.deltaTime);
+                    anim.SetFloat("vertical", 0);
+                    anim.SetFloat("horizontal", 1);
+                }
+
+                if (Input.GetKeyDown(keys["switchA"]) && attacking == false)
+                {
+                    formNumber -= 1;
+                    SwitchForm();
+                }
+                if (Input.GetKeyDown(keys["switchB"]) && attacking == false)
+                {
+                    formNumber += 1;
+                    SwitchForm();
+                }
+
+                //attackCode (Mouse)
+                if (Input.GetKeyDown(keys["basicAttack"]) && attacking == false)
+                {
+                    //StartCoroutine(BasicAttack());
+                    StartCoroutine(MainAttack());
+                }
+
+                if (Input.GetKeyDown(keys["secondaryAttack"]) && attacking == false && sndActive == false)
+                {
+                    StartCoroutine(SecondaryAttack());
+                }
+
+                if (currentCooldown >= 0)
+                {
+                    currentCooldown -= Time.deltaTime;
+                }
+
+                if (sndCurrentCooldown >= 0)
+                {
+                    sndCurrentCooldown -= Time.deltaTime;
+                }
+
+                if (sndCurrentCooldown < 0)
+                {
+                    sndActive = false;
+                }
+
+
+                /* mousePos = Input.mousePosition;
+                 mousePos.z = 0;
+                 mousePos = Camera.main.ScreenToWorldPoint(mousePos); */
+                normaliseDir = (mousePos - rb.position).normalized;
+
+                if (bullSndAtk == true)
+                {
+                    transform.Translate(normaliseDir * (moveSpeed * 2) * Time.deltaTime);
+                    if (currentCooldown <= 0f)
+                    {
+                        attacking = false;
+                        secondaryAttacks[formNumber].SetActive(false);
+                        bullSndAtk = false;
+                        sndCurrentCooldown = sndCooldown;
+                        anim.SetBool("Charging", false);
+                        sndActive = true;
+                    }
+                }
+                if (jackalSndAtk == true)
+                {
+                    transform.Translate(normaliseDir * (moveSpeed * 2) * Time.deltaTime);
+                    if (currentCooldown <= 0f)
+                    {
+                        attacking = false;
+                        secondaryAttacks[formNumber].SetActive(false);
+                        jackalSndAtk = false;
+                        sndCurrentCooldown = sndCooldown;
+                        sndActive = true;
+                    }
+                }
+                if (hawkSndAtk == true)
+                {
+                    if (currentCooldown <= 0f)
+                    {
+                        attacking = false;
+                        secondaryAttacks[formNumber].SetActive(false);
+                        hawkSndAtk = false;
+                        sndCurrentCooldown = sndCooldown;
+                        sndActive = true;
+                    }
                 }
             }
 

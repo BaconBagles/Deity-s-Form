@@ -30,6 +30,7 @@ public class Enemy : MonoBehaviour
     AudioManager Audio;
     public bool isBoss;
     public int bossNum;
+    BossEnemy boss;
     string secondarytag;
     int latDirRnd;
     bool lateralDirection;
@@ -67,6 +68,7 @@ public class Enemy : MonoBehaviour
         eCont = FindObjectOfType<EnemyController>();
         player = GameObject.Find("Player");
         pCont = player.GetComponent<PlayerController>();
+        boss = gameObject.GetComponent<BossEnemy>();
         currentForce = eCont.Force;
         currentKnockback = eCont.Knockback;
         goal = player.transform;
@@ -366,7 +368,13 @@ public class Enemy : MonoBehaviour
         if (isBoss == true)
         {
             eCont.gameController.roomComplete = true;
+            if (boss.isFinalBoss == true)
+            {
+                Instantiate(boss.bossCrown, transform.position, Quaternion.identity);
+            }
         }
+
+        
         Destroy(this.gameObject);
     }
 

@@ -20,6 +20,7 @@ public class BossEnemy : MonoBehaviour
     public int bossHealth;
     public int bossDamage;
     public ParticleSystem deathEffect;
+    public GameObject bossCrown;
 
     // Start is called before the first frame update
     void Start()
@@ -70,7 +71,18 @@ public class BossEnemy : MonoBehaviour
 
        if (enemyScript.health == 0)
        {
-           Instantiate(deathEffect, transform.position, Quaternion.identity);
+            if (isFinalBoss)
+            {
+                Camera cam = FindObjectOfType<Camera>();
+                CameraShake camShake = cam.GetComponent<CameraShake>();
+                camShake.StartCoroutine(camShake.Shake(5f, 0.5f));
+                cam.transform.position = Vector3.MoveTowards(cam.transform.position, gameObject.transform.position, 5 * Time.deltaTime);
+                StartCoroutine(FinalBossDeath());
+            }
+            else
+            {
+                StartCoroutine(BossDeath());
+            }
        }
 
        if(FormList > 2)
@@ -127,7 +139,27 @@ public class BossEnemy : MonoBehaviour
         SwitchForm();
     }
 
-    
+    IEnumerator BossDeath()
+    {
+        bool dead = true;
+        while (dead)
+        {
+            Vector3 rand = new Vector3(Random.Range(-5, 5), Random.Range(-5, 5), Random.Range(-5, 5));
+            Instantiate(deathEffect, transform.position + rand, Quaternion.identity);
+            yield return new WaitForSeconds(0.5f);
+        }
+    }
+
+    IEnumerator FinalBossDeath()
+    {
+        bool dead = true;
+        while (dead)
+        {
+            Vector3 rand = new Vector3(Random.Range(-5, 5), Random.Range(-5, 5), Random.Range(-5, 5));
+            Instantiate(deathEffect, transform.position + rand, Quaternion.identity);
+            yield return new WaitForSeconds(0.5f);
+        }
+    }
       
  
 }
