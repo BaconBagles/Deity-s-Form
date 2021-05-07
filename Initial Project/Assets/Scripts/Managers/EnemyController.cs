@@ -90,9 +90,8 @@ public class EnemyController : MonoBehaviour
             {
                 for (int i = 0; i < maxEnemies; i++)
                 {
-                    rndPos = new Vector2(Random.Range(-5, 5), Random.Range(-5, 5));
                     int enemyType = Random.Range(0, EnemyType.Length - 3);
-                    Enemy enemy = Instantiate(EnemyType[enemyType], spawnPoint + rndPos, Quaternion.identity, transform);
+                    Enemy enemy = Instantiate(EnemyType[enemyType], spawnPoint, Quaternion.identity, transform);
                     enemy.maxHealth += diffHealthMod;
                     enemy.health += diffHealthMod;
                     enemy.currentDamage += diffDamageMod;
@@ -103,9 +102,8 @@ public class EnemyController : MonoBehaviour
             {
                 for (int i = 0; i < maxEnemies; i++)
                 {
-                    rndPos = new Vector2(Random.Range(-5, 5), Random.Range(-5, 5));
                     int enemyType = Random.Range(0, EnemyType.Length - 2);
-                    Enemy enemy = Instantiate(EnemyType[enemyType], spawnPoint + rndPos, Quaternion.identity, transform);
+                    Enemy enemy = Instantiate(EnemyType[enemyType], spawnPoint, Quaternion.identity, transform);
                     enemy.maxHealth += diffHealthMod;
                     enemy.health += diffHealthMod;
                     enemy.currentDamage += diffDamageMod;
@@ -116,9 +114,8 @@ public class EnemyController : MonoBehaviour
             {
                 for (int i = 0; i < maxEnemies; i++)
                 {
-                    rndPos = new Vector2(Random.Range(-5, 5), Random.Range(-5, 5));
                     int enemyType = Random.Range(0, EnemyType.Length - 1);
-                    Enemy enemy = Instantiate(EnemyType[enemyType], spawnPoint + rndPos, Quaternion.identity, transform);
+                    Enemy enemy = Instantiate(EnemyType[enemyType], spawnPoint, Quaternion.identity, transform);
                     enemy.maxHealth += diffHealthMod;
                     enemy.health += diffHealthMod;
                     enemy.currentDamage += diffDamageMod;
@@ -129,9 +126,8 @@ public class EnemyController : MonoBehaviour
             {
                 for (int i = 0; i < maxEnemies; i++)
                 {
-                    rndPos = new Vector2(Random.Range(-5, 5), Random.Range(-5, 5));
                     int enemyType = Random.Range(0, EnemyType.Length);
-                    Enemy enemy = Instantiate(EnemyType[enemyType], spawnPoint + rndPos, Quaternion.identity, transform);
+                    Enemy enemy = Instantiate(EnemyType[enemyType], spawnPoint, Quaternion.identity, transform);
                     enemy.maxHealth += diffHealthMod;
                     enemy.health += diffHealthMod;
                     enemy.currentDamage += diffDamageMod;

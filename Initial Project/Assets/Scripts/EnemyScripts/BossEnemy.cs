@@ -145,7 +145,7 @@ public class BossEnemy : MonoBehaviour
         while (dead)
         {
             Vector3 rand = new Vector3(Random.Range(-5, 5), Random.Range(-5, 5), Random.Range(-5, 5));
-            GameObject effect = Instantiate(deathEffect, transform.position, Quaternion.identity);
+            GameObject effect = Instantiate(deathEffect, transform.position+rand, Quaternion.identity);
             Destroy(effect, 0.5f);
             yield return new WaitForSeconds(0.5f);
         }
@@ -157,7 +157,7 @@ public class BossEnemy : MonoBehaviour
         while (dead)
         {
             Vector3 rand = new Vector3(Random.Range(-5, 5), Random.Range(-5, 5), Random.Range(-5, 5));
-            GameObject effect = Instantiate(deathEffect, transform.position, Quaternion.identity);
+            GameObject effect = Instantiate(deathEffect, transform.position+rand, Quaternion.identity);
             Destroy(effect, 0.5f);
             yield return new WaitForSeconds(0.5f);
         }
