@@ -96,6 +96,7 @@ public class EnemyController : MonoBehaviour
                     enemy.health += diffHealthMod;
                     enemy.currentDamage += diffDamageMod;
                     enemies.Add(enemy);
+                    yield return new WaitForSeconds(0.01f);
                 }
             }
             else if (enemyNumber == 4)
@@ -108,6 +109,7 @@ public class EnemyController : MonoBehaviour
                     enemy.health += diffHealthMod;
                     enemy.currentDamage += diffDamageMod;
                     enemies.Add(enemy);
+                    yield return new WaitForSeconds(0.01f);
                 }
             }
             else if (enemyNumber == 5)
@@ -120,6 +122,7 @@ public class EnemyController : MonoBehaviour
                     enemy.health += diffHealthMod;
                     enemy.currentDamage += diffDamageMod;
                     enemies.Add(enemy);
+                    yield return new WaitForSeconds(0.01f);
                 }
             }
             else if (enemyNumber == 6)
@@ -132,6 +135,7 @@ public class EnemyController : MonoBehaviour
                     enemy.health += diffHealthMod;
                     enemy.currentDamage += diffDamageMod;
                     enemies.Add(enemy);
+                    yield return new WaitForSeconds(0.01f);
                 }
             }
         }
