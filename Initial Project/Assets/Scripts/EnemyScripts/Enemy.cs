@@ -359,7 +359,7 @@ public class Enemy : MonoBehaviour
         yield return new WaitForSecondsRealtime(1f);
 
         float randomNum = Random.Range(0, 100);
-        if (randomNum > 90)
+        if (randomNum > 90 || boss == true)
         {
             Instantiate(healthPickup, new Vector2(gameObject.transform.position.x, gameObject.transform.position.y), Quaternion.identity);
         }
