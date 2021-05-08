@@ -44,9 +44,6 @@ public class tutorialScript : MonoBehaviour
 
     void Awake()
     {
-        PlayerPrefs.SetInt("tutorialDone", 1);
-        PlayerPrefs.Save();
-
         Force = 5.5f;
         Knockback = 175;
         enemyNumber = PlayerPrefs.GetInt("lastScene", 3);

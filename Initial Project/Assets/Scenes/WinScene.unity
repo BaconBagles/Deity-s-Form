@@ -516,7 +516,7 @@ MonoBehaviour:
     topRight: {r: 1, g: 1, b: 1, a: 1}
     bottomLeft: {r: 1, g: 1, b: 1, a: 1}
     bottomRight: {r: 1, g: 1, b: 1, a: 1}
-  m_fontColorGradientPreset: {fileID: 11400000, guid: 032ab3c31ea5d4b43b2549b7c2bfffe5, type: 2}
+  m_fontColorGradientPreset: {fileID: 11400000, guid: 65c6df6ae9e93ac42b8907c9a1a83d01, type: 2}
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
@@ -650,7 +650,7 @@ MonoBehaviour:
     topRight: {r: 1, g: 1, b: 1, a: 1}
     bottomLeft: {r: 1, g: 1, b: 1, a: 1}
     bottomRight: {r: 1, g: 1, b: 1, a: 1}
-  m_fontColorGradientPreset: {fileID: 11400000, guid: 032ab3c31ea5d4b43b2549b7c2bfffe5, type: 2}
+  m_fontColorGradientPreset: {fileID: 11400000, guid: 65c6df6ae9e93ac42b8907c9a1a83d01, type: 2}
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
@@ -1514,7 +1514,7 @@ MonoBehaviour:
     topRight: {r: 1, g: 1, b: 1, a: 1}
     bottomLeft: {r: 1, g: 1, b: 1, a: 1}
     bottomRight: {r: 1, g: 1, b: 1, a: 1}
-  m_fontColorGradientPreset: {fileID: 11400000, guid: 032ab3c31ea5d4b43b2549b7c2bfffe5, type: 2}
+  m_fontColorGradientPreset: {fileID: 11400000, guid: 65c6df6ae9e93ac42b8907c9a1a83d01, type: 2}
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}

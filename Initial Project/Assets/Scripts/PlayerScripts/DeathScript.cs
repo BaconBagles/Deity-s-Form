@@ -14,9 +14,9 @@ public class DeathScript : MonoBehaviour
 
     public void Dead()
     {
-        PlayerPrefs.SetInt("tutorialDone", 0);
         SceneManager.LoadScene(1);
     }
+
 
     public void Restart()
     {

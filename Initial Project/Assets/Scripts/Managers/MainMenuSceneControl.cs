@@ -6,7 +6,6 @@ using UnityEngine.SceneManagement;
 public class MainMenuSceneControl : MonoBehaviour
 {
 
-    public int isTutorialDone;
     public int lastScene;
     public int saveExists;
     public int firstGameComplete;
@@ -15,7 +14,6 @@ public class MainMenuSceneControl : MonoBehaviour
 
     private void Start()
     {
-        isTutorialDone = PlayerPrefs.GetInt("tutorialDone", 0);
         lastScene = PlayerPrefs.GetInt("lastScene", 3);
         saveExists = PlayerPrefs.GetInt("saveExists", 0);
         firstGameComplete = PlayerPrefs.GetInt("firstGameComplete", 0);
@@ -38,19 +36,16 @@ public class MainMenuSceneControl : MonoBehaviour
             Crown.SetActive(false);
         }
     }
+    public void PlayTutorial()
+    {
+        PlayerPrefs.SetInt("deleteSave", 0);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);
+    }
 
     public void StartGame()
     {
         PlayerPrefs.SetInt("deleteSave", 0);
-
-        if (isTutorialDone == 0)
-        {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2); // Will load player into tutorial scene, only works once
-        }
-        else if (isTutorialDone == 1)
-        { 
-         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 3); //Will load player into main game
-        }
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 3); //Will load player into main game
     }
 
     public void ResumeGame()
