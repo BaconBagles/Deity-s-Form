@@ -71,7 +71,7 @@ public class Pickup : MonoBehaviour
                 break;
             case 6:
                 //move speed up
-                pCont.speedBonus += 10;
+                pCont.speedBonus += 5;
                 break;
             case 7:
                 //armoured

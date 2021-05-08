@@ -44,6 +44,7 @@ public class MemoryGain : MonoBehaviour
             PlayerPrefs.SetInt("Memory3", 1);
             gCont.allMemories = true;
         }
+        PlayerPrefs.Save();
         Options.MemoryCheck();
     }
 }
