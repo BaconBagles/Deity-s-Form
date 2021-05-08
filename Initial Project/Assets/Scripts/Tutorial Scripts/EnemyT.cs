@@ -244,7 +244,11 @@ public class EnemyT : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-         if (other.gameObject.CompareTag("JackalSpecial"))
+        if (other.gameObject.CompareTag("Respawn"))
+        {
+            transform.position = player.transform.position;
+        }
+        if (other.gameObject.CompareTag("JackalSpecial"))
         {
             health -= 2;
             pCont.health += 1;

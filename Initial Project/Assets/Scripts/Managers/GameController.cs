@@ -88,9 +88,7 @@ public class GameController : MonoBehaviour
             bossConversations[i].gameObject.SetActive(false);
         }
         bossConversations[random].gameObject.SetActive(true);
-
-        progressBar.SetMaxProgress(bRoomNum);
-        progressBar.SetProgress(currentRoom);
+        
     }
 
     // Update is called once per frame
@@ -114,6 +112,7 @@ public class GameController : MonoBehaviour
             bossRoom = true;
         }
 
+        progressBar.SetMaxProgress(bRoomNum);
         progressBar.SetProgress(currentRoom);
     }
 
