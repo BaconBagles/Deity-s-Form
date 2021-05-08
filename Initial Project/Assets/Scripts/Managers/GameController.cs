@@ -113,6 +113,8 @@ public class GameController : MonoBehaviour
         {
             bossRoom = true;
         }
+
+        progressBar.SetProgress(currentRoom);
     }
 
     IEnumerator SpawnPickups()
