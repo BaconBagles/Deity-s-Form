@@ -387,7 +387,7 @@ public class Enemy : MonoBehaviour
         else if (other.gameObject.CompareTag("JackalSpecial"))
         {
             health -= 2;
-            pCont.health += 1;
+            pCont.health += 2;
             FindObjectOfType<AudioManager>().Play("EnemyDamaged");
         }
         else if (other.gameObject.CompareTag("BullSpecial"))

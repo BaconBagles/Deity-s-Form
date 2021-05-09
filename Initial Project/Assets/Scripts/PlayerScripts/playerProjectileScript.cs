@@ -72,8 +72,8 @@ public class playerProjectileScript : MonoBehaviour
         {
             enemy = other.gameObject.GetComponent<Enemy>();
             GameObject effect = Instantiate(hitEffect, transform.position, Quaternion.identity);
-            effect.transform.parent = enemy.gameObject.transform;
             Destroy(effect, 0.5f);
+            effect.transform.parent = enemy.gameObject.transform;
             StartCoroutine(enemy.GetComponent<Enemy>().Knockback(knockbackDuration, knockbackPower, this.transform));
             if (gameObject.tag == "basicAttack")
             {

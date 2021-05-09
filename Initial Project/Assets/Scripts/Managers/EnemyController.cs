@@ -57,13 +57,13 @@ public class EnemyController : MonoBehaviour
         attacking = true;
         yield return new WaitForSeconds(attackTimer - 0.25f);
         
-        foreach (Enemy enemy in enemies)
+        for (int i = 0; i < enemies.Count; i++)
         {
-            if (enemy != null)
+            if (enemies[i] != null)
             {
-                enemy.enemyAnim.SetTrigger("Attack");
+                enemies[i].enemyAnim.SetTrigger("Attack");
                 yield return new WaitForSeconds(0.25f);
-                enemy.StartCoroutine(enemy.Attack());
+                enemies[i].StartCoroutine(enemies[i].Attack());
             }
         }
 

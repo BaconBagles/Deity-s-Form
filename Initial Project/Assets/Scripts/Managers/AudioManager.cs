@@ -49,7 +49,7 @@ public class AudioManager : MonoBehaviour
 
         int sceneID = SceneManager.GetActiveScene().buildIndex;
 
-        if (sceneID > 2)
+        if (sceneID == 3)
         {
             PlayMusic("IntroMainTheme");
         }

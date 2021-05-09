@@ -51,7 +51,7 @@ public class Pickup : MonoBehaviour
                 break;
             case 1:
                 //attack speed up
-                pCont.attackCooldown *= 0.60f;
+                pCont.attackCooldown *= 0.80f;
                 break;
             case 2:
                 //attack size up
@@ -59,7 +59,7 @@ public class Pickup : MonoBehaviour
                 break;
             case 3:
                 //Secondary attack cooldown reduced
-                pCont.sndCooldown *= 0.60f;
+                pCont.sndCooldown *= 0.80f;
                 break;
             case 4:
                 //enemy projectile speed down
@@ -71,11 +71,12 @@ public class Pickup : MonoBehaviour
                 break;
             case 6:
                 //move speed up
-                pCont.speedBonus += 5;
+                pCont.speedBonus += 2.5f;
+                pCont.moveSpeed = pCont.moveSpeed + pCont.speedBonus;
                 break;
             case 7:
                 //armoured
-                pCont.shieldCount = 15;
+                pCont.shieldCount = 12;
                 break;
             case 8:
                 //Attack Knockback/mass up
@@ -92,8 +93,8 @@ public class Pickup : MonoBehaviour
                 break;
             case 11:
                 //Max health increased
-                pCont.maxHealth += 15;
-                pCont.health += 15;
+                pCont.maxHealth += 5;
+                pCont.health += 5;
                 break;
         }
     }

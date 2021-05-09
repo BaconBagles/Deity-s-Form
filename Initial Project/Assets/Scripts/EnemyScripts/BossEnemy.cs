@@ -35,11 +35,11 @@ public class BossEnemy : MonoBehaviour
         enemyScript.spaceBetween = Random.Range(15, 20);
         switchthreshold = enemyScript.health * 0.75f;
         FormList = firstForm;
-        SwitchForm();
         enemyScript.currentDamage = bossDamage;
         enemyScript.currentSize = 3f;
         enemyScript.isBoss = true;
         enemyScript.bossNum = bossNum;
+        SwitchForm();
     }
 
     // Update is called once per frame

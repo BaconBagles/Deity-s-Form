@@ -69,6 +69,12 @@ public class GameController : MonoBehaviour
             LoadReset();
         }
         dCont.CheckDiff();
+        int random = Random.Range(0, bossConversations.Length);
+        for (int i = 0; i < bossConversations.Length; i++)
+        {
+            bossConversations[i].gameObject.SetActive(false);
+        }
+        bossConversations[random].gameObject.SetActive(true);
         FadeIn();
     }
 
@@ -82,12 +88,7 @@ public class GameController : MonoBehaviour
         RandomRoom();
         
 
-        int random = Random.Range(0, bossConversations.Length);
-        for (int i = 0; i< bossConversations.Length; i++)
-        {
-            bossConversations[i].gameObject.SetActive(false);
-        }
-        bossConversations[random].gameObject.SetActive(true);
+        
         
     }
 
@@ -405,10 +406,11 @@ public class GameController : MonoBehaviour
             aMan.bossStageOne = false;
             SaveGame();
             PlayerPrefs.SetInt("deleteSave", 2);
+            PlayerPrefs.SetInt("lastScene", currentScene + 1);
             PlayerPrefs.Save();
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
-
+        FadeIn();
     }
 
     void ResetSounds()
@@ -447,7 +449,6 @@ public class GameController : MonoBehaviour
         sceneFader.CrossFadeAlpha(1.0f, 1f, false);
         yield return new WaitForSeconds(1);
         NewRoom();
-        FadeIn();
     }
 
     void FadeIn()

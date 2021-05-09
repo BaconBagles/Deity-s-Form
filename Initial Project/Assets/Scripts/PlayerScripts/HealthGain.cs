@@ -26,7 +26,7 @@ public class HealthGain : MonoBehaviour
 
     void Heal()
     {
-        pCont.health += 4;
+        pCont.health += 5;
         gCont.StartCoroutine(gCont.HealthAdded());
     }
 }
