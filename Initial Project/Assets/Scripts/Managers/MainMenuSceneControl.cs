@@ -27,7 +27,7 @@ public class MainMenuSceneControl : MonoBehaviour
             Resumebutton.SetActive(false);
         }
 
-        if(firstGameComplete == 1 )
+        if (firstGameComplete == 1)
         {
             Crown.SetActive(true);
         }
@@ -50,7 +50,7 @@ public class MainMenuSceneControl : MonoBehaviour
 
     public void ResumeGame()
     {
-        if(saveExists == 1)
+        if (saveExists == 1)
         {
             SceneManager.LoadScene(lastScene);
         }

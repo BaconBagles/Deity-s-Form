@@ -64,23 +64,27 @@ public class Rivers : MonoBehaviour
             }
         }
 
-        if (coll.gameObject.tag == "basicEnemy")
+        if(isLava == true)
         {
-            Enemy enemy = coll.GetComponent<Enemy>();
-            enemy.inLava = true;
-        }
+            if (coll.gameObject.tag == "basicEnemy")
+            {
+                Enemy enemy = coll.GetComponent<Enemy>();
+                enemy.inLava = true;
+            }
 
-        if (coll.gameObject.tag == "armourEnemy")
-        {
-            Enemy enemy = coll.GetComponent<Enemy>();
-            enemy.inLava = true;
-        }
+            if (coll.gameObject.tag == "armourEnemy")
+            {
+                Enemy enemy = coll.GetComponent<Enemy>();
+                enemy.inLava = true;
+            }
 
-        if (coll.gameObject.tag == "spikyEnemy")
-        {
-            Enemy enemy = coll.GetComponent<Enemy>();
-            enemy.inLava = true;
+            if (coll.gameObject.tag == "spikyEnemy")
+            {
+                Enemy enemy = coll.GetComponent<Enemy>();
+                enemy.inLava = true;
+            }
         }
+        
     }
 
     void OnTriggerExit2D(Collider2D coll)
@@ -105,22 +109,25 @@ public class Rivers : MonoBehaviour
                 }
             }
         }
-        if (coll.gameObject.tag == "basicEnemy")
+        if (isLava == true)
         {
-            Enemy enemy = coll.GetComponent<Enemy>();
-            enemy.inLava = false;
-        }
+            if (coll.gameObject.tag == "basicEnemy")
+            {
+                Enemy enemy = coll.GetComponent<Enemy>();
+                enemy.inLava = false;
+            }
 
-        if (coll.gameObject.tag == "armourEnemy")
-        {
-            Enemy enemy = coll.GetComponent<Enemy>();
-            enemy.inLava = false;
-        }
+            if (coll.gameObject.tag == "armourEnemy")
+            {
+                Enemy enemy = coll.GetComponent<Enemy>();
+                enemy.inLava = false;
+            }
 
-        if (coll.gameObject.tag == "spikyEnemy")
-        {
-            Enemy enemy = coll.GetComponent<Enemy>();
-            enemy.inLava = false;
+            if (coll.gameObject.tag == "spikyEnemy")
+            {
+                Enemy enemy = coll.GetComponent<Enemy>();
+                enemy.inLava = false;
+            }
         }
     }
 
