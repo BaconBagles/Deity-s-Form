@@ -19,6 +19,8 @@ public class GameController : MonoBehaviour
     public TMPro.TextMeshProUGUI PickupText;
     public int roomNumber;
     public ProgressBar progressBar;
+    public bool endlessMode;
+    public TMPro.TextMeshProUGUI roomCounter;
 
     public int pickupNumber;
     public bool pickupSpawned;
@@ -113,8 +115,15 @@ public class GameController : MonoBehaviour
             bossRoom = true;
         }
 
-        progressBar.SetMaxProgress(bRoomNum);
-        progressBar.SetProgress(currentRoom);
+        if (!endlessMode)
+        {
+            progressBar.SetMaxProgress(bRoomNum);
+            progressBar.SetProgress(currentRoom);
+        }
+        else
+        {
+            roomCounter.text = "Current Room: " + currentRoom;
+        }
     }
 
     IEnumerator SpawnPickups()
@@ -369,8 +378,8 @@ public class GameController : MonoBehaviour
 
     public void NewRoom()
     {
-       
-        if (bossRoom == false)
+
+        if (bossRoom == false || endlessMode == true)
         {
             currentRoom++;
             dCont.diffLevel++;
@@ -386,7 +395,7 @@ public class GameController : MonoBehaviour
             alltorches = FindObjectsOfType<theTorchScript>();
             for (int i = 0; i < allPillars.Length; i++)
             {
-                allPillars[i].pillarState = allPillars[i].state.Length-1;
+                allPillars[i].pillarState = allPillars[i].state.Length - 1;
                 allPillars[i].mylight.SetActive(true);
                 allPillars[i].mycollider.enabled = true;
                 allPillars[i].PillarDamage();
@@ -394,7 +403,7 @@ public class GameController : MonoBehaviour
             for (int i = 0; i < alltorches.Length; i++)
             {
                 alltorches[i].LightsOn();
-            } 
+            }
             if (spawnMemory == true)
             {
                 Instantiate(memory, memSpawn.transform.position, Quaternion.identity);
