@@ -232,7 +232,14 @@ public class GameController : MonoBehaviour
                     roomNumber = 1;
                     break;
                 default:
-                    roomNumber = Random.Range(2, rooms.Length);
+                    if (!endlessMode)
+                    {
+                        roomNumber = Random.Range(2, rooms.Length);
+                    }
+                    else
+                    {
+                        roomNumber = Random.Range(0, rooms.Length);
+                    }
                     break;
             }
         }
@@ -387,7 +394,14 @@ public class GameController : MonoBehaviour
             roomComplete = false;
             ResetSounds();
             RandomRoom();
-            progressBar.SetProgress(currentRoom);
+            if (!endlessMode)
+            {
+                progressBar.SetProgress(currentRoom);
+            }
+            else
+            {
+                roomCounter.text = "Rooms Complete: " + currentRoom;
+            }
             pickupSpawned = false;
             thePillarScript[] allPillars;
             theTorchScript[] alltorches;
