@@ -42,8 +42,6 @@ public class GameController : MonoBehaviour
     bool spawnMemory;
     public int currentScene;
     public Image sceneFader;
-    public GameObject hourglass;
-    public Animator hourAnim;
     public float animSpeed;
 
     public List<GameObject> pickups = new List<GameObject>();
@@ -53,7 +51,6 @@ public class GameController : MonoBehaviour
     {
         deleteSave = PlayerPrefs.GetInt("deleteSave", 0);
         PlayerPrefs.Save();
-        hourAnim = hourglass.GetComponent<Animator>();
         if (PlayerPrefs.GetInt("Memory3", 0) == 1)
         {
             allMemories = true;
@@ -83,9 +80,7 @@ public class GameController : MonoBehaviour
     void Start()
     {
         
-
-        animSpeed = 1f / eCont.attackTimer;
-        hourAnim.SetFloat("speed", animSpeed);
+        
 
         RandomRoom();
         
@@ -355,7 +350,6 @@ public class GameController : MonoBehaviour
                 break;
             case 5:
                 PickupText.text = "Enemy Attack Timer Increased";
-                hourAnim.SetFloat("speed", animSpeed);
                 break;
             case 6:
                 PickupText.text = "Move Speed Increased";

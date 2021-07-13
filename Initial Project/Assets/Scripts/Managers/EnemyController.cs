@@ -42,7 +42,6 @@ public class EnemyController : MonoBehaviour
         if (enemies.Count == 0 && spawning == false)
         {
             StopAllCoroutines();
-            gameController.hourAnim.SetBool("fightTime", false);
             if (gameController.roomComplete == false)
             {
                 attacking = false;
@@ -142,7 +141,6 @@ public class EnemyController : MonoBehaviour
 
         gameController.waveNum += 1;
         StartCoroutine(EnemyAttack());
-        gameController.hourAnim.SetBool("fightTime", true);
         spawning = false;
     }
     

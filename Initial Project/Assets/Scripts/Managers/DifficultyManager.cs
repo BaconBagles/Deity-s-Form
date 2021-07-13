@@ -67,6 +67,10 @@ public class DifficultyManager : MonoBehaviour
             eCont.diffHealthMod = 1;
             eCont.diffDamageMod = 0;
             enemyNum = 1;
+                if (gCont.endlessMode)
+                {
+                    eCont.enemyNumber = 4;
+                }
                 break;
             case 16:
             diffScale = 3;
@@ -81,6 +85,10 @@ public class DifficultyManager : MonoBehaviour
             eCont.diffHealthMod = 2;
             eCont.diffDamageMod = 1;
             enemyNum = 1;
+                if (gCont.endlessMode)
+                {
+                    eCont.enemyNumber = 5;
+                }
                 break;
             case 32:
             diffScale = 5;
@@ -95,6 +103,10 @@ public class DifficultyManager : MonoBehaviour
             eCont.diffHealthMod = 2;
             eCont.diffDamageMod = 2;
             enemyNum = 1;
+                if (gCont.endlessMode)
+                {
+                    eCont.enemyNumber = 6;
+                }
                 break;
             case 48:
             diffScale = 7;
