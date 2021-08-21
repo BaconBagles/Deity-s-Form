@@ -20,6 +20,7 @@ TagManager:
   - River
   - Lava
   - Torch
+  - AreYouSure
   layers:
   - Default
   - TransparentFX
