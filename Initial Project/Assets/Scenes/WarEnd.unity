@@ -646,8 +646,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Dummy Dialogue
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 2a49702e19e168c4eb06504a73e9cc22, type: 2}
-  m_sharedMaterial: {fileID: -4568627204592645429, guid: 2a49702e19e168c4eb06504a73e9cc22, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 304c26e9bebbe144bbc8239da4b3f919, type: 2}
+  m_sharedMaterial: {fileID: 7542947412155650758, guid: 304c26e9bebbe144bbc8239da4b3f919, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
