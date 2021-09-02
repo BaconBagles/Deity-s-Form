@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 78872859}
   - component: {fileID: 78872858}
   - component: {fileID: 78872857}
+  - component: {fileID: 78872860}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -206,6 +207,37 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &78872860
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 78872856}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_RenderShadows: 1
+  m_RequiresDepthTextureOption: 2
+  m_RequiresOpaqueTextureOption: 2
+  m_CameraType: 0
+  m_Cameras: []
+  m_RendererIndex: -1
+  m_VolumeLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  m_VolumeTrigger: {fileID: 0}
+  m_RenderPostProcessing: 0
+  m_Antialiasing: 0
+  m_AntialiasingQuality: 2
+  m_StopNaN: 0
+  m_Dithering: 0
+  m_ClearDepth: 1
+  m_RequiresDepthTexture: 0
+  m_RequiresColorTexture: 0
+  m_Version: 2
 --- !u!1 &150342797
 GameObject:
   m_ObjectHideFlags: 0
@@ -230,8 +262,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 150342797}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.6557617, y: 74.82745, z: -65.95211}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -0.095337, y: 142.81, z: -128.16}
+  m_LocalScale: {x: 1.9432, y: 1.9432, z: 1.9432}
   m_Children:
   - {fileID: 643806558}
   - {fileID: 1723238536}
@@ -479,8 +511,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 346555600}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.6557617, y: 74.82745, z: -65.95211}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -0.095337, y: 142.81, z: -128.16}
+  m_LocalScale: {x: 1.9432, y: 1.9432, z: 1.9432}
   m_Children:
   - {fileID: 553889949}
   - {fileID: 1469951126}
@@ -2424,9 +2456,9 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 21300000, guid: 13b5bab2cfc3b6843878e3818468481c, type: 3}
+    m_HighlightedSprite: {fileID: 21300000, guid: 6c07a22089ce20e45808fdc61014c040, type: 3}
     m_PressedSprite: {fileID: 21300000, guid: 14a5485498dc6674ca861d8a682c9662, type: 3}
-    m_SelectedSprite: {fileID: 21300000, guid: 14a5485498dc6674ca861d8a682c9662, type: 3}
+    m_SelectedSprite: {fileID: 21300000, guid: 13b5bab2cfc3b6843878e3818468481c, type: 3}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
@@ -2724,7 +2756,7 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 21300000, guid: 29a3d76577e626e4d8cf501d58853102, type: 3}
+    m_HighlightedSprite: {fileID: 21300000, guid: d1c4fee16bfb08647ba4fa6c7d03f814, type: 3}
     m_PressedSprite: {fileID: 21300000, guid: a5f9af267c17a074c8044096ce5d7b20, type: 3}
     m_SelectedSprite: {fileID: 21300000, guid: a5f9af267c17a074c8044096ce5d7b20, type: 3}
     m_DisabledSprite: {fileID: 0}
